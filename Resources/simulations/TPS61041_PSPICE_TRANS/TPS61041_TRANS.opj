@@ -1,0 +1,123 @@
+(ExpressProject "TPS61041_TRANS"
+  (ProjectVersion "19981106")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File "tps61041_trans.olb"
+        (Type "Schematic Library")))
+    (NoModify)
+    (File "tps61041_trans.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (RootChangedForceReNetlist "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE"))
+  (Folder "Outputs")
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\tps61041_trans-pspicefiles\startup_tb\trans.sim"
+        (DisplayName "Startup_TB-trans")
+        (Type "PSpice Profile"))
+      (ActiveProfile ".\tps61041_trans-pspicefiles\startup_tb\trans.sim"))
+    (Folder "Model Libraries"
+      (Sort User)
+      (File ".\tps61041_trans.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\tps61041_trans.lib")))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (PartMRUSelector
+    (TPS61041_TRANS
+      (FullPartName "TPS61041_TRANS.Normal")
+      (LibraryName
+         "C:\ELAB_MODEL_WS\ELAB_MODEL_DS\PART_NUMBERS\TPS61041\RELEASE_TI\TPS61041_PSPICE_TRANS\TPS61041_TRANS.OLB")
+      (DeviceIndex "0"))
+    (TPS61040_TRANS
+      (FullPartName "TPS61040_TRANS.Normal")
+      (LibraryName
+         "C:\ELAB_MODEL_WS\ELAB_MODEL_DS\PART_NUMBERS\TPS61040\RELEASE_TI\PSPICE\TPS61040_PSPICE_TRANS\TPS61040_TRANS.OLB")
+      (DeviceIndex "0"))
+    (VDC
+      (FullPartName "VDC.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.0\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (PARAM
+      (FullPartName "PARAM.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.0\TOOLS\CAPTURE\LIBRARY\PSPICE\SPECIAL.OLB")
+      (DeviceIndex "0"))
+    (ABM2
+      (FullPartName "ABM2.Normal")
+      (LibraryName "C:\CADENCE\SPB_16.0\TOOLS\CAPTURE\LIBRARY\PSPICE\ABM.OLB")
+      (DeviceIndex "0"))
+    (VPULSE
+      (FullPartName "VPULSE.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.0\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (S
+      (FullPartName "S.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.0\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (PORTLEFT-L
+      (LibraryName "C:\CADENCE\SPB_16.01\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (INV_BASIC_GEN
+      (FullPartName "INV_BASIC_GEN.Normal")
+      (LibraryName
+         "C:\ELAB_MODEL_WS\ELAB_MODEL_DS\PART_NUMBERS\TPS61041\ACTIVE_WORK\TPS61041_PSPICE_TRANS\GATES_GEN.OLB")
+      (DeviceIndex "0"))
+    (AND2_BASIC_GEN
+      (FullPartName "AND2_BASIC_GEN.Normal")
+      (LibraryName
+         "C:\ELAB_MODEL_WS\ELAB_MODEL_DS\PART_NUMBERS\TPS61041\ACTIVE_WORK\TPS61041_PSPICE_TRANS\GATES_GEN.OLB")
+      (DeviceIndex "0"))
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.0\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (OR3_BASIC_GEN
+      (FullPartName "OR3_BASIC_GEN.Normal")
+      (LibraryName
+         "C:\ELAB_MODEL_WS\ELAB_MODEL_DS\PART_NUMBERS\TPS61041\ACTIVE_WORK\TPS61041_PSPICE_TRANS\GATES_GEN.OLB")
+      (DeviceIndex "0"))
+    (AND3_BASIC_GEN
+      (FullPartName "AND3_BASIC_GEN.Normal")
+      (LibraryName
+         "C:\ELAB_MODEL_WS\ELAB_MODEL_DS\PART_NUMBERS\TPS61041\ACTIVE_WORK\TPS61041_PSPICE_TRANS\GATES_GEN.OLB")
+      (DeviceIndex "0"))
+    (SRLATCHRHP_BASIC_GEN
+      (FullPartName "SRLATCHRHP_BASIC_GEN.Normal")
+      (LibraryName
+         "C:\ELAB_MODEL_WS\ELAB_MODEL_DS\PART_NUMBERS\TPS61041\ACTIVE_WORK\TPS61041_PSPICE_TRANS\GATES_GEN.OLB")
+      (DeviceIndex "0"))
+    (DFFSBRB_SHPBASIC_GEN
+      (FullPartName "DFFSBRB_SHPBASIC_GEN.Normal")
+      (LibraryName
+         "C:\ELAB_MODEL_WS\ELAB_MODEL_DS\PART_NUMBERS\TPS61041\ACTIVE_WORK\TPS61041_PSPICE_TRANS\GATES_GEN.OLB")
+      (DeviceIndex "0")))
+  (MPSSessionName "a0132703")
+  (LastUsedLibraryBrowseDirectory
+     "C:\ELAB_MODEL_WS\ELAB_MODEL_DS\Part_Numbers\TPS61041\Release_TI\TPS61041_PSPICE_TRANS")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources"
+         "c:\elab_model_ws\elab_model_ds\part_numbers\tps61041\release_ti\tps61041_pspice_trans\tps61041_trans.dsn")
+      (Path "Design Resources"
+         "c:\elab_model_ws\elab_model_ds\part_numbers\tps61041\release_ti\tps61041_pspice_trans\tps61041_trans.dsn"
+         "Startup_TB")
+      (Path "Design Resources" "Library"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -4 -30 0 200 0 536"))
+      (Tab 0))))
