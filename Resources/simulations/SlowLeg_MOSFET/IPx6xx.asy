@@ -29,16 +29,22 @@ LINE Normal 80 -67 96 -67
 CIRCLE Normal 119 17 22 -80
 WINDOW 0 97 -83 Left 0
 WINDOW 3 125 -29 Left 0
-SYMATTR Value EPC1001
-SYMATTR Description EPC10xx GaN Power Transistor
+SYMATTR Value IPW60R017C7_L0
+SYMATTR Description IPx60Rxx Power Transistor
 SYMATTR Prefix x
-SYMATTR ModelFile EPCGanlibrary.lib
-PIN 0 0 NONE 0
-PINATTR PinName gatein
-PINATTR SpiceOrder 1
+SYMATTR ModelFile Infineon_SimulationModel_CoolMOS_C7_MOSFET_600V_Spice.lib
 PIN 80 -96 NONE 0
-PINATTR PinName drainin
+PINATTR PinName drain
+PINATTR SpiceOrder 1
+PIN 0 0 NONE 0
+PINATTR PinName gate
 PINATTR SpiceOrder 2
 PIN 80 32 NONE 0
-PINATTR PinName sourcein
+PINATTR PinName source
 PINATTR SpiceOrder 3
+PIN 32 -96 NONE 8
+PINATTR PinName Tj
+PINATTR SpiceOrder 4
+PIN 0 -96 NONE 8
+PINATTR PinName Tcase
+PINATTR SpiceOrder 5
