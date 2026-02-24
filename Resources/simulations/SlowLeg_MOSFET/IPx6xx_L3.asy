@@ -29,7 +29,7 @@ LINE Normal 80 -67 96 -67
 CIRCLE Normal 119 17 22 -80
 WINDOW 0 97 -83 Left 0
 WINDOW 3 125 -29 Left 0
-SYMATTR Value IPW60R017C7_L0
+SYMATTR Value IPZ60R017C7_L3
 SYMATTR Description IPx60Rxx Power Transistor WITH THERMAL
 SYMATTR Prefix x
 SYMATTR ModelFile Infineon_SimulationModel_CoolMOS_C7_MOSFET_600V_Spice.lib
