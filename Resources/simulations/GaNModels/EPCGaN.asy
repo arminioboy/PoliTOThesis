@@ -29,7 +29,7 @@ LINE Normal 80 -67 96 -67
 CIRCLE Normal 119 17 22 -80
 WINDOW 0 97 -83 Left 0
 WINDOW 3 125 -29 Left 0
-SYMATTR Value EPC1001
+SYMATTR Value EPC2304
 SYMATTR Description EPC10xx GaN Power Transistor
 SYMATTR Prefix x
 SYMATTR ModelFile EPCGanlibrary.lib
