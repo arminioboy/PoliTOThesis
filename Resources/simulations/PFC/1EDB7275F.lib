@@ -255,12 +255,34 @@ XU1 OUT_SRC VDDO IN+ GNDI VDDI Tj Tamb Tc IN- OUT_SNK GNDO 1EDB7275F_0 Params: T
 .PARAM TCbias= {-400u}
 VS6         29 30 1.1
 VS5         25 31 3.3
-VCIb2I      30 GNDI ; Current Arrow
-VCIb1I      33 GNDI ; Current Arrow
+
+*VCIb2I      30 GNDI ; Current Arrow
+*VCIb1I      33 GNDI ; Current Arrow
+*VS3         32 33 1.2
+*VIhmosA     37 OUT_SRC ; Current Arrow
+*VIlmosA     OUT_SNK 38 ; Current Arrow
+*VCIb1       44 GNDO ; Current Arrow
+
+* Current sense sources stabilized
+
+VCIb2I      30 N_VCIb2I 0
+R_VCIb2I    N_VCIb2I GNDI 1m
+
+VCIb1I      33 N_VCIb1I 0
+R_VCIb1I    N_VCIb1I GNDI 1m
+
 VS3         32 33 1.2
-VIhmosA     37 OUT_SRC ; Current Arrow
-VIlmosA     OUT_SNK 38 ; Current Arrow
-VCIb1       44 GNDO ; Current Arrow
+
+VIhmosA     37 N_VIhmosA 0
+R_VIhmosA   N_VIhmosA OUT_SRC 1m
+
+VIlmosA     OUT_SNK N_VIlmosA 0
+R_VIlmosA   N_VIlmosA 38 1m
+
+VCIb1       44 N_VCIb1 0
+R_VCIb1     N_VCIb1 GNDO 1m
+*end stabilized current sense sources
+
 VS2         53 44 1.15
 IT25        0 46 25M
 XU7         VDDO GNDO 18 DGND Tj HYSTCOMPG_THLRF_LONGDEL_1EDB7275F_0
