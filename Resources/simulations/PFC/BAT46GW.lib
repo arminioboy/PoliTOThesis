@@ -1,0 +1,75 @@
+*
+*******************************************
+*
+*BAT46GW
+*
+*Nexperia
+*
+*100V, 250mA Schottky barrier diode
+*
+*
+*VRmax = 100V
+*
+*
+*VFmax = 850mV @ IF = 250mA
+*
+*
+*
+*
+*
+*
+*  
+*
+*
+*
+*Package pinning does not match Spice model pinning.
+*Package: SOD123
+*
+*Package Pin 1: cathode    
+*Package Pin 2: anode 
+*
+*
+*
+*Extraction date (week/year): 08/2021
+*Simulator: SPICE3
+*
+*******************************************
+*#
+.SUBCKT BAT46GW 1 2
+R1 1 2 5E+07
+D1 1 2
++ DIODE1
+*
+*The resistor R1 does not reflect  
+*physical devices but improves only modeling  
+*in the forward mode of operation.
+*       
+.MODEL DIODE1 D
++ IS = 1.703E-07
++ N = 1.06
++ BV = 115
++ IBV = 0.005
++ RS = 1
++ CJO = 3.5E-11
++ VJ = 0.4
++ M = 0.5
++ FC = 0.5
++ TT = 0
++ EG = 0.69
++ XTI = 2
+.ENDS
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
