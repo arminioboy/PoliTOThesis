@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ThermalLibraryPackage xmlns="http://www.plexim.com/xml/thermallibrary/" version="1.0">
+ <Name>EPC</Name>
+ <Version check="https://www.plexim.com/version">1.0.0</Version>
+ <BlockLibrary file="EPCComponent">EPC FET Component</BlockLibrary>
+ <ThermalDescriptions directory="EPCThermalDescriptions/EPC" />
+</ThermalLibraryPackage>

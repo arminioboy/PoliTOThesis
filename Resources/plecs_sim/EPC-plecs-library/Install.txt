@@ -1,0 +1,3 @@
+These instructions are the same for PLECS Blockset and PLECS Standalone users.
+
+To install the EPC library component and corresponding thermal descriptions (XML files), simply add this directory (containing the "EPCThermalDescriptions/" folder, "EPCComponent.plecs" PLECS model, and "info.xml" file) into the list of thermal description search paths in the Thermal tab of the PLECS Preferences window. Click the Refresh button on the left side of the list and click OK to load the EPC files into PLECS. Then a new entry in the PLECS Library Browser should appear "EPC FET Component" containing the custom component that can be dragged into your own circuit models (you may need to restart PLECS to see this). 
