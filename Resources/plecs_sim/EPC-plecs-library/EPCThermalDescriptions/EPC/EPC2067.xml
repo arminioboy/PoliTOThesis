@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SemiconductorLibrary xmlns="http://www.plexim.com/xml/semiconductors/" version="1.4">
+    <Package class="EPC" vendor="EPC" partnumber="EPC2067">
+        <Constants>
+            <Constant>
+                <Name>Vsd</Name>
+                <Description>Gate off reverse conduction voltage drop (V)</Description>
+                <Value>1.2</Value>
+            </Constant>
+            <Constant>
+                <Name>Id_max</Name>
+                <Description>Maximum current (A)</Description>
+                <Value>69</Value>
+            </Constant>
+        </Constants>
+        <Variables>
+            <Variable>
+                <Name>v</Name>
+                <MaxValue>40</MaxValue>
+            </Variable>
+            <Variable>
+                <Name>T</Name>
+                <MaxValue>150</MaxValue>
+            </Variable>
+            <Variable>
+                <Name>RgON</Name>
+                <Description>Turn ON gate resistance (total)</Description>
+                <DefaultValue>1.7</DefaultValue>
+                <MinValue>0</MinValue>
+                <MaxValue>100</MaxValue>
+            </Variable>
+            <Variable>
+                <Name>RgOFF</Name>
+                <Description>Turn OFF gate resistance (total)</Description>
+                <DefaultValue>0.4</DefaultValue>
+                <MinValue>0</MinValue>
+                <MaxValue>100</MaxValue>
+            </Variable>
+            <Variable>
+                <Name>Ron</Name>
+                <Description>On resistance (Rds,on default is typical for Vgs = 5V and @25C) (Ohms)</Description>
+                <DefaultValue>0.0013</DefaultValue>
+                <MinValue>0.0</MinValue>
+                <MaxValue>0.0052</MaxValue>
+            </Variable>
+        </Variables>
+        <CustomTables>
+            <Table1D>
+                <Name>Eoss(V)</Name>
+                <XAxis> -1.0 0.0 10.0 20.0 30.0 40.0  </XAxis>
+                <FunctionValues scale="1"> 0.00E+00 0.00E+00 2.25E-07 7.42E-07 1.42E-06 2.26E-06 </FunctionValues>
+            </Table1D>
+            <Table1D>
+                <Name>Rdson(Tj)</Name>
+                <XAxis> 25 50 75 100 125 150 </XAxis>
+                <FunctionValues scale="1"> 1.30E-03 1.48E-03 1.66E-03 1.85E-03 2.05E-03 2.27E-03 </FunctionValues>
+            </Table1D>
+            <Table2D>
+                <Name>RthJPCB</Name>
+                <XAxis> 1 2 3</XAxis>
+                <YAxis> 0 1</YAxis>
+                <FunctionValues scale="1">
+                    <YDimension>  1.25E+00 1.01E-01 2.18E-02  </YDimension>
+                    <YDimension>  7.57E-03 2.84E-03 1.02E-03  </YDimension>
+                </FunctionValues>
+            </Table2D>
+            <Table2D>
+                <Name>RthJtop</Name>
+                <XAxis> 1 2 3</XAxis>
+                <YAxis> 0 1</YAxis>
+                <FunctionValues scale="1">
+                    <YDimension>  3.11E-01 6.15E-02 1.96E-02  </YDimension>
+                    <YDimension>  4.66E-03 3.18E-03 8.11E-04  </YDimension>
+                </FunctionValues>
+            </Table2D>
+        </CustomTables>
+        <SemiconductorData type="MOSFET with Diode" nameFilter="MOSFET*">
+            <TurnOnLoss>
+                <ComputationMethod>Table and formula</ComputationMethod>
+                <Formula> E * ( 1 + 0.476*(RgON-1.70) + 0.000*(RgON-1.70)^2 ) + lookup('Eoss(V)',v) </Formula>
+                <CurrentAxis> -1.0 0.0 6.9 13.8 20.7 27.6 34.5 41.4 55.2 69.0 82.8 103.5 138.0 </CurrentAxis>
+                <VoltageAxis> 0.0 10.0 20.0 30.0 40.0 </VoltageAxis>
+                <TemperatureAxis> 25 125 </TemperatureAxis>
+                <Energy scale="1E-06">
+                    <Temperature>
+                        <Voltage> 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 </Voltage>
+                        <Voltage> 0.00E+00 0.00E+00 5.46E-02 1.12E-01 1.71E-01 2.31E-01 2.93E-01 3.57E-01 4.87E-01 6.23E-01 7.66E-01 9.91E-01 1.40E+00 </Voltage>
+                        <Voltage> 0.00E+00 0.00E+00 1.26E-01 2.58E-01 3.94E-01 5.33E-01 6.74E-01 8.19E-01 1.12E+00 1.43E+00 1.75E+00 2.26E+00 3.17E+00 </Voltage>
+                        <Voltage> 0.00E+00 0.00E+00 2.02E-01 4.13E-01 6.29E-01 8.50E-01 1.08E+00 1.31E+00 1.78E+00 2.27E+00 2.79E+00 3.59E+00 5.04E+00 </Voltage>
+                        <Voltage> 0.00E+00 0.00E+00 2.83E-01 5.79E-01 8.82E-01 1.19E+00 1.51E+00 1.83E+00 2.49E+00 3.18E+00 3.90E+00 5.03E+00 7.04E+00 </Voltage>
+                    </Temperature>
+                    <Temperature>
+                        <Voltage> 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 </Voltage>
+                        <Voltage> 0.00E+00 0.00E+00 5.19E-02 1.07E-01 1.64E-01 2.24E-01 2.85E-01 3.49E-01 4.83E-01 6.26E-01 7.78E-01 1.02E+00 1.49E+00 </Voltage>
+                        <Voltage> 0.00E+00 0.00E+00 1.20E-01 2.48E-01 3.80E-01 5.16E-01 6.57E-01 8.03E-01 1.11E+00 1.43E+00 1.77E+00 2.33E+00 3.36E+00 </Voltage>
+                        <Voltage> 0.00E+00 0.00E+00 1.93E-01 3.96E-01 6.07E-01 8.24E-01 1.05E+00 1.28E+00 1.77E+00 2.28E+00 2.82E+00 3.70E+00 5.33E+00 </Voltage>
+                        <Voltage> 0.00E+00 0.00E+00 2.71E-01 5.56E-01 8.51E-01 1.16E+00 1.47E+00 1.79E+00 2.47E+00 3.19E+00 3.95E+00 5.17E+00 7.43E+00 </Voltage>
+                    </Temperature>
+                </Energy>
+            </TurnOnLoss>
+            <TurnOffLoss>
+                <ComputationMethod>Table and formula</ComputationMethod>
+                <Formula> E * ( 1 + 1.250*(RgOFF-0.40) + 0.000*(RgOFF-0.40)^2 ) </Formula>
+                <CurrentAxis> -1.0 0.0 6.9 13.8 20.7 27.6 34.5 41.4 55.2 69.0 82.8 103.5 138.0 </CurrentAxis>
+                <VoltageAxis> 0.0 10.0 20.0 30.0 40.0 </VoltageAxis>
+                <TemperatureAxis> 25 125 </TemperatureAxis>
+                <Energy scale="1E-06">
+                    <Temperature>
+                        <Voltage> 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 </Voltage>
+                        <Voltage> 0.00E+00 0.00E+00 4.76E-02 9.43E-02 1.40E-01 1.86E-01 2.31E-01 2.76E-01 3.64E-01 4.51E-01 5.37E-01 6.63E-01 8.68E-01 </Voltage>
+                        <Voltage> 0.00E+00 0.00E+00 1.10E-01 2.17E-01 3.23E-01 4.28E-01 5.31E-01 6.34E-01 8.35E-01 1.03E+00 1.23E+00 1.51E+00 1.97E+00 </Voltage>
+                        <Voltage> 0.00E+00 0.00E+00 1.76E-01 3.47E-01 5.16E-01 6.83E-01 8.48E-01 1.01E+00 1.33E+00 1.65E+00 1.95E+00 2.41E+00 3.14E+00 </Voltage>
+                        <Voltage> 0.00E+00 0.00E+00 2.47E-01 4.87E-01 7.24E-01 9.57E-01 1.19E+00 1.42E+00 1.86E+00 2.30E+00 2.73E+00 3.36E+00 4.38E+00 </Voltage>
+                    </Temperature>
+                    <Temperature>
+                        <Voltage> 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00 </Voltage>
+                        <Voltage> 0.00E+00 0.00E+00 5.00E-02 9.84E-02 1.46E-01 1.93E-01 2.39E-01 2.84E-01 3.73E-01 4.60E-01 5.44E-01 6.68E-01 8.66E-01 </Voltage>
+                        <Voltage> 0.00E+00 0.00E+00 1.16E-01 2.28E-01 3.37E-01 4.44E-01 5.50E-01 6.53E-01 8.55E-01 1.05E+00 1.24E+00 1.52E+00 1.96E+00 </Voltage>
+                        <Voltage> 0.00E+00 0.00E+00 1.85E-01 3.64E-01 5.38E-01 7.09E-01 8.77E-01 1.04E+00 1.36E+00 1.67E+00 1.98E+00 2.41E+00 3.11E+00 </Voltage>
+                        <Voltage> 0.00E+00 0.00E+00 2.60E-01 5.11E-01 7.56E-01 9.95E-01 1.23E+00 1.46E+00 1.91E+00 2.34E+00 2.76E+00 3.37E+00 4.34E+00 </Voltage>
+                    </Temperature>
+                </Energy>
+            </TurnOffLoss>
+            <ConductionLoss gate="on">
+                <ComputationMethod>Formula only</ComputationMethod>
+                <Formula>lookup('Rdson(Tj)',T)*i</Formula>
+                <CurrentAxis> 0</CurrentAxis>
+                <TemperatureAxis> 25</TemperatureAxis>
+                <VoltageDrop scale="1">
+                    <Temperature> 0</Temperature>
+                </VoltageDrop>
+            </ConductionLoss>
+            <ConductionLoss gate="off">
+                <ComputationMethod>Table only</ComputationMethod>
+                <CurrentAxis> -138.0 -103.5 -82.8 -69.0 -55.2 -41.4 -34.5 -20.7 -6.9 -0.7 0.0 1.0 </CurrentAxis>
+                <TemperatureAxis> 25 125 </TemperatureAxis>
+                <VoltageDrop scale="1">
+                    <Temperature> -2.85 -2.67 -2.56 -2.49 -2.41 -2.34 -2.30 -2.20 -2.03 -1.90 0.00 0.00 </Temperature>
+                    <Temperature> -3.11 -2.83 -2.66 -2.55 -2.43 -2.31 -2.24 -2.11 -1.91 -1.75 0.00 0.00 </Temperature>
+                </VoltageDrop>
+            </ConductionLoss>
+        </SemiconductorData>
+        <ThermalModel>
+            <StateSpaceModel>
+                <Devices/>
+                <Matrix name="A" rows="0" cols="0"/>
+                <Matrix name="B" rows="0" cols="1"/>
+                <Matrix name="C" rows="1" cols="0">
+                    <Row></Row>
+                </Matrix>
+                <Matrix name="D" rows="1" cols="1">
+                    <Row> 0</Row>
+                </Matrix>
+            </StateSpaceModel>
+        </ThermalModel>
+        <Comment>
+            <Line>Jan 26, 2024 - Ed2</Line>
+        </Comment>
+    </Package>
+</SemiconductorLibrary>

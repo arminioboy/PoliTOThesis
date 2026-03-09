@@ -1,0 +1,2193 @@
+Plecs {
+  Name          "EPCComponent"
+  Version       "4.6"
+  CircuitModel  "ContStateSpace"
+  StartTime     "0.0"
+  TimeSpan      "1.0"
+  Timeout       ""
+  Solver        "auto"
+  MaxStep       "1e-3"
+  InitStep      "-1"
+  FixedStep     "1e-3"
+  Refine        "1"
+  ZCStepSize    "1e-9"
+  RelTol        "1e-3"
+  AbsTol        "-1"
+  TurnOnThreshold "0"
+  SyncFixedStepTasks "2"
+  UseSingleCommonBaseRate "2"
+  LossVariableLimitExceededMsg "3"
+  NegativeSwitchLossMsg "3"
+  DivisionByZeroMsg "3"
+  StiffnessDetectionMsg "2"
+  MaxConsecutiveZCs "1000"
+  AlgebraicLoopWithStateMachineMsg "3"
+  AssertionAction "1"
+  InitializationCommands ""
+  InitialState  "1"
+  SystemState   ""
+  TaskingMode   "1"
+  TaskConfigurations ""
+  CodeGenParameterInlining "2"
+  CodeGenFloatingPointFormat "2"
+  CodeGenAbsTimeUsageMsg "3"
+  CodeGenBaseName ""
+  CodeGenOutputDir ""
+  CodeGenExtraOpts ""
+  CodeGenTarget "Generic"
+  CodeGenTargetSettings ""
+  ExtendedMatrixPrecision "1"
+  MatrixSignificanceCheck "2"
+  EnableStateSpaceSplitting "2"
+  DisplayStateSpaceSplitting "1"
+  DiscretizationMethod "2"
+  ExternalModeSettings ""
+  AlgebraicLoopMethod "1"
+  AlgebraicLoopTolerance "1e-6"
+  ScriptsDialogGeometry ""
+  ScriptsDialogSplitterPos "0"
+  Schematic {
+    Location      [257, 66; 868, 343]
+    ZoomFactor    1
+    SliderPosition [0, 0]
+    ShowBrowser   off
+    BrowserWidth  100
+    Component {
+      Type          Subsystem
+      Name          "EPC GaN FET1"
+      Show          on
+      Position      [295, 115]
+      Direction     up
+      Flipped       off
+      Frame         [-15, -15; 15, 15]
+      LabelPosition [18, 0]
+      LabelAlign    left
+      SampleTime    "-1"
+      CodeGenDiscretizationMethod "2"
+      CodeGenTarget "Generic"
+      MaskType      "EPC GaN FET"
+      MaskDescription "This component is used to link .xml thermal description"
+" files for EPC GaN FETs.\n"
+"\n"
+"To use, first add the folder containing EPCComponent.plecs and info.xml files"
+", and EPCThermalDescriptions/ subfolder to the 'Thermal description search pa"
+"th' of the Thermal tab of the PLECS Preferences window. Then, EPC GaN FETs co"
+"mponents can be selected in the FET field below. \n"
+"\n"
+"You do not need to provide a value for device parameters that show their defa"
+"ult values in gray, but you can overwrite these to a different value. All oth"
+"er parameters are required to have a value assigned.\n"
+"\n"
+"Deadtime needs to be added external to the device parameters and should be in"
+"cluded with the Turn-on Delay block placed in series with the gate control si"
+"gnal."
+      MaskDisplay   "Icon:line({5, 5, -6}, {-20, -10, -10})\n"
+"Icon:line({-6, -6}, {14, 10})\n"
+"Icon:line({-7, -7}, {14, 10})\n"
+"Icon:line({-6, -6}, {4 , 6})\n"
+"Icon:line({-7, -7}, {4 , 6})\n"
+"Icon:line({-6, -6}, {0, -12})\n"
+"Icon:line({-7, -7}, {0, -12})\n"
+"Icon:line({-7, -14}, {5, 5})\n"
+"Icon:line({5, 5, -6}, {20, 12, 12})\n"
+"Icon:patch({-2, 2, -2}, {14, 12, 10})\n"
+"\n"
+"local function drawBox(color)\n"
+"  Icon:color(color[1], color[2], color[3])\n"
+"  local frame = Block:get(\"Frame\")\n"
+"  local xLeft = frame[1]\n"
+"  local xTot = frame[3]\n"
+"  local yUp = frame[2]\n"
+"  local yTot = frame[4]\n"
+"  \n"
+"  Icon:line({xLeft, xLeft}, {yUp, yUp+yTot})\n"
+"  Icon:line({xLeft, xLeft+xTot}, {yUp+yTot, yUp+yTot})\n"
+"  Icon:line({xLeft+xTot, xLeft+xTot}, {yUp+yTot, yUp})\n"
+"  Icon:line({xLeft+xTot, xLeft}, {yUp, yUp})\n"
+"end\n"
+"\n"
+"drawBox({150, 150, 150})\n"
+"\n"
+"Icon:color(0, 0, 180)\n"
+"Icon:line({15, 20}, {-10, -10})\n"
+"Icon:line({15, 20}, {10, 10})"
+      MaskDisplayLang "2"
+      MaskIconFrame off
+      MaskIconOpaque on
+      MaskIconRotates on
+      MaskInit      "% Check if a FET device is selected - if not, assign dumm"
+"y variables to allow simulation with ideal switch\n"
+"if (isempty(device.Filename))\n"
+"\n"
+"% Set probed Tj/loss values to dummy values\n"
+"simType = 1;\n"
+"\n"
+"% Dummy assignments\n"
+"Id_max = 10000;\n"
+"Ron = 0;\n"
+"Vsd = 0;\n"
+"Rth_top = 0;\n"
+"Cth_top = 0;\n"
+"Rth_bot = 0;\n"
+"Cth_bot = 0;\n"
+"\n"
+"else % When a device is selected, handle loss scaling, variable assignments a"
+"nd diagnostics\n"
+"\n"
+"% Set probed Tj/loss values to active\n"
+"simType = 2;\n"
+"\n"
+"%% Scale FET and diode curves to account for number of parallel devices\n"
+"\n"
+"% FET conduction (Pc_m) loss scaling\n"
+"if(~isempty(device.DeviceData{1}.Von.GateOn))\n"
+"\tdevice.DeviceData{1}.Von.GateOn.Formula = [device.DeviceData{1}.Von.GateOn."
+"Formula,'/',num2str(num_par)];\n"
+"end\n"
+"\n"
+"% FET turn-on (Eon) loss scaling\n"
+"if(~isempty(device.DeviceData{1}.Eon))\n"
+"\tdevice.DeviceData{1}.Eon.i = device.DeviceData{1}.Eon.i*num_par;\n"
+"\tdevice.DeviceData{1}.Eon.E = device.DeviceData{1}.Eon.E*num_par;\n"
+"end\n"
+"% FET turn-off (Eoff) loss scaling\n"
+"if(~isempty(device.DeviceData{1}.Eoff))\n"
+"\tdevice.DeviceData{1}.Eoff.i = device.DeviceData{1}.Eoff.i*num_par;\n"
+"\tdevice.DeviceData{1}.Eoff.E = device.DeviceData{1}.Eoff.E*num_par;\n"
+"end\n"
+"% Reverse conduction with gate off (virtual commutation) loss scaling\n"
+"if(~isempty(device.DeviceData{1}.Von.GateOff))\n"
+"\tdevice.DeviceData{1}.Von.GateOff.i = device.DeviceData{1}.Von.GateOff.i*num"
+"_par;\n"
+"end\n"
+"\n"
+"%% Scale device thermal impedance to account for number of parallel devices\n"
+"\n"
+"%device.DeviceData{1}.CauerChain.R = device.DeviceData{1}.CauerChain.R(1,:)/("
+"num_par);\n"
+"%device.DeviceData{1}.CauerChain.C = device.DeviceData{1}.CauerChain.C(1,:)*("
+"num_par);\n"
+"% Thermal impedance (requires data in Custom Tables of thermal description)\n"
+"Rth_top = device.CustomTables.RthJtop{3,1}(1,:)/(num_par);\n"
+"Cth_top = device.CustomTables.RthJtop{3,1}(2,:)*(num_par);\n"
+"Rth_bot = device.CustomTables.RthJPCB{3,1}(1,:)/(num_par);\n"
+"Cth_bot = device.CustomTables.RthJPCB{3,1}(2,:)*(num_par);\n"
+"\n"
+"%% Diagnostics\n"
+"\n"
+"% Number of parallel device input requirements\n"
+"if (num_par < 1)\n"
+"\terror(\"You must enter an integer of at least 1 for the number of parallel "
+"devices.\")\n"
+"end\n"
+"num_par = round(num_par); % round to the nearest integer\n"
+"\n"
+"% Ensure a valid initial temperature value is entered\n"
+"if (T_init < -50 || T_init > 150)\n"
+"\terror(\"You must enter a valid value for the initial temperature between -5"
+"0 and 100 (C).\")\n"
+"end\n"
+"\n"
+"%% Housekeeping\n"
+"\n"
+"% Get maximum current limit value (Id_max) from thermal description (fixed va"
+"lue, used in Assertion block)\n"
+"if (~isempty(device.Constants.Id_max))\n"
+"\tId_max = device.Constants.Id_max;\n"
+"else\n"
+"\tId_max = 150;\n"
+"end\n"
+"\n"
+"% Get source-drain voltage (Vsd) from thermal description (fixed typical valu"
+"e, used as virtual body diode forward voltage drop)\n"
+"if (~isempty(device.Constants.Vsd))\n"
+"\tVsd = device.Constants.Vsd;\n"
+"else\n"
+"\tVsd = 1;\n"
+"end\n"
+"\n"
+"% Set FET on resistance using typical value given in thermal description\n"
+"if (~isempty(device.Variables.Ron.Value))\n"
+"\tRon = device.Variables.Ron.Value;\n"
+"else\n"
+"  \tRon = 0;\n"
+"end\n"
+"\n"
+"end"
+      Parameter {
+        Variable      "device"
+        Prompt        "FET"
+        Type          Thermal
+        Class         "EPC"
+        Value         ""
+        Show          off
+        TabName       ""
+      }
+      Parameter {
+        Variable      "num_par"
+        Prompt        "Number of parallel FETs"
+        Type          FreeText
+        Value         "1"
+        Show          off
+        Tunable       off
+        TabName       ""
+      }
+      Parameter {
+        Variable      "T_init"
+        Prompt        "Initial junction temperature (C)"
+        Type          FreeText
+        Value         "25"
+        Show          off
+        Tunable       off
+        TabName       ""
+      }
+      Terminal {
+        Type          Port
+        Position      [5, 20]
+        Direction     down
+      }
+      Terminal {
+        Type          Input
+        Position      [-15, 5]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [5, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          HeatPort
+        Position      [20, -10]
+        Direction     right
+      }
+      Terminal {
+        Type          HeatPort
+        Position      [20, 10]
+        Direction     right
+      }
+      Schematic {
+        Location      [258, 344; 869, 939]
+        ZoomFactor    1
+        SliderPosition [0, 0]
+        ShowBrowser   off
+        BrowserWidth  100
+        Component {
+          Type          Port
+          Name          "-"
+          Show          on
+          Position      [350, 275]
+          Direction     up
+          Flipped       off
+          Parameter {
+            Variable      "Index"
+            Value         "1"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Input
+          Name          "gate"
+          Show          on
+          Position      [245, 190]
+          Direction     right
+          Flipped       off
+          Parameter {
+            Variable      "Index"
+            Value         "2"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Port
+          Name          "+"
+          Show          on
+          Position      [350, 80]
+          Direction     up
+          Flipped       on
+          Parameter {
+            Variable      "Index"
+            Value         "3"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Reference
+          SrcComponent  "Components/Assertions/Assert Upper Limit"
+          Name          "Max Current"
+          Show          on
+          Position      [460, 235]
+          Direction     up
+          Flipped       off
+          Frame         [-15, -15; 15, 15]
+          LabelPosition [0, 18]
+          LabelAlign    up
+          Parameter {
+            Variable      "upper_limit"
+            Value         "Id_max"
+            Show          off
+          }
+          Parameter {
+            Variable      "include_limit"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "action"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "message"
+            Value         "Device current limit exceeded. Choose another devic"
+"e, or consider paralleling."
+            Show          off
+            Evaluate      off
+          }
+          Terminal {
+            Type          Input
+            Position      [-15, 0]
+            Direction     left
+          }
+        }
+        Component {
+          Type          MosfetWithDiode
+          Name          "MOSFET"
+          Show          off
+          Position      [350, 190]
+          Direction     up
+          Flipped       off
+          Parameter {
+            Variable      "Ron"
+            Value         "Ron/num_par"
+            Show          off
+          }
+          Parameter {
+            Variable      "s_init"
+            Value         "0"
+            Show          off
+          }
+          Parameter {
+            Variable      "thermal"
+            Value         "ref:device"
+            Show          off
+          }
+          Parameter {
+            Variable      "Rth"
+            Value         "0"
+            Show          off
+          }
+          Parameter {
+            Variable      "T_init"
+            Value         "T_init"
+            Show          off
+          }
+        }
+        Component {
+          Type          Ammeter
+          Name          "Id"
+          Show          on
+          Position      [350, 235]
+          Direction     up
+          Flipped       off
+        }
+        Component {
+          Type          Subsystem
+          Name          "Switching Loss\nSeparation"
+          Show          on
+          Position      [340, 490]
+          Direction     up
+          Flipped       off
+          Frame         [-30, -25; 30, 25]
+          LabelPosition [0, 28]
+          LabelAlign    up
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Terminal {
+            Type          Output
+            Position      [34, -15]
+            Direction     right
+          }
+          Terminal {
+            Type          Input
+            Position      [-30, 15]
+            Direction     left
+          }
+          Terminal {
+            Type          Output
+            Position      [34, 0]
+            Direction     right
+          }
+          Terminal {
+            Type          Output
+            Position      [34, 15]
+            Direction     right
+          }
+          Terminal {
+            Type          Input
+            Position      [-30, -15]
+            Direction     left
+          }
+          Schematic {
+            Location      [261, 812; 631, 1046]
+            ZoomFactor    1
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Output
+              Name          "Eon"
+              Show          on
+              Position      [415, 80]
+              Direction     right
+              Flipped       off
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          EdgeDetection
+              Name          "Edge Detection"
+              Show          off
+              Position      [230, 85]
+              Direction     right
+              Flipped       off
+              Parameter {
+                Variable      "Direction"
+                Value         "1"
+                Show          on
+              }
+            }
+            Component {
+              Type          Input
+              Name          "Psw"
+              Show          on
+              Position      [150, 60]
+              Direction     right
+              Flipped       off
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          EdgeDetection
+              Name          "Edge Detection1"
+              Show          off
+              Position      [230, 130]
+              Direction     right
+              Flipped       off
+              Parameter {
+                Variable      "Direction"
+                Value         "2"
+                Show          on
+              }
+            }
+            Component {
+              Type          Product
+              Name          "Product"
+              Show          off
+              Position      [315, 80]
+              Direction     up
+              Flipped       off
+              Parameter {
+                Variable      "IconShape"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "11"
+                Show          off
+              }
+            }
+            Component {
+              Type          Sum
+              Name          "Sum5"
+              Show          off
+              Position      [375, 170]
+              Direction     up
+              Flipped       off
+              Parameter {
+                Variable      "IconShape"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "++|"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "11"
+                Show          off
+              }
+            }
+            Component {
+              Type          Output
+              Name          "Eoff"
+              Show          on
+              Position      [415, 125]
+              Direction     right
+              Flipped       off
+              Parameter {
+                Variable      "Index"
+                Value         "3"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Output
+              Name          "Esw,tot"
+              Show          on
+              Position      [415, 170]
+              Direction     right
+              Flipped       off
+              Parameter {
+                Variable      "Index"
+                Value         "4"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Product
+              Name          "Product1"
+              Show          off
+              Position      [315, 125]
+              Direction     up
+              Flipped       off
+              Parameter {
+                Variable      "IconShape"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "11"
+                Show          off
+              }
+            }
+            Component {
+              Type          Input
+              Name          "sw"
+              Show          on
+              Position      [150, 110]
+              Direction     right
+              Flipped       off
+              Parameter {
+                Variable      "Index"
+                Value         "5"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Edge Detection"
+              SrcTerminal   2
+              DstComponent  "Product"
+              DstTerminal   3
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Edge Detection1"
+              SrcTerminal   2
+              DstComponent  "Product1"
+              DstTerminal   3
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "sw"
+              SrcTerminal   1
+              Points        [180, 110]
+              Branch {
+                Points        [180, 85]
+                DstComponent  "Edge Detection"
+                DstTerminal   1
+              }
+              Branch {
+                Points        [180, 130]
+                DstComponent  "Edge Detection1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Product"
+              SrcTerminal   1
+              Points        [345, 80]
+              Branch {
+                DstComponent  "Eon"
+                DstTerminal   1
+              }
+              Branch {
+                Points        [345, 170]
+                DstComponent  "Sum5"
+                DstTerminal   3
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Sum5"
+              SrcTerminal   1
+              DstComponent  "Esw,tot"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Product1"
+              SrcTerminal   1
+              Points        [375, 125]
+              Branch {
+                DstComponent  "Eoff"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "Sum5"
+                DstTerminal   2
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Psw"
+              SrcTerminal   1
+              Points        [280, 60; 280, 75]
+              Branch {
+                DstComponent  "Product"
+                DstTerminal   2
+              }
+              Branch {
+                Points        [280, 120]
+                DstComponent  "Product1"
+                DstTerminal   2
+              }
+            }
+          }
+        }
+        Component {
+          Type          SignalDemux
+          Name          "CDemux3"
+          Show          off
+          Position      [200, 500]
+          Direction     right
+          Flipped       on
+          Parameter {
+            Variable      "Width"
+            Value         "2"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "I_mosfet"
+          Show          on
+          Position      [400, 235]
+          Direction     right
+          Flipped       off
+          Parameter {
+            Variable      "K"
+            Value         "1/num_par"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Sum
+          Name          "Average Pc.tot"
+          Show          off
+          Position      [345, 430]
+          Direction     up
+          Flipped       off
+          Parameter {
+            Variable      "IconShape"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Inputs"
+            Value         "++"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Product
+          Name          "Product"
+          Show          off
+          Position      [265, 400]
+          Direction     up
+          Flipped       off
+          Parameter {
+            Variable      "IconShape"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Inputs"
+            Value         "**"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Product
+          Name          "Product1"
+          Show          off
+          Position      [265, 435]
+          Direction     up
+          Flipped       off
+          Parameter {
+            Variable      "IconShape"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Inputs"
+            Value         "**"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "I"
+          Show          on
+          Position      [130, 50]
+          Direction     right
+          Flipped       off
+        }
+        Component {
+          Type          Product
+          Name          "GateOnCurrent"
+          Show          on
+          Position      [225, 55]
+          Direction     up
+          Flipped       off
+          Parameter {
+            Variable      "IconShape"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Inputs"
+            Value         "**"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Product
+          Name          "GateOffCurrent"
+          Show          on
+          Position      [225, 100]
+          Direction     up
+          Flipped       off
+          Parameter {
+            Variable      "IconShape"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Inputs"
+            Value         "**"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "Conductivity"
+          Show          on
+          Position      [95, 95]
+          Direction     right
+          Flipped       off
+        }
+        Component {
+          Type          Product
+          Name          "GateOnConductivty"
+          Show          on
+          Position      [95, 140]
+          Direction     down
+          Flipped       on
+          Parameter {
+            Variable      "IconShape"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Inputs"
+            Value         "**"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Product
+          Name          "GateOffConductivty"
+          Show          on
+          Position      [95, 190]
+          Direction     down
+          Flipped       on
+          Parameter {
+            Variable      "IconShape"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Inputs"
+            Value         "**"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "Pc Q1"
+          Show          off
+          Position      [450, 310]
+          Direction     right
+          Flipped       off
+          Parameter {
+            Variable      "K"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "Pc Q3"
+          Show          off
+          Position      [450, 340]
+          Direction     right
+          Flipped       off
+          Parameter {
+            Variable      "K"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "Pc off"
+          Show          off
+          Position      [450, 400]
+          Direction     right
+          Flipped       off
+          Parameter {
+            Variable      "K"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "Pc on"
+          Show          off
+          Position      [450, 370]
+          Direction     right
+          Flipped       off
+          Parameter {
+            Variable      "K"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "Pc.tot"
+          Show          off
+          Position      [450, 430]
+          Direction     right
+          Flipped       off
+          Parameter {
+            Variable      "K"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "Esw.tot"
+          Show          off
+          Position      [450, 520]
+          Direction     right
+          Flipped       off
+          Parameter {
+            Variable      "K"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "Eoff"
+          Show          off
+          Position      [450, 490]
+          Direction     right
+          Flipped       off
+          Parameter {
+            Variable      "K"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "Eon"
+          Show          off
+          Position      [450, 460]
+          Direction     right
+          Flipped       off
+          Parameter {
+            Variable      "K"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          LogicalOperator
+          Name          "Logical\nOperator"
+          Show          off
+          Position      [270, 155]
+          Direction     left
+          Flipped       off
+          Parameter {
+            Variable      "Operator"
+            Value         "6"
+            Show          off
+          }
+          Parameter {
+            Variable      "Inputs"
+            Value         "2"
+            Show          off
+          }
+        }
+        Component {
+          Type          Voltmeter
+          Name          "V"
+          Show          off
+          Position      [420, 130]
+          Direction     up
+          Flipped       off
+        }
+        Component {
+          Type          VoltageSource
+          Name          "Vf_bd"
+          Show          off
+          Position      [350, 130]
+          Direction     down
+          Flipped       off
+          Parameter {
+            Variable      "DiscretizationBehavior"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "StateSpaceInlining"
+            Value         "1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "Vsd"
+          Show          off
+          Position      [305, 130]
+          Direction     right
+          Flipped       off
+          Parameter {
+            Variable      "K"
+            Value         "Vsd"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Product
+          Name          "Product2"
+          Show          off
+          Position      [400, 310]
+          Direction     up
+          Flipped       off
+          Parameter {
+            Variable      "IconShape"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Inputs"
+            Value         "**"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Product
+          Name          "Product3"
+          Show          off
+          Position      [400, 340]
+          Direction     up
+          Flipped       off
+          Parameter {
+            Variable      "IconShape"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Inputs"
+            Value         "**"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          ConstantRelationalOperator
+          Name          "Compare to\nConstant"
+          Show          off
+          Position      [130, 285]
+          Direction     right
+          Flipped       off
+          Frame         [-20, -10; 20, 10]
+          LabelPosition [0, 13]
+          LabelAlign    up
+          Parameter {
+            Variable      "Operator"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Threshold"
+            Value         "0"
+            Show          off
+          }
+        }
+        Component {
+          Type          ConstantRelationalOperator
+          Name          "Compare to\nConstant1"
+          Show          off
+          Position      [130, 250]
+          Direction     right
+          Flipped       off
+          Frame         [-20, -10; 20, 10]
+          LabelPosition [0, 13]
+          LabelAlign    up
+          Parameter {
+            Variable      "Operator"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "Threshold"
+            Value         "0"
+            Show          off
+          }
+        }
+        Component {
+          Type          ConstantRelationalOperator
+          Name          "Compare to\nConstant2"
+          Show          off
+          Position      [325, 315]
+          Direction     right
+          Flipped       off
+          Frame         [-20, -10; 20, 10]
+          LabelPosition [0, 13]
+          LabelAlign    up
+          Parameter {
+            Variable      "Operator"
+            Value         "6"
+            Show          off
+          }
+          Parameter {
+            Variable      "Threshold"
+            Value         "0"
+            Show          off
+          }
+        }
+        Component {
+          Type          ConstantRelationalOperator
+          Name          "Compare to\nConstant3"
+          Show          off
+          Position      [325, 345]
+          Direction     right
+          Flipped       off
+          Frame         [-20, -10; 20, 10]
+          LabelPosition [0, 13]
+          LabelAlign    up
+          Parameter {
+            Variable      "Operator"
+            Value         "3"
+            Show          off
+          }
+          Parameter {
+            Variable      "Threshold"
+            Value         "0"
+            Show          off
+          }
+        }
+        Component {
+          Type          ConfigurableSubsystem
+          Name          "Loss/Tj"
+          Show          on
+          Position      [150, 500]
+          Direction     up
+          Flipped       off
+          Frame         [-25, -20; 25, 20]
+          LabelPosition [0, 0]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Terminal {
+            Type          Output
+            Position      [29, 0]
+            Direction     right
+          }
+          Terminal {
+            Type          Output
+            Position      [5, 24]
+            Direction     down
+          }
+          TerminalNames { "1", "2" }
+          Location      [1399, 493; 2010, 728]
+          ZoomFactor    1
+          SliderPosition [0, 0]
+          ShowBrowser   off
+          BrowserWidth  100
+          Configurations {
+            Name          "No Thermal"
+            Schematic {
+              Component {
+                Type          Output
+                Name          "1"
+                Show          off
+                Position      [155, 80]
+                Direction     right
+                Flipped       off
+                Parameter {
+                  Variable      "Index"
+                  Value         "1"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Constant
+                Name          "Losses"
+                Show          on
+                Position      [100, 80]
+                Direction     right
+                Flipped       off
+                Frame         [-20, -10; 20, 10]
+                LabelPosition [0, 13]
+                LabelAlign    up
+                Parameter {
+                  Variable      "Value"
+                  Value         "[0 0]"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Constant
+                Name          "Tj"
+                Show          on
+                Position      [100, 125]
+                Direction     right
+                Flipped       off
+                Frame         [-20, -10; 20, 10]
+                LabelPosition [0, 13]
+                LabelAlign    up
+                Parameter {
+                  Variable      "Value"
+                  Value         "0"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Output
+                Name          "2"
+                Show          off
+                Position      [155, 125]
+                Direction     right
+                Flipped       off
+                Parameter {
+                  Variable      "Index"
+                  Value         "2"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Losses"
+                SrcTerminal   1
+                DstComponent  "1"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Tj"
+                SrcTerminal   1
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+            Name          "Thermal"
+            Schematic {
+              Component {
+                Type          PlecsProbe
+                Name          "Losses"
+                Show          on
+                Position      [100, 80]
+                Direction     right
+                Flipped       off
+              }
+              Component {
+                Type          Output
+                Name          "1"
+                Show          off
+                Position      [155, 80]
+                Direction     right
+                Flipped       off
+                Parameter {
+                  Variable      "Index"
+                  Value         "1"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Output
+                Name          "2"
+                Show          off
+                Position      [155, 125]
+                Direction     right
+                Flipped       off
+                Parameter {
+                  Variable      "Index"
+                  Value         "2"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          PlecsProbe
+                Name          "Tj"
+                Show          on
+                Position      [100, 125]
+                Direction     right
+                Flipped       off
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Losses"
+                SrcTerminal   1
+                DstComponent  "1"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Tj"
+                SrcTerminal   1
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          Parameter {
+            Variable      "Configuration"
+            Value         "simType"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "Tj"
+          Show          on
+          Position      [200, 545]
+          Direction     right
+          Flipped       off
+          Parameter {
+            Variable      "K"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          HeatSink
+          Name          "Junction"
+          Show          off
+          Position      [350, 190]
+          Direction     right
+          Flipped       off
+          Frame         [-22, -22; 22, 22]
+          Parameter {
+            Variable      "Cth"
+            Value         "0"
+            Show          off
+          }
+          Parameter {
+            Variable      "T_init"
+            Value         ""
+            Show          off
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "1"
+            Show          off
+          }
+          Terminal {
+            Type          HeatPort
+            Position      [-5, -27]
+            Direction     up
+          }
+          Terminal {
+            Type          HeatPort
+            Position      [-15, -27]
+            Direction     up
+          }
+        }
+        Component {
+          Type          ThermalChain
+          Name          "Zth_jc-top"
+          Show          on
+          Position      [480, 135]
+          Direction     up
+          Flipped       off
+          Parameter {
+            Variable      "Rth"
+            Value         "[Rth_top]"
+            Show          off
+          }
+          Parameter {
+            Variable      "Cth"
+            Value         "[Cth_top]"
+            Show          off
+          }
+          Parameter {
+            Variable      "T_init"
+            Value         "T_init"
+            Show          off
+          }
+        }
+        Component {
+          Type          ThermalChain
+          Name          "Zth_jb-bot"
+          Show          on
+          Position      [480, 185]
+          Direction     up
+          Flipped       off
+          Parameter {
+            Variable      "Rth"
+            Value         "[Rth_bot]"
+            Show          off
+          }
+          Parameter {
+            Variable      "Cth"
+            Value         "[Cth_bot]"
+            Show          off
+          }
+          Parameter {
+            Variable      "T_init"
+            Value         "T_init"
+            Show          off
+          }
+        }
+        Component {
+          Type          HeatPort
+          Name          "HS"
+          Show          on
+          Position      [540, 135]
+          Direction     right
+          Flipped       on
+          Parameter {
+            Variable      "Index"
+            Value         "4"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          HeatPort
+          Name          "PCB"
+          Show          on
+          Position      [540, 185]
+          Direction     right
+          Flipped       on
+          Parameter {
+            Variable      "Index"
+            Value         "5"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Loss/Tj"
+          SrcTerminal   1
+          DstComponent  "CDemux3"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "CDemux3"
+          SrcTerminal   3
+          DstComponent  "Switching Loss\nSeparation"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Product"
+          SrcTerminal   1
+          Points        [300, 400]
+          Branch {
+            Points        [300, 370; 355, 370]
+            Branch {
+              Points        [365, 370]
+              Branch {
+                DstComponent  "Pc on"
+                DstTerminal   1
+              }
+              Branch {
+                Points        [365, 335]
+                DstComponent  "Product3"
+                DstTerminal   2
+              }
+            }
+            Branch {
+              Points        [355, 305]
+              DstComponent  "Product2"
+              DstTerminal   2
+            }
+          }
+          Branch {
+            Points        [300, 425]
+            DstComponent  "Average Pc.tot"
+            DstTerminal   2
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Product1"
+          SrcTerminal   1
+          Points        [310, 435]
+          Branch {
+            Points        [310, 400]
+            DstComponent  "Pc off"
+            DstTerminal   1
+          }
+          Branch {
+            DstComponent  "Average Pc.tot"
+            DstTerminal   3
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Compare to\nConstant1"
+          SrcTerminal   2
+          Points        [170, 250]
+          Branch {
+            Points        [190, 250; 190, 405]
+            DstComponent  "Product"
+            DstTerminal   3
+          }
+          Branch {
+            Points        [170, 135]
+            Branch {
+              Points        [170, 60]
+              DstComponent  "GateOnCurrent"
+              DstTerminal   3
+            }
+            Branch {
+              DstComponent  "GateOnConductivty"
+              DstTerminal   2
+            }
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "I"
+          SrcTerminal   1
+          Points        [160, 50]
+          Branch {
+            DstComponent  "GateOnCurrent"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [160, 95]
+            Branch {
+              DstComponent  "GateOffCurrent"
+              DstTerminal   2
+            }
+            Branch {
+              Points        [160, 315]
+              Branch {
+                Points        [160, 345]
+                DstComponent  "Compare to\nConstant3"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "Compare to\nConstant2"
+                DstTerminal   1
+              }
+            }
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Compare to\nConstant"
+          SrcTerminal   2
+          Points        [180, 285]
+          Branch {
+            Points        [180, 440]
+            DstComponent  "Product1"
+            DstTerminal   3
+          }
+          Branch {
+            Points        [180, 185]
+            Branch {
+              Points        [180, 105]
+              DstComponent  "GateOffCurrent"
+              DstTerminal   3
+            }
+            Branch {
+              DstComponent  "GateOffConductivty"
+              DstTerminal   2
+            }
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Conductivity"
+          SrcTerminal   1
+          Points        [150, 95; 150, 145]
+          Branch {
+            DstComponent  "GateOnConductivty"
+            DstTerminal   3
+          }
+          Branch {
+            Points        [150, 195]
+            DstComponent  "GateOffConductivty"
+            DstTerminal   3
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Average Pc.tot"
+          SrcTerminal   1
+          DstComponent  "Pc.tot"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Switching Loss\nSeparation"
+          SrcTerminal   1
+          Points        [400, 475; 400, 460]
+          DstComponent  "Eon"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Switching Loss\nSeparation"
+          SrcTerminal   3
+          DstComponent  "Eoff"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Switching Loss\nSeparation"
+          SrcTerminal   4
+          Points        [400, 505; 400, 520]
+          DstComponent  "Esw.tot"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "I_mosfet"
+          SrcTerminal   2
+          DstComponent  "Max Current"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "+"
+          SrcTerminal   1
+          Points        [350, 105]
+          Branch {
+            DstComponent  "Vf_bd"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [420, 105]
+            DstComponent  "V"
+            DstTerminal   1
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "MOSFET"
+          SrcTerminal   2
+          Points        [350, 215]
+          Branch {
+            DstComponent  "Id"
+            DstTerminal   1
+          }
+          Branch {
+            Points        [420, 215]
+            DstComponent  "V"
+            DstTerminal   2
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "gate"
+          SrcTerminal   1
+          Points        [270, 190]
+          Branch {
+            Points        [290, 190]
+            Branch {
+              DstComponent  "MOSFET"
+              DstTerminal   3
+            }
+            Branch {
+              Points        [290, 225]
+              Branch {
+                Points        [90, 225; 90, 250]
+                Branch {
+                  Points        [90, 285]
+                  DstComponent  "Compare to\nConstant"
+                  DstTerminal   1
+                }
+                Branch {
+                  DstComponent  "Compare to\nConstant1"
+                  DstTerminal   1
+                }
+              }
+              Branch {
+                Points        [290, 475]
+                DstComponent  "Switching Loss\nSeparation"
+                DstTerminal   5
+              }
+            }
+          }
+          Branch {
+            DstComponent  "Logical\nOperator"
+            DstTerminal   2
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "MOSFET"
+          SrcTerminal   1
+          DstComponent  "Vf_bd"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Vsd"
+          SrcTerminal   2
+          DstComponent  "Vf_bd"
+          DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Product2"
+          SrcTerminal   1
+          DstComponent  "Pc Q1"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Product3"
+          SrcTerminal   1
+          DstComponent  "Pc Q3"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Compare to\nConstant3"
+          SrcTerminal   2
+          DstComponent  "Product3"
+          DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Logical\nOperator"
+          SrcTerminal   1
+          Points        [270, 130]
+          DstComponent  "Vsd"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "CDemux3"
+          SrcTerminal   2
+          Points        [210, 495; 210, 430]
+          Branch {
+            Points        [210, 395]
+            DstComponent  "Product"
+            DstTerminal   2
+          }
+          Branch {
+            DstComponent  "Product1"
+            DstTerminal   2
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Compare to\nConstant2"
+          SrcTerminal   2
+          DstComponent  "Product2"
+          DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Loss/Tj"
+          SrcTerminal   2
+          Points        [155, 545]
+          DstComponent  "Tj"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "Id"
+          SrcTerminal   2
+          DstComponent  "-"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Id"
+          SrcTerminal   3
+          DstComponent  "I_mosfet"
+          DstTerminal   1
+        }
+        Connection {
+          Type          HeatPipe
+          SrcComponent  "Junction"
+          SrcTerminal   1
+          DstComponent  "Zth_jb-bot"
+          DstTerminal   1
+        }
+        Connection {
+          Type          HeatPipe
+          SrcComponent  "Zth_jc-top"
+          SrcTerminal   1
+          Points        [435, 135; 435, 175]
+          DstComponent  "Junction"
+          DstTerminal   2
+        }
+        Connection {
+          Type          HeatPipe
+          SrcComponent  "Zth_jb-bot"
+          SrcTerminal   2
+          DstComponent  "PCB"
+          DstTerminal   1
+        }
+        Connection {
+          Type          HeatPipe
+          SrcComponent  "Zth_jc-top"
+          SrcTerminal   2
+          DstComponent  "HS"
+          DstTerminal   1
+        }
+        Annotation {
+          Name          "<html><body>\n<p>&quot;virtual&quot; body diode</p></"
+"body></html>"
+          Position      [465, 75]
+        } 
+        Annotation {
+          Name          "<html><body>\n<p>Pc_on Q1</p>\n<p>Pc_on Q3</p>\n<p>Pc"
+"_on</p>\n<p>Pc_off</p>\n<p>Pc_tot</p>\n<p>Eon</p>\n<p>Eoff</p>\n<p>Esw</p></b"
+"ody></html>"
+          Position      [510, 420]
+        } 
+        ArrowAnnotation {
+          Position  [385, 100]
+          Width     -40
+          Height    40
+          LineStyle 0
+          Thickness 2
+          Style     1
+          HeadSize  4
+          PenColor  10642217
+          PenAlpha  1
+        } 
+      }
+      MaskProbe {
+        Name          "FET voltage (V)"
+        Probe {
+          Component     "V"
+          Path          ""
+          Signals       {"Measured voltage"}
+        }
+      }
+      MaskProbe {
+        Name          "FET current (A) (per paralleled device)"
+        Probe {
+          Component     "I_mosfet"
+          Path          ""
+          Signals       {"Output"}
+        }
+      }
+      MaskProbe {
+        Name          "FET gate input"
+        Probe {
+          Component     "MOSFET"
+          Path          ""
+          Signals       {"Device gate input"}
+        }
+      }
+      MaskProbe {
+        Name          "FET conductivity"
+        Probe {
+          Component     "MOSFET"
+          Path          ""
+          Signals       {"Device conductivity"}
+        }
+      }
+      MaskProbe {
+        Name          "FET junction temperature (C)"
+        Probe {
+          Component     "MOSFET"
+          Path          ""
+          Signals       {"Device junction temp"}
+        }
+      }
+      MaskProbe {
+        Name          "FET conduction loss (W)"
+        Probe {
+          Component     "Pc.tot"
+          Path          ""
+          Signals       {"Input"}
+        }
+      }
+      MaskProbe {
+        Name          "FET gate-on conduction loss (W)"
+        Probe {
+          Component     "Pc on"
+          Path          ""
+          Signals       {"Input"}
+        }
+      }
+      MaskProbe {
+        Name          "FET gate-on Q1 forward conduction loss (W)"
+        Probe {
+          Component     "Pc Q1"
+          Path          ""
+          Signals       {"Input"}
+        }
+      }
+      MaskProbe {
+        Name          "FET gate-on Q3 reverse conduction loss (W)"
+        Probe {
+          Component     "Pc Q3"
+          Path          ""
+          Signals       {"Input"}
+        }
+      }
+      MaskProbe {
+        Name          "FET gate-off (virtual body diode) conduction loss (W)"
+        Probe {
+          Component     "Pc off"
+          Path          ""
+          Signals       {"Input"}
+        }
+      }
+      MaskProbe {
+        Name          "FET switching loss (J)"
+        Probe {
+          Component     "Esw.tot"
+          Path          ""
+          Signals       {"Input"}
+        }
+      }
+      MaskProbe {
+        Name          "FET turn-on (Eon) loss (J)"
+        Probe {
+          Component     "Eon"
+          Path          ""
+          Signals       {"Input"}
+        }
+      }
+      MaskProbe {
+        Name          "FET turn-off (Eoff) loss (J)"
+        Probe {
+          Component     "Eoff"
+          Path          ""
+          Signals       {"Input"}
+        }
+      }
+    }
+  }
+  ProbeBlock {
+    Tag           "EPCComponent/EPC GaN FET1/Conductivity"
+    Probe {
+      Component     "MOSFET"
+      Path          "EPC GaN FET1"
+      Signals       {"Device conductivity"}
+    }
+  }
+  ProbeBlock {
+    Tag           "EPCComponent/EPC GaN FET1/I"
+    Probe {
+      Component     "Id"
+      Path          "EPC GaN FET1"
+      Signals       {"Measured current"}
+    }
+  }
+  ProbeBlock {
+    Tag           "EPCComponent/EPC GaN FET1/Loss\\/Tj/Thermal/Losses"
+    Probe {
+      Component     "MOSFET"
+      Path          "EPC GaN FET1"
+      Signals       {"Device switching loss", "Device conduction loss"}
+    }
+  }
+  ProbeBlock {
+    Tag           "EPCComponent/EPC GaN FET1/Loss\\/Tj/Thermal/Tj"
+    Probe {
+      Component     "MOSFET"
+      Path          "EPC GaN FET1"
+      Signals       {"Device junction temp"}
+    }
+  }
+}
+DemoSignature "gosqP5EgwfxVj9yWWSRBTPcDv78t2K/HYcFutGJHHyw="
