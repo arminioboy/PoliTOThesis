@@ -1,0 +1,4281 @@
+Plecs {
+  Name          "FL_x18_model"
+  Version       "4.9"
+  CircuitModel  "ContStateSpace"
+  StartTime     "0.0"
+  TimeSpan      "1.0"
+  Timeout       ""
+  Solver        "auto"
+  MaxStep       "1e-3"
+  InitStep      "-1"
+  FixedStep     "1e-3"
+  Refine        "1"
+  ZCStepSize    "1e-9"
+  RelTol        "1e-3"
+  AbsTol        "-1"
+  TurnOnThreshold "0"
+  NonIdealSwitchResistance "1"
+  SyncFixedStepTasks "2"
+  UseSingleCommonBaseRate "2"
+  LossVariableLimitExceededMsg "3"
+  NegativeSwitchLossMsg "3"
+  DivisionByZeroMsg "3"
+  DatatypeOverflowMsg "3"
+  DatatypeInheritanceConflictMsg "2"
+  ContSampleTimeConflictMsg "2"
+  StiffnessDetectionMsg "2"
+  MaxConsecutiveZCs "1000"
+  AlgebraicLoopWithStateMachineMsg "3"
+  AssertionAction "1"
+  FixedPointDatatypeOverride "1"
+  InitializationCommands ""
+  InitialState  "1"
+  SystemState   ""
+  TaskingMode   "1"
+  TaskConfigurations ""
+  CodeGenParameterInlining "2"
+  CodeGenFloatingPointFormat "2"
+  CodeGenAbsTimeUsageMsg "3"
+  CodeGenBaseName ""
+  CodeGenOutputDir ""
+  CodeGenExtraOpts ""
+  CodeGenTarget "Generic"
+  CodeGenTargetSettings ""
+  ExtendedMatrixPrecision "1"
+  MatrixSignificanceCheck "2"
+  RemoveUnusedStateSpaceOutputs "2"
+  EnableStateSpaceSplitting "2"
+  DisplayStateSpaceSplitting "1"
+  DiscretizationMethod "2"
+  ExternalModeSettings ""
+  AlgebraicLoopMethod "1"
+  AlgebraicLoopTolerance "1e-6"
+  ScriptsDialogGeometry ""
+  ScriptsDialogSplitterPos "0"
+  Schematic {
+    Location      [60, 205; 942, 864]
+    ZoomFactor    1.49989
+    SliderPosition [0, 0]
+    ShowBrowser   off
+    BrowserWidth  100
+    Component {
+      Type          VoltageSource
+      Name          "V"
+      Show          on
+      Position      [100, 40]
+      Direction     down
+      Flipped       on
+      LabelPosition east
+      Parameter {
+        Variable      "DiscretizationBehavior"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "StateSpaceInlining"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          SmallSignalPerturbation
+      Name          "Perturbation"
+      Show          on
+      Position      [35, 40]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "ShowInput"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          SmallSignalResponse
+      Name          "Response"
+      Show          on
+      Position      [280, 25]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "ShowReference"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "InvertReference"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Ammeter
+      Name          "Am1"
+      Show          off
+      Position      [190, 25]
+      Direction     up
+      Flipped       off
+      LabelPosition west
+    }
+    Component {
+      Type          Subsystem
+      Name          "FL_x18"
+      Show          on
+      Position      [190, 130]
+      Direction     up
+      Flipped       off
+      LabelPosition none
+      Frame         [-20, -20; 20, 20]
+      SampleTime    "-1"
+      CodeGenDiscretizationMethod "2"
+      CodeGenTarget "Generic"
+      MaskDisplayLang "2"
+      MaskIconFrame on
+      MaskIconOpaque off
+      MaskIconRotates on
+      Parameter {
+        Variable      "Vinit"
+        Prompt        "Cap initial voltage"
+        Type          FreeText
+        Value         "0"
+        Show          off
+        Tunable       on
+        TabName       ""
+      }
+      Terminal {
+        Type          Port
+        Position      [0, 25]
+        Direction     down
+      }
+      Terminal {
+        Type          Port
+        Position      [0, -25]
+        Direction     up
+      }
+      Schematic {
+        Location      [204, 426; 1557, 865]
+        ZoomFactor    1.48329
+        SliderPosition [60, 0]
+        ShowBrowser   off
+        BrowserWidth  100
+        Component {
+          Type          Subsystem
+          Name          "FL_cap1"
+          Show          on
+          Position      [75, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-20, -20; 20, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Real capacitor model"
+          MaskDescription "Spice model of Flying capacitor"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Vinit"
+            Prompt        "Cap inital voltage"
+            Type          FreeText
+            Value         "Vinit"
+            Show          off
+            Tunable       on
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, -25]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, 25]
+            Direction     down
+          }
+          Schematic {
+            Location      [1034, 271; 1722, 878]
+            ZoomFactor    1.84696
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Capacitor
+              Name          "C1"
+              Show          off
+              Position      [140, 110]
+              Direction     down
+              Flipped       on
+              LabelPosition west
+              Parameter {
+                Variable      "C"
+                Value         "2.2e-6"
+                Show          on
+              }
+              Parameter {
+                Variable      "v_init"
+                Value         "Vinit"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R1"
+              Show          off
+              Position      [200, 120]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "R"
+                Value         "0.227e6"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R2"
+              Show          off
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "R"
+                Value         "4.3e-3"
+                Show          on
+              }
+            }
+            Component {
+              Type          Inductor
+              Name          "L1"
+              Show          off
+              Position      [140, 215]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "L"
+                Value         "0.65e-9"
+                Show          on
+              }
+              Parameter {
+                Variable      "i_init"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "1"
+              Show          on
+              Position      [170, 265]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "2"
+              Show          on
+              Position      [170, 65]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   2
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R2"
+              SrcTerminal   2
+              DstComponent  "L1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R1"
+              SrcTerminal   2
+              Points        [200, 235; 170, 235]
+              Branch {
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   1
+              Points        [170, 100]
+              Branch {
+                DstComponent  "R1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          MaskProbe {
+            Name          "Cap_losses"
+            Probe {
+              Component     "R2"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "R1"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "FL_cap2"
+          Show          on
+          Position      [120, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-20, -20; 20, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Real capacitor model"
+          MaskDescription "Spice model of Flying capacitor"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Vinit"
+            Prompt        "Cap inital voltage"
+            Type          FreeText
+            Value         "Vinit"
+            Show          off
+            Tunable       on
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, -25]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, 25]
+            Direction     down
+          }
+          Schematic {
+            Location      [1034, 271; 1722, 878]
+            ZoomFactor    1.84696
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Capacitor
+              Name          "C1"
+              Show          off
+              Position      [140, 110]
+              Direction     down
+              Flipped       on
+              LabelPosition west
+              Parameter {
+                Variable      "C"
+                Value         "2.2e-6"
+                Show          on
+              }
+              Parameter {
+                Variable      "v_init"
+                Value         "Vinit"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R1"
+              Show          off
+              Position      [200, 120]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "R"
+                Value         "0.227e6"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R2"
+              Show          off
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "R"
+                Value         "4.3e-3"
+                Show          on
+              }
+            }
+            Component {
+              Type          Inductor
+              Name          "L1"
+              Show          off
+              Position      [140, 215]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "L"
+                Value         "0.65e-9"
+                Show          on
+              }
+              Parameter {
+                Variable      "i_init"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "1"
+              Show          on
+              Position      [170, 265]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "2"
+              Show          on
+              Position      [170, 65]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   2
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R2"
+              SrcTerminal   2
+              DstComponent  "L1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R1"
+              SrcTerminal   2
+              Points        [200, 235; 170, 235]
+              Branch {
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   1
+              Points        [170, 100]
+              Branch {
+                DstComponent  "R1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          MaskProbe {
+            Name          "Cap_losses"
+            Probe {
+              Component     "R2"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "R1"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "FL_cap3"
+          Show          on
+          Position      [165, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-20, -20; 20, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Real capacitor model"
+          MaskDescription "Spice model of Flying capacitor"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Vinit"
+            Prompt        "Cap inital voltage"
+            Type          FreeText
+            Value         "Vinit"
+            Show          off
+            Tunable       on
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, -25]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, 25]
+            Direction     down
+          }
+          Schematic {
+            Location      [1034, 271; 1722, 878]
+            ZoomFactor    1.84696
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Capacitor
+              Name          "C1"
+              Show          off
+              Position      [140, 110]
+              Direction     down
+              Flipped       on
+              LabelPosition west
+              Parameter {
+                Variable      "C"
+                Value         "2.2e-6"
+                Show          on
+              }
+              Parameter {
+                Variable      "v_init"
+                Value         "Vinit"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R1"
+              Show          off
+              Position      [200, 120]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "R"
+                Value         "0.227e6"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R2"
+              Show          off
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "R"
+                Value         "4.3e-3"
+                Show          on
+              }
+            }
+            Component {
+              Type          Inductor
+              Name          "L1"
+              Show          off
+              Position      [140, 215]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "L"
+                Value         "0.65e-9"
+                Show          on
+              }
+              Parameter {
+                Variable      "i_init"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "1"
+              Show          on
+              Position      [170, 265]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "2"
+              Show          on
+              Position      [170, 65]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   2
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R2"
+              SrcTerminal   2
+              DstComponent  "L1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R1"
+              SrcTerminal   2
+              Points        [200, 235; 170, 235]
+              Branch {
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   1
+              Points        [170, 100]
+              Branch {
+                DstComponent  "R1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          MaskProbe {
+            Name          "Cap_losses"
+            Probe {
+              Component     "R2"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "R1"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "FL_cap4"
+          Show          on
+          Position      [210, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-20, -20; 20, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Real capacitor model"
+          MaskDescription "Spice model of Flying capacitor"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Vinit"
+            Prompt        "Cap inital voltage"
+            Type          FreeText
+            Value         "Vinit"
+            Show          off
+            Tunable       on
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, -25]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, 25]
+            Direction     down
+          }
+          Schematic {
+            Location      [1034, 271; 1722, 878]
+            ZoomFactor    1.84696
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Capacitor
+              Name          "C1"
+              Show          off
+              Position      [140, 110]
+              Direction     down
+              Flipped       on
+              LabelPosition west
+              Parameter {
+                Variable      "C"
+                Value         "2.2e-6"
+                Show          on
+              }
+              Parameter {
+                Variable      "v_init"
+                Value         "Vinit"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R1"
+              Show          off
+              Position      [200, 120]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "R"
+                Value         "0.227e6"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R2"
+              Show          off
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "R"
+                Value         "4.3e-3"
+                Show          on
+              }
+            }
+            Component {
+              Type          Inductor
+              Name          "L1"
+              Show          off
+              Position      [140, 215]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "L"
+                Value         "0.65e-9"
+                Show          on
+              }
+              Parameter {
+                Variable      "i_init"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "1"
+              Show          on
+              Position      [170, 265]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "2"
+              Show          on
+              Position      [170, 65]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   2
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R2"
+              SrcTerminal   2
+              DstComponent  "L1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R1"
+              SrcTerminal   2
+              Points        [200, 235; 170, 235]
+              Branch {
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   1
+              Points        [170, 100]
+              Branch {
+                DstComponent  "R1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          MaskProbe {
+            Name          "Cap_losses"
+            Probe {
+              Component     "R2"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "R1"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "FL_cap5"
+          Show          on
+          Position      [255, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-20, -20; 20, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Real capacitor model"
+          MaskDescription "Spice model of Flying capacitor"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Vinit"
+            Prompt        "Cap inital voltage"
+            Type          FreeText
+            Value         "Vinit"
+            Show          off
+            Tunable       on
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, -25]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, 25]
+            Direction     down
+          }
+          Schematic {
+            Location      [1034, 271; 1722, 878]
+            ZoomFactor    1.84696
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Capacitor
+              Name          "C1"
+              Show          off
+              Position      [140, 110]
+              Direction     down
+              Flipped       on
+              LabelPosition west
+              Parameter {
+                Variable      "C"
+                Value         "2.2e-6"
+                Show          on
+              }
+              Parameter {
+                Variable      "v_init"
+                Value         "Vinit"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R1"
+              Show          off
+              Position      [200, 120]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "R"
+                Value         "0.227e6"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R2"
+              Show          off
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "R"
+                Value         "4.3e-3"
+                Show          on
+              }
+            }
+            Component {
+              Type          Inductor
+              Name          "L1"
+              Show          off
+              Position      [140, 215]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "L"
+                Value         "0.65e-9"
+                Show          on
+              }
+              Parameter {
+                Variable      "i_init"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "1"
+              Show          on
+              Position      [170, 265]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "2"
+              Show          on
+              Position      [170, 65]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   2
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R2"
+              SrcTerminal   2
+              DstComponent  "L1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R1"
+              SrcTerminal   2
+              Points        [200, 235; 170, 235]
+              Branch {
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   1
+              Points        [170, 100]
+              Branch {
+                DstComponent  "R1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          MaskProbe {
+            Name          "Cap_losses"
+            Probe {
+              Component     "R2"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "R1"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "FL_cap6"
+          Show          on
+          Position      [300, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-20, -20; 20, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Real capacitor model"
+          MaskDescription "Spice model of Flying capacitor"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Vinit"
+            Prompt        "Cap inital voltage"
+            Type          FreeText
+            Value         "Vinit"
+            Show          off
+            Tunable       on
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, -25]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, 25]
+            Direction     down
+          }
+          Schematic {
+            Location      [1034, 271; 1722, 878]
+            ZoomFactor    1.84696
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Capacitor
+              Name          "C1"
+              Show          off
+              Position      [140, 110]
+              Direction     down
+              Flipped       on
+              LabelPosition west
+              Parameter {
+                Variable      "C"
+                Value         "2.2e-6"
+                Show          on
+              }
+              Parameter {
+                Variable      "v_init"
+                Value         "Vinit"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R1"
+              Show          off
+              Position      [200, 120]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "R"
+                Value         "0.227e6"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R2"
+              Show          off
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "R"
+                Value         "4.3e-3"
+                Show          on
+              }
+            }
+            Component {
+              Type          Inductor
+              Name          "L1"
+              Show          off
+              Position      [140, 215]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "L"
+                Value         "0.65e-9"
+                Show          on
+              }
+              Parameter {
+                Variable      "i_init"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "1"
+              Show          on
+              Position      [170, 265]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "2"
+              Show          on
+              Position      [170, 65]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   2
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R2"
+              SrcTerminal   2
+              DstComponent  "L1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R1"
+              SrcTerminal   2
+              Points        [200, 235; 170, 235]
+              Branch {
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   1
+              Points        [170, 100]
+              Branch {
+                DstComponent  "R1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          MaskProbe {
+            Name          "Cap_losses"
+            Probe {
+              Component     "R2"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "R1"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "FL_cap7"
+          Show          on
+          Position      [345, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-20, -20; 20, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Real capacitor model"
+          MaskDescription "Spice model of Flying capacitor"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Vinit"
+            Prompt        "Cap inital voltage"
+            Type          FreeText
+            Value         "Vinit"
+            Show          off
+            Tunable       on
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, -25]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, 25]
+            Direction     down
+          }
+          Schematic {
+            Location      [1034, 271; 1722, 878]
+            ZoomFactor    1.84696
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Capacitor
+              Name          "C1"
+              Show          off
+              Position      [140, 110]
+              Direction     down
+              Flipped       on
+              LabelPosition west
+              Parameter {
+                Variable      "C"
+                Value         "2.2e-6"
+                Show          on
+              }
+              Parameter {
+                Variable      "v_init"
+                Value         "Vinit"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R1"
+              Show          off
+              Position      [200, 120]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "R"
+                Value         "0.227e6"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R2"
+              Show          off
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "R"
+                Value         "4.3e-3"
+                Show          on
+              }
+            }
+            Component {
+              Type          Inductor
+              Name          "L1"
+              Show          off
+              Position      [140, 215]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "L"
+                Value         "0.65e-9"
+                Show          on
+              }
+              Parameter {
+                Variable      "i_init"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "1"
+              Show          on
+              Position      [170, 265]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "2"
+              Show          on
+              Position      [170, 65]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   2
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R2"
+              SrcTerminal   2
+              DstComponent  "L1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R1"
+              SrcTerminal   2
+              Points        [200, 235; 170, 235]
+              Branch {
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   1
+              Points        [170, 100]
+              Branch {
+                DstComponent  "R1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          MaskProbe {
+            Name          "Cap_losses"
+            Probe {
+              Component     "R2"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "R1"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "FL_cap8"
+          Show          on
+          Position      [395, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-20, -20; 20, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Real capacitor model"
+          MaskDescription "Spice model of Flying capacitor"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Vinit"
+            Prompt        "Cap inital voltage"
+            Type          FreeText
+            Value         "Vinit"
+            Show          off
+            Tunable       on
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, -25]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, 25]
+            Direction     down
+          }
+          Schematic {
+            Location      [1034, 271; 1722, 878]
+            ZoomFactor    1.84696
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Capacitor
+              Name          "C1"
+              Show          off
+              Position      [140, 110]
+              Direction     down
+              Flipped       on
+              LabelPosition west
+              Parameter {
+                Variable      "C"
+                Value         "2.2e-6"
+                Show          on
+              }
+              Parameter {
+                Variable      "v_init"
+                Value         "Vinit"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R1"
+              Show          off
+              Position      [200, 120]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "R"
+                Value         "0.227e6"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R2"
+              Show          off
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "R"
+                Value         "4.3e-3"
+                Show          on
+              }
+            }
+            Component {
+              Type          Inductor
+              Name          "L1"
+              Show          off
+              Position      [140, 215]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "L"
+                Value         "0.65e-9"
+                Show          on
+              }
+              Parameter {
+                Variable      "i_init"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "1"
+              Show          on
+              Position      [170, 265]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "2"
+              Show          on
+              Position      [170, 65]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   2
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R2"
+              SrcTerminal   2
+              DstComponent  "L1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R1"
+              SrcTerminal   2
+              Points        [200, 235; 170, 235]
+              Branch {
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   1
+              Points        [170, 100]
+              Branch {
+                DstComponent  "R1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          MaskProbe {
+            Name          "Cap_losses"
+            Probe {
+              Component     "R2"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "R1"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "FL_cap9"
+          Show          on
+          Position      [440, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-20, -20; 20, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Real capacitor model"
+          MaskDescription "Spice model of Flying capacitor"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Vinit"
+            Prompt        "Cap inital voltage"
+            Type          FreeText
+            Value         "Vinit"
+            Show          off
+            Tunable       on
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, -25]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, 25]
+            Direction     down
+          }
+          Schematic {
+            Location      [1034, 271; 1722, 878]
+            ZoomFactor    1.84696
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Capacitor
+              Name          "C1"
+              Show          off
+              Position      [140, 110]
+              Direction     down
+              Flipped       on
+              LabelPosition west
+              Parameter {
+                Variable      "C"
+                Value         "2.2e-6"
+                Show          on
+              }
+              Parameter {
+                Variable      "v_init"
+                Value         "Vinit"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R1"
+              Show          off
+              Position      [200, 120]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "R"
+                Value         "0.227e6"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R2"
+              Show          off
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "R"
+                Value         "4.3e-3"
+                Show          on
+              }
+            }
+            Component {
+              Type          Inductor
+              Name          "L1"
+              Show          off
+              Position      [140, 215]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "L"
+                Value         "0.65e-9"
+                Show          on
+              }
+              Parameter {
+                Variable      "i_init"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "1"
+              Show          on
+              Position      [170, 265]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "2"
+              Show          on
+              Position      [170, 65]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   2
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R2"
+              SrcTerminal   2
+              DstComponent  "L1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R1"
+              SrcTerminal   2
+              Points        [200, 235; 170, 235]
+              Branch {
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   1
+              Points        [170, 100]
+              Branch {
+                DstComponent  "R1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          MaskProbe {
+            Name          "Cap_losses"
+            Probe {
+              Component     "R2"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "R1"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "FL_cap10"
+          Show          on
+          Position      [495, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-20, -20; 20, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Real capacitor model"
+          MaskDescription "Spice model of Flying capacitor"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Vinit"
+            Prompt        "Cap inital voltage"
+            Type          FreeText
+            Value         "Vinit"
+            Show          off
+            Tunable       on
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, -25]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, 25]
+            Direction     down
+          }
+          Schematic {
+            Location      [1034, 271; 1722, 878]
+            ZoomFactor    1.84696
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Capacitor
+              Name          "C1"
+              Show          off
+              Position      [140, 110]
+              Direction     down
+              Flipped       on
+              LabelPosition west
+              Parameter {
+                Variable      "C"
+                Value         "2.2e-6"
+                Show          on
+              }
+              Parameter {
+                Variable      "v_init"
+                Value         "Vinit"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R1"
+              Show          off
+              Position      [200, 120]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "R"
+                Value         "0.227e6"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R2"
+              Show          off
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "R"
+                Value         "4.3e-3"
+                Show          on
+              }
+            }
+            Component {
+              Type          Inductor
+              Name          "L1"
+              Show          off
+              Position      [140, 215]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "L"
+                Value         "0.65e-9"
+                Show          on
+              }
+              Parameter {
+                Variable      "i_init"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "1"
+              Show          on
+              Position      [170, 265]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "2"
+              Show          on
+              Position      [170, 65]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   2
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R2"
+              SrcTerminal   2
+              DstComponent  "L1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R1"
+              SrcTerminal   2
+              Points        [200, 235; 170, 235]
+              Branch {
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   1
+              Points        [170, 100]
+              Branch {
+                DstComponent  "R1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          MaskProbe {
+            Name          "Cap_losses"
+            Probe {
+              Component     "R2"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "R1"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+          }
+        }
+        Component {
+          Type          Port
+          Name          "1"
+          Show          on
+          Position      [270, 155]
+          Direction     up
+          Flipped       off
+          LabelPosition east
+          Parameter {
+            Variable      "Index"
+            Value         "1"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Port
+          Name          "2"
+          Show          on
+          Position      [270, 25]
+          Direction     up
+          Flipped       on
+          LabelPosition east
+          Parameter {
+            Variable      "Index"
+            Value         "2"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "FL_cap11"
+          Show          on
+          Position      [550, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-20, -20; 20, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Real capacitor model"
+          MaskDescription "Spice model of Flying capacitor"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Vinit"
+            Prompt        "Cap inital voltage"
+            Type          FreeText
+            Value         "Vinit"
+            Show          off
+            Tunable       on
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, -25]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, 25]
+            Direction     down
+          }
+          Schematic {
+            Location      [1034, 271; 1722, 878]
+            ZoomFactor    1.84696
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Capacitor
+              Name          "C1"
+              Show          off
+              Position      [140, 110]
+              Direction     down
+              Flipped       on
+              LabelPosition west
+              Parameter {
+                Variable      "C"
+                Value         "2.2e-6"
+                Show          on
+              }
+              Parameter {
+                Variable      "v_init"
+                Value         "Vinit"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R1"
+              Show          off
+              Position      [200, 120]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "R"
+                Value         "0.227e6"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R2"
+              Show          off
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "R"
+                Value         "4.3e-3"
+                Show          on
+              }
+            }
+            Component {
+              Type          Inductor
+              Name          "L1"
+              Show          off
+              Position      [140, 215]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "L"
+                Value         "0.65e-9"
+                Show          on
+              }
+              Parameter {
+                Variable      "i_init"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "1"
+              Show          on
+              Position      [170, 265]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "2"
+              Show          on
+              Position      [170, 65]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   2
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R2"
+              SrcTerminal   2
+              DstComponent  "L1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R1"
+              SrcTerminal   2
+              Points        [200, 235; 170, 235]
+              Branch {
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   1
+              Points        [170, 100]
+              Branch {
+                DstComponent  "R1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          MaskProbe {
+            Name          "Cap_losses"
+            Probe {
+              Component     "R2"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "R1"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "FL_cap12"
+          Show          on
+          Position      [605, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-20, -20; 20, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Real capacitor model"
+          MaskDescription "Spice model of Flying capacitor"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Vinit"
+            Prompt        "Cap inital voltage"
+            Type          FreeText
+            Value         "Vinit"
+            Show          off
+            Tunable       on
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, -25]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, 25]
+            Direction     down
+          }
+          Schematic {
+            Location      [1034, 271; 1722, 878]
+            ZoomFactor    1.84696
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Capacitor
+              Name          "C1"
+              Show          off
+              Position      [140, 110]
+              Direction     down
+              Flipped       on
+              LabelPosition west
+              Parameter {
+                Variable      "C"
+                Value         "2.2e-6"
+                Show          on
+              }
+              Parameter {
+                Variable      "v_init"
+                Value         "Vinit"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R1"
+              Show          off
+              Position      [200, 120]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "R"
+                Value         "0.227e6"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R2"
+              Show          off
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "R"
+                Value         "4.3e-3"
+                Show          on
+              }
+            }
+            Component {
+              Type          Inductor
+              Name          "L1"
+              Show          off
+              Position      [140, 215]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "L"
+                Value         "0.65e-9"
+                Show          on
+              }
+              Parameter {
+                Variable      "i_init"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "1"
+              Show          on
+              Position      [170, 265]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "2"
+              Show          on
+              Position      [170, 65]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   2
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R2"
+              SrcTerminal   2
+              DstComponent  "L1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R1"
+              SrcTerminal   2
+              Points        [200, 235; 170, 235]
+              Branch {
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   1
+              Points        [170, 100]
+              Branch {
+                DstComponent  "R1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          MaskProbe {
+            Name          "Cap_losses"
+            Probe {
+              Component     "R2"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "R1"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "FL_cap13"
+          Show          on
+          Position      [655, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-20, -20; 20, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Real capacitor model"
+          MaskDescription "Spice model of Flying capacitor"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Vinit"
+            Prompt        "Cap inital voltage"
+            Type          FreeText
+            Value         "Vinit"
+            Show          off
+            Tunable       on
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, -25]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, 25]
+            Direction     down
+          }
+          Schematic {
+            Location      [1034, 271; 1722, 878]
+            ZoomFactor    1.84696
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Capacitor
+              Name          "C1"
+              Show          off
+              Position      [140, 110]
+              Direction     down
+              Flipped       on
+              LabelPosition west
+              Parameter {
+                Variable      "C"
+                Value         "2.2e-6"
+                Show          on
+              }
+              Parameter {
+                Variable      "v_init"
+                Value         "Vinit"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R1"
+              Show          off
+              Position      [200, 120]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "R"
+                Value         "0.227e6"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R2"
+              Show          off
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "R"
+                Value         "4.3e-3"
+                Show          on
+              }
+            }
+            Component {
+              Type          Inductor
+              Name          "L1"
+              Show          off
+              Position      [140, 215]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "L"
+                Value         "0.65e-9"
+                Show          on
+              }
+              Parameter {
+                Variable      "i_init"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "1"
+              Show          on
+              Position      [170, 265]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "2"
+              Show          on
+              Position      [170, 65]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   2
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R2"
+              SrcTerminal   2
+              DstComponent  "L1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R1"
+              SrcTerminal   2
+              Points        [200, 235; 170, 235]
+              Branch {
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   1
+              Points        [170, 100]
+              Branch {
+                DstComponent  "R1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          MaskProbe {
+            Name          "Cap_losses"
+            Probe {
+              Component     "R2"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "R1"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "FL_cap14"
+          Show          on
+          Position      [710, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-20, -20; 20, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Real capacitor model"
+          MaskDescription "Spice model of Flying capacitor"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Vinit"
+            Prompt        "Cap inital voltage"
+            Type          FreeText
+            Value         "Vinit"
+            Show          off
+            Tunable       on
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, -25]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, 25]
+            Direction     down
+          }
+          Schematic {
+            Location      [1034, 271; 1722, 878]
+            ZoomFactor    1.84696
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Capacitor
+              Name          "C1"
+              Show          off
+              Position      [140, 110]
+              Direction     down
+              Flipped       on
+              LabelPosition west
+              Parameter {
+                Variable      "C"
+                Value         "2.2e-6"
+                Show          on
+              }
+              Parameter {
+                Variable      "v_init"
+                Value         "Vinit"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R1"
+              Show          off
+              Position      [200, 120]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "R"
+                Value         "0.227e6"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R2"
+              Show          off
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "R"
+                Value         "4.3e-3"
+                Show          on
+              }
+            }
+            Component {
+              Type          Inductor
+              Name          "L1"
+              Show          off
+              Position      [140, 215]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "L"
+                Value         "0.65e-9"
+                Show          on
+              }
+              Parameter {
+                Variable      "i_init"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "1"
+              Show          on
+              Position      [170, 265]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "2"
+              Show          on
+              Position      [170, 65]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   2
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R2"
+              SrcTerminal   2
+              DstComponent  "L1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R1"
+              SrcTerminal   2
+              Points        [200, 235; 170, 235]
+              Branch {
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   1
+              Points        [170, 100]
+              Branch {
+                DstComponent  "R1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          MaskProbe {
+            Name          "Cap_losses"
+            Probe {
+              Component     "R2"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "R1"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "FL_cap15"
+          Show          on
+          Position      [765, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-20, -20; 20, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Real capacitor model"
+          MaskDescription "Spice model of Flying capacitor"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Vinit"
+            Prompt        "Cap inital voltage"
+            Type          FreeText
+            Value         "Vinit"
+            Show          off
+            Tunable       on
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, -25]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, 25]
+            Direction     down
+          }
+          Schematic {
+            Location      [1034, 271; 1722, 878]
+            ZoomFactor    1.84696
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Capacitor
+              Name          "C1"
+              Show          off
+              Position      [140, 110]
+              Direction     down
+              Flipped       on
+              LabelPosition west
+              Parameter {
+                Variable      "C"
+                Value         "2.2e-6"
+                Show          on
+              }
+              Parameter {
+                Variable      "v_init"
+                Value         "Vinit"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R1"
+              Show          off
+              Position      [200, 120]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "R"
+                Value         "0.227e6"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R2"
+              Show          off
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "R"
+                Value         "4.3e-3"
+                Show          on
+              }
+            }
+            Component {
+              Type          Inductor
+              Name          "L1"
+              Show          off
+              Position      [140, 215]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "L"
+                Value         "0.65e-9"
+                Show          on
+              }
+              Parameter {
+                Variable      "i_init"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "1"
+              Show          on
+              Position      [170, 265]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "2"
+              Show          on
+              Position      [170, 65]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   2
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R2"
+              SrcTerminal   2
+              DstComponent  "L1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R1"
+              SrcTerminal   2
+              Points        [200, 235; 170, 235]
+              Branch {
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   1
+              Points        [170, 100]
+              Branch {
+                DstComponent  "R1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          MaskProbe {
+            Name          "Cap_losses"
+            Probe {
+              Component     "R2"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "R1"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "FL_cap16"
+          Show          on
+          Position      [820, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-20, -20; 20, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Real capacitor model"
+          MaskDescription "Spice model of Flying capacitor"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Vinit"
+            Prompt        "Cap inital voltage"
+            Type          FreeText
+            Value         "Vinit"
+            Show          off
+            Tunable       on
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, -25]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, 25]
+            Direction     down
+          }
+          Schematic {
+            Location      [1034, 271; 1722, 878]
+            ZoomFactor    1.84696
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Capacitor
+              Name          "C1"
+              Show          off
+              Position      [140, 110]
+              Direction     down
+              Flipped       on
+              LabelPosition west
+              Parameter {
+                Variable      "C"
+                Value         "2.2e-6"
+                Show          on
+              }
+              Parameter {
+                Variable      "v_init"
+                Value         "Vinit"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R1"
+              Show          off
+              Position      [200, 120]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "R"
+                Value         "0.227e6"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R2"
+              Show          off
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "R"
+                Value         "4.3e-3"
+                Show          on
+              }
+            }
+            Component {
+              Type          Inductor
+              Name          "L1"
+              Show          off
+              Position      [140, 215]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "L"
+                Value         "0.65e-9"
+                Show          on
+              }
+              Parameter {
+                Variable      "i_init"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "1"
+              Show          on
+              Position      [170, 265]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "2"
+              Show          on
+              Position      [170, 65]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   2
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R2"
+              SrcTerminal   2
+              DstComponent  "L1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R1"
+              SrcTerminal   2
+              Points        [200, 235; 170, 235]
+              Branch {
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   1
+              Points        [170, 100]
+              Branch {
+                DstComponent  "R1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          MaskProbe {
+            Name          "Cap_losses"
+            Probe {
+              Component     "R2"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "R1"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "FL_cap17"
+          Show          on
+          Position      [875, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-20, -20; 20, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Real capacitor model"
+          MaskDescription "Spice model of Flying capacitor"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Vinit"
+            Prompt        "Cap inital voltage"
+            Type          FreeText
+            Value         "Vinit"
+            Show          off
+            Tunable       on
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, -25]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, 25]
+            Direction     down
+          }
+          Schematic {
+            Location      [1034, 271; 1722, 878]
+            ZoomFactor    1.84696
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Capacitor
+              Name          "C1"
+              Show          off
+              Position      [140, 110]
+              Direction     down
+              Flipped       on
+              LabelPosition west
+              Parameter {
+                Variable      "C"
+                Value         "2.2e-6"
+                Show          on
+              }
+              Parameter {
+                Variable      "v_init"
+                Value         "Vinit"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R1"
+              Show          off
+              Position      [200, 120]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "R"
+                Value         "0.227e6"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R2"
+              Show          off
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "R"
+                Value         "4.3e-3"
+                Show          on
+              }
+            }
+            Component {
+              Type          Inductor
+              Name          "L1"
+              Show          off
+              Position      [140, 215]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "L"
+                Value         "0.65e-9"
+                Show          on
+              }
+              Parameter {
+                Variable      "i_init"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "1"
+              Show          on
+              Position      [170, 265]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "2"
+              Show          on
+              Position      [170, 65]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   2
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R2"
+              SrcTerminal   2
+              DstComponent  "L1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R1"
+              SrcTerminal   2
+              Points        [200, 235; 170, 235]
+              Branch {
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   1
+              Points        [170, 100]
+              Branch {
+                DstComponent  "R1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          MaskProbe {
+            Name          "Cap_losses"
+            Probe {
+              Component     "R2"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "R1"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+          }
+        }
+        Component {
+          Type          Subsystem
+          Name          "FL_cap18"
+          Show          on
+          Position      [925, 95]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-20, -20; 20, 20]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Real capacitor model"
+          MaskDescription "Spice model of Flying capacitor"
+          MaskDisplayLang "2"
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "Vinit"
+            Prompt        "Cap inital voltage"
+            Type          FreeText
+            Value         "Vinit"
+            Show          off
+            Tunable       on
+            TabName       ""
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, -25]
+            Direction     up
+          }
+          Terminal {
+            Type          Port
+            Position      [-10, 25]
+            Direction     down
+          }
+          Schematic {
+            Location      [1034, 271; 1722, 878]
+            ZoomFactor    1.84696
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          Capacitor
+              Name          "C1"
+              Show          off
+              Position      [140, 110]
+              Direction     down
+              Flipped       on
+              LabelPosition west
+              Parameter {
+                Variable      "C"
+                Value         "2.2e-6"
+                Show          on
+              }
+              Parameter {
+                Variable      "v_init"
+                Value         "Vinit"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R1"
+              Show          off
+              Position      [200, 120]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "R"
+                Value         "0.227e6"
+                Show          on
+              }
+            }
+            Component {
+              Type          Resistor
+              Name          "R2"
+              Show          off
+              Position      [140, 155]
+              Direction     up
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "R"
+                Value         "4.3e-3"
+                Show          on
+              }
+            }
+            Component {
+              Type          Inductor
+              Name          "L1"
+              Show          off
+              Position      [140, 215]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "L"
+                Value         "0.65e-9"
+                Show          on
+              }
+              Parameter {
+                Variable      "i_init"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "1"
+              Show          on
+              Position      [170, 265]
+              Direction     up
+              Flipped       off
+              LabelPosition east
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Port
+              Name          "2"
+              Show          on
+              Position      [170, 65]
+              Direction     down
+              Flipped       off
+              LabelPosition west
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   2
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R2"
+              SrcTerminal   2
+              DstComponent  "L1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "R1"
+              SrcTerminal   2
+              Points        [200, 235; 170, 235]
+              Branch {
+                DstComponent  "L1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "1"
+                DstTerminal   1
+              }
+            }
+            Connection {
+              Type          Wire
+              SrcComponent  "C1"
+              SrcTerminal   1
+              Points        [170, 100]
+              Branch {
+                DstComponent  "R1"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "2"
+                DstTerminal   1
+              }
+            }
+          }
+          MaskProbe {
+            Name          "Cap_losses"
+            Probe {
+              Component     "R2"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+            Probe {
+              Component     "R1"
+              Path          ""
+              Signals       {"Resistor power"}
+            }
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "FL_cap1"
+          SrcTerminal   1
+          Points        [110, 70]
+          Branch {
+            Points        [155, 70]
+            Branch {
+              Points        [200, 70]
+              Branch {
+                Points        [245, 70]
+                Branch {
+                  Points        [270, 70]
+                  Branch {
+                    Points        [290, 70]
+                    Branch {
+                      Points        [335, 70]
+                      Branch {
+                        Points        [385, 70]
+                        Branch {
+                          Points        [430, 70]
+                          Branch {
+                            Points        [485, 70]
+                            Branch {
+                              DstComponent  "FL_cap10"
+                              DstTerminal   1
+                            }
+                            Branch {
+                              Points        [540, 70]
+                              Branch {
+                                Points        [595, 70]
+                                Branch {
+                                  Points        [645, 70]
+                                  Branch {
+                                    Points        [700, 70]
+                                    Branch {
+                                      Points        [755, 70]
+                                      Branch {
+                                        Points        [810, 70]
+                                        Branch {
+                                          Points        [865, 70]
+                                          Branch {
+                                            DstComponent  "FL_cap18"
+                                            DstTerminal   1
+                                          }
+                                          Branch {
+                                            DstComponent  "FL_cap17"
+                                            DstTerminal   1
+                                          }
+                                        }
+                                        Branch {
+                                          DstComponent  "FL_cap16"
+                                          DstTerminal   1
+                                        }
+                                      }
+                                      Branch {
+                                        DstComponent  "FL_cap15"
+                                        DstTerminal   1
+                                      }
+                                    }
+                                    Branch {
+                                      DstComponent  "FL_cap14"
+                                      DstTerminal   1
+                                    }
+                                  }
+                                  Branch {
+                                    DstComponent  "FL_cap13"
+                                    DstTerminal   1
+                                  }
+                                }
+                                Branch {
+                                  DstComponent  "FL_cap12"
+                                  DstTerminal   1
+                                }
+                              }
+                              Branch {
+                                DstComponent  "FL_cap11"
+                                DstTerminal   1
+                              }
+                            }
+                          }
+                          Branch {
+                            DstComponent  "FL_cap9"
+                            DstTerminal   1
+                          }
+                        }
+                        Branch {
+                          DstComponent  "FL_cap8"
+                          DstTerminal   1
+                        }
+                      }
+                      Branch {
+                        DstComponent  "FL_cap7"
+                        DstTerminal   1
+                      }
+                    }
+                    Branch {
+                      DstComponent  "FL_cap6"
+                      DstTerminal   1
+                    }
+                  }
+                  Branch {
+                    Points        [270, 70; 270, 45]
+                    DstComponent  "2"
+                    DstTerminal   1
+                  }
+                }
+                Branch {
+                  DstComponent  "FL_cap5"
+                  DstTerminal   1
+                }
+              }
+              Branch {
+                DstComponent  "FL_cap4"
+                DstTerminal   1
+              }
+            }
+            Branch {
+              DstComponent  "FL_cap3"
+              DstTerminal   1
+            }
+          }
+          Branch {
+            DstComponent  "FL_cap2"
+            DstTerminal   1
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "FL_cap9"
+          SrcTerminal   2
+          Points        [430, 120]
+          Branch {
+            Points        [485, 120]
+            Branch {
+              DstComponent  "FL_cap10"
+              DstTerminal   2
+            }
+            Branch {
+              Points        [540, 120]
+              Branch {
+                Points        [595, 120]
+                Branch {
+                  Points        [645, 120]
+                  Branch {
+                    Points        [700, 120]
+                    Branch {
+                      Points        [755, 120]
+                      Branch {
+                        Points        [810, 120]
+                        Branch {
+                          Points        [865, 120]
+                          Branch {
+                            DstComponent  "FL_cap18"
+                            DstTerminal   2
+                          }
+                          Branch {
+                            DstComponent  "FL_cap17"
+                            DstTerminal   2
+                          }
+                        }
+                        Branch {
+                          DstComponent  "FL_cap16"
+                          DstTerminal   2
+                        }
+                      }
+                      Branch {
+                        DstComponent  "FL_cap15"
+                        DstTerminal   2
+                      }
+                    }
+                    Branch {
+                      DstComponent  "FL_cap14"
+                      DstTerminal   2
+                    }
+                  }
+                  Branch {
+                    DstComponent  "FL_cap13"
+                    DstTerminal   2
+                  }
+                }
+                Branch {
+                  DstComponent  "FL_cap12"
+                  DstTerminal   2
+                }
+              }
+              Branch {
+                DstComponent  "FL_cap11"
+                DstTerminal   2
+              }
+            }
+          }
+          Branch {
+            Points        [385, 120]
+            Branch {
+              Points        [335, 120]
+              Branch {
+                Points        [290, 120]
+                Branch {
+                  Points        [270, 120]
+                  Branch {
+                    Points        [245, 120]
+                    Branch {
+                      Points        [200, 120]
+                      Branch {
+                        Points        [155, 120]
+                        Branch {
+                          Points        [110, 120]
+                          Branch {
+                            DstComponent  "FL_cap1"
+                            DstTerminal   2
+                          }
+                          Branch {
+                            DstComponent  "FL_cap2"
+                            DstTerminal   2
+                          }
+                        }
+                        Branch {
+                          DstComponent  "FL_cap3"
+                          DstTerminal   2
+                        }
+                      }
+                      Branch {
+                        DstComponent  "FL_cap4"
+                        DstTerminal   2
+                      }
+                    }
+                    Branch {
+                      DstComponent  "FL_cap5"
+                      DstTerminal   2
+                    }
+                  }
+                  Branch {
+                    Points        [270, 120; 270, 135]
+                    DstComponent  "1"
+                    DstTerminal   1
+                  }
+                }
+                Branch {
+                  DstComponent  "FL_cap6"
+                  DstTerminal   2
+                }
+              }
+              Branch {
+                DstComponent  "FL_cap7"
+                DstTerminal   2
+              }
+            }
+            Branch {
+              DstComponent  "FL_cap8"
+              DstTerminal   2
+            }
+          }
+        }
+      }
+      MaskProbe {
+        Name          "Cap_losses"
+        Probe {
+          Component     "FL_cap1"
+          Path          ""
+          Signals       {"Cap_losses"}
+        }
+        Probe {
+          Component     "FL_cap2"
+          Path          ""
+          Signals       {"Cap_losses"}
+        }
+        Probe {
+          Component     "FL_cap3"
+          Path          ""
+          Signals       {"Cap_losses"}
+        }
+        Probe {
+          Component     "FL_cap4"
+          Path          ""
+          Signals       {"Cap_losses"}
+        }
+        Probe {
+          Component     "FL_cap5"
+          Path          ""
+          Signals       {"Cap_losses"}
+        }
+        Probe {
+          Component     "FL_cap6"
+          Path          ""
+          Signals       {"Cap_losses"}
+        }
+        Probe {
+          Component     "FL_cap7"
+          Path          ""
+          Signals       {"Cap_losses"}
+        }
+        Probe {
+          Component     "FL_cap8"
+          Path          ""
+          Signals       {"Cap_losses"}
+        }
+        Probe {
+          Component     "FL_cap9"
+          Path          ""
+          Signals       {"Cap_losses"}
+        }
+        Probe {
+          Component     "FL_cap10"
+          Path          ""
+          Signals       {"Cap_losses"}
+        }
+        Probe {
+          Component     "FL_cap11"
+          Path          ""
+          Signals       {"Cap_losses"}
+        }
+        Probe {
+          Component     "FL_cap12"
+          Path          ""
+          Signals       {"Cap_losses"}
+        }
+        Probe {
+          Component     "FL_cap13"
+          Path          ""
+          Signals       {"Cap_losses"}
+        }
+        Probe {
+          Component     "FL_cap14"
+          Path          ""
+          Signals       {"Cap_losses"}
+        }
+        Probe {
+          Component     "FL_cap15"
+          Path          ""
+          Signals       {"Cap_losses"}
+        }
+        Probe {
+          Component     "FL_cap16"
+          Path          ""
+          Signals       {"Cap_losses"}
+        }
+        Probe {
+          Component     "FL_cap17"
+          Path          ""
+          Signals       {"Cap_losses"}
+        }
+        Probe {
+          Component     "FL_cap18"
+          Path          ""
+          Signals       {"Cap_losses"}
+        }
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Perturbation"
+      SrcTerminal   1
+      DstComponent  "V"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Am1"
+      SrcTerminal   1
+      Points        [100, 5]
+      DstComponent  "V"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Am1"
+      SrcTerminal   3
+      DstComponent  "Response"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Am1"
+      SrcTerminal   2
+      DstComponent  "FL_x18"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "V"
+      SrcTerminal   2
+      Points        [100, 215; 190, 215]
+      DstComponent  "FL_x18"
+      DstTerminal   1
+    }
+  }
+  Analysis {
+    Type          ACSweep
+    Name          "FL_x18"
+    ShowLegend    "1"
+    OperatingPoint "2"
+    TimeSpan      "0"
+    StartTime     "0"
+    Tolerance     "1e-4"
+    MaxIter       "20"
+    FrequencyRange "[1e3 1e9]"
+    FrequencyScale "2"
+    AdditionalFreqs "[]"
+    AmplitudeRange "1e-3"
+    NumPoints     "10000"
+    Perturbation  "Perturbation"
+    Response      "Response"
+    JacobianPerturbation "1e-4"
+    JacobianCalculation "1"
+    InitCycles    "0"
+    MaxNumberOfThreads "-1"
+  }
+}

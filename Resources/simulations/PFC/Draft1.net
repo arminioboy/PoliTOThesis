@@ -1,0 +1,15 @@
+*
+X§U2 weak_vref VREF Val 0 VREF level2 Avol=100 GBW=17Meg Slew=11Meg Ilimit=30m Rail=20m Vos=700u En=13n Enk=0 In=0 Ink=0 Rin=500Meg ;§pnba In+)In-)V+)V-)OUT
+V1 Val 0 3.3
+R1 Val weak_vref 1k
+R2 weak_vref 0 1k
+C1 weak_vref 0 1µ
+V2 IP N001 PULSE(0 0.231 0 1.19u 1.19u 0 2.38u)
+V3 N001 0 SINE(0 1 50 0 0 0)
+* A single pole op amp with one internal node,\nslew rate limit, and output voltage and current limit.\n---------------------------------------------------------------------------------\nAvol = open-loop gain at DC (dB)\nGBW = gain-bandwidth product (Hz)\nSlew = slew rate limit  (V/s) \nIlimit = current limit (A)\nRail = output voltage limit relative to the power supply (V)\nVos = input offset voltage (V)\nEn = input voltage noise density (V/√Hz)\nEnk = input voltage noise density corner frequency (Hz)\nIn = input current noise density (A/√Hz)\nInk = input current noise density corner frequency (Hz)\nRin = input resistance (Ω)
+* .op
+.tran 20m
+* Library below included based on ModelFile attribute of instance X§U2 (C:\users\giorgio\Local Settings\Application Data\LTspice\lib\sym\OpAmps\UniversalOpAmp2.asy)
+.lib UniversalOpAmp2.lib
+.backanno
+.end
