@@ -1,6 +1,6 @@
 Plecs {
   Name          "FCML4_Microchip_mp_250117_01_ml_tobegiven"
-  Version       "4.8"
+  Version       "5.0"
   CircuitModel  "ContStateSpace"
   StartTime     "0.0"
   TimeSpan      "16e-2"
@@ -50,6 +50,7 @@ Plecs {
 ";\nRv.Ki = 1/Rv.Ti;\n\nk=2;"
   InitialState  "1"
   SystemState   ""
+  JacobianComputation "2"
   TaskingMode   "1"
   TaskConfigurations ""
   CodeGenParameterInlining "2"
@@ -71,10 +72,22 @@ Plecs {
   AlgebraicLoopTolerance "1e-6"
   ScriptsDialogGeometry "[1142 -1238 623 267]"
   ScriptsDialogSplitterPos "107"
+  MixedSignalSolverBypassOperatingPoint "1"
+  MixedSignalSolverInitialConditions "2"
+  MixedSignalSolverMaxNewtonIterations "25"
+  MixedSignalSolverNumThreads "-1"
+  OperatingPointMaxNewtonIterations "50"
+  OperatingPointRelativeNewtonTolerance "1e-3"
+  OperatingPointAbsoluteNewtonTolerance "1e-12"
+  OperatingPointNodalVoltageNewtonTolerance "1e-6"
+  SpiceTemperature "27"
+  NetlistParserDetails "2"
+  InvalidNetlistFunctionEvaluationMsg "1"
+  IncompatibleInitialConditionMsg "2"
   Schematic {
     Location      [60, 69; 1920, 1038]
     ZoomFactor    1.49861
-    SliderPosition [-1, 216]
+    SliderPosition [-1, 213]
     ShowBrowser   off
     BrowserWidth  130
     Component {
@@ -185,6 +198,11 @@ Plecs {
         Show          off
       }
       Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
         Variable      "T_init"
         Value         "0"
         Show          off
@@ -216,6 +234,11 @@ Plecs {
       Parameter {
         Variable      "Rth"
         Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
         Show          off
       }
       Parameter {
@@ -253,6 +276,11 @@ Plecs {
         Show          off
       }
       Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
         Variable      "T_init"
         Value         "0"
         Show          off
@@ -284,6 +312,11 @@ Plecs {
       Parameter {
         Variable      "Rth"
         Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
         Show          off
       }
       Parameter {
@@ -339,6 +372,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          Goto
@@ -356,6 +405,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -377,6 +442,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          From
@@ -394,6 +475,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -423,6 +520,11 @@ Plecs {
       Parameter {
         Variable      "Rth"
         Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
         Show          off
       }
       Parameter {
@@ -460,6 +562,11 @@ Plecs {
         Show          off
       }
       Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
         Variable      "T_init"
         Value         "0"
         Show          off
@@ -494,6 +601,11 @@ Plecs {
         Show          off
       }
       Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
         Variable      "T_init"
         Value         "0"
         Show          off
@@ -525,6 +637,11 @@ Plecs {
       Parameter {
         Variable      "Rth"
         Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
         Show          off
       }
       Parameter {
@@ -589,6 +706,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          From
@@ -606,6 +739,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -627,6 +776,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          From
@@ -644,6 +809,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -665,6 +846,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          Goto
@@ -682,6 +879,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -703,6 +916,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          Goto
@@ -720,6 +949,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -821,6 +1066,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          Goto
@@ -840,6 +1101,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          Goto
@@ -857,6 +1134,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -1052,6 +1345,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -1305,6 +1614,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          Frame         [-2, -10; 7, 10]
           Parameter {
             Variable      "Width"
             Value         "2"
@@ -1338,6 +1648,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          Frame         [-2, -10; 7, 10]
           Parameter {
             Variable      "Width"
             Value         "2"
@@ -1371,6 +1682,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          Frame         [-2, -10; 7, 10]
           Parameter {
             Variable      "Width"
             Value         "2"
@@ -2724,13 +3036,18 @@ Plecs {
             Show          off
           }
           Parameter {
-            Variable      "DataType"
+            Variable      "OutputDataType"
             Value         "11"
             Show          off
           }
           Parameter {
             Variable      "DataTypeOverflowMode"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "GainDataType"
+            Value         "11"
             Show          off
           }
         }
@@ -2931,13 +3248,18 @@ Plecs {
             Show          off
           }
           Parameter {
-            Variable      "DataType"
+            Variable      "OutputDataType"
             Value         "11"
             Show          off
           }
           Parameter {
             Variable      "DataTypeOverflowMode"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "GainDataType"
+            Value         "11"
             Show          off
           }
         }
@@ -2976,13 +3298,18 @@ Plecs {
             Show          off
           }
           Parameter {
-            Variable      "DataType"
+            Variable      "OutputDataType"
             Value         "11"
             Show          off
           }
           Parameter {
             Variable      "DataTypeOverflowMode"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "GainDataType"
+            Value         "11"
             Show          off
           }
         }
@@ -3224,13 +3551,18 @@ Plecs {
             Show          off
           }
           Parameter {
-            Variable      "DataType"
+            Variable      "OutputDataType"
             Value         "11"
             Show          off
           }
           Parameter {
             Variable      "DataTypeOverflowMode"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "GainDataType"
+            Value         "11"
             Show          off
           }
         }
@@ -3242,6 +3574,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
+          Frame         [-15, -15; 15, 15]
           Location      [643, 26; 1280, 727]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAACWAAAD9vwCAAAAA/sAAAAUAFMAY"
 "QB2AGUAZABWAGkAZQB3AHMAAAAAHAAAAXoAAACXAP////sAAAAQAFoAbwBvAG0AQQByAGUAYQAAAA"
@@ -3432,13 +3765,18 @@ Plecs {
             Show          off
           }
           Parameter {
-            Variable      "DataType"
+            Variable      "OutputDataType"
             Value         "11"
             Show          off
           }
           Parameter {
             Variable      "DataTypeOverflowMode"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "GainDataType"
+            Value         "11"
             Show          off
           }
         }
@@ -3725,13 +4063,18 @@ Plecs {
             Show          off
           }
           Parameter {
-            Variable      "DataType"
+            Variable      "OutputDataType"
             Value         "11"
             Show          off
           }
           Parameter {
             Variable      "DataTypeOverflowMode"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "GainDataType"
+            Value         "11"
             Show          off
           }
         }
@@ -4000,6 +4343,22 @@ Plecs {
             Value         "1"
             Show          off
           }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "3"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
+            Show          off
+          }
         }
         Component {
           Type          From
@@ -4018,6 +4377,22 @@ Plecs {
           Parameter {
             Variable      "Visibility"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
             Show          off
           }
         }
@@ -4068,6 +4443,22 @@ Plecs {
             Value         "1"
             Show          off
           }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
+            Show          off
+          }
         }
         Component {
           Type          Product
@@ -4116,6 +4507,22 @@ Plecs {
           Parameter {
             Variable      "Visibility"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
             Show          off
           }
         }
@@ -4176,6 +4583,22 @@ Plecs {
             Value         "1"
             Show          off
           }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "3"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
+            Show          off
+          }
         }
         Component {
           Type          From
@@ -4194,6 +4617,22 @@ Plecs {
           Parameter {
             Variable      "Visibility"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
             Show          off
           }
         }
@@ -4216,6 +4655,22 @@ Plecs {
             Value         "1"
             Show          off
           }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
+            Show          off
+          }
         }
         Component {
           Type          Goto
@@ -4233,6 +4688,22 @@ Plecs {
           Parameter {
             Variable      "Visibility"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "3"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
             Show          off
           }
         }
@@ -4255,6 +4726,22 @@ Plecs {
             Value         "1"
             Show          off
           }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
+            Show          off
+          }
         }
         Component {
           Type          From
@@ -4275,6 +4762,22 @@ Plecs {
             Value         "1"
             Show          off
           }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
+            Show          off
+          }
         }
         Component {
           Type          Goto
@@ -4292,6 +4795,22 @@ Plecs {
           Parameter {
             Variable      "Visibility"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "3"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
             Show          off
           }
         }
@@ -4314,6 +4833,22 @@ Plecs {
             Value         "1"
             Show          off
           }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
+            Show          off
+          }
         }
         Component {
           Type          From
@@ -4331,6 +4866,22 @@ Plecs {
           Parameter {
             Variable      "Visibility"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
             Show          off
           }
         }
@@ -4351,6 +4902,22 @@ Plecs {
           Parameter {
             Variable      "Visibility"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
             Show          off
           }
         }
@@ -4450,13 +5017,18 @@ Plecs {
             Show          off
           }
           Parameter {
-            Variable      "DataType"
+            Variable      "OutputDataType"
             Value         "11"
             Show          off
           }
           Parameter {
             Variable      "DataTypeOverflowMode"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "GainDataType"
+            Value         "11"
             Show          off
           }
         }
@@ -4480,13 +5052,18 @@ Plecs {
             Show          off
           }
           Parameter {
-            Variable      "DataType"
+            Variable      "OutputDataType"
             Value         "11"
             Show          off
           }
           Parameter {
             Variable      "DataTypeOverflowMode"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "GainDataType"
+            Value         "11"
             Show          off
           }
         }
@@ -4510,13 +5087,18 @@ Plecs {
             Show          off
           }
           Parameter {
-            Variable      "DataType"
+            Variable      "OutputDataType"
             Value         "11"
             Show          off
           }
           Parameter {
             Variable      "DataTypeOverflowMode"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "GainDataType"
+            Value         "11"
             Show          off
           }
         }
@@ -4619,6 +5201,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
+          Frame         [-15, -15; 15, 15]
           Location      [385, 990; 1665, 1629]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAACWAAAD9vwCAAAAA/sAAAAUAFMAY"
 "QB2AGUAZABWAGkAZQB3AHMAAAAAHAAAAXoAAABjAP////sAAAAQAFoAbwBvAG0AQQByAGUAYQAAAA"
@@ -4832,6 +5415,22 @@ Plecs {
             Value         "1"
             Show          off
           }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
+            Show          off
+          }
         }
         Component {
           Type          DataType
@@ -4871,13 +5470,18 @@ Plecs {
             Show          off
           }
           Parameter {
-            Variable      "DataType"
+            Variable      "OutputDataType"
             Value         "11"
             Show          off
           }
           Parameter {
             Variable      "DataTypeOverflowMode"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "GainDataType"
+            Value         "11"
             Show          off
           }
         }
@@ -4900,13 +5504,18 @@ Plecs {
             Show          off
           }
           Parameter {
-            Variable      "DataType"
+            Variable      "OutputDataType"
             Value         "11"
             Show          off
           }
           Parameter {
             Variable      "DataTypeOverflowMode"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "GainDataType"
+            Value         "11"
             Show          off
           }
         }
@@ -4929,13 +5538,18 @@ Plecs {
             Show          off
           }
           Parameter {
-            Variable      "DataType"
+            Variable      "OutputDataType"
             Value         "11"
             Show          off
           }
           Parameter {
             Variable      "DataTypeOverflowMode"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "GainDataType"
+            Value         "11"
             Show          off
           }
         }
@@ -5131,13 +5745,18 @@ Plecs {
                 Show          off
               }
               Parameter {
-                Variable      "DataType"
+                Variable      "OutputDataType"
                 Value         "11"
                 Show          off
               }
               Parameter {
                 Variable      "DataTypeOverflowMode"
                 Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "GainDataType"
+                Value         "11"
                 Show          off
               }
             }
@@ -5160,13 +5779,18 @@ Plecs {
                 Show          off
               }
               Parameter {
-                Variable      "DataType"
+                Variable      "OutputDataType"
                 Value         "11"
                 Show          off
               }
               Parameter {
                 Variable      "DataTypeOverflowMode"
                 Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "GainDataType"
+                Value         "11"
                 Show          off
               }
             }
@@ -5382,6 +6006,22 @@ Plecs {
           Parameter {
             Variable      "Visibility"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "3"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
             Show          off
           }
         }
@@ -6320,6 +6960,7 @@ Plecs {
               Direction     up
               Flipped       off
               LabelPosition south
+              Frame         [-15, -20; 15, 20]
               Location      [782, 188; 1419, 899]
               State         "AAAA/wAAAAD9AAAAAgAAAAEAAACWAAAD9vwCAAAAA/sAAAAUA"
 "FMAYQB2AGUAZABWAGkAZQB3AHMAAAAAHAAAAXoAAABjAP////sAAAAQAFoAbwBvAG0AQQByAGUAYQ"
@@ -6919,6 +7560,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          Frame         [-2, -10; 7, 10]
           Parameter {
             Variable      "Width"
             Value         "2"
@@ -6941,6 +7583,22 @@ Plecs {
           Parameter {
             Variable      "Visibility"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "3"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
             Show          off
           }
         }
@@ -6985,6 +7643,22 @@ Plecs {
           Parameter {
             Variable      "Visibility"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
             Show          off
           }
         }
@@ -7071,6 +7745,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
+          Frame         [-15, -15; 15, 15]
           Location      [-1280, 23; 0, 652]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAACWAAAD9vwCAAAAA/sAAAAUAFMAY"
 "QB2AGUAZABWAGkAZQB3AHMAAAAAHAAAAXoAAACXAP////sAAAAQAFoAbwBvAG0AQQByAGUAYQAAAA"
@@ -7496,6 +8171,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          Frame         [-2, -10; 7, 10]
           Parameter {
             Variable      "Width"
             Value         "2"
@@ -7510,6 +8186,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
+          Frame         [-15, -15; 15, 15]
           Location      [60, 69; 1340, 718]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAACWAAAD9vwCAAAAA/sAAAAUAFMAY"
 "QB2AGUAZABWAGkAZQB3AHMAAAAAHAAAAXoAAABjAP////sAAAAQAFoAbwBvAG0AQQByAGUAYQAAAA"
@@ -7598,6 +8275,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          Frame         [-2, -10; 7, 10]
           Parameter {
             Variable      "Width"
             Value         "2"
@@ -8626,6 +9304,7 @@ Plecs {
       Direction     right
       Flipped       on
       LabelPosition south
+      Frame         [-7, -10; 2, 10]
       Parameter {
         Variable      "Width"
         Value         "2"
@@ -8640,6 +9319,7 @@ Plecs {
       Direction     right
       Flipped       on
       LabelPosition south
+      Frame         [-7, -10; 2, 10]
       Parameter {
         Variable      "Width"
         Value         "2"
@@ -8654,6 +9334,7 @@ Plecs {
       Direction     right
       Flipped       on
       LabelPosition south
+      Frame         [-7, -10; 2, 10]
       Parameter {
         Variable      "Width"
         Value         "2"
@@ -8678,6 +9359,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          From
@@ -8695,6 +9392,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -8736,6 +9449,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          From
@@ -8755,6 +9484,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          Scope
@@ -8764,6 +9509,7 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
+      Frame         [-15, -30; 15, 30]
       Location      [309, 170; 1589, 809]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAACWAAAD9vwCAAAAA/sAAAAUAFMAYQB2A"
 "GUAZABWAGkAZQB3AHMAAAAAHAAAAXoAAABjAP////sAAAAQAFoAbwBvAG0AQQByAGUAYQAAAAAA//"
@@ -8925,6 +9671,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          ACVoltageSource
@@ -8958,6 +9720,7 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
+      Frame         [-15, -25; 15, 25]
       Location      [129, 215; 766, 898]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAACWAAAD9vwCAAAAA/sAAAAUAFMAYQB2A"
 "GUAZABWAGkAZQB3AHMAAAAAHAAAAXoAAABjAP////sAAAAQAFoAbwBvAG0AQQByAGUAYQAAAAAA//"
@@ -9097,6 +9860,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          From
@@ -9114,6 +9893,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -9186,6 +9981,7 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
+      Frame         [-15, -25; 15, 25]
       Location      [1264, 175; 1901, 886]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAACWAAAD9vwCAAAAA/sAAAAUAFMAYQB2A"
 "GUAZABWAGkAZQB3AHMAAAAAHAAAAXoAAABjAP////sAAAAQAFoAbwBvAG0AQQByAGUAYQAAAAAA//"
@@ -9325,6 +10121,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          From
@@ -9342,6 +10154,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -9363,6 +10191,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          From
@@ -9380,6 +10224,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -9532,6 +10392,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          From
@@ -9551,6 +10427,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          SignalMux
@@ -9560,6 +10452,7 @@ Plecs {
       Direction     right
       Flipped       off
       LabelPosition south
+      Frame         [-2, -10; 7, 10]
       Parameter {
         Variable      "Width"
         Value         "2"
@@ -9582,6 +10475,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -9622,6 +10531,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          From
@@ -9639,6 +10564,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -9708,6 +10649,7 @@ Plecs {
       Direction     right
       Flipped       off
       LabelPosition south
+      Frame         [-2, -15; 7, 15]
       Parameter {
         Variable      "Width"
         Value         "3"
@@ -9732,6 +10674,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          From
@@ -9749,6 +10707,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -9770,6 +10744,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          SignalMux
@@ -9779,6 +10769,7 @@ Plecs {
       Direction     right
       Flipped       off
       LabelPosition south
+      Frame         [-2, -15; 7, 15]
       Parameter {
         Variable      "Width"
         Value         "3"
@@ -9803,6 +10794,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          From
@@ -9820,6 +10827,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -9841,6 +10864,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          From
@@ -9858,6 +10897,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -9879,6 +10934,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          From
@@ -9898,6 +10969,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          SignalMux
@@ -9907,6 +10994,7 @@ Plecs {
       Direction     right
       Flipped       off
       LabelPosition south
+      Frame         [-2, -15; 7, 15]
       Parameter {
         Variable      "Width"
         Value         "3"
@@ -9921,6 +11009,7 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
+      Frame         [-15, -15; 15, 15]
       Location      [-1280, 23; 0, 652]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAACWAAAD9vwCAAAAA/sAAAAUAFMAYQB2A"
 "GUAZABWAGkAZQB3AHMAAAAAHAAAAXoAAACXAP////sAAAAQAFoAbwBvAG0AQQByAGUAYQAAAAAA//"
@@ -10009,6 +11098,7 @@ Plecs {
       Direction     right
       Flipped       off
       LabelPosition south
+      Frame         [-2, -15; 7, 15]
       Parameter {
         Variable      "Width"
         Value         "3"
@@ -10033,6 +11123,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          From
@@ -10050,6 +11156,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -10071,6 +11193,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          From
@@ -10088,6 +11226,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
@@ -10140,6 +11294,7 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
+      Frame         [-15, -15; 15, 15]
       Location      [60, 71; 1340, 710]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAACWAAAD9vwCAAAAA/sAAAAUAFMAYQB2A"
 "GUAZABWAGkAZQB3AHMAAAAAHAAAAXoAAABjAP////sAAAAQAFoAbwBvAG0AQQByAGUAYQAAAAAA//"
@@ -10238,6 +11393,22 @@ Plecs {
         Value         "1"
         Show          off
       }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
     }
     Component {
       Type          From
@@ -10255,6 +11426,22 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "NoMatchingCounterpartAction"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CustomMessage"
+        Value         ""
+        Show          off
+        Evaluate      on
+      }
+      Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
         Show          off
       }
     }
