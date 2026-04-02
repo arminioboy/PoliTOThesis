@@ -3,7 +3,7 @@ Plecs {
   Version       "5.0"
   CircuitModel  "ContStateSpace"
   StartTime     "0"
-  TimeSpan      "2"
+  TimeSpan      "1"
   Timeout       ""
   Solver        "radau"
   MaxStep       "1e-6"
@@ -28,19 +28,19 @@ Plecs {
   AlgebraicLoopWithStateMachineMsg "2"
   AssertionAction "3"
   FixedPointDatatypeOverride "1"
-  InitializationCommands base64 "UG91dD01MDA7JUNPTU1FTlQgVEhJUyBGT1IgQkFUQ0ggU"
-"0lNVUxBVElPTlMKClZvdXQ9NDAwOwpWaW4gPSAyMzAqc3FydCgyKTsgJSBHcmlkIHZvbHRhZ2UgKF"
-"YpCkYgPSA1MC4wOyAlIEdyaWQgZnJlcXVlbmN5IChIeikKCmRlYWR0aW1lPTE1ZS05OwolU2xvd19"
-"sZWdfZGVhZHRpbWU9NDAwZS05OwoKJXRoZXJtYWwKUnRoX2NoID0gMC4xOwkJJSBDYXNlLXRvLWhl"
-"YXRzaW5rIHRoZXJtYWwgcmVzaXN0YW5jZSAoVElNKSAoSy9XKSBbMDoyMF0KUnRoX2hhID0gMC41O"
-"wkJJSBIZWF0c2luay10by1hbWJpZW50IHRoZXJtYWwgcmVzaXN0YW5jZSAoSy9XKSBbMDoyMF0KUn"
-"RoX3BjYiA9IDAuNTsJCSUgSGVhdHNpbmstdG8tYW1iaWVudCB0aGVybWFsIHJlc2lzdGFuY2UgKEs"
-"vVykgWzA6MjBdCiV0YW9faGEgPSAxOwkJJSBIZWF0c2luayB0aW1lIGNvbnN0YW50IChzKSBbMDox"
-"MDBdCiVDdGggPSB0YW9faGEvUnRoX2hhOyAlIEhlYXRzaW5rIHRoZXJtYWwgY2FwYWNpdGFuY2UgK"
-"EovSykKVGFtYiA9IDI1OwolZW5kIHRoZXJtYWwKCgpmcyA9IDE0MGUzOyAlIFN3aXRjaGluZyBmcm"
-"VxdWVuY3kgKEh6KQoKUExMX2Vycm9yPTA7JWFtb3VudCBvZiBQTEwgZXJyb3IgKMKwKQpQTExfaml"
-"0dGVyX2ZyZXE9MTslIGZyZXF1ZW5jeSBvZiB0aGlzIGppdHRlciAoSHopClBMTF9qaXR0ZXJfYW1w"
-"bGl0dWRlPShQTExfZXJyb3IqMC4wMikvMzYwOw=="
+  InitializationCommands base64 "JVBvdXQ9NTAwOyVDT01NRU5UIFRISVMgRk9SIEJBVENII"
+"FNJTVVMQVRJT05TCgpWb3V0PTQwMDsKVmluID0gMjMwKnNxcnQoMik7ICUgR3JpZCB2b2x0YWdlIC"
+"hWKQpGID0gNTAuMDsgJSBHcmlkIGZyZXF1ZW5jeSAoSHopCgpkZWFkdGltZT0xNWUtOTsKJVNsb3d"
+"fbGVnX2RlYWR0aW1lPTQwMGUtOTsKCiV0aGVybWFsClJ0aF9jaCA9IDAuMTsJCSUgQ2FzZS10by1o"
+"ZWF0c2luayB0aGVybWFsIHJlc2lzdGFuY2UgKFRJTSkgKEsvVykgWzA6MjBdClJ0aF9oYSA9IDAuN"
+"TsJCSUgSGVhdHNpbmstdG8tYW1iaWVudCB0aGVybWFsIHJlc2lzdGFuY2UgKEsvVykgWzA6MjBdCl"
+"J0aF9wY2IgPSAwLjU7CQklIEhlYXRzaW5rLXRvLWFtYmllbnQgdGhlcm1hbCByZXNpc3RhbmNlICh"
+"LL1cpIFswOjIwXQoldGFvX2hhID0gMTsJCSUgSGVhdHNpbmsgdGltZSBjb25zdGFudCAocykgWzA6"
+"MTAwXQolQ3RoID0gdGFvX2hhL1J0aF9oYTsgJSBIZWF0c2luayB0aGVybWFsIGNhcGFjaXRhbmNlI"
+"ChKL0spClRhbWIgPSAyNTsKJWVuZCB0aGVybWFsCgoKZnMgPSAxNDBlMzsgJSBTd2l0Y2hpbmcgZn"
+"JlcXVlbmN5IChIeikKClBMTF9lcnJvcj0wOyVhbW91bnQgb2YgUExMIGVycm9yICjCsCkKUExMX2p"
+"pdHRlcl9mcmVxPTE7JSBmcmVxdWVuY3kgb2YgdGhpcyBqaXR0ZXIgKEh6KQpQTExfaml0dGVyX2Ft"
+"cGxpdHVkZT0oUExMX2Vycm9yKjAuMDIpLzM2MDs="
   InitialState  "1"
   SystemState   ""
   JacobianComputation "2"
@@ -63,8 +63,8 @@ Plecs {
   ExternalModeSettings ""
   AlgebraicLoopMethod "1"
   AlgebraicLoopTolerance "1e-6"
-  ScriptsDialogGeometry "[0 0 1273 638]"
-  ScriptsDialogSplitterPos "295"
+  ScriptsDialogGeometry "[0 0 545 440]"
+  ScriptsDialogSplitterPos "70"
   MixedSignalSolverBypassOperatingPoint "1"
   MixedSignalSolverInitialConditions "2"
   MixedSignalSolverMaxNewtonIterations "25"
@@ -78,9 +78,9 @@ Plecs {
   InvalidNetlistFunctionEvaluationMsg "1"
   IncompatibleInitialConditionMsg "2"
   Schematic {
-    Location      [0, 0; 1860, 969]
-    ZoomFactor    1.2301
-    SliderPosition [894, 0]
+    Location      [0, 0; 1280, 679]
+    ZoomFactor    0.562922
+    SliderPosition [0, 0]
     ShowBrowser   off
     BrowserWidth  100
     Component {
@@ -23530,8 +23530,8 @@ Plecs {
       }
       Schematic {
         Location      [60, 69; 1920, 1038]
-        ZoomFactor    1.60215
-        SliderPosition [827, 65]
+        ZoomFactor    0.747524
+        SliderPosition [0, 0]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -28853,11 +28853,11 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -15; 15, 15]
-          Location      [0, 0; 947, 652]
+          Location      [0, 0; 947, 663]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAFYA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGAA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABgAP///wAAAAMAAAOzAAA"
-"AVPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA7MAAABEAP///wAAA7MAAAIT"
+"AVPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA7MAAABEAP///wAAA7MAAAIe"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -29818,19 +29818,19 @@ Plecs {
 "\t\t% Reducing simulation results by return value 'result' \n \t\tresult = 0;"
 "\n \telse\n \t\t% Print error message to Octave console\n \t\tprintf(' Error "
 "in Simulation %d for Power=%dW: %s\\n',\n                  index, PowerOutput"
-"(index), data);\n\tend\nend\n\n% Set value to be swept\nPowerOutput = [50:50:"
-"5000]; % start step stop\n% Initialize simStruct as cell array with all value"
-"s\nfor ix = 1:length(PowerOutput)\n\tsimStructs{ix}.ModelVars.Pout = PowerOut"
-"put(ix);\n% Name of 'ModelVars' can be assigned for diagnostic purposes\t\n\t"
-"simStructs{ix}.Name = ['Power=' mat2str(PowerOutput(ix)) 'W'];\nend\n\n% Star"
-"t simulation, return result from callback function into 'out'\n% Analysis wil"
-"l be moved to callback function to reduce simulation results\nout = plecs('si"
-"mulate', simStructs, @(index, data) callback(index, data));\n\nfor ix = 1:len"
-"gth(PowerOutput)\n\tprintf(' Simulation for Power=%dW: started\\n',PowerOutpu"
-"t(ix));\n\t% Detect if errors occurred in parallel simulation \n   if ischar("
-"out{ix})\n   \tprintf(' Error for P=%dW: %s\\n',PowerOutput(ix), out{ix});\n "
-"  else\n \t\tprintf(' Simulation for Power=%dW: terminated\\n',PowerOutput(ix"
-"));\n\tend\nend"
+"(index), data);\n\tend\nend\n\n% Set value to be swept\nPowerOutput = [3350:5"
+"0:5000]; % start step stop\n% Initialize simStruct as cell array with all val"
+"ues\nfor ix = 1:length(PowerOutput)\n\tsimStructs{ix}.ModelVars.Pout = PowerO"
+"utput(ix);\n% Name of 'ModelVars' can be assigned for diagnostic purposes\t\n"
+"\tsimStructs{ix}.Name = ['Power=' mat2str(PowerOutput(ix)) 'W'];\nend\n\n% St"
+"art simulation, return result from callback function into 'out'\n% Analysis w"
+"ill be moved to callback function to reduce simulation results\nout = plecs('"
+"simulate', simStructs, @(index, data) callback(index, data));\n\nfor ix = 1:l"
+"ength(PowerOutput)\n\tprintf(' Simulation for Power=%dW: started\\n',PowerOut"
+"put(ix));\n\t% Detect if errors occurred in parallel simulation \n   if ischa"
+"r(out{ix})\n   \tprintf(' Error for P=%dW: %s\\n',PowerOutput(ix), out{ix});"
+"\n   else\n \t\tprintf(' Simulation for Power=%dW: terminated\\n',PowerOutput"
+"(ix));\n\tend\nend"
   }
   Script {
     Name          "PLL_sweep"
