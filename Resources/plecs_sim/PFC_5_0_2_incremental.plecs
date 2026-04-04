@@ -28,19 +28,19 @@ Plecs {
   AlgebraicLoopWithStateMachineMsg "2"
   AssertionAction "3"
   FixedPointDatatypeOverride "1"
-  InitializationCommands base64 "JVBvdXQ9NTAwOyVDT01NRU5UIFRISVMgRk9SIEJBVENII"
-"FNJTVVMQVRJT05TCgpWb3V0PTQwMDsKVmluID0gMjMwKnNxcnQoMik7ICUgR3JpZCB2b2x0YWdlIC"
-"hWKQpGID0gNTAuMDsgJSBHcmlkIGZyZXF1ZW5jeSAoSHopCgpkZWFkdGltZT0xNWUtOTsKJVNsb3d"
-"fbGVnX2RlYWR0aW1lPTQwMGUtOTsKCiV0aGVybWFsClJ0aF9jaCA9IDAuMTsJCSUgQ2FzZS10by1o"
-"ZWF0c2luayB0aGVybWFsIHJlc2lzdGFuY2UgKFRJTSkgKEsvVykgWzA6MjBdClJ0aF9oYSA9IDAuN"
-"TsJCSUgSGVhdHNpbmstdG8tYW1iaWVudCB0aGVybWFsIHJlc2lzdGFuY2UgKEsvVykgWzA6MjBdCl"
-"J0aF9wY2IgPSAwLjU7CQklIEhlYXRzaW5rLXRvLWFtYmllbnQgdGhlcm1hbCByZXNpc3RhbmNlICh"
-"LL1cpIFswOjIwXQoldGFvX2hhID0gMTsJCSUgSGVhdHNpbmsgdGltZSBjb25zdGFudCAocykgWzA6"
-"MTAwXQolQ3RoID0gdGFvX2hhL1J0aF9oYTsgJSBIZWF0c2luayB0aGVybWFsIGNhcGFjaXRhbmNlI"
-"ChKL0spClRhbWIgPSAyNTsKJWVuZCB0aGVybWFsCgoKZnMgPSAxNDBlMzsgJSBTd2l0Y2hpbmcgZn"
-"JlcXVlbmN5IChIeikKClBMTF9lcnJvcj0wOyVhbW91bnQgb2YgUExMIGVycm9yICjCsCkKUExMX2p"
-"pdHRlcl9mcmVxPTE7JSBmcmVxdWVuY3kgb2YgdGhpcyBqaXR0ZXIgKEh6KQpQTExfaml0dGVyX2Ft"
-"cGxpdHVkZT0oUExMX2Vycm9yKjAuMDIpLzM2MDs="
+  InitializationCommands base64 "UG91dD01MDslQ09NTUVOVCBUSElTIEZPUiBCQVRDSCBTS"
+"U1VTEFUSU9OUwoKVm91dD00MDA7ClZpbiA9IDIzMCpzcXJ0KDIpOyAlIEdyaWQgdm9sdGFnZSAoVi"
+"kKRiA9IDUwLjA7ICUgR3JpZCBmcmVxdWVuY3kgKEh6KQoKZGVhZHRpbWU9MTVlLTk7CiVTbG93X2x"
+"lZ19kZWFkdGltZT00MDBlLTk7CgoldGhlcm1hbApSdGhfY2ggPSAwLjE7CQklIENhc2UtdG8taGVh"
+"dHNpbmsgdGhlcm1hbCByZXNpc3RhbmNlIChUSU0pIChLL1cpIFswOjIwXQpSdGhfaGEgPSAwLjU7C"
+"QklIEhlYXRzaW5rLXRvLWFtYmllbnQgdGhlcm1hbCByZXNpc3RhbmNlIChLL1cpIFswOjIwXQpSdG"
+"hfcGNiID0gMC41OwkJJSBIZWF0c2luay10by1hbWJpZW50IHRoZXJtYWwgcmVzaXN0YW5jZSAoSy9"
+"XKSBbMDoyMF0KJXRhb19oYSA9IDE7CQklIEhlYXRzaW5rIHRpbWUgY29uc3RhbnQgKHMpIFswOjEw"
+"MF0KJUN0aCA9IHRhb19oYS9SdGhfaGE7ICUgSGVhdHNpbmsgdGhlcm1hbCBjYXBhY2l0YW5jZSAoS"
+"i9LKQpUYW1iID0gMjU7CiVlbmQgdGhlcm1hbAoKCmZzID0gMTQwZTM7ICUgU3dpdGNoaW5nIGZyZX"
+"F1ZW5jeSAoSHopCgpQTExfZXJyb3I9MDslYW1vdW50IG9mIFBMTCBlcnJvciAowrApClBMTF9qaXR"
+"0ZXJfZnJlcT0xOyUgZnJlcXVlbmN5IG9mIHRoaXMgaml0dGVyIChIeikKUExMX2ppdHRlcl9hbXBs"
+"aXR1ZGU9KFBMTF9lcnJvciowLjAyKS8zNjA7"
   InitialState  "1"
   SystemState   ""
   JacobianComputation "2"
@@ -78,7 +78,7 @@ Plecs {
   InvalidNetlistFunctionEvaluationMsg "1"
   IncompatibleInitialConditionMsg "2"
   Schematic {
-    Location      [0, 0; 1280, 679]
+    Location      [1920, 0; 3200, 679]
     ZoomFactor    0.562922
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -15498,7 +15498,7 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [0, 0; 1280, 679]
+        Location      [1920, 0; 3200, 679]
         ZoomFactor    1.21126
         SliderPosition [0, 0]
         ShowBrowser   off
@@ -18703,16 +18703,16 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -15; 15, 15]
-          Location      [0, 0; 1042, 836]
-          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAAB5fwCAAAAA/sAAAAQAFoAb"
+          Location      [1920, 0; 2962, 847]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAABwPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAC4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
-"AA/////wAAAGAA////+wAAAAwAVAByAGEAYwBlAHMBAAAAMgAAAeUAAABgAP///wAAAAMAAAQSAAA"
-"BOvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABBIAAABEAP///wAAA1gAAAHl"
+"AA/////wAAAGAA////+wAAAAwAVAByAGEAYwBlAHMBAAAAMgAAAcAAAABgAP///wAAAAMAAAQSAAA"
+"BavwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABBIAAABEAP///wAAA1gAAAHA"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "{\"DefaultSecSize\":100,\"FirstSecSize\":186,\"Labels"
-"\":[],\"VisualIdxs\":[]}"
+          HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":186,\"Labels\""
+":[],\"VisualIdxs\":[]}"
           PlotPalettes  "AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           Axes          "1"
           TimeRange     "0"
@@ -18731,7 +18731,7 @@ Plecs {
             Signals       {"Input_power", "Output_power", "Losses", "Efficency", ""
 "Caps_losses", "FL1_losses", "HF1_losses", "FL2_losses", "HF2_losses", "Bulkca"
 "p_losses", "GaN_total_losses", "GaN_switching_losses", "GaN_ohmic_losses", "L"
-"_losses", "iTHD"}
+"_losses", "iTHD", "Si_conduction", "Si_switching", "Si_total"}
             SignalTypes   [ ]
             Untangle      0
             KeepBaseline  off
