@@ -1,0 +1,1272 @@
+Plecs {
+  Name          "CM_plecs"
+  Version       "5.0"
+  CircuitModel  "ContStateSpace"
+  StartTime     "0.0"
+  TimeSpan      "1.0"
+  Timeout       ""
+  Solver        "auto"
+  MaxStep       "1e-3"
+  InitStep      "-1"
+  FixedStep     "1e-3"
+  Refine        "1"
+  ZCStepSize    "1e-9"
+  RelTol        "1e-3"
+  AbsTol        "-1"
+  TurnOnThreshold "0"
+  NonIdealSwitchResistance "1"
+  SyncFixedStepTasks "2"
+  UseSingleCommonBaseRate "2"
+  LossVariableLimitExceededMsg "3"
+  NegativeSwitchLossMsg "3"
+  DivisionByZeroMsg "3"
+  DatatypeOverflowMsg "3"
+  DatatypeInheritanceConflictMsg "2"
+  ContSampleTimeConflictMsg "2"
+  StiffnessDetectionMsg "2"
+  MaxConsecutiveZCs "1000"
+  AlgebraicLoopWithStateMachineMsg "3"
+  AssertionAction "1"
+  FixedPointDatatypeOverride "1"
+  InitializationCommands ""
+  InitialState  "1"
+  SystemState   ""
+  JacobianComputation "2"
+  TaskingMode   "1"
+  TaskConfigurations ""
+  CodeGenParameterInlining "2"
+  CodeGenFloatingPointFormat "2"
+  CodeGenAbsTimeUsageMsg "3"
+  CodeGenBaseName ""
+  CodeGenOutputDir ""
+  CodeGenExtraOpts ""
+  CodeGenTarget "Generic"
+  CodeGenTargetSettings ""
+  ExtendedMatrixPrecision "1"
+  MatrixSignificanceCheck "2"
+  RemoveUnusedStateSpaceOutputs "2"
+  EnableStateSpaceSplitting "2"
+  DisplayStateSpaceSplitting "1"
+  DiscretizationMethod "2"
+  ExternalModeSettings ""
+  AlgebraicLoopMethod "1"
+  AlgebraicLoopTolerance "1e-6"
+  ScriptsDialogGeometry "[726 378 500 244]"
+  ScriptsDialogSplitterPos "100"
+  MixedSignalSolverBypassOperatingPoint "1"
+  MixedSignalSolverInitialConditions "2"
+  MixedSignalSolverMaxNewtonIterations "25"
+  MixedSignalSolverNumThreads "-1"
+  OperatingPointMaxNewtonIterations "50"
+  OperatingPointRelativeNewtonTolerance "1e-3"
+  OperatingPointAbsoluteNewtonTolerance "1e-12"
+  OperatingPointNodalVoltageNewtonTolerance "1e-6"
+  SpiceTemperature "27"
+  NetlistParserDetails "2"
+  InvalidNetlistFunctionEvaluationMsg "1"
+  IncompatibleInitialConditionMsg "2"
+  Schematic {
+    Location      [0, 0; 1920, 1001]
+    ZoomFactor    1.96257
+    SliderPosition [0, 0]
+    ShowBrowser   off
+    BrowserWidth  100
+    Component {
+      Type          Subsystem
+      Name          "CM_choke"
+      Show          on
+      Position      [480, 220]
+      Direction     up
+      Flipped       off
+      LabelPosition none
+      Frame         [-35, -25; 35, 25]
+      SampleTime    "-1"
+      CodeGenDiscretizationMethod "2"
+      CodeGenTarget "Generic"
+      MaskDisplayLang "2"
+      MaskIconFrame on
+      MaskIconOpaque off
+      MaskIconRotates on
+      Parameter {
+        Variable      "Rdc"
+        Prompt        "Rdc"
+        Type          FreeText
+        Value         "0.00100000004749745"
+        Show          off
+        Tunable       on
+        TabName       ""
+      }
+      Parameter {
+        Variable      "DR4"
+        Prompt        "DR4"
+        Type          FreeText
+        Value         "314498368"
+        Show          off
+        Tunable       on
+        TabName       ""
+      }
+      Parameter {
+        Variable      "DR6"
+        Prompt        "DR6"
+        Type          FreeText
+        Value         "4292.69921875"
+        Show          off
+        Tunable       on
+        TabName       ""
+      }
+      Parameter {
+        Variable      "RS5"
+        Prompt        "RS5"
+        Type          FreeText
+        Value         "1.53144800662994"
+        Show          off
+        Tunable       on
+        TabName       ""
+      }
+      Parameter {
+        Variable      "RS4"
+        Prompt        "RS4"
+        Type          FreeText
+        Value         "10990.73046875"
+        Show          off
+        Tunable       on
+        TabName       ""
+      }
+      Parameter {
+        Variable      "RS3"
+        Prompt        "RS3"
+        Type          FreeText
+        Value         "739.272888183594"
+        Show          off
+        Tunable       on
+        TabName       ""
+      }
+      Parameter {
+        Variable      "RS2"
+        Prompt        "RS2"
+        Type          FreeText
+        Value         "2328.259765625"
+        Show          off
+        Tunable       on
+        TabName       ""
+      }
+      Parameter {
+        Variable      "RS1"
+        Prompt        "RS1"
+        Type          FreeText
+        Value         "506.157012939453"
+        Show          off
+        Tunable       on
+        TabName       ""
+      }
+      Parameter {
+        Variable      "L1"
+        Prompt        "L1"
+        Type          FreeText
+        Value         "0.00263017346151173"
+        Show          off
+        Tunable       on
+        TabName       ""
+      }
+      Parameter {
+        Variable      "L2"
+        Prompt        "L2"
+        Type          FreeText
+        Value         "0.000105558763607405"
+        Show          off
+        Tunable       on
+        TabName       ""
+      }
+      Parameter {
+        Variable      "L3"
+        Prompt        "L3"
+        Type          FreeText
+        Value         "0.00042800308438018"
+        Show          off
+        Tunable       on
+        TabName       ""
+      }
+      Parameter {
+        Variable      "L4"
+        Prompt        "L4"
+        Type          FreeText
+        Value         "8.12618600321002e-6"
+        Show          off
+        Tunable       on
+        TabName       ""
+      }
+      Parameter {
+        Variable      "L5"
+        Prompt        "L5"
+        Type          FreeText
+        Value         "1.50932783071767e-6"
+        Show          off
+        Tunable       on
+        TabName       ""
+      }
+      Parameter {
+        Variable      "DL4"
+        Prompt        "DL4"
+        Type          FreeText
+        Value         "1.43946996544742e-8"
+        Show          off
+        Tunable       on
+        TabName       ""
+      }
+      Parameter {
+        Variable      "DL3"
+        Prompt        "DL3"
+        Type          FreeText
+        Value         "1.11804851599118e-7"
+        Show          off
+        Tunable       on
+        TabName       ""
+      }
+      Terminal {
+        Type          Port
+        Position      [-40, -20]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [-40, 20]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [40, -20]
+        Direction     right
+      }
+      Terminal {
+        Type          Port
+        Position      [40, 20]
+        Direction     right
+      }
+      Schematic {
+        Location      [0, 0; 1280, 679]
+        ZoomFactor    2.21838
+        SliderPosition [17, 0]
+        ShowBrowser   off
+        BrowserWidth  100
+        Component {
+          Type          MutInductor
+          Name          "L_1_2"
+          Show          on
+          Position      [775, 190]
+          Direction     left
+          Flipped       off
+          LabelPosition north
+          Parameter {
+            Variable      "Windings"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "L"
+            Value         "[L1 1; 1 L1]"
+            Show          off
+          }
+          Parameter {
+            Variable      "i_init"
+            Value         "0"
+            Show          off
+          }
+        }
+        Component {
+          Type          Resistor
+          Name          "R1"
+          Show          on
+          Position      [110, 105]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "R"
+            Value         "Rdc"
+            Show          on
+          }
+        }
+        Component {
+          Type          Resistor
+          Name          "R6"
+          Show          on
+          Position      [110, 245]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "R"
+            Value         "Rdc"
+            Show          on
+          }
+        }
+        Component {
+          Type          Resistor
+          Name          "R2"
+          Show          on
+          Position      [190, 105]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "R"
+            Value         "DR4"
+            Show          on
+          }
+        }
+        Component {
+          Type          Resistor
+          Name          "R5"
+          Show          on
+          Position      [190, 245]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "R"
+            Value         "DR4"
+            Show          on
+          }
+        }
+        Component {
+          Type          Resistor
+          Name          "R8"
+          Show          on
+          Position      [320, 105]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "R"
+            Value         "DR6"
+            Show          on
+          }
+        }
+        Component {
+          Type          Resistor
+          Name          "R11"
+          Show          on
+          Position      [320, 245]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "R"
+            Value         "DR6"
+            Show          on
+          }
+        }
+        Component {
+          Type          Resistor
+          Name          "R12"
+          Show          on
+          Position      [425, 105]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "R"
+            Value         "RS5"
+            Show          on
+          }
+        }
+        Component {
+          Type          Resistor
+          Name          "R7"
+          Show          on
+          Position      [425, 245]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "R"
+            Value         "RS5"
+            Show          on
+          }
+        }
+        Component {
+          Type          Resistor
+          Name          "R17"
+          Show          on
+          Position      [520, 105]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "R"
+            Value         "RS4"
+            Show          on
+          }
+        }
+        Component {
+          Type          Resistor
+          Name          "R13"
+          Show          on
+          Position      [520, 245]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "R"
+            Value         "RS4"
+            Show          on
+          }
+        }
+        Component {
+          Type          Resistor
+          Name          "R18"
+          Show          on
+          Position      [615, 105]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "R"
+            Value         "RS3"
+            Show          on
+          }
+        }
+        Component {
+          Type          Resistor
+          Name          "R14"
+          Show          on
+          Position      [615, 245]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "R"
+            Value         "RS3"
+            Show          on
+          }
+        }
+        Component {
+          Type          Resistor
+          Name          "R15"
+          Show          on
+          Position      [695, 245]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "R"
+            Value         "RS2"
+            Show          on
+          }
+        }
+        Component {
+          Type          Resistor
+          Name          "R16"
+          Show          on
+          Position      [775, 245]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "R"
+            Value         "RS1"
+            Show          on
+          }
+        }
+        Component {
+          Type          Resistor
+          Name          "R19"
+          Show          on
+          Position      [695, 105]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "R"
+            Value         "RS2"
+            Show          on
+          }
+        }
+        Component {
+          Type          Resistor
+          Name          "R20"
+          Show          on
+          Position      [775, 105]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "R"
+            Value         "RS1"
+            Show          on
+          }
+        }
+        Component {
+          Type          MutInductor
+          Name          "L_3_4"
+          Show          on
+          Position      [695, 190]
+          Direction     left
+          Flipped       off
+          LabelPosition north
+          Parameter {
+            Variable      "Windings"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "L"
+            Value         "[L2 1; 1 L2]"
+            Show          off
+          }
+          Parameter {
+            Variable      "i_init"
+            Value         "0"
+            Show          off
+          }
+        }
+        Component {
+          Type          MutInductor
+          Name          "L_5_6"
+          Show          on
+          Position      [615, 190]
+          Direction     left
+          Flipped       off
+          LabelPosition north
+          Parameter {
+            Variable      "Windings"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "L"
+            Value         "[L3 1; 1 L3]"
+            Show          off
+          }
+          Parameter {
+            Variable      "i_init"
+            Value         "0"
+            Show          off
+          }
+        }
+        Component {
+          Type          MutInductor
+          Name          "L_7_8"
+          Show          on
+          Position      [520, 190]
+          Direction     left
+          Flipped       off
+          LabelPosition north
+          Parameter {
+            Variable      "Windings"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "L"
+            Value         "[L4 1; 1 L4]"
+            Show          off
+          }
+          Parameter {
+            Variable      "i_init"
+            Value         "0"
+            Show          off
+          }
+        }
+        Component {
+          Type          MutInductor
+          Name          "L_9_10"
+          Show          on
+          Position      [425, 190]
+          Direction     left
+          Flipped       off
+          LabelPosition north
+          Parameter {
+            Variable      "Windings"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "L"
+            Value         "[L5 1; 1 L5]"
+            Show          off
+          }
+          Parameter {
+            Variable      "i_init"
+            Value         "0"
+            Show          off
+          }
+        }
+        Component {
+          Type          MutInductor
+          Name          "L_13_16"
+          Show          on
+          Position      [320, 190]
+          Direction     left
+          Flipped       off
+          LabelPosition north
+          Parameter {
+            Variable      "Windings"
+            Value         "4"
+            Show          off
+          }
+          Parameter {
+            Variable      "L"
+            Value         "[DL4 1 1 1;1 DL4 1 1;1 1 DL4 1; 1 1 1 DL4]"
+            Show          off
+          }
+          Parameter {
+            Variable      "i_init"
+            Value         "0"
+            Show          off
+          }
+        }
+        Component {
+          Type          MutInductor
+          Name          "L_17_20"
+          Show          on
+          Position      [190, 190]
+          Direction     left
+          Flipped       off
+          LabelPosition north
+          Parameter {
+            Variable      "Windings"
+            Value         "4"
+            Show          off
+          }
+          Parameter {
+            Variable      "L"
+            Value         "[DL3 1 1 1;1 DL3 1 1;1 1 DL3 1; 1 1 1 DL3]"
+            Show          off
+          }
+          Parameter {
+            Variable      "i_init"
+            Value         "0"
+            Show          off
+          }
+        }
+        Component {
+          Type          Port
+          Name          "1"
+          Show          on
+          Position      [50, 105]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Index"
+            Value         "1"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Port
+          Name          "2"
+          Show          on
+          Position      [50, 245]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Index"
+            Value         "2"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Port
+          Name          "3"
+          Show          on
+          Position      [855, 105]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Index"
+            Value         "3"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Port
+          Name          "4"
+          Show          on
+          Position      [855, 245]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Index"
+            Value         "4"
+            Show          on
+          }
+          Parameter {
+            Variable      "Width"
+            Value         "-1"
+            Show          off
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "L_1_2"
+          SrcTerminal   3
+          Points        [755, 245]
+          Branch {
+            DstComponent  "R16"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [715, 245]
+            Branch {
+              DstComponent  "R15"
+              DstTerminal   1
+            }
+            Branch {
+              DstComponent  "L_3_4"
+              DstTerminal   4
+            }
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "L_1_2"
+          SrcTerminal   1
+          Points        [755, 105]
+          Branch {
+            DstComponent  "R20"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [715, 105]
+            Branch {
+              DstComponent  "R19"
+              DstTerminal   1
+            }
+            Branch {
+              DstComponent  "L_3_4"
+              DstTerminal   2
+            }
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "L_3_4"
+          SrcTerminal   1
+          Points        [675, 105]
+          Branch {
+            DstComponent  "R19"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [635, 105]
+            Branch {
+              DstComponent  "R18"
+              DstTerminal   1
+            }
+            Branch {
+              DstComponent  "L_5_6"
+              DstTerminal   2
+            }
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "L_3_4"
+          SrcTerminal   3
+          Points        [675, 245]
+          Branch {
+            DstComponent  "R15"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [635, 245]
+            Branch {
+              DstComponent  "R14"
+              DstTerminal   1
+            }
+            Branch {
+              DstComponent  "L_5_6"
+              DstTerminal   4
+            }
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "R14"
+          SrcTerminal   2
+          Points        [595, 245]
+          Branch {
+            Points        [540, 245]
+            Branch {
+              DstComponent  "R13"
+              DstTerminal   1
+            }
+            Branch {
+              DstComponent  "L_7_8"
+              DstTerminal   4
+            }
+          }
+          Branch {
+            DstComponent  "L_5_6"
+            DstTerminal   3
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "L_5_6"
+          SrcTerminal   1
+          Points        [595, 105]
+          Branch {
+            DstComponent  "R18"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [540, 105]
+            Branch {
+              DstComponent  "R17"
+              DstTerminal   1
+            }
+            Branch {
+              DstComponent  "L_7_8"
+              DstTerminal   2
+            }
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "R7"
+          SrcTerminal   1
+          Points        [445, 245]
+          Branch {
+            Points        [500, 245]
+            Branch {
+              DstComponent  "R13"
+              DstTerminal   2
+            }
+            Branch {
+              DstComponent  "L_7_8"
+              DstTerminal   3
+            }
+          }
+          Branch {
+            DstComponent  "L_9_10"
+            DstTerminal   4
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "R17"
+          SrcTerminal   2
+          Points        [500, 105]
+          Branch {
+            Points        [445, 105]
+            Branch {
+              DstComponent  "R12"
+              DstTerminal   1
+            }
+            Branch {
+              DstComponent  "L_9_10"
+              DstTerminal   2
+            }
+          }
+          Branch {
+            DstComponent  "L_7_8"
+            DstTerminal   1
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "L_13_16"
+          SrcTerminal   3
+          Points        [300, 170; 340, 170]
+          DstComponent  "L_13_16"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "L_13_16"
+          SrcTerminal   6
+          Points        [340, 210; 300, 210]
+          DstComponent  "L_13_16"
+          DstTerminal   7
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "L_13_16"
+          SrcTerminal   4
+          Points        [355, 180; 355, 105]
+          Branch {
+            Points        [405, 105]
+            Branch {
+              DstComponent  "R12"
+              DstTerminal   2
+            }
+            Branch {
+              DstComponent  "L_9_10"
+              DstTerminal   1
+            }
+          }
+          Branch {
+            DstComponent  "R8"
+            DstTerminal   1
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "L_13_16"
+          SrcTerminal   1
+          Points        [295, 160; 295, 105]
+          Branch {
+            DstComponent  "R8"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [225, 105]
+            Branch {
+              DstComponent  "R2"
+              DstTerminal   1
+            }
+            Branch {
+              Points        [225, 180]
+              DstComponent  "L_17_20"
+              DstTerminal   4
+            }
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "L_13_16"
+          SrcTerminal   8
+          Points        [345, 220; 345, 245]
+          Branch {
+            DstComponent  "R11"
+            DstTerminal   1
+          }
+          Branch {
+            Points        [405, 245]
+            Branch {
+              DstComponent  "R7"
+              DstTerminal   2
+            }
+            Branch {
+              DstComponent  "L_9_10"
+              DstTerminal   3
+            }
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "R11"
+          SrcTerminal   2
+          Points        [290, 245]
+          Branch {
+            Points        [290, 200]
+            DstComponent  "L_13_16"
+            DstTerminal   5
+          }
+          Branch {
+            Points        [215, 245]
+            Branch {
+              DstComponent  "R5"
+              DstTerminal   1
+            }
+            Branch {
+              Points        [215, 220]
+              DstComponent  "L_17_20"
+              DstTerminal   8
+            }
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "L_17_20"
+          SrcTerminal   3
+          Points        [170, 170; 210, 170]
+          DstComponent  "L_17_20"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "L_17_20"
+          SrcTerminal   6
+          Points        [210, 210; 170, 210]
+          DstComponent  "L_17_20"
+          DstTerminal   7
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "R5"
+          SrcTerminal   2
+          Points        [160, 245]
+          Branch {
+            Points        [160, 200]
+            DstComponent  "L_17_20"
+            DstTerminal   5
+          }
+          Branch {
+            DstComponent  "R6"
+            DstTerminal   1
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "L_17_20"
+          SrcTerminal   1
+          Points        [165, 160; 165, 105]
+          Branch {
+            DstComponent  "R2"
+            DstTerminal   2
+          }
+          Branch {
+            DstComponent  "R1"
+            DstTerminal   1
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "2"
+          SrcTerminal   1
+          DstComponent  "R6"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "1"
+          SrcTerminal   1
+          DstComponent  "R1"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "L_1_2"
+          SrcTerminal   2
+          Points        [795, 105]
+          Branch {
+            DstComponent  "R20"
+            DstTerminal   1
+          }
+          Branch {
+            DstComponent  "3"
+            DstTerminal   1
+          }
+        }
+        Connection {
+          Type          Wire
+          SrcComponent  "L_1_2"
+          SrcTerminal   4
+          Points        [795, 245]
+          Branch {
+            DstComponent  "R16"
+            DstTerminal   1
+          }
+          Branch {
+            DstComponent  "4"
+            DstTerminal   1
+          }
+        }
+      }
+    }
+    Component {
+      Type          VoltageSource
+      Name          "V"
+      Show          off
+      Position      [240, 220]
+      Direction     down
+      Flipped       on
+      LabelPosition east
+      Parameter {
+        Variable      "DiscretizationBehavior"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "StateSpaceInlining"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          SmallSignalPerturbation
+      Name          "Perturbation"
+      Show          off
+      Position      [200, 220]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "ShowInput"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Ammeter
+      Name          "Am1"
+      Show          off
+      Position      [340, 200]
+      Direction     left
+      Flipped       off
+      LabelPosition south
+    }
+    Component {
+      Type          Ground
+      Name          "Ground"
+      Show          off
+      Position      [340, 310]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          Ground
+      Name          "Ground1"
+      Show          off
+      Position      [575, 320]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Component {
+      Type          SmallSignalResponse
+      Name          "Response"
+      Show          off
+      Position      [380, 130]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "ShowReference"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "InvertReference"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Resistor
+      Name          "R1"
+      Show          off
+      Position      [285, 260]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "R"
+        Value         "1e6"
+        Show          on
+      }
+    }
+    Component {
+      Type          Ground
+      Name          "Ground2"
+      Show          off
+      Position      [285, 310]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Perturbation"
+      SrcTerminal   1
+      DstComponent  "V"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "CM_choke"
+      SrcTerminal   4
+      Points        [575, 240]
+      Branch {
+        DstComponent  "Ground1"
+        DstTerminal   1
+      }
+      Branch {
+        Points        [575, 200]
+        DstComponent  "CM_choke"
+        DstTerminal   3
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "V"
+      SrcTerminal   1
+      DstComponent  "Am1"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Am1"
+      SrcTerminal   3
+      Points        [340, 130]
+      DstComponent  "Response"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "R1"
+      SrcTerminal   2
+      DstComponent  "Ground2"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Am1"
+      SrcTerminal   2
+      DstComponent  "CM_choke"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "V"
+      SrcTerminal   2
+      Points        [285, 240]
+      Branch {
+        DstComponent  "R1"
+        DstTerminal   1
+      }
+      Branch {
+        DstComponent  "CM_choke"
+        DstTerminal   2
+      }
+    }
+  }
+  Analysis {
+    Type          ACSweep
+    Name          "AC Sweep"
+    ShowLegend    "1"
+    OperatingPoint "2"
+    TimeSpan      "0"
+    StartTime     "0"
+    Tolerance     "1e-6"
+    MaxIter       "20"
+    FrequencyRange "[1e3 1e9]"
+    FrequencyScale "2"
+    AdditionalFreqs "[420e3 140e3]"
+    AmplitudeRange "1"
+    NumPoints     "60"
+    Perturbation  "Perturbation"
+    Response      "Response"
+    JacobianPerturbation "1e-4"
+    JacobianCalculation "1"
+    InitCycles    "0"
+    MaxNumberOfThreads "-1"
+  }
+  Script {
+    Name          "Script"
+    Script        ""
+  }
+}
