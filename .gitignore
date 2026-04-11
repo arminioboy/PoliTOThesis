@@ -1,6 +1,9 @@
 #SPICE files
 *.raw
 
+PLECS files
+*.trace
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
