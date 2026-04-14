@@ -113,14 +113,10 @@
 *       1.97: 10/27/2023 Included EPC7002 Model	
 *       1.98: 12/06/2023 Edited EPC7002 Model
 *       1.99: 03/07/2024 Included EPC2361 Model	
-*       1.100: 06/07/2024 Included EPC2057 Model
-*       1.101: 08/04/2024 Updated EPC2304 from preliminary version,
-                          Updated EPC2307 from preliminary version 
-*	1.102: 09/24/2024 Updated EPC2308 from preliminary version
-*       1.103: 06/16/2025 Included EPC2366 and EPC2367 Models
-*       1.104: 07/22/2025 Included EPC2090, EPC2091 EPC2092 Models
-
-			  
+*       1.100: 06/07/2024 Included EPC2057 Model 
+*	1.101: 09/24/2024 Updated EPC2308 from preliminary version
+*       1.102: 06/16/2025 Included EPC2366 and EPC2367 Models
+*       1.103: 07/22/2025 Included EPC2090, EPC2091 EPC2092 Models			  
 ************************************************************************
 .subckt EPC2001 gatein drainin sourcein
 .param aWg=1077 A1=41.7998 k2=2.259866e+000 k3=1.2e-001 rpara=4.463059e-003  
@@ -6125,19 +6121,19 @@ C_CSD1	source drain Q=(asd2*asd4*log(1+exp((v(source,drain)-asd3)/asd4))+
 ************************************************************************
 .subckt EPC2304 gatein drainin sourcein
 .param  si={aWg} so={aWg} sr={aWg}
-.param  aWg={Wg*1E-3} Wg=1730000 A1={1.861e-02*aWg} k2=2.201e+00 k3=9.000e-02 rpara=2.424e-03
-+      rpara_s_factor=2.429e-01 aITc=4.000e-03 arTc=-5.724e-03 k2Tc=6.894e-04
-+      x0_0=2.814e+00 x0_0_TC=-2.579e-03 x0_1=-1.000e-01 x0_1_TC=-1.000e-02
-+      dgs1=4.3e-07 dgs2=2.6e-13 dgs3=0.8 dgs4=0.23
-+      ags1={1.403e-12*si} ags2={9.963e-13*si} ags3=1.736e+00 ags4=1.512e-01
-+      ags5={0.000e+00*si} ags6=7.480e+01 ags7=1.055e+01
-+      agd1={2.822e-15*sr} agd2={1.120e-13*sr} agd3=-6.203e+00 agd4=3.283e+00
-+      agd5={8.212e-16*sr} agd6=-7.506e+01 agd7=2.488e+00 agd8={0.000e+00*sr}
-+      agd9=-3.326e+01 agd10=8.900e-01
-+      asd1={3.250e-13*so} asd2={6.919e-13*so} asd3=-9.850e+00 asd4=6.863e-01
-+      asd5={1.218e-12*so} asd6=2.236e+01 asd7=3.516e+01 asd8={1.112e-13*so}
-+      asd9=-8.875e+01 asd10=1.261e+01
-+      rg_value=0.4
+.param  aWg={Wg*1E-3} Wg=1730000 A1={1.921e-02*aWg} k2=1.758e+00 k3=9.000e-02 rpara=2.249e-03
++   rpara_s_factor=2.429e-01 aITc=4.683e-03 arTc=-7.360e-03 k2Tc=7.628e-04
++   x0_0=2.687e+00 x0_0_TC=7.404e-04 x0_1=-1.000e-01 x0_1_TC=1.753e-15
++   dgs1=4.3e-07 dgs2=2.6e-13 dgs3=0.8 dgs4=0.23
++   ags1={1.831e-12*si} ags2={9.072e-13*si} ags3=1.359e+00 ags4=1.584e-01
++   ags5={0.000e+00*si} ags6=7.480e+01 ags7=1.055e+01
++   agd1={1.401e-15*sr} agd2={9.833e-14*sr} agd3=-7.500e+00 agd4=2.636e+00
++   agd5={9.444e-15*sr} agd6=-4.667e+01 agd7=1.104e+01 agd8={0.000e+00*sr}
++   agd9=-3.326e+01 agd10=8.900e-01
++   asd1={3.438e-13*so} asd2={7.491e-13*so} asd3=-1.135e+01 asd4=8.893e-01
++   asd5={5.128e-13*so} asd6=-2.014e+01 asd7=2.862e+01 asd8={1.076e-13*so}
++   asd9=-4.500e+01 asd10=8.402e+00
++   rg_value=0.4
 
 rd drainin drain {((1-rpara_s_factor)*rpara*(1-arTc*(Temp-25)))}
 rs sourcein source {(rpara_s_factor*rpara*(1-arTc*(Temp-25)))}
@@ -6181,18 +6177,18 @@ C_CSD1	source drain Q=(asd2*asd4*log(1+exp((v(source,drain)-asd3)/asd4))+
 ************************************************************************
 .subckt EPC2307 gatein drainin sourcein
 .param  si={aWg} so={aWg} sr={aWg}
-.param  aWg={Wg*1E-3} Wg=870000 A1={3.008e-02*aWg} k2=2.589e+00 k3=9.000e-02 rpara=5.655e-03
-+      rpara_s_factor=2.180e-01 aITc=4.000e-03 arTc=-5.495e-03 k2Tc=3.045e-04
-+      x0_0=4.517e+00 x0_0_TC=-2.432e-03 x0_1=-1.000e-01 x0_1_TC=-1.000e-02
-+      dgs1=4.3e-07 dgs2=2.6e-13 dgs3=0.8 dgs4=0.23
-+      ags1={1.330e-12*si} ags2={9.620e-13*si} ags3=2.047e+00 ags4=1.665e-01
-+      ags5={0.000e+00*si} ags6=7.480e+01 ags7=1.055e+01
-+      agd1={2.420e-15*sr} agd2={1.030e-13*sr} agd3=-6.250e+00 agd4=3.236e+00
-+      agd5={1.500e-14*sr} agd6=-2.000e+01 agd7=2.293e+01 agd8={0.000e+00*sr}
-+      agd9=-3.326e+01 agd10=8.900e-01
-+      asd1={3.250e-13*so} asd2={6.055e-13*so} asd3=-1.285e+01 asd4=6.005e-01
-+      asd5={1.525e-12*so} asd6=2.236e+01 asd7=3.077e+01 asd8={8.325e-14*so}
-+      asd9=-8.875e+01 asd10=1.261e+01
+.param  aWg={Wg*1E-3} Wg=870000 A1={3.244e-02*aWg} k2=2.290e+00 k3=9.000e-02 rpara=6.807e-03
++   rpara_s_factor=3.168e-01 aITc=5.543e-03 arTc=-3.493e-03 k2Tc=6.809e-04
++   x0_0=4.384e+00 x0_0_TC=1.414e-03 x0_1=-1.000e-01 x0_1_TC=1.740e-14
++   dgs1=4.3e-07 dgs2=2.6e-13 dgs3=0.8 dgs4=0.23
++   ags1={1.381e-12*si} ags2={9.963e-13*si} ags3=1.827e+00 ags4=1.724e-01
++   ags5={0.000e+00*si} ags6=7.480e+01 ags7=1.055e+01
++   agd1={1.940e-15*sr} agd2={1.180e-13*sr} agd3=-5.000e+00 agd4=4.314e+00
++   agd5={1.000e-14*sr} agd6=-4.000e+01 agd7=1.529e+01 agd8={0.000e+00*sr}
++   agd9=-3.326e+01 agd10=8.900e-01
++   asd1={2.750e-13*so} asd2={5.725e-13*so} asd3=-1.435e+01 asd4=1.430e+00
++   asd5={5.276e-13*so} asd6=-2.514e+01 asd7=4.207e+01 asd8={1.275e-13*so}
++   asd9=-5.500e+01 asd10=4.780e+00
 +   rg_value=0.4
 
 rd drainin drain {((1-rpara_s_factor)*rpara*(1-arTc*(Temp-25)))}
@@ -6405,19 +6401,19 @@ C_CSD1	source drain Q=(asd2*asd4*log(1+exp((v(source,drain)-asd3)/asd4))+
 ************************************************************************
 .subckt EPC2361 gatein drainin sourcein
 .param  si={aWg} so={aWg} sr={aWg}
-.param  aWg={Wg*1E-3} Wg=3460000 A1={1.934e-02*aWg} k2=1.948e+00 k3=9.000e-02 rpara=2.915e-04
-+      rpara_s_factor=2.759e-01 aITc=1.000e-12 arTc=-1.652e-02 k2Tc=6.750e-04
-+      x0_0=2.554e+00 x0_0_TC=-1.000e-02 x0_1=1.000e-03 x0_1_TC=-5.000e-01
+.param  aWg={Wg*1E-3} Wg=3460000 A1={1.491e-02*aWg} k2=1.878e+00 k3=9.000e-02 rpara=3.670e-04
++      rpara_s_factor=2.759e-01 aITc=3.211e-03 arTc=-8.633e-03 k2Tc=9.140e-04
++      x0_0=2.077e+00 x0_0_TC=-7.848e-03 x0_1=1.000e-03 x0_1_TC=-1.000e-01
 +      dgs1=4.3e-07 dgs2=2.6e-13 dgs3=0.8 dgs4=0.23
-+      ags1={9.690e-13*si} ags2={4.010e-13*si} ags3=1.610e+00 ags4=1.584e-01
++      ags1={1.078e-12*si} ags2={3.697e-13*si} ags3=1.610e+00 ags4=1.838e-01
 +      ags5={0.000e+00*si} ags6=7.480e+01 ags7=1.055e+01
-+      agd1={3.470e-15*sr} agd2={1.630e-13*sr} agd3=-5.538e-01 agd4=8.241e+00
-+      agd5={1.320e-15*sr} agd6=-7.244e+01 agd7=6.032e-01 agd8={0.000e+00*sr}
++      agd1={3.082e-15*sr} agd2={1.305e-13*sr} agd3=-1.108e+00 agd4=3.663e+00
++      agd5={1.053e-14*sr} agd6=-1.610e+01 agd7=9.651e+00 agd8={0.000e+00*sr}
 +      agd9=-2.026e+01 agd10=8.900e-01
-+      asd1={2.650e-13*so} asd2={2.305e-13*so} asd3=-5.000e+00 asd4=1.646e+01
-+      asd5={4.925e-14*so} asd6=-4.250e+01 asd7=2.366e+00 asd8={4.050e-13*so}
-+      asd9=-1.500e+01
-+      rg_value=0.4
++      asd1={2.650e-13*so} asd2={4.721e-13*so} asd3=-8.000e+00 asd4=8.429e+00
++      asd5={9.847e-14*so} asd6=-5.750e+01 asd7=1.211e+01 asd8={1.795e-13*so}
++      asd9=-1.000e+01 asd10=1.357e+00
++      rg_value=0.5
 
 rd drainin drain {((1-rpara_s_factor)*rpara*(1-arTc*(Temp-25)))}
 rs sourcein source {(rpara_s_factor*rpara*(1-arTc*(Temp-25)))}
