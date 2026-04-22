@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ThermalLibraryPackage xmlns="http://www.plexim.com/xml/thermallibrary/" version="1.0">
+ <Name>EPC2304</Name>
+ <Version check="https://www.plexim.com/version">1.0.0</Version>
+ <BlockLibrary file="EPC2304">EPC GaN FET</BlockLibrary>
+ <ThermalDescriptions directory="thermals" />
+</ThermalLibraryPackage>
