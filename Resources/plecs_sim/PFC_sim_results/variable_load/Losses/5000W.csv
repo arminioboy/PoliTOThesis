@@ -1,0 +1,2 @@
+"Time / s","Input_power","Output_power","Losses","Efficency","Caps_losses","FL1_losses","HF1_losses","FL2_losses","HF2_losses","Bulkcap_losses","GaN_total_losses","GaN_switching_losses","GaN_ohmic_losses","L_losses","iTHD_percentage","Si_conduction","Si_switching","Si_total","EMI_losses"
+1.300000e+00,5.016937e+03,5.002277e+03,1.270723e+02,9.745971e+01,3.309990e+00,1.187822e+00,6.353862e-02,1.183557e+00,6.349046e-02,8.115822e-01,1.019087e+02,5.492986e+00,9.641575e+01,5.968305e+00,3.449263e+00,1.456404e+01,4.605945e-05,1.456409e+01,1.321214e+00

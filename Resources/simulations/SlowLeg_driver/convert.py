@@ -1,8 +1,8 @@
 import re
 
 # Inserisci qui il percorso del tuo file se diverso
-input_file = 'Eon_Eoff_circuit.log'
-output_file = 'forward_circuit_125.csv'
+input_file = 'Eon_Eoff_circuit_reverse.log'
+output_file = 'reverse_circuit_125.csv'
 
 targets = ['vds', 'ids', 'eon', 'eoff', 'vdsreal', 'idsreal', 'rdson']
 data = {t: {} for t in targets}
@@ -39,10 +39,10 @@ for step in all_steps:
         
         #inverti solo vds
         if t == 'vds':
-            val = val
+            val = -val
         
         if t == 'ids':
-            val = val
+            val = -val
         
         row[t] = val
         
