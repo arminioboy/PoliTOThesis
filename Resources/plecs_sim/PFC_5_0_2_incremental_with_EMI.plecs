@@ -64,7 +64,7 @@ Plecs {
   AlgebraicLoopMethod "1"
   AlgebraicLoopTolerance "1e-6"
   ScriptsDialogGeometry "[0 0 930 1008]"
-  ScriptsDialogSplitterPos "192"
+  ScriptsDialogSplitterPos "48"
   MixedSignalSolverBypassOperatingPoint "1"
   MixedSignalSolverInitialConditions "2"
   MixedSignalSolverMaxNewtonIterations "25"
@@ -86,9 +86,9 @@ Plecs {
     Index         "2"
   }
   Schematic {
-    Location      [0, 0; 1860, 969]
+    Location      [0, 0; 1280, 679]
     ZoomFactor    0.808527
-    SliderPosition [0, 0]
+    SliderPosition [544, 101]
     ShowBrowser   off
     BrowserWidth  802
     Component {
@@ -36277,7 +36277,7 @@ Plecs {
         Direction     right
       }
       Schematic {
-        Location      [0, 0; 930, 969]
+        Location      [0, 0; 930, 679]
         ZoomFactor    0.795134
         SliderPosition [0, 0]
         ShowBrowser   off
@@ -38537,18 +38537,18 @@ Plecs {
 "lt' \n \t\tresult = 0;\n \telse\n \t\t% Print error message to Octave console"
 "\n \t\tprintf(' Error in Simulation %d for Power=%dW: %s\\n',\n              "
 "    index, PowerOutput(index), data);\n\tend\nend\n\n% Set value to be swept"
-"\nPowerOutput = [350:50:5000]; % start step stop\n%PowerOutput = 50;\n% Initi"
-"alize simStruct as cell array with all values\nfor ix = 1:length(PowerOutput)"
-"\n\tsimStructs{ix}.ModelVars.Pout = PowerOutput(ix);\n% Name of 'ModelVars' c"
-"an be assigned for diagnostic purposes\t\n\tsimStructs{ix}.Name = ['Power=' m"
-"at2str(PowerOutput(ix)) 'W'];\nend\n\n% Start simulation, return result from "
-"callback function into 'out'\n% Analysis will be moved to callback function t"
-"o reduce simulation results\nout = plecs('simulate', simStructs, @(index, dat"
-"a) callback(index, data));\n\nfor ix = 1:length(PowerOutput)\n\tprintf(' Simu"
-"lation for Power=%dW: started\\n',PowerOutput(ix));\n\t% Detect if errors occ"
-"urred in parallel simulation \n   if ischar(out{ix})\n   \tprintf(' Error for"
-" P=%dW: %s\\n',PowerOutput(ix), out{ix});\n   else\n \t\tprintf(' Simulation "
-"for Power=%dW: terminated\\n',PowerOutput(ix));\n\tend\nend"
+"\nPowerOutput = [250:5000:3000]; % start step stop\n%PowerOutput = 50;\n% Ini"
+"tialize simStruct as cell array with all values\nfor ix = 1:length(PowerOutpu"
+"t)\n\tsimStructs{ix}.ModelVars.Pout = PowerOutput(ix);\n% Name of 'ModelVars'"
+" can be assigned for diagnostic purposes\t\n\tsimStructs{ix}.Name = ['Power='"
+" mat2str(PowerOutput(ix)) 'W'];\nend\n\n% Start simulation, return result fro"
+"m callback function into 'out'\n% Analysis will be moved to callback function"
+" to reduce simulation results\nout = plecs('simulate', simStructs, @(index, d"
+"ata) callback(index, data));\n\nfor ix = 1:length(PowerOutput)\n\tprintf(' Si"
+"mulation for Power=%dW: started\\n',PowerOutput(ix));\n\t% Detect if errors o"
+"ccurred in parallel simulation \n   if ischar(out{ix})\n   \tprintf(' Error f"
+"or P=%dW: %s\\n',PowerOutput(ix), out{ix});\n   else\n \t\tprintf(' Simulatio"
+"n for Power=%dW: terminated\\n',PowerOutput(ix));\n\tend\nend"
   }
   Script {
     Name          "PLL_sweep"
