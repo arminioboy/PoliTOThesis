@@ -72,7 +72,7 @@ Plecs {
     ShowBrowser   off
     BrowserWidth  100
     Component {
-      Type          MosfetWithDiode
+      Type          Mosfet
       Name          "FET1"
       Show          on
       Position      [220, 80]

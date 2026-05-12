@@ -83,4 +83,4 @@ def generate_plecs_xml_2D(csv_file, output_file):
 
     print("XML generato correttamente")
 
-generate_plecs_xml_2D("reverse_circuit_diode_125.csv","PLECS_thermals_diode_125.xml")
+generate_plecs_xml_2D("eon_eoff_channell_open_125.csv","EPC2304_channel_open_125.xml")
