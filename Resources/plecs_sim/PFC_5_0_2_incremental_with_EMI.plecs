@@ -13,12 +13,12 @@ Plecs {
   ZCStepSize    "1e-9"
   RelTol        "1e-5"
   AbsTol        "-1"
-  TurnOnThreshold "0.7"
+  TurnOnThreshold "1"
   NonIdealSwitchResistance "1"
   SyncFixedStepTasks "2"
   UseSingleCommonBaseRate "2"
   LossVariableLimitExceededMsg "2"
-  NegativeSwitchLossMsg "1"
+  NegativeSwitchLossMsg "2"
   DivisionByZeroMsg "2"
   DatatypeOverflowMsg "2"
   DatatypeInheritanceConflictMsg "1"
@@ -87,8 +87,8 @@ Plecs {
   }
   Schematic {
     Location      [0, 0; 1280, 679]
-    ZoomFactor    0.808527
-    SliderPosition [544, 101]
+    ZoomFactor    0.808529
+    SliderPosition [544, 0]
     ShowBrowser   off
     BrowserWidth  802
     Component {
@@ -3660,7 +3660,7 @@ Plecs {
       }
       Parameter {
         Variable      "thermal"
-        Value         "file:IPZ60R017C"
+        Value         "file:IPZ60R017C_channel_open"
         Show          off
       }
       Parameter {
@@ -3699,7 +3699,7 @@ Plecs {
       }
       Parameter {
         Variable      "thermal"
-        Value         "file:IPZ60R017C"
+        Value         "file:IPZ60R017C_channel_open"
         Show          off
       }
       Parameter {
@@ -16047,7 +16047,7 @@ Plecs {
       Type          ThermalResistor
       Name          "Rth_pcb"
       Show          on
-      Position      [790, 530]
+      Position      [870, 545]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -18091,9 +18091,9 @@ Plecs {
         Direction     right
       }
       Schematic {
-        Location      [60, 24; 1920, 993]
-        ZoomFactor    0.900213
-        SliderPosition [0, 0]
+        Location      [0, 0; 1280, 679]
+        ZoomFactor    0.99714
+        SliderPosition [0, 2]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -18315,9 +18315,9 @@ Plecs {
             Direction     right
           }
           Schematic {
-            Location      [0, 0; 1280, 679]
-            ZoomFactor    1.5848
-            SliderPosition [397, 417]
+            Location      [0, 0; 1860, 969]
+            ZoomFactor    1.37404
+            SliderPosition [0, -1]
             ShowBrowser   off
             BrowserWidth  100
             Component {
@@ -18331,37 +18331,37 @@ Plecs {
               Probe {
                 Component     "FET1"
                 Path          ""
-                Signals       {"Device switching loss", "Device conduction los"
+                Signals       {"Device conduction loss", "Device switching los"
 "s"}
               }
               Probe {
                 Component     "FET2"
                 Path          ""
-                Signals       {"Device switching loss", "Device conduction los"
+                Signals       {"Device conduction loss", "Device switching los"
 "s"}
               }
               Probe {
                 Component     "FET3"
                 Path          ""
-                Signals       {"Device switching loss", "Device conduction los"
+                Signals       {"Device conduction loss", "Device switching los"
 "s"}
               }
               Probe {
                 Component     "FET4"
                 Path          ""
-                Signals       {"Device switching loss", "Device conduction los"
+                Signals       {"Device conduction loss", "Device switching los"
 "s"}
               }
               Probe {
                 Component     "FET5"
                 Path          ""
-                Signals       {"Device switching loss", "Device conduction los"
+                Signals       {"Device conduction loss", "Device switching los"
 "s"}
               }
               Probe {
                 Component     "FET6"
                 Path          ""
-                Signals       {"Device switching loss", "Device conduction los"
+                Signals       {"Device conduction loss", "Device switching los"
 "s"}
               }
             }
@@ -18397,7 +18397,7 @@ Plecs {
               Type          Sum
               Name          "GaN_total"
               Show          off
-              Position      [995, 230]
+              Position      [1210, 275]
               Direction     up
               Flipped       on
               LabelPosition north
@@ -18408,7 +18408,7 @@ Plecs {
               }
               Parameter {
                 Variable      "Inputs"
-                Value         "++"
+                Value         "++++"
                 Show          off
               }
               Parameter {
@@ -18581,7 +18581,7 @@ Plecs {
               Type          Output
               Name          "GaN_loss"
               Show          on
-              Position      [1215, 230]
+              Position      [1275, 275]
               Direction     left
               Flipped       on
               LabelPosition north
@@ -18600,7 +18600,7 @@ Plecs {
               Type          Sum
               Name          "Sum2"
               Show          off
-              Position      [820, 120]
+              Position      [835, 70]
               Direction     up
               Flipped       on
               LabelPosition north
@@ -18629,7 +18629,7 @@ Plecs {
               Type          Sum
               Name          "Sum3"
               Show          off
-              Position      [820, 385]
+              Position      [835, 350]
               Direction     up
               Flipped       on
               LabelPosition north
@@ -19078,7 +19078,7 @@ Plecs {
               Type          From
               Name          "From"
               Show          off
-              Position      [730, 340]
+              Position      [745, 305]
               Direction     right
               Flipped       off
               LabelPosition north
@@ -19113,7 +19113,7 @@ Plecs {
               Type          From
               Name          "From1"
               Show          off
-              Position      [730, 360]
+              Position      [745, 325]
               Direction     right
               Flipped       off
               LabelPosition north
@@ -19148,7 +19148,7 @@ Plecs {
               Type          From
               Name          "From2"
               Show          off
-              Position      [730, 380]
+              Position      [745, 345]
               Direction     right
               Flipped       off
               LabelPosition north
@@ -19183,7 +19183,7 @@ Plecs {
               Type          From
               Name          "From3"
               Show          off
-              Position      [730, 400]
+              Position      [745, 365]
               Direction     right
               Flipped       off
               LabelPosition north
@@ -19218,7 +19218,7 @@ Plecs {
               Type          From
               Name          "From4"
               Show          off
-              Position      [730, 420]
+              Position      [745, 385]
               Direction     right
               Flipped       off
               LabelPosition north
@@ -19253,7 +19253,7 @@ Plecs {
               Type          From
               Name          "From5"
               Show          off
-              Position      [730, 440]
+              Position      [745, 405]
               Direction     right
               Flipped       off
               LabelPosition north
@@ -19288,7 +19288,7 @@ Plecs {
               Type          From
               Name          "From6"
               Show          off
-              Position      [720, 65]
+              Position      [735, 15]
               Direction     right
               Flipped       off
               LabelPosition north
@@ -19323,7 +19323,7 @@ Plecs {
               Type          From
               Name          "From7"
               Show          off
-              Position      [720, 85]
+              Position      [735, 35]
               Direction     right
               Flipped       off
               LabelPosition north
@@ -19358,7 +19358,7 @@ Plecs {
               Type          From
               Name          "From8"
               Show          off
-              Position      [720, 105]
+              Position      [735, 55]
               Direction     right
               Flipped       off
               LabelPosition north
@@ -19393,7 +19393,7 @@ Plecs {
               Type          From
               Name          "From9"
               Show          off
-              Position      [720, 125]
+              Position      [735, 75]
               Direction     right
               Flipped       off
               LabelPosition north
@@ -19428,7 +19428,7 @@ Plecs {
               Type          From
               Name          "From10"
               Show          off
-              Position      [720, 145]
+              Position      [735, 95]
               Direction     right
               Flipped       off
               LabelPosition north
@@ -19463,7 +19463,7 @@ Plecs {
               Type          From
               Name          "From11"
               Show          off
-              Position      [720, 165]
+              Position      [735, 115]
               Direction     right
               Flipped       off
               LabelPosition north
@@ -19496,9 +19496,9 @@ Plecs {
             }
             Component {
               Type          Display
-              Name          "MOSFET switching losses"
+              Name          "GaNFET switching losses"
               Show          on
-              Position      [995, 45]
+              Position      [1010, 30]
               Direction     up
               Flipped       on
               LabelPosition north
@@ -19516,9 +19516,9 @@ Plecs {
             }
             Component {
               Type          Display
-              Name          "MOSFET conduction losses"
+              Name          "GaNFET conduction losses"
               Show          on
-              Position      [1030, 460]
+              Position      [1020, 350]
               Direction     up
               Flipped       on
               LabelPosition north
@@ -19538,7 +19538,7 @@ Plecs {
               Type          PeriodicAverage
               Name          "GaN_switch"
               Show          off
-              Position      [880, 120]
+              Position      [895, 70]
               Direction     up
               Flipped       on
               LabelPosition north
@@ -19552,7 +19552,7 @@ Plecs {
               Type          PeriodicAverage
               Name          "GaN_ohmic"
               Show          off
-              Position      [885, 385]
+              Position      [900, 350]
               Direction     up
               Flipped       on
               LabelPosition north
@@ -19740,46 +19740,27 @@ Plecs {
               Type          PlecsProbe
               Name          "Losses"
               Show          on
-              Position      [720, 595]
+              Position      [805, 780]
               Direction     right
               Flipped       off
               LabelPosition south
+              CommentOut    DisabledOpenCircuit
               Probe {
                 Component     "FET1"
                 Path          "Losses_measure/GaN_losses"
                 Signals       {"Output", "Input 1", "Input 2"}
               }
               Probe {
-                Component     "FET2"
+                Component     "DFET1"
                 Path          "Losses_measure/GaN_losses"
-                Signals       {}
-              }
-              Probe {
-                Component     "FET3"
-                Path          "Losses_measure/GaN_losses"
-                Signals       {}
-              }
-              Probe {
-                Component     "FET4"
-                Path          "Losses_measure/GaN_losses"
-                Signals       {}
-              }
-              Probe {
-                Component     "FET5"
-                Path          "Losses_measure/GaN_losses"
-                Signals       {}
-              }
-              Probe {
-                Component     "FET6"
-                Path          "Losses_measure/GaN_losses"
-                Signals       {}
+                Signals       {"Output", "Input 1", "Input 2"}
               }
             }
             Component {
               Type          Scope
               Name          "Tester"
               Show          on
-              Position      [845, 620]
+              Position      [915, 795]
               Direction     up
               Flipped       off
               LabelPosition south
@@ -19789,11 +19770,11 @@ Plecs {
               State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQA"
 "FoAbwBvAG0AQQByAGUAYQAAAAAA/////wAAAFYA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcw"
 "AAAAAA/////wAAAGAA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABgAP///wAAAAMAAAd"
-"EAAAAqPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB0QAAABEAP///wAAB0QA"
-"AAMSAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP///"
+"EAAAA2PwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB0QAAABEAP///wAAB0QA"
+"AALiAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP///"
 "/8AAAAAAAAAAA=="
               SavedViews    "AAAAAgAAAAA="
-              HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":178,\"Labe"
+              HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":185,\"Labe"
 "ls\":[],\"VisualIdxs\":[]}"
               PlotPalettes  "AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
@@ -19823,7 +19804,7 @@ Plecs {
                 AutoScale     1
                 MinValue      0
                 MaxValue      1
-                Signals       {"FET1:Voltage", "FET1:Current"}
+                Signals       {"FET1:Voltage"}
                 SignalTypes   [ ]
                 Untangle      0
                 KeepBaseline  off
@@ -19840,7 +19821,8 @@ Plecs {
                   AutoScale     1
                   MinValue      0
                   MaxValue      1
-                  Signals       {}
+                  Signals       {"FET1:Conduction", "FET1:Switching", "FET1:To"
+"tal"}
                   Untangle      0
                   KeepBaseline  off
                   BaselineValue 0
@@ -19850,7 +19832,7 @@ Plecs {
                   AutoScale     1
                   MinValue      0
                   MaxValue      1
-                  Signals       {}
+                  Signals       {"FET1:Voltage"}
                   Untangle      0
                   KeepBaseline  off
                   BaselineValue 0
@@ -19861,14 +19843,15 @@ Plecs {
               Type          PlecsProbe
               Name          "Voltages_currents"
               Show          on
-              Position      [720, 650]
+              Position      [805, 825]
               Direction     right
               Flipped       off
               LabelPosition south
+              CommentOut    DisabledOpenCircuit
               Probe {
                 Component     "FET1"
                 Path          ""
-                Signals       {"Device current", "Device voltage"}
+                Signals       {"MOSFET voltage", "MOSFET current"}
               }
               Probe {
                 Component     "FET2"
@@ -19896,6 +19879,1416 @@ Plecs {
                 Signals       {}
               }
             }
+            Component {
+              Type          PlecsProbe
+              Name          "GaN diode Losses"
+              Show          on
+              Position      [60, 1010]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Probe {
+                Component     "D1"
+                Path          ""
+                Signals       {"Diode switching loss", "Diode conduction loss"}
+              }
+              Probe {
+                Component     "D2"
+                Path          ""
+                Signals       {"Diode conduction loss", "Diode switching loss"}
+              }
+              Probe {
+                Component     "D3"
+                Path          ""
+                Signals       {"Diode conduction loss", "Diode switching loss"}
+              }
+              Probe {
+                Component     "D4"
+                Path          ""
+                Signals       {"Diode conduction loss", "Diode switching loss"}
+              }
+              Probe {
+                Component     "D5"
+                Path          ""
+                Signals       {"Diode conduction loss", "Diode switching loss"}
+              }
+              Probe {
+                Component     "D6"
+                Path          ""
+                Signals       {"Diode switching loss", "Diode conduction loss"}
+              }
+            }
+            Component {
+              Type          PeriodicAverage
+              Name          "Periodic Average 12"
+              Show          off
+              Position      [430, 760]
+              Direction     up
+              Flipped       on
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "T_average"
+                Value         "1/fs"
+                Show          off
+              }
+            }
+            Component {
+              Type          PeriodicImpulseAverage
+              Name          "Periodic Impulse\nAverage6"
+              Show          off
+              Position      [430, 850]
+              Direction     up
+              Flipped       on
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "T_average"
+                Value         "1/fs"
+                Show          off
+              }
+            }
+            Component {
+              Type          SignalDemux
+              Name          "Demux4"
+              Show          off
+              Position      [140, 1010]
+              Direction     right
+              Flipped       on
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Frame         [-7, -60; 2, 60]
+              Parameter {
+                Variable      "Width"
+                Value         "12"
+                Show          off
+              }
+            }
+            Component {
+              Type          PeriodicAverage
+              Name          "Periodic Average 13"
+              Show          off
+              Position      [430, 895]
+              Direction     up
+              Flipped       on
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "T_average"
+                Value         "1/fs"
+                Show          off
+              }
+            }
+            Component {
+              Type          PeriodicImpulseAverage
+              Name          "Periodic Impulse\nAverage7"
+              Show          off
+              Position      [430, 975]
+              Direction     up
+              Flipped       on
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "T_average"
+                Value         "1/fs"
+                Show          off
+              }
+            }
+            Component {
+              Type          PeriodicAverage
+              Name          "Periodic Average 14"
+              Show          off
+              Position      [430, 1010]
+              Direction     up
+              Flipped       on
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "T_average"
+                Value         "1/fs"
+                Show          off
+              }
+            }
+            Component {
+              Type          PeriodicImpulseAverage
+              Name          "Periodic Impulse\nAverage8"
+              Show          off
+              Position      [430, 1085]
+              Direction     up
+              Flipped       on
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "T_average"
+                Value         "1/fs"
+                Show          off
+              }
+            }
+            Component {
+              Type          PeriodicAverage
+              Name          "Periodic Average 15"
+              Show          off
+              Position      [430, 1125]
+              Direction     up
+              Flipped       on
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "T_average"
+                Value         "1/fs"
+                Show          off
+              }
+            }
+            Component {
+              Type          PeriodicImpulseAverage
+              Name          "Periodic Impulse\nAverage9"
+              Show          off
+              Position      [430, 1190]
+              Direction     up
+              Flipped       on
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "T_average"
+                Value         "1/fs"
+                Show          off
+              }
+            }
+            Component {
+              Type          PeriodicAverage
+              Name          "Periodic Average 16"
+              Show          off
+              Position      [430, 1230]
+              Direction     up
+              Flipped       on
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "T_average"
+                Value         "1/fs"
+                Show          off
+              }
+            }
+            Component {
+              Type          PeriodicImpulseAverage
+              Name          "Periodic Impulse\nAverage10"
+              Show          off
+              Position      [430, 1300]
+              Direction     up
+              Flipped       on
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "T_average"
+                Value         "1/fs"
+                Show          off
+              }
+            }
+            Component {
+              Type          PeriodicAverage
+              Name          "Periodic Average 17"
+              Show          off
+              Position      [430, 1335]
+              Direction     up
+              Flipped       on
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "T_average"
+                Value         "1/fs"
+                Show          off
+              }
+            }
+            Component {
+              Type          PeriodicImpulseAverage
+              Name          "Periodic Impulse\nAverage11"
+              Show          off
+              Position      [430, 1405]
+              Direction     up
+              Flipped       on
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "T_average"
+                Value         "1/fs"
+                Show          off
+              }
+            }
+            Component {
+              Type          Sum
+              Name          "DFET1"
+              Show          off
+              Position      [305, 795]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "IconShape"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "++"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Goto
+              Name          "Goto"
+              Show          off
+              Position      [475, 760]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_CONDUCTION_DIODE_1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Goto
+              Name          "Goto13"
+              Show          off
+              Position      [475, 850]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_SWITCHING_DIODE_1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Goto
+              Name          "Goto14"
+              Show          off
+              Position      [475, 895]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_CONDUCTION_DIODE_2"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Goto
+              Name          "Goto15"
+              Show          off
+              Position      [475, 975]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_SWITCHING_DIODE_2"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Goto
+              Name          "Goto16"
+              Show          off
+              Position      [475, 1010]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_CONDUCTION_DIODE_3"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Goto
+              Name          "Goto17"
+              Show          off
+              Position      [475, 1085]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_SWITCHING_DIODE_3"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Goto
+              Name          "Goto18"
+              Show          off
+              Position      [475, 1125]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_CONDUCTION_DIODE_4"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Goto
+              Name          "Goto19"
+              Show          off
+              Position      [475, 1190]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_SWITCHING_DIODE_4"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Goto
+              Name          "Goto20"
+              Show          off
+              Position      [475, 1230]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_CONDUCTION_DIODE_5"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Goto
+              Name          "Goto21"
+              Show          off
+              Position      [475, 1300]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_SWITCHING_DIODE_5"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Goto
+              Name          "Goto22"
+              Show          off
+              Position      [475, 1335]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_CONDUCTION_DIODE_6"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Goto
+              Name          "Goto23"
+              Show          off
+              Position      [475, 1405]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_SWITCHING_DIODE_6"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          From
+              Name          "From12"
+              Show          off
+              Position      [770, 445]
+              Direction     right
+              Flipped       off
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_CONDUCTION_DIODE_1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          From
+              Name          "From13"
+              Show          off
+              Position      [770, 145]
+              Direction     right
+              Flipped       off
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_SWITCHING_DIODE_1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          From
+              Name          "From14"
+              Show          off
+              Position      [770, 465]
+              Direction     right
+              Flipped       off
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_CONDUCTION_DIODE_2"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          From
+              Name          "From15"
+              Show          off
+              Position      [770, 170]
+              Direction     right
+              Flipped       off
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_SWITCHING_DIODE_2"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          From
+              Name          "From16"
+              Show          off
+              Position      [770, 485]
+              Direction     right
+              Flipped       off
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_CONDUCTION_DIODE_3"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          From
+              Name          "From17"
+              Show          off
+              Position      [770, 195]
+              Direction     right
+              Flipped       off
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_SWITCHING_DIODE_3"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          From
+              Name          "From18"
+              Show          off
+              Position      [770, 505]
+              Direction     right
+              Flipped       off
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_CONDUCTION_DIODE_4"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          From
+              Name          "From19"
+              Show          off
+              Position      [770, 220]
+              Direction     right
+              Flipped       off
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_SWITCHING_DIODE_4"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          From
+              Name          "From20"
+              Show          off
+              Position      [770, 525]
+              Direction     right
+              Flipped       off
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_CONDUCTION_DIODE_5"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          From
+              Name          "From21"
+              Show          off
+              Position      [770, 245]
+              Direction     right
+              Flipped       off
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_SWITCHING_DIODE_5"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          From
+              Name          "From22"
+              Show          off
+              Position      [770, 550]
+              Direction     right
+              Flipped       off
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_CONDUCTION_DIODE_6"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          From
+              Name          "From23"
+              Show          off
+              Position      [770, 270]
+              Direction     right
+              Flipped       off
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "FET_SWITCHING_DIODE_6"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Sum
+              Name          "Sum1"
+              Show          off
+              Position      [835, 490]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "IconShape"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "++++++"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
+            }
+            Component {
+              Type          PeriodicAverage
+              Name          "GaN_diode_conduction"
+              Show          off
+              Position      [885, 490]
+              Direction     up
+              Flipped       on
+              LabelPosition north
+              Parameter {
+                Variable      "T_average"
+                Value         "1/F"
+                Show          off
+              }
+            }
+            Component {
+              Type          PeriodicAverage
+              Name          "GaN_diode_switch"
+              Show          off
+              Position      [900, 200]
+              Direction     up
+              Flipped       on
+              LabelPosition north
+              Parameter {
+                Variable      "T_average"
+                Value         "1/F"
+                Show          off
+              }
+            }
+            Component {
+              Type          Sum
+              Name          "Sum4"
+              Show          off
+              Position      [835, 200]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "IconShape"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "++++++"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Display
+              Name          "GaNFET switching diode losses"
+              Show          on
+              Position      [1010, 200]
+              Direction     up
+              Flipped       on
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Frame         [-56, -11; 56, 11]
+              Parameter {
+                Variable      "Notation"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Precision"
+                Value         "4"
+                Show          off
+              }
+            }
+            Component {
+              Type          Display
+              Name          "GaNFET conduction diode losses"
+              Show          on
+              Position      [1005, 535]
+              Direction     up
+              Flipped       on
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Frame         [-56, -11; 56, 11]
+              Parameter {
+                Variable      "Notation"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Precision"
+                Value         "4"
+                Show          off
+              }
+            }
+            Component {
+              Type          Sum
+              Name          "DFET2"
+              Show          off
+              Position      [320, 935]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "IconShape"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "++"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Sum
+              Name          "DFET3"
+              Show          off
+              Position      [350, 1045]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "IconShape"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "++"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Sum
+              Name          "DFET4"
+              Show          off
+              Position      [340, 1155]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "IconShape"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "++"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Sum
+              Name          "DFET5"
+              Show          off
+              Position      [330, 1265]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "IconShape"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "++"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Sum
+              Name          "DFET6"
+              Show          off
+              Position      [330, 1365]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "IconShape"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "++"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
+            }
             Connection {
               Type          Signal
               SrcComponent  "GaN Losses"
@@ -19907,7 +21300,7 @@ Plecs {
               Type          Signal
               SrcComponent  "From"
               SrcTerminal   1
-              Points        [770, 340; 770, 360]
+              Points        [785, 305; 785, 325]
               DstComponent  "Sum3"
               DstTerminal   7
             }
@@ -19915,7 +21308,7 @@ Plecs {
               Type          Signal
               SrcComponent  "From1"
               SrcTerminal   1
-              Points        [765, 360; 765, 370]
+              Points        [780, 325; 780, 335]
               DstComponent  "Sum3"
               DstTerminal   6
             }
@@ -19930,7 +21323,7 @@ Plecs {
               Type          Signal
               SrcComponent  "From3"
               SrcTerminal   1
-              Points        [770, 400; 770, 390]
+              Points        [785, 365; 785, 355]
               DstComponent  "Sum3"
               DstTerminal   4
             }
@@ -19938,7 +21331,7 @@ Plecs {
               Type          Signal
               SrcComponent  "From4"
               SrcTerminal   1
-              Points        [775, 420; 775, 400]
+              Points        [790, 385; 790, 365]
               DstComponent  "Sum3"
               DstTerminal   3
             }
@@ -19946,7 +21339,7 @@ Plecs {
               Type          Signal
               SrcComponent  "From5"
               SrcTerminal   1
-              Points        [780, 440; 780, 410]
+              Points        [795, 405; 795, 375]
               DstComponent  "Sum3"
               DstTerminal   2
             }
@@ -19954,7 +21347,7 @@ Plecs {
               Type          Signal
               SrcComponent  "From6"
               SrcTerminal   1
-              Points        [760, 65; 760, 95]
+              Points        [775, 15; 775, 45]
               DstComponent  "Sum2"
               DstTerminal   7
             }
@@ -19962,7 +21355,7 @@ Plecs {
               Type          Signal
               SrcComponent  "From7"
               SrcTerminal   1
-              Points        [755, 85; 755, 105]
+              Points        [770, 35; 770, 55]
               DstComponent  "Sum2"
               DstTerminal   6
             }
@@ -19970,7 +21363,7 @@ Plecs {
               Type          Signal
               SrcComponent  "From8"
               SrcTerminal   1
-              Points        [750, 105; 750, 115]
+              Points        [765, 55; 765, 65]
               DstComponent  "Sum2"
               DstTerminal   5
             }
@@ -19985,7 +21378,7 @@ Plecs {
               Type          Signal
               SrcComponent  "From10"
               SrcTerminal   1
-              Points        [760, 145; 760, 135]
+              Points        [775, 95; 775, 85]
               DstComponent  "Sum2"
               DstTerminal   3
             }
@@ -19993,7 +21386,7 @@ Plecs {
               Type          Signal
               SrcComponent  "From11"
               SrcTerminal   1
-              Points        [765, 165; 765, 145]
+              Points        [780, 115; 780, 95]
               DstComponent  "Sum2"
               DstTerminal   2
             }
@@ -20094,38 +21487,6 @@ Plecs {
               SrcTerminal   1
               DstComponent  "GaN_switch"
               DstTerminal   2
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "GaN_switch"
-              SrcTerminal   1
-              Points        [910, 120]
-              Branch {
-                Points        [910, 45]
-                DstComponent  "MOSFET switching losses"
-                DstTerminal   1
-              }
-              Branch {
-                Points        [910, 225]
-                DstComponent  "GaN_total"
-                DstTerminal   3
-              }
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "GaN_ohmic"
-              SrcTerminal   1
-              Points        [930, 385]
-              Branch {
-                Points        [930, 460]
-                DstComponent  "MOSFET conduction losses"
-                DstTerminal   1
-              }
-              Branch {
-                Points        [930, 235]
-                DstComponent  "GaN_total"
-                DstTerminal   2
-              }
             }
             Connection {
               Type          Signal
@@ -20318,7 +21679,7 @@ Plecs {
               Type          Signal
               SrcComponent  "Losses"
               SrcTerminal   1
-              Points        [780, 595; 780, 615]
+              Points        [850, 780; 850, 790]
               DstComponent  "Tester"
               DstTerminal   1
             }
@@ -20326,9 +21687,438 @@ Plecs {
               Type          Signal
               SrcComponent  "Voltages_currents"
               SrcTerminal   1
-              Points        [780, 650; 780, 625]
+              Points        [850, 825; 850, 800]
               DstComponent  "Tester"
               DstTerminal   2
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Demux4"
+              SrcTerminal   3
+              Points        [275, 965; 275, 850; 305, 850]
+              Branch {
+                DstComponent  "Periodic Impulse\nAverage6"
+                DstTerminal   2
+              }
+              Branch {
+                DstComponent  "DFET1"
+                DstTerminal   3
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Demux4"
+              SrcTerminal   5
+              Points        [290, 985; 290, 975; 320, 975]
+              Branch {
+                DstComponent  "Periodic Impulse\nAverage7"
+                DstTerminal   2
+              }
+              Branch {
+                DstComponent  "DFET2"
+                DstTerminal   3
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Demux4"
+              SrcTerminal   7
+              Points        [290, 1005; 290, 1085; 350, 1085]
+              Branch {
+                DstComponent  "Periodic Impulse\nAverage8"
+                DstTerminal   2
+              }
+              Branch {
+                DstComponent  "DFET3"
+                DstTerminal   3
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Demux4"
+              SrcTerminal   6
+              Points        [295, 995; 295, 1010; 350, 1010]
+              Branch {
+                DstComponent  "Periodic Average 14"
+                DstTerminal   2
+              }
+              Branch {
+                DstComponent  "DFET3"
+                DstTerminal   2
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Demux4"
+              SrcTerminal   8
+              Points        [270, 1015; 270, 1125; 340, 1125]
+              Branch {
+                DstComponent  "Periodic Average 15"
+                DstTerminal   2
+              }
+              Branch {
+                DstComponent  "DFET4"
+                DstTerminal   2
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Demux4"
+              SrcTerminal   9
+              Points        [265, 1025; 265, 1190; 340, 1190]
+              Branch {
+                DstComponent  "Periodic Impulse\nAverage9"
+                DstTerminal   2
+              }
+              Branch {
+                DstComponent  "DFET4"
+                DstTerminal   3
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Demux4"
+              SrcTerminal   10
+              Points        [260, 1035; 260, 1230; 330, 1230]
+              Branch {
+                DstComponent  "Periodic Average 16"
+                DstTerminal   2
+              }
+              Branch {
+                DstComponent  "DFET5"
+                DstTerminal   2
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Demux4"
+              SrcTerminal   11
+              Points        [255, 1045; 255, 1300; 330, 1300]
+              Branch {
+                DstComponent  "Periodic Impulse\nAverage10"
+                DstTerminal   2
+              }
+              Branch {
+                DstComponent  "DFET5"
+                DstTerminal   3
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Demux4"
+              SrcTerminal   13
+              Points        [245, 1065; 245, 1405; 330, 1405]
+              Branch {
+                DstComponent  "Periodic Impulse\nAverage11"
+                DstTerminal   2
+              }
+              Branch {
+                DstComponent  "DFET6"
+                DstTerminal   3
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Demux4"
+              SrcTerminal   12
+              Points        [250, 1055; 250, 1335; 330, 1335]
+              Branch {
+                DstComponent  "Periodic Average 17"
+                DstTerminal   2
+              }
+              Branch {
+                DstComponent  "DFET6"
+                DstTerminal   2
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Demux4"
+              SrcTerminal   4
+              Points        [285, 975; 285, 895; 320, 895]
+              Branch {
+                DstComponent  "Periodic Average 13"
+                DstTerminal   2
+              }
+              Branch {
+                DstComponent  "DFET2"
+                DstTerminal   2
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Demux4"
+              SrcTerminal   2
+              Points        [270, 955; 270, 760; 305, 760]
+              Branch {
+                DstComponent  "Periodic Average 12"
+                DstTerminal   2
+              }
+              Branch {
+                DstComponent  "DFET1"
+                DstTerminal   2
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "GaN diode Losses"
+              SrcTerminal   1
+              DstComponent  "Demux4"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Periodic Average 12"
+              SrcTerminal   1
+              DstComponent  "Goto"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Periodic Impulse\nAverage6"
+              SrcTerminal   1
+              DstComponent  "Goto13"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Periodic Impulse\nAverage7"
+              SrcTerminal   1
+              DstComponent  "Goto15"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Periodic Average 13"
+              SrcTerminal   1
+              DstComponent  "Goto14"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Periodic Average 14"
+              SrcTerminal   1
+              DstComponent  "Goto16"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Periodic Impulse\nAverage8"
+              SrcTerminal   1
+              DstComponent  "Goto17"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Periodic Average 15"
+              SrcTerminal   1
+              DstComponent  "Goto18"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Periodic Impulse\nAverage9"
+              SrcTerminal   1
+              DstComponent  "Goto19"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Periodic Average 16"
+              SrcTerminal   1
+              DstComponent  "Goto20"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Periodic Impulse\nAverage10"
+              SrcTerminal   1
+              DstComponent  "Goto21"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Periodic Average 17"
+              SrcTerminal   1
+              DstComponent  "Goto22"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Periodic Impulse\nAverage11"
+              SrcTerminal   1
+              DstComponent  "Goto23"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "From12"
+              SrcTerminal   1
+              Points        [795, 445; 795, 465]
+              DstComponent  "Sum1"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "From14"
+              SrcTerminal   1
+              Points        [790, 465; 790, 475]
+              DstComponent  "Sum1"
+              DstTerminal   3
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "From16"
+              SrcTerminal   1
+              DstComponent  "Sum1"
+              DstTerminal   4
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "From18"
+              SrcTerminal   1
+              Points        [795, 505; 795, 495]
+              DstComponent  "Sum1"
+              DstTerminal   5
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "From20"
+              SrcTerminal   1
+              Points        [800, 525; 800, 505]
+              DstComponent  "Sum1"
+              DstTerminal   6
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "From22"
+              SrcTerminal   1
+              Points        [805, 550]
+              DstComponent  "Sum1"
+              DstTerminal   7
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Sum1"
+              SrcTerminal   1
+              DstComponent  "GaN_diode_conduction"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "From13"
+              SrcTerminal   1
+              Points        [795, 145; 795, 175]
+              DstComponent  "Sum4"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "From15"
+              SrcTerminal   1
+              Points        [790, 170; 790, 185]
+              DstComponent  "Sum4"
+              DstTerminal   3
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "From17"
+              SrcTerminal   1
+              DstComponent  "Sum4"
+              DstTerminal   4
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "From19"
+              SrcTerminal   1
+              Points        [795, 220; 795, 205]
+              DstComponent  "Sum4"
+              DstTerminal   5
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "From21"
+              SrcTerminal   1
+              Points        [800, 245; 800, 215]
+              DstComponent  "Sum4"
+              DstTerminal   6
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "From23"
+              SrcTerminal   1
+              Points        [805, 270]
+              DstComponent  "Sum4"
+              DstTerminal   7
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Sum4"
+              SrcTerminal   1
+              DstComponent  "GaN_diode_switch"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "GaN_switch"
+              SrcTerminal   1
+              Points        [935, 70]
+              Branch {
+                Points        [935, 30]
+                DstComponent  "GaNFET switching losses"
+                DstTerminal   1
+              }
+              Branch {
+                Points        [1145, 70; 1145, 260]
+                DstComponent  "GaN_total"
+                DstTerminal   5
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "GaN_diode_switch"
+              SrcTerminal   1
+              Points        [935, 200]
+              Branch {
+                DstComponent  "GaNFET switching diode losses"
+                DstTerminal   1
+              }
+              Branch {
+                Points        [935, 270]
+                DstComponent  "GaN_total"
+                DstTerminal   4
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "GaN_ohmic"
+              SrcTerminal   1
+              Points        [935, 350]
+              Branch {
+                DstComponent  "GaNFET conduction losses"
+                DstTerminal   1
+              }
+              Branch {
+                Points        [935, 280]
+                DstComponent  "GaN_total"
+                DstTerminal   3
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "GaN_diode_conduction"
+              SrcTerminal   1
+              Points        [930, 490]
+              Branch {
+                Points        [930, 535]
+                DstComponent  "GaNFET conduction diode losses"
+                DstTerminal   1
+              }
+              Branch {
+                Points        [1140, 490; 1140, 290]
+                DstComponent  "GaN_total"
+                DstTerminal   2
+              }
             }
           }
         }
@@ -21468,7 +23258,17 @@ Plecs {
             Signals       {"Output"}
           }
           Probe {
+            Component     "GaN_diode_switch"
+            Path          "Losses_measure/GaN_losses"
+            Signals       {"Output"}
+          }
+          Probe {
             Component     "GaN_ohmic"
+            Path          "Losses_measure/GaN_losses"
+            Signals       {"Output"}
+          }
+          Probe {
+            Component     "GaN_diode_conduction"
             Path          "Losses_measure/GaN_losses"
             Signals       {"Output"}
           }
@@ -21493,6 +23293,16 @@ Plecs {
             Signals       {"Output"}
           }
           Probe {
+            Component     "Si_switching_diode"
+            Path          "Losses_measure/Si_losses"
+            Signals       {"Output"}
+          }
+          Probe {
+            Component     "Si_conduction_diode"
+            Path          "Losses_measure/Si_losses"
+            Signals       {"Output"}
+          }
+          Probe {
             Component     "Si_total"
             Path          "Losses_measure/Si_losses"
             Signals       {"Output"}
@@ -21513,16 +23323,16 @@ Plecs {
           LabelPosition south
           CommentOut    DisabledOpenCircuit
           Frame         [-15, -15; 15, 15]
-          Location      [0, 0; 930, 991]
+          Location      [0, 0; 1860, 991]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACQPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAC4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
-"AA/////wAAAGAA////+wAAAAwAVAByAGEAYwBlAHMAAAAAMgAAAkAAAABgAP///wAAAAMAAAOiAAA"
-"BevwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA6IAAABEAP///wAAA6IAAAJA"
+"AA/////wAAAGAA////+wAAAAwAVAByAGEAYwBlAHMAAAAAMgAAAkAAAABgAP///wAAAAMAAAdEAAA"
+"BevwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB0QAAABEAP///wAAB0QAAAJA"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "{\"DefaultSecSize\":100,\"FirstSecSize\":186,\"Labels"
-"\":[],\"VisualIdxs\":[]}"
+          HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":186,\"Labels\""
+":[],\"VisualIdxs\":[]}"
           PlotPalettes  "AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           Axes          "1"
           TimeRange     "0"
@@ -21680,9 +23490,9 @@ Plecs {
             Direction     right
           }
           Schematic {
-            Location      [0, 0; 961, 444]
-            ZoomFactor    1
-            SliderPosition [0, 0]
+            Location      [0, 0; 1860, 969]
+            ZoomFactor    1.30957
+            SliderPosition [1057, 53]
             ShowBrowser   off
             BrowserWidth  100
             Component {
@@ -21696,13 +23506,13 @@ Plecs {
               Probe {
                 Component     "S7"
                 Path          ""
-                Signals       {"Device switching loss", "Device conduction los"
+                Signals       {"Device conduction loss", "Device switching los"
 "s"}
               }
               Probe {
                 Component     "S8"
                 Path          ""
-                Signals       {"Device switching loss", "Device conduction los"
+                Signals       {"Device conduction loss", "Device switching los"
 "s"}
               }
             }
@@ -21991,7 +23801,7 @@ Plecs {
               Type          From
               Name          "From7"
               Show          off
-              Position      [510, 245]
+              Position      [495, 405]
               Direction     right
               Flipped       off
               LabelPosition north
@@ -22026,7 +23836,7 @@ Plecs {
               Type          From
               Name          "From8"
               Show          off
-              Position      [510, 275]
+              Position      [495, 435]
               Direction     right
               Flipped       off
               LabelPosition north
@@ -22090,7 +23900,7 @@ Plecs {
               Type          Display
               Name          "Si MOSFET switching losses"
               Show          on
-              Position      [790, 295]
+              Position      [780, 475]
               Direction     up
               Flipped       on
               LabelPosition north
@@ -22130,7 +23940,7 @@ Plecs {
               Type          Sum
               Name          "Sum2"
               Show          off
-              Position      [595, 260]
+              Position      [580, 420]
               Direction     up
               Flipped       off
               LabelPosition south
@@ -22173,7 +23983,7 @@ Plecs {
               Type          PeriodicAverage
               Name          "Si_switching"
               Show          off
-              Position      [660, 260]
+              Position      [645, 420]
               Direction     up
               Flipped       off
               LabelPosition south
@@ -22187,7 +23997,7 @@ Plecs {
               Type          Output
               Name          "Si_loss"
               Show          on
-              Position      [845, 215]
+              Position      [1170, 310]
               Direction     right
               Flipped       off
               LabelPosition south
@@ -22206,10 +24016,424 @@ Plecs {
               Type          Sum
               Name          "Si_total"
               Show          off
-              Position      [745, 215]
+              Position      [1100, 240]
               Direction     up
               Flipped       off
               LabelPosition south
+              Parameter {
+                Variable      "IconShape"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "++++"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
+            }
+            Component {
+              Type          PlecsProbe
+              Name          "Si_diode_losses"
+              Show          on
+              Position      [80, 460]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Probe {
+                Component     "D7"
+                Path          ""
+                Signals       {"Diode switching loss", "Diode conduction loss"}
+              }
+              Probe {
+                Component     "D8"
+                Path          ""
+                Signals       {"Diode switching loss", "Diode conduction loss"}
+              }
+            }
+            Component {
+              Type          PeriodicAverage
+              Name          "Periodic Average2"
+              Show          off
+              Position      [220, 405]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "T_average"
+                Value         "1/F"
+                Show          off
+              }
+            }
+            Component {
+              Type          PeriodicImpulseAverage
+              Name          "Periodic Impulse\nAverage2"
+              Show          off
+              Position      [220, 445]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "T_average"
+                Value         "1/F"
+                Show          off
+              }
+            }
+            Component {
+              Type          SignalDemux
+              Name          "Demux1"
+              Show          off
+              Position      [140, 460]
+              Direction     right
+              Flipped       on
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Frame         [-7, -20; 2, 20]
+              Parameter {
+                Variable      "Width"
+                Value         "4"
+                Show          off
+              }
+            }
+            Component {
+              Type          PeriodicAverage
+              Name          "Periodic Average3"
+              Show          off
+              Position      [220, 490]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "T_average"
+                Value         "1/F"
+                Show          off
+              }
+            }
+            Component {
+              Type          PeriodicImpulseAverage
+              Name          "Periodic Impulse\nAverage3"
+              Show          off
+              Position      [220, 530]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "T_average"
+                Value         "1/F"
+                Show          off
+              }
+            }
+            Component {
+              Type          Goto
+              Name          "Goto9"
+              Show          off
+              Position      [265, 405]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "SLWH_conduction_diode"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Goto
+              Name          "Goto10"
+              Show          off
+              Position      [265, 490]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "SLWL_conduction_diode"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Goto
+              Name          "Goto11"
+              Show          off
+              Position      [265, 530]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "SLWL_switching_diode"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Goto
+              Name          "Goto12"
+              Show          off
+              Position      [265, 445]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "SLWH_switching_diode"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          From
+              Name          "From"
+              Show          off
+              Position      [525, 210]
+              Direction     right
+              Flipped       off
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "SLWH_conduction_diode"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          From
+              Name          "From1"
+              Show          off
+              Position      [525, 240]
+              Direction     right
+              Flipped       off
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "SLWL_conduction_diode"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          From
+              Name          "From2"
+              Show          off
+              Position      [525, 330]
+              Direction     right
+              Flipped       off
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "SLWL_switching_diode"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          From
+              Name          "From3"
+              Show          off
+              Position      [525, 290]
+              Direction     right
+              Flipped       off
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "Tag"
+                Value         "SLWH_switching_diode"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "NoMatchingCounterpartAction"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "CustomMessage"
+                Value         ""
+                Show          off
+                Evaluate      on
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          Sum
+              Name          "Sum3"
+              Show          off
+              Position      [595, 225]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
               Parameter {
                 Variable      "IconShape"
                 Value         "1"
@@ -22228,6 +24452,106 @@ Plecs {
               Parameter {
                 Variable      "DataTypeOverflowMode"
                 Value         "1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Sum
+              Name          "Sum4"
+              Show          off
+              Position      [595, 315]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              CommentOut    DisabledOpenCircuit
+              Parameter {
+                Variable      "IconShape"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Inputs"
+                Value         "++"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
+            }
+            Component {
+              Type          PeriodicAverage
+              Name          "Si_conduction_diode"
+              Show          off
+              Position      [660, 225]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "T_average"
+                Value         "1/F"
+                Show          off
+              }
+            }
+            Component {
+              Type          PeriodicAverage
+              Name          "Si_switching_diode"
+              Show          off
+              Position      [660, 315]
+              Direction     up
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "T_average"
+                Value         "1/F"
+                Show          off
+              }
+            }
+            Component {
+              Type          Display
+              Name          "Si MOSFET switching diode losses"
+              Show          on
+              Position      [820, 315]
+              Direction     up
+              Flipped       on
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Frame         [-56, -11; 56, 11]
+              Parameter {
+                Variable      "Notation"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Precision"
+                Value         "4"
+                Show          off
+              }
+            }
+            Component {
+              Type          Display
+              Name          "Si MOSFET conduction diode losses"
+              Show          on
+              Position      [875, 205]
+              Direction     up
+              Flipped       on
+              LabelPosition north
+              CommentOut    DisabledOpenCircuit
+              Frame         [-56, -11; 56, 11]
+              Parameter {
+                Variable      "Notation"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Precision"
+                Value         "4"
                 Show          off
               }
             }
@@ -22302,7 +24626,7 @@ Plecs {
               Type          Signal
               SrcComponent  "From7"
               SrcTerminal   1
-              Points        [545, 245; 545, 255]
+              Points        [530, 405; 530, 415]
               DstComponent  "Sum2"
               DstTerminal   2
             }
@@ -22310,7 +24634,7 @@ Plecs {
               Type          Signal
               SrcComponent  "From8"
               SrcTerminal   1
-              Points        [545, 275; 545, 265]
+              Points        [530, 435; 530, 425]
               DstComponent  "Sum2"
               DstTerminal   3
             }
@@ -22346,6 +24670,127 @@ Plecs {
             }
             Connection {
               Type          Signal
+              SrcComponent  "Si_total"
+              SrcTerminal   1
+              Points        [1130, 240; 1130, 310]
+              DstComponent  "Si_loss"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Demux1"
+              SrcTerminal   2
+              Points        [170, 445; 170, 405]
+              DstComponent  "Periodic Average2"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Demux1"
+              SrcTerminal   3
+              Points        [175, 455; 175, 445]
+              DstComponent  "Periodic Impulse\nAverage2"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Demux1"
+              SrcTerminal   4
+              Points        [170, 465; 170, 490]
+              DstComponent  "Periodic Average3"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Demux1"
+              SrcTerminal   5
+              Points        [165, 475; 165, 530]
+              DstComponent  "Periodic Impulse\nAverage3"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Periodic Average2"
+              SrcTerminal   1
+              DstComponent  "Goto9"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Periodic Average3"
+              SrcTerminal   1
+              DstComponent  "Goto10"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Periodic Impulse\nAverage3"
+              SrcTerminal   1
+              DstComponent  "Goto11"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Periodic Impulse\nAverage2"
+              SrcTerminal   1
+              DstComponent  "Goto12"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Si_diode_losses"
+              SrcTerminal   1
+              DstComponent  "Demux1"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Sum3"
+              SrcTerminal   1
+              DstComponent  "Si_conduction_diode"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Sum4"
+              SrcTerminal   1
+              DstComponent  "Si_switching_diode"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "From"
+              SrcTerminal   1
+              Points        [550, 210; 550, 220]
+              DstComponent  "Sum3"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "From1"
+              SrcTerminal   1
+              Points        [550, 240; 550, 230]
+              DstComponent  "Sum3"
+              DstTerminal   3
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "From3"
+              SrcTerminal   1
+              Points        [550, 290; 550, 310]
+              DstComponent  "Sum4"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "From2"
+              SrcTerminal   1
+              Points        [550, 330; 550, 320]
+              DstComponent  "Sum4"
+              DstTerminal   3
+            }
+            Connection {
+              Type          Signal
               SrcComponent  "Si_conduction"
               SrcTerminal   1
               Points        [685, 170]
@@ -22355,33 +24800,56 @@ Plecs {
                 DstTerminal   1
               }
               Branch {
-                Points        [685, 210]
+                Points        [1040, 170; 1040, 225]
                 DstComponent  "Si_total"
                 DstTerminal   2
               }
             }
             Connection {
               Type          Signal
-              SrcComponent  "Si_switching"
+              SrcComponent  "Si_conduction_diode"
               SrcTerminal   1
-              Points        [700, 260]
+              Points        [705, 225; 705, 205; 795, 205]
               Branch {
-                Points        [700, 295]
-                DstComponent  "Si MOSFET switching losses"
+                DstComponent  "Si MOSFET conduction diode losses"
                 DstTerminal   1
               }
               Branch {
-                Points        [700, 220]
+                Points        [795, 235]
                 DstComponent  "Si_total"
                 DstTerminal   3
               }
             }
             Connection {
               Type          Signal
-              SrcComponent  "Si_total"
+              SrcComponent  "Si_switching_diode"
               SrcTerminal   1
-              DstComponent  "Si_loss"
-              DstTerminal   1
+              Points        [725, 315]
+              Branch {
+                DstComponent  "Si MOSFET switching diode losses"
+                DstTerminal   1
+              }
+              Branch {
+                Points        [725, 245]
+                DstComponent  "Si_total"
+                DstTerminal   4
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Si_switching"
+              SrcTerminal   1
+              Points        [695, 420]
+              Branch {
+                Points        [695, 475]
+                DstComponent  "Si MOSFET switching losses"
+                DstTerminal   1
+              }
+              Branch {
+                Points        [1035, 420; 1035, 255]
+                DstComponent  "Si_total"
+                DstTerminal   5
+              }
             }
           }
         }
@@ -23221,11 +25689,11 @@ Plecs {
           Type          Display
           Name          "All_out"
           Show          on
-          Position      [910, 695]
+          Position      [910, 735]
           Direction     up
           Flipped       on
           LabelPosition north
-          Frame         [-96, -191; 96, 191]
+          Frame         [-96, -231; 96, 231]
           Parameter {
             Variable      "Notation"
             Value         "1"
@@ -23529,7 +25997,7 @@ Plecs {
               DstTerminal   1
             }
             Branch {
-              Points        [775, 695]
+              Points        [775, 735]
               DstComponent  "All_out"
               DstTerminal   1
             }
@@ -23564,6 +26032,28 @@ Plecs {
 " ESR AND CORE</span></p>\n<p><span style=\" color:#ff0000;\">NO AC</span></p>"
 "</body></html>"
           Position      [815, 30]
+        } 
+        Annotation {
+          Name          "<html><body>\n<p><span style=\" font-size:17px;\">Inp"
+"ut Power</span></p>\n<p><span style=\" font-size:17px;\">Output Power</span><"
+"/p>\n<p><span style=\" font-size:17px;\">Losses</span></p>\n<p><span style=\""
+" font-size:17px;\">Efficiency</span></p>\n<p><span style=\" font-size:17px;\""
+">Caps</span></p>\n<p><span style=\" font-size:17px;\">FL1</span></p>\n<p><spa"
+"n style=\" font-size:17px;\">HF1</span></p>\n<p><span style=\" font-size:17px"
+";\">FL2</span></p>\n<p><span style=\" font-size:17px;\">HF2</span></p>\n<p><s"
+"pan style=\" font-size:17px;\">Bulk</span></p>\n<p><span style=\" font-size:1"
+"7px;\">GaN_Total</span></p>\n<p><span style=\" font-size:17px;\">GaN_switchin"
+"g</span></p>\n<p><span style=\" font-size:17px;\">GaN_diode_switching</span><"
+"/p>\n<p><span style=\" font-size:17px;\">GaN_ohmic</span></p>\n<p><span style"
+"=\" font-size:17px;\">GaN_diode_ohmic</span></p>\n<p><span style=\" font-size"
+":17px;\">Inductor</span></p>\n<p><span style=\" font-size:17px;\">iTHD%</span"
+"></p>\n<p><span style=\" font-size:17px;\">Si_conduction</span></p>\n<p><span"
+" style=\" font-size:17px;\">Si_switching</span></p>\n<p><span style=\" font-s"
+"ize:17px;\">Si_switching_diode</span></p>\n<p><span style=\" font-size:17px;"
+"\">Si_conduction_diode</span></p>\n<p><span style=\" font-size:17px;\">Si_tot"
+"al</span></p>\n<p><span style=\" font-size:17px;\">EMI</span></p></body></htm"
+"l>"
+          Position      [1100, 735]
         } 
       }
     }
@@ -29535,7 +32025,6 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition none
-      CommentOut    DisabledOpenCircuit
       Frame         [-50, -30; 50, 30]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
@@ -29545,9 +32034,9 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [640, 24; 1920, 703]
-        ZoomFactor    1.96259
-        SliderPosition [229, 38]
+        Location      [0, 0; 1280, 679]
+        ZoomFactor    1.03342
+        SliderPosition [0, 0]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -29859,7 +32348,7 @@ Plecs {
           Type          PlecsProbe
           Name          "Probe5"
           Show          off
-          Position      [335, 255]
+          Position      [335, 395]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -29898,7 +32387,7 @@ Plecs {
           Type          Scope
           Name          "FETs"
           Show          on
-          Position      [435, 285]
+          Position      [435, 440]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -29907,13 +32396,13 @@ Plecs {
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAB4AAABcfwCAAAAA/sAAAAUAFMAY"
 "QB2AGUAZABWAGkAZQB3AHMAAAAAHAAAAXoAAABgAP////sAAAAQAFoAbwBvAG0AQQByAGUAYQAAAA"
 "AA/////wAAAKYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAAXEAAABgAP///wAAAAMAAAdEAAA"
-"AdPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB0QAAABEAP///wAAB0QAAANG"
+"A9fwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB0QAAABEAP///wAAB0QAAALF"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAEAAAAYAFMAdABlAGEAZAB5ACAAcwB0AGEAdABlP8NGC"
 "D00YIQ/yZmZmZmZmgAAAAQAf/gAAAAAAAB/+AAAAAAAAAB/+AAAAAAAAH/4AAAAAAAAAH/4AAAAAA"
 "AAf/gAAAAAAAAAf/gAAAAAAAB/+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
-          HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":178,\"Labels\""
+          HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":186,\"Labels\""
 ":[\"Delta\"],\"VisualIdxs\":[3]}"
           PlotPalettes  "AAAAAQAAAAQAAAABAAAABAAAAAEC//8u4P//zMwAAAAAAAEC//8AA"
 "P////8AAAAAAAEC//9PsP////8AAAAAAAEC//8SwP////8AAAAAAAQAAAABAAAAAAEAAAAAAQAAAA"
@@ -30401,7 +32890,7 @@ Plecs {
           Type          PlecsProbe
           Name          "Probe4"
           Show          off
-          Position      [335, 310]
+          Position      [335, 465]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -30420,7 +32909,7 @@ Plecs {
           Type          PlecsProbe
           Name          "Probe7"
           Show          off
-          Position      [335, 345]
+          Position      [335, 500]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -30434,12 +32923,22 @@ Plecs {
             Path          ""
             Signals       {"Device current"}
           }
+          Probe {
+            Component     "D7"
+            Path          ""
+            Signals       {"Diode current"}
+          }
+          Probe {
+            Component     "D8"
+            Path          ""
+            Signals       {"Diode current"}
+          }
         }
         Component {
           Type          PlecsProbe
           Name          "Probe6"
           Show          off
-          Position      [335, 280]
+          Position      [335, 435]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -30472,6 +32971,36 @@ Plecs {
             Component     "FET6"
             Path          ""
             Signals       {"Device current"}
+          }
+          Probe {
+            Component     "D1"
+            Path          ""
+            Signals       {"Diode current"}
+          }
+          Probe {
+            Component     "D2"
+            Path          ""
+            Signals       {"Diode current"}
+          }
+          Probe {
+            Component     "D3"
+            Path          ""
+            Signals       {"Diode current"}
+          }
+          Probe {
+            Component     "D4"
+            Path          ""
+            Signals       {"Diode current"}
+          }
+          Probe {
+            Component     "D5"
+            Path          ""
+            Signals       {"Diode current"}
+          }
+          Probe {
+            Component     "D6"
+            Path          ""
+            Signals       {"Diode current"}
           }
         }
         Connection {
@@ -30546,7 +33075,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Probe5"
           SrcTerminal   1
-          Points        [400, 255; 400, 270]
+          Points        [400, 395; 400, 425]
           DstComponent  "FETs"
           DstTerminal   1
         }
@@ -30637,7 +33166,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Probe4"
           SrcTerminal   1
-          Points        [385, 310; 385, 290]
+          Points        [385, 465; 385, 445]
           DstComponent  "FETs"
           DstTerminal   3
         }
@@ -30645,7 +33174,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Probe7"
           SrcTerminal   1
-          Points        [390, 345; 390, 300]
+          Points        [390, 500; 390, 455]
           DstComponent  "FETs"
           DstTerminal   4
         }
@@ -30764,7 +33293,6 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition none
-      CommentOut    DisabledOpenCircuit
       Frame         [-45, -35; 45, 35]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
@@ -31180,7 +33708,7 @@ Plecs {
               AutoScale     1
               MinValue      0
               MaxValue      1
-              Signals       {}
+              Signals       {"Vac_sig-", "AC", "Vac_sig+"}
               Untangle      0
               KeepBaseline  off
               BaselineValue 0
@@ -31190,7 +33718,7 @@ Plecs {
               AutoScale     1
               MinValue      0
               MaxValue      1
-              Signals       {}
+              Signals       {"PWM1H", "PWM1L"}
               Untangle      0
               KeepBaseline  off
               BaselineValue 0
@@ -31200,7 +33728,7 @@ Plecs {
               AutoScale     1
               MinValue      0
               MaxValue      1
-              Signals       {}
+              Signals       {"PWM2H", "PWM2L"}
               Untangle      0
               KeepBaseline  off
               BaselineValue 0
@@ -31210,7 +33738,7 @@ Plecs {
               AutoScale     1
               MinValue      0
               MaxValue      1
-              Signals       {}
+              Signals       {"PWM3H", "PWM3L"}
               Untangle      0
               KeepBaseline  off
               BaselineValue 0
@@ -31464,8 +33992,8 @@ Plecs {
       }
       Schematic {
         Location      [0, 0; 1280, 679]
-        ZoomFactor    0.549417
-        SliderPosition [27, 0]
+        ZoomFactor    2.77129
+        SliderPosition [4594, -1]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -34353,12 +36881,12 @@ Plecs {
           Frame         [-15, -15; 15, 15]
           Parameter {
             Variable      "lower"
-            Value         "-1"
+            Value         "-30"
             Show          off
           }
           Parameter {
             Variable      "upper"
-            Value         "+1"
+            Value         "+30"
             Show          off
           }
           Terminal {
@@ -34454,7 +36982,7 @@ Plecs {
           Type          From
           Name          "From"
           Show          off
-          Position      [2100, 70]
+          Position      [2055, 70]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -34527,7 +37055,7 @@ Plecs {
           Type          LogicalOperator
           Name          "Logical\nOperator"
           Show          off
-          Position      [2140, 70]
+          Position      [2095, 70]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -35376,6 +37904,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Amplitude"
             Value         "PLL_jitter_amplitude"
@@ -35410,6 +37939,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition east
+          CommentOut    DisabledOpenCircuit
         }
         Component {
           Type          From
@@ -35471,6 +38001,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ideal_PLL_sig"
@@ -35506,6 +38037,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "jitter"
@@ -35541,6 +38073,7 @@ Plecs {
           Direction     down
           Flipped       off
           LabelPosition west
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "delayed_sine_ref"
@@ -35759,6 +38292,26 @@ Plecs {
           Name          "Constant7"
           Show          off
           Position      [435, 250]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Frame         [-10, -10; 10, 10]
+          Parameter {
+            Variable      "Value"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Constant
+          Name          "Constant8"
+          Show          off
+          Position      [2145, 70]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -36120,22 +38673,6 @@ Plecs {
           SrcTerminal   1
           DstComponent  "Logical\nOperator"
           DstTerminal   2
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Logical\nOperator"
-          SrcTerminal   1
-          Points        [2170, 70]
-          Branch {
-            Points        [2170, 90]
-            DstComponent  "Logical\nOperator12"
-            DstTerminal   2
-          }
-          Branch {
-            Points        [2170, 55]
-            DstComponent  "Logical\nOperator11"
-            DstTerminal   3
-          }
         }
         Connection {
           Type          Signal
@@ -36538,6 +39075,22 @@ Plecs {
           DstComponent  "Goto13"
           DstTerminal   1
         }
+        Connection {
+          Type          Signal
+          SrcComponent  "Constant8"
+          SrcTerminal   1
+          Points        [2170, 70]
+          Branch {
+            Points        [2170, 90]
+            DstComponent  "Logical\nOperator12"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [2170, 55]
+            DstComponent  "Logical\nOperator11"
+            DstTerminal   3
+          }
+        }
         Annotation {
           Name          "<html><body>\n<p><span style=\" color:#0000ff;\">Disc"
 "rete Control Loop 70 kHz sampling</span></p></body></html>"
@@ -36712,9 +39265,9 @@ Plecs {
         Direction     right
       }
       Schematic {
-        Location      [0, 0; 930, 679]
-        ZoomFactor    0.795134
-        SliderPosition [0, 0]
+        Location      [0, 0; 1280, 679]
+        ZoomFactor    1.59239
+        SliderPosition [0, 197]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -36759,6 +39312,36 @@ Plecs {
             Component     "FET6"
             Path          ""
             Signals       {"Device junction temp"}
+          }
+          Probe {
+            Component     "D1"
+            Path          ""
+            Signals       {"Diode junction temp"}
+          }
+          Probe {
+            Component     "D2"
+            Path          ""
+            Signals       {"Diode junction temp"}
+          }
+          Probe {
+            Component     "D3"
+            Path          ""
+            Signals       {"Diode junction temp"}
+          }
+          Probe {
+            Component     "D4"
+            Path          ""
+            Signals       {"Diode junction temp"}
+          }
+          Probe {
+            Component     "D5"
+            Path          ""
+            Signals       {"Diode junction temp"}
+          }
+          Probe {
+            Component     "D6"
+            Path          ""
+            Signals       {"Diode junction temp"}
           }
         }
         Component {
@@ -36865,6 +39448,16 @@ Plecs {
             Path          ""
             Signals       {}
           }
+          Probe {
+            Component     "D7"
+            Path          ""
+            Signals       {"Diode junction temp"}
+          }
+          Probe {
+            Component     "D8"
+            Path          ""
+            Signals       {"Diode junction temp"}
+          }
         }
         Component {
           Type          Scope
@@ -36883,8 +39476,8 @@ Plecs {
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "{\"DefaultSecSize\":100,\"FirstSecSize\":240,\"Labels"
-"\":[],\"VisualIdxs\":[]}"
+          HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":130,\"Labels\""
+":[],\"VisualIdxs\":[]}"
           PlotPalettes  "AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           Axes          "1"
           TimeRange     "0"
@@ -36901,7 +39494,7 @@ Plecs {
             MinValue      0
             MaxValue      1
             Signals       {"GaNFET 1", "GaNFET 2", "GaNFET 3", "GaNFET 4", "Ga"
-"NFET 5", "GaNFET 6", "MOSFET 7", "MOSFET 8"}
+"NFET 5", "GaNFET 6", "MOSFET 7", "MOSFET 8", "D_GaNFET1", "D_GaNFET2"}
             SignalTypes   [ ]
             Untangle      0
             KeepBaseline  off
@@ -36919,7 +39512,8 @@ Plecs {
               MinValue      0
               MaxValue      1
               Signals       {"GaNFET 1", "GaNFET 2", "GaNFET 3", "GaNFET 4", ""
-"GaNFET 5", "GaNFET 6"}
+"GaNFET 5", "GaNFET 6", "MOSFET 7", "MOSFET 8", "D_GaNFET1", "D_GaNFET2", "D_G"
+"aNFET3", "D_GaNFET4", "D_GaNFET5", "D_GaNFET6"}
               Untangle      0
               KeepBaseline  off
               BaselineValue 0
@@ -37068,11 +39662,11 @@ Plecs {
           Type          Display
           Name          "All_out"
           Show          on
-          Position      [240, 590]
+          Position      [240, 670]
           Direction     up
           Flipped       off
           LabelPosition south
-          Frame         [-91, -81; 91, 81]
+          Frame         [-91, -161; 91, 161]
           Parameter {
             Variable      "Notation"
             Value         "1"
@@ -37144,7 +39738,7 @@ Plecs {
               DstTerminal   1
             }
             Branch {
-              Points        [120, 590]
+              Points        [120, 670]
               DstComponent  "All_out"
               DstTerminal   1
             }
@@ -37206,11 +39800,11 @@ Plecs {
       Type          HeatSink
       Name          "Heat Sink"
       Show          off
-      Position      [2010, 400]
+      Position      [2030, 400]
       Direction     right
       Flipped       off
       LabelPosition south
-      Frame         [-37, -22; 37, 22]
+      Frame         [-57, -22; 57, 22]
       Parameter {
         Variable      "Cth"
         Value         "0"
@@ -37228,7 +39822,7 @@ Plecs {
       }
       Terminal {
         Type          HeatPort
-        Position      [0, -42]
+        Position      [0, -62]
         Direction     up
       }
     }
@@ -37236,11 +39830,11 @@ Plecs {
       Type          HeatSink
       Name          "Heat Sink1"
       Show          off
-      Position      [2010, 135]
+      Position      [2030, 135]
       Direction     right
       Flipped       off
       LabelPosition south
-      Frame         [-37, -22; 37, 22]
+      Frame         [-57, -22; 57, 22]
       Parameter {
         Variable      "Cth"
         Value         "0"
@@ -37258,7 +39852,7 @@ Plecs {
       }
       Terminal {
         Type          HeatPort
-        Position      [0, -42]
+        Position      [0, -62]
         Direction     up
       }
     }
@@ -37812,11 +40406,11 @@ Plecs {
       Type          HeatSink
       Name          "Heat Sink2"
       Show          off
-      Position      [740, 385]
+      Position      [770, 385]
       Direction     right
       Flipped       off
       LabelPosition south
-      Frame         [-22, -22; 22, 22]
+      Frame         [-52, -22; 52, 22]
       Parameter {
         Variable      "Cth"
         Value         "0"
@@ -37834,7 +40428,7 @@ Plecs {
       }
       Terminal {
         Type          HeatPort
-        Position      [0, -27]
+        Position      [0, -57]
         Direction     up
       }
     }
@@ -37842,11 +40436,11 @@ Plecs {
       Type          HeatSink
       Name          "Heat Sink3"
       Show          off
-      Position      [740, 330]
+      Position      [770, 330]
       Direction     right
       Flipped       off
       LabelPosition south
-      Frame         [-22, -22; 22, 22]
+      Frame         [-52, -22; 52, 22]
       Parameter {
         Variable      "Cth"
         Value         "0"
@@ -37864,7 +40458,7 @@ Plecs {
       }
       Terminal {
         Type          HeatPort
-        Position      [10, -27]
+        Position      [10, -57]
         Direction     up
       }
     }
@@ -37872,11 +40466,11 @@ Plecs {
       Type          HeatSink
       Name          "Heat Sink4"
       Show          off
-      Position      [740, 280]
+      Position      [770, 280]
       Direction     right
       Flipped       off
       LabelPosition south
-      Frame         [-22, -22; 22, 22]
+      Frame         [-52, -22; 52, 22]
       Parameter {
         Variable      "Cth"
         Value         "0"
@@ -37894,7 +40488,7 @@ Plecs {
       }
       Terminal {
         Type          HeatPort
-        Position      [0, -27]
+        Position      [0, -57]
         Direction     up
       }
     }
@@ -37902,11 +40496,11 @@ Plecs {
       Type          HeatSink
       Name          "Heat Sink5"
       Show          off
-      Position      [740, 225]
+      Position      [770, 225]
       Direction     right
       Flipped       off
       LabelPosition south
-      Frame         [-22, -22; 22, 22]
+      Frame         [-52, -22; 52, 22]
       Parameter {
         Variable      "Cth"
         Value         "0"
@@ -37924,7 +40518,7 @@ Plecs {
       }
       Terminal {
         Type          HeatPort
-        Position      [0, -27]
+        Position      [0, -57]
         Direction     up
       }
     }
@@ -37932,11 +40526,11 @@ Plecs {
       Type          HeatSink
       Name          "Heat Sink6"
       Show          off
-      Position      [740, 165]
+      Position      [770, 165]
       Direction     right
       Flipped       off
       LabelPosition south
-      Frame         [-22, -22; 22, 22]
+      Frame         [-52, -22; 52, 22]
       Parameter {
         Variable      "Cth"
         Value         "0"
@@ -37954,7 +40548,7 @@ Plecs {
       }
       Terminal {
         Type          HeatPort
-        Position      [0, -27]
+        Position      [0, -57]
         Direction     up
       }
     }
@@ -37962,11 +40556,11 @@ Plecs {
       Type          HeatSink
       Name          "Heat Sink7"
       Show          off
-      Position      [740, 115]
+      Position      [770, 115]
       Direction     right
       Flipped       off
       LabelPosition south
-      Frame         [-22, -22; 22, 22]
+      Frame         [-52, -22; 52, 22]
       Parameter {
         Variable      "Cth"
         Value         "0"
@@ -37984,7 +40578,7 @@ Plecs {
       }
       Terminal {
         Type          HeatPort
-        Position      [0, -27]
+        Position      [0, -57]
         Direction     up
       }
     }
@@ -38008,7 +40602,7 @@ Plecs {
       }
       Parameter {
         Variable      "thermal"
-        Value         "file:EPC2304/EPC2304"
+        Value         "file:EPC2304/EPC2304_no_conduction"
         Show          off
       }
       Parameter {
@@ -38260,47 +40854,513 @@ Plecs {
         Show          off
       }
     }
+    Component {
+      Type          Diode
+      Name          "D1"
+      Show          off
+      Position      [785, 390]
+      Direction     down
+      Flipped       off
+      LabelPosition east
+      CommentOut    DisabledOpenCircuit
+      Parameter {
+        Variable      "Vf"
+        Value         "2.1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Ron"
+        Value         "4e-3"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         "file:EPC2304/EPC2304_Diode"
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         "Tamb"
+        Show          off
+      }
+      Parameter {
+        Variable      "SwitchModel"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "f_grid"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Diode
+      Name          "D2"
+      Show          off
+      Position      [785, 330]
+      Direction     down
+      Flipped       off
+      LabelPosition east
+      CommentOut    DisabledOpenCircuit
+      Parameter {
+        Variable      "Vf"
+        Value         "2.1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Ron"
+        Value         "4e-3"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         "file:EPC2304/EPC2304_Diode"
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         "Tamb"
+        Show          off
+      }
+      Parameter {
+        Variable      "SwitchModel"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "f_grid"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Diode
+      Name          "D3"
+      Show          off
+      Position      [785, 280]
+      Direction     down
+      Flipped       off
+      LabelPosition east
+      CommentOut    DisabledOpenCircuit
+      Parameter {
+        Variable      "Vf"
+        Value         "2.1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Ron"
+        Value         "4e-3"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         "file:EPC2304/EPC2304_Diode"
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         "Tamb"
+        Show          off
+      }
+      Parameter {
+        Variable      "SwitchModel"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "f_grid"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Diode
+      Name          "D4"
+      Show          off
+      Position      [785, 225]
+      Direction     down
+      Flipped       off
+      LabelPosition east
+      CommentOut    DisabledOpenCircuit
+      Parameter {
+        Variable      "Vf"
+        Value         "2.1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Ron"
+        Value         "4e-3"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         "file:EPC2304/EPC2304_Diode"
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         "Tamb"
+        Show          off
+      }
+      Parameter {
+        Variable      "SwitchModel"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "f_grid"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Diode
+      Name          "D5"
+      Show          off
+      Position      [785, 165]
+      Direction     down
+      Flipped       off
+      LabelPosition east
+      CommentOut    DisabledOpenCircuit
+      Parameter {
+        Variable      "Vf"
+        Value         "2.1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Ron"
+        Value         "4e-3"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         "file:EPC2304/EPC2304_Diode"
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         "Tamb"
+        Show          off
+      }
+      Parameter {
+        Variable      "SwitchModel"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "f_grid"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Diode
+      Name          "D6"
+      Show          off
+      Position      [785, 115]
+      Direction     down
+      Flipped       off
+      LabelPosition east
+      CommentOut    DisabledOpenCircuit
+      Parameter {
+        Variable      "Vf"
+        Value         "2.1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Ron"
+        Value         "4e-3"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         "file:EPC2304/EPC2304_Diode"
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         "Tamb"
+        Show          off
+      }
+      Parameter {
+        Variable      "SwitchModel"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "f_grid"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Diode
+      Name          "D7"
+      Show          on
+      Position      [2055, 135]
+      Direction     down
+      Flipped       off
+      LabelPosition east
+      CommentOut    DisabledOpenCircuit
+      Parameter {
+        Variable      "Vf"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Ron"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         "file:IPZ60R017C_diode"
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "SwitchModel"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "f_grid"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Diode
+      Name          "D8"
+      Show          on
+      Position      [2055, 400]
+      Direction     down
+      Flipped       off
+      LabelPosition east
+      CommentOut    DisabledOpenCircuit
+      Parameter {
+        Variable      "Vf"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Ron"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "thermal"
+        Value         "file:IPZ60R017C_diode"
+        Show          off
+      }
+      Parameter {
+        Variable      "Rth"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Np"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "SwitchModel"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "f_grid"
+        Value         "0"
+        Show          off
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "EPCComponent/EPC GaN FET1"
+      Name          "EPC GaN FET1"
+      Show          on
+      Position      [1660, 725]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Frame         [-15, -15; 15, 15]
+      Parameter {
+        Variable      "device"
+        Value         "file:EPC/EPC2304"
+        Show          off
+        CustomVariables "struct('RgON', 10, 'RgOFF', 2.2, 'Ron', 4e-3)"
+      }
+      Parameter {
+        Variable      "num_par"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "T_init"
+        Value         "25"
+        Show          off
+      }
+      Terminal {
+        Type          Port
+        Position      [5, 20]
+        Direction     down
+      }
+      Terminal {
+        Type          Input
+        Position      [-15, 5]
+        Direction     left
+      }
+      Terminal {
+        Type          Port
+        Position      [5, -20]
+        Direction     up
+      }
+      Terminal {
+        Type          HeatPort
+        Position      [20, -10]
+        Direction     right
+      }
+      Terminal {
+        Type          HeatPort
+        Position      [20, 10]
+        Direction     right
+      }
+    }
     Connection {
       Type          Wire
       SrcComponent  "FET6"
       SrcTerminal   1
-      Points        [740, 90; 855, 90]
+      Points        [740, 90; 785, 90]
       Branch {
-        Points        [1205, 90]
+        Points        [855, 90]
         Branch {
-          Points        [1315, 90]
+          Points        [1205, 90]
           Branch {
-            Points        [1820, 90]
+            Points        [1315, 90]
             Branch {
-              Points        [1885, 90]
+              Points        [1820, 90]
               Branch {
-                Points        [1995, 90]
-                DstComponent  "S7"
-                DstTerminal   1
+                Points        [1885, 90]
+                Branch {
+                  Points        [1995, 90; 1995, 105]
+                  Branch {
+                    DstComponent  "S7"
+                    DstTerminal   1
+                  }
+                  Branch {
+                    Points        [2055, 105]
+                    DstComponent  "D7"
+                    DstTerminal   2
+                  }
+                }
+                Branch {
+                  DstComponent  "Load"
+                  DstTerminal   1
+                }
               }
               Branch {
-                DstComponent  "Load"
+                DstComponent  "I"
                 DstTerminal   1
               }
             }
             Branch {
-              DstComponent  "I"
-              DstTerminal   1
+              DstComponent  "Vout_sense"
+              DstTerminal   2
             }
           }
           Branch {
-            DstComponent  "Vout_sense"
-            DstTerminal   2
+            DstComponent  "Bulk_caps_noESL"
+            DstTerminal   1
           }
         }
         Branch {
-          DstComponent  "Bulk_caps_noESL"
+          DstComponent  "R2"
           DstTerminal   1
         }
       }
       Branch {
-        DstComponent  "R2"
-        DstTerminal   1
+        DstComponent  "D6"
+        DstTerminal   2
       }
     }
     Connection {
@@ -38325,6 +41385,17 @@ Plecs {
           DstComponent  "FET3"
           DstTerminal   1
         }
+        Branch {
+          Points        [785, 250]
+          Branch {
+            DstComponent  "D3"
+            DstTerminal   2
+          }
+          Branch {
+            DstComponent  "D4"
+            DstTerminal   1
+          }
+        }
       }
       Branch {
         DstComponent  "SWN_voltage"
@@ -38346,18 +41417,29 @@ Plecs {
         DstTerminal   1
       }
       Branch {
-        Points        [855, 190]
+        Points        [785, 190]
         Branch {
-          DstComponent  "R3"
+          Points        [855, 190]
+          Branch {
+            DstComponent  "R3"
+            DstTerminal   2
+          }
+          Branch {
+            DstComponent  "R4"
+            DstTerminal   1
+          }
+          Branch {
+            Points        [950, 190]
+            DstComponent  "CF2_noESL"
+            DstTerminal   1
+          }
+        }
+        Branch {
+          DstComponent  "D4"
           DstTerminal   2
         }
         Branch {
-          DstComponent  "R4"
-          DstTerminal   1
-        }
-        Branch {
-          Points        [950, 190]
-          DstComponent  "CF2_noESL"
+          DstComponent  "D5"
           DstTerminal   1
         }
       }
@@ -38368,14 +41450,25 @@ Plecs {
       SrcTerminal   2
       Points        [855, 300]
       Branch {
-        Points        [740, 300]
+        Points        [785, 300]
         Branch {
-          DstComponent  "FET2"
-          DstTerminal   1
+          Points        [740, 300]
+          Branch {
+            DstComponent  "FET2"
+            DstTerminal   1
+          }
+          Branch {
+            DstComponent  "FET3"
+            DstTerminal   2
+          }
         }
         Branch {
-          DstComponent  "FET3"
+          DstComponent  "D2"
           DstTerminal   2
+        }
+        Branch {
+          DstComponent  "D3"
+          DstTerminal   1
         }
       }
       Branch {
@@ -38398,18 +41491,29 @@ Plecs {
         DstTerminal   1
       }
       Branch {
-        Points        [855, 140]
+        Points        [785, 140]
         Branch {
-          DstComponent  "R2"
+          Points        [855, 140]
+          Branch {
+            DstComponent  "R2"
+            DstTerminal   2
+          }
+          Branch {
+            DstComponent  "R3"
+            DstTerminal   1
+          }
+          Branch {
+            Points        [1090, 140]
+            DstComponent  "CF1_noESL"
+            DstTerminal   1
+          }
+        }
+        Branch {
+          DstComponent  "D5"
           DstTerminal   2
         }
         Branch {
-          DstComponent  "R3"
-          DstTerminal   1
-        }
-        Branch {
-          Points        [1090, 140]
-          DstComponent  "CF1_noESL"
+          DstComponent  "D6"
           DstTerminal   1
         }
       }
@@ -38420,14 +41524,25 @@ Plecs {
       SrcTerminal   2
       Points        [855, 350]
       Branch {
-        Points        [740, 350]
+        Points        [785, 350]
         Branch {
-          DstComponent  "FET1"
+          DstComponent  "D1"
+          DstTerminal   2
+        }
+        Branch {
+          DstComponent  "D2"
           DstTerminal   1
         }
         Branch {
-          DstComponent  "FET2"
-          DstTerminal   2
+          Points        [740, 350]
+          Branch {
+            DstComponent  "FET1"
+            DstTerminal   1
+          }
+          Branch {
+            DstComponent  "FET2"
+            DstTerminal   2
+          }
         }
       }
       Branch {
@@ -38467,12 +41582,28 @@ Plecs {
       Branch {
         Points        [2140, 480; 2140, 310; 2030, 310; 2030, 270; 1995, 270]
         Branch {
-          DstComponent  "S8"
-          DstTerminal   1
+          Points        [1995, 375]
+          Branch {
+            DstComponent  "S8"
+            DstTerminal   1
+          }
+          Branch {
+            Points        [2055, 375]
+            DstComponent  "D8"
+            DstTerminal   2
+          }
         }
         Branch {
-          DstComponent  "S7"
-          DstTerminal   2
+          Points        [1995, 165]
+          Branch {
+            DstComponent  "S7"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [2055, 165]
+            DstComponent  "D7"
+            DstTerminal   1
+          }
         }
       }
     }
@@ -38503,8 +41634,16 @@ Plecs {
                   DstTerminal   2
                 }
                 Branch {
-                  DstComponent  "S8"
-                  DstTerminal   2
+                  Points        [1995, 420]
+                  Branch {
+                    DstComponent  "S8"
+                    DstTerminal   2
+                  }
+                  Branch {
+                    Points        [2055, 420]
+                    DstComponent  "D8"
+                    DstTerminal   1
+                  }
                 }
               }
               Branch {
@@ -38528,9 +41667,16 @@ Plecs {
         }
       }
       Branch {
-        Points        [740, 420]
-        DstComponent  "FET1"
-        DstTerminal   2
+        Points        [785, 420]
+        Branch {
+          Points        [740, 420]
+          DstComponent  "FET1"
+          DstTerminal   2
+        }
+        Branch {
+          DstComponent  "D1"
+          DstTerminal   1
+        }
       }
     }
     Connection {
@@ -38727,26 +41873,10 @@ Plecs {
         DstTerminal   1
       }
       Branch {
-        Points        [965, 530]
+        Points        [965, 545]
         DstComponent  "Rth_pcb"
         DstTerminal   2
       }
-    }
-    Connection {
-      Type          HeatPipe
-      SrcComponent  "Heat Sink1"
-      SrcTerminal   1
-      Points        [2055, 135]
-      DstComponent  "Rth"
-      DstTerminal   1
-    }
-    Connection {
-      Type          HeatPipe
-      SrcComponent  "Heat Sink"
-      SrcTerminal   1
-      Points        [2055, 400]
-      DstComponent  "Rth1"
-      DstTerminal   2
     }
     Connection {
       Type          HeatPipe
@@ -38862,49 +41992,6 @@ Plecs {
       DstTerminal   3
     }
     Connection {
-      Type          HeatPipe
-      SrcComponent  "Rth_pcb"
-      SrcTerminal   1
-      Points        [770, 385]
-      Branch {
-        Points        [770, 340]
-        Branch {
-          Points        [770, 280]
-          Branch {
-            Points        [770, 225]
-            Branch {
-              Points        [770, 165]
-              Branch {
-                Points        [770, 115]
-                DstComponent  "Heat Sink7"
-                DstTerminal   1
-              }
-              Branch {
-                DstComponent  "Heat Sink6"
-                DstTerminal   1
-              }
-            }
-            Branch {
-              DstComponent  "Heat Sink5"
-              DstTerminal   1
-            }
-          }
-          Branch {
-            DstComponent  "Heat Sink4"
-            DstTerminal   1
-          }
-        }
-        Branch {
-          DstComponent  "Heat Sink3"
-          DstTerminal   1
-        }
-      }
-      Branch {
-        DstComponent  "Heat Sink2"
-        DstTerminal   1
-      }
-    }
-    Connection {
       Type          Wire
       SrcComponent  "V_ac"
       SrcTerminal   2
@@ -38924,6 +42011,65 @@ Plecs {
       SrcComponent  "Thermals"
       SrcTerminal   1
       DstComponent  "Thermals_CSV_out"
+      DstTerminal   1
+    }
+    Connection {
+      Type          HeatPipe
+      SrcComponent  "Heat Sink7"
+      SrcTerminal   1
+      Points        [830, 115; 830, 165]
+      Branch {
+        DstComponent  "Heat Sink6"
+        DstTerminal   1
+      }
+      Branch {
+        Points        [830, 225]
+        Branch {
+          DstComponent  "Heat Sink5"
+          DstTerminal   1
+        }
+        Branch {
+          Points        [830, 280]
+          Branch {
+            DstComponent  "Heat Sink4"
+            DstTerminal   1
+          }
+          Branch {
+            Points        [830, 340]
+            Branch {
+              DstComponent  "Heat Sink3"
+              DstTerminal   1
+            }
+            Branch {
+              Points        [830, 385]
+              Branch {
+                DstComponent  "Heat Sink2"
+                DstTerminal   1
+              }
+              Branch {
+                Points        [830, 545]
+                DstComponent  "Rth_pcb"
+                DstTerminal   1
+              }
+            }
+          }
+        }
+      }
+    }
+    Connection {
+      Type          HeatPipe
+      SrcComponent  "Rth1"
+      SrcTerminal   2
+      Points        [2055, 370; 2095, 370; 2095, 400]
+      DstComponent  "Heat Sink"
+      DstTerminal   1
+    }
+    Connection {
+      Type          HeatPipe
+      SrcComponent  "Rth"
+      SrcTerminal   1
+      Points        [2095, 170; 2095, 135]
+      DstComponent  "Heat Sink1"
       DstTerminal   1
     }
     Annotation {
