@@ -57,20 +57,20 @@
             </Table1D>
             <Table2D>
                 <Name>RthJPCB</Name>
-                <XAxis> 1 2</XAxis>
+                <XAxis> 1 2 3</XAxis>
                 <YAxis> 0 1</YAxis>
                 <FunctionValues scale="1">
-                    <YDimension> 0.05518 0.8605</YDimension>
-                    <YDimension> 8.127e-05 0.01041</YDimension>
+                    <YDimension> 0.0683 0.693 0.749</YDimension>
+                    <YDimension> 0.000983 0.0104 0.0244</YDimension>
                 </FunctionValues>
             </Table2D>
             <Table2D>
                 <Name>RthJtop</Name>
-                <XAxis> 1 2</XAxis>
+                <XAxis> 1 2 3</XAxis>
                 <YAxis> 0 1</YAxis>
                 <FunctionValues scale="1">
-                    <YDimension> 0.1484 0.7759</YDimension>
-                    <YDimension> 1.721e-05 0.0007249</YDimension>
+                    <YDimension> 0.0247 0.0421 0.173</YDimension>
+                    <YDimension> 0.000301 0.155 0.00271</YDimension>
                 </FunctionValues>
             </Table2D>
         </CustomTables>
@@ -156,13 +156,5 @@
         <Comment>
             <Line>Sep 15, 2023 - Ed2</Line>
         </Comment>
-        <GaugeData name="Import 1" tableName="RthJtop" type="CustomTables" positionIndex="1">
-            <XAxis>0 1 0</XAxis>
-            <YAxis>0 1 0</YAxis>
-            <XAxisSnapGrid>0.05 0</XAxisSnapGrid>
-            <CurveVisibility></CurveVisibility>
-            <CoAxesOnScene>0 0 0 0</CoAxesOnScene>
-            <ImageData opacity="1" x="0" y="0" scale="1"></ImageData>
-        </GaugeData>
     </Package>
 </SemiconductorLibrary>

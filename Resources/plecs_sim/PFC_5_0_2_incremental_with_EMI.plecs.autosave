@@ -92,7 +92,7 @@ Plecs {
   Schematic {
     Location      [0, 0; 930, 969]
     ZoomFactor    1.35954
-    SliderPosition [1282, -1]
+    SliderPosition [1282, 60]
     ShowBrowser   off
     BrowserWidth  802
     Component {
@@ -18054,7 +18054,7 @@ Plecs {
       Schematic {
         Location      [0, 0; 930, 969]
         ZoomFactor    1.95696
-        SliderPosition [1429, 293]
+        SliderPosition [1571, 950]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -41516,7 +41516,7 @@ Plecs {
       Schematic {
         Location      [0, 0; 526, 679]
         ZoomFactor    1.21596
-        SliderPosition [0, 96]
+        SliderPosition [0, -1]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -41621,7 +41621,7 @@ Plecs {
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAFYA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGAA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABgAP///wAAAAMAAAOiAAA"
-"Ap/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA6IAAABEAP///wAAA6IAAAMT"
+"BCPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA6IAAABEAP///wAAA6IAAAKy"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -44959,42 +44959,45 @@ Plecs {
 "sses_measure/All_losses','ClearTraces');\n\t%plecs('scope', './Thermals/csv',"
 "'ClearTraces');\n\t\n\tif isstruct(data)\n\t\n\t\tt = data.Time;\n\t\ty = dat"
 "a.Values;\n\t\t\n\t\t% ======================================================"
-"===\n\t\t% GRUPPO 1 (19 segnali) - LOSSES\n\t\t% ============================"
+"===\n\t\t% GRUPPO 1 (23 segnali) - LOSSES\n\t\t% ============================"
 "=============================\n\t\tlosses = y(1:19,end);\n\n\t\tLosses = ['/h"
 "ome/giorgio/Documenti/PolitoMaterial/Tesi/PoliTOThesis/Resources/plecs_sim/PF"
 "C_sim_results/variable_load/Losses/', mat2str(PowerOutput(index)), 'W.csv'];"
 "\n\t\tfid = fopen(Losses,'w');\n\t\tfprintf(fid, ['\"Time / s\",\"Input_power"
 "\",\"Output_power\",\"Losses\",\"Efficency\",\"Caps_losses\",\"FL1_losses\","
-"\"HF1_losses\",\"FL2_losses\",\"HF2_losses\",\"Bulkcap_losses\",\"GaN_total_l"
-"osses\",\"GaN_switching_losses\",\"GaN_ohmic_losses\",\"L_losses\",\"iTHD_per"
-"centage\",\"Si_conduction\",\"Si_switching\",\"Si_total\",\"EMI_losses\"\\n']"
-");\n\t\tfprintf(fid, '%e', t(end));\n\t\tfor i = 1:19\n\t\t\tfprintf(fid, ',%"
-"e', losses(i));\n\t\tend\n\t\tfprintf(fid, '\\n');\n\t\t\n\t\tfclose(fid);\n"
-"\n\t\t% =========================================================\n\t\t% GRUP"
-"PO 2 (8 segnali) - THERMALS\n\t\t% =========================================="
-"===============\n\t\tthermals = y(20:27,end);\n\n\t\tThermals = ['/home/giorg"
-"io/Documenti/PolitoMaterial/Tesi/PoliTOThesis/Resources/plecs_sim/PFC_sim_res"
-"ults/variable_load/Thermals/', mat2str(PowerOutput(index)), 'W.csv'];\n\t\tfi"
-"d = fopen(Thermals,'w');\n\t\tfprintf(fid, ['\"Time / s\",\"GaNFET 1\",\"GaNF"
-"ET 2\",\"GaNFET 3\",\"GaNFET 4\",\"GaNFET 5\",\"GaNFET 6\",\"MOSFET 7\",\"MOS"
-"FET 8\"\\n']);\n\t\t\n\t\tfprintf(fid, '%e', t(end));\n\t\tfor i = 1:8\n\t\t"
-"\tfprintf(fid, ',%e', thermals(i));\n\t\tend\n\t\tfprintf(fid, '\\n');\n\t\t"
-"\n\t\tfclose(fid);\n\n\t\t% Reducing simulation results by return value 'resu"
-"lt' \n \t\tresult = 0;\n \telse\n \t\t% Print error message to Octave console"
-"\n \t\tprintf(' Error in Simulation %d for Power=%dW: %s\\n',\n              "
-"    index, PowerOutput(index), data);\n\tend\nend\n\n% Set value to be swept"
-"\nPowerOutput = [250:5000:3000]; % start step stop\n%PowerOutput = 50;\n% Ini"
-"tialize simStruct as cell array with all values\nfor ix = 1:length(PowerOutpu"
-"t)\n\tsimStructs{ix}.ModelVars.Pout = PowerOutput(ix);\n% Name of 'ModelVars'"
-" can be assigned for diagnostic purposes\t\n\tsimStructs{ix}.Name = ['Power='"
-" mat2str(PowerOutput(ix)) 'W'];\nend\n\n% Start simulation, return result fro"
-"m callback function into 'out'\n% Analysis will be moved to callback function"
-" to reduce simulation results\nout = plecs('simulate', simStructs, @(index, d"
-"ata) callback(index, data));\n\nfor ix = 1:length(PowerOutput)\n\tprintf(' Si"
-"mulation for Power=%dW: started\\n',PowerOutput(ix));\n\t% Detect if errors o"
-"ccurred in parallel simulation \n   if ischar(out{ix})\n   \tprintf(' Error f"
-"or P=%dW: %s\\n',PowerOutput(ix), out{ix});\n   else\n \t\tprintf(' Simulatio"
-"n for Power=%dW: terminated\\n',PowerOutput(ix));\n\tend\nend"
+"\"HF1_losses\",\"FL2_losses\",\"HF2_losses\",\"Bulkcap_losses\",\"Inductor\","
+"\"EMI\",\"GaN_total\",\"GaN_switching\",\"GaN_ohmic_total\",\"GaN_ohmich_ON\""
+",\"GaN_Forward_conduction\",\"GaN_Reverse_ON_conduction\",\"GaN_Reverse_OFF_c"
+"onduction\",\"Si_total\",\"Si_conduction\",\"Si_switching\",\"EMI_losses\",\""
+"iTHD_percentage\"\\n']);\n\t\tfprintf(fid, '%e', t(end));\n\t\tfor i = 1:19\n"
+"\t\t\tfprintf(fid, ',%e', losses(i));\n\t\tend\n\t\tfprintf(fid, '\\n');\n\t"
+"\t\n\t\tfclose(fid);\n\n\t\t% ==============================================="
+"==========\n\t\t% GRUPPO 2 (8 segnali) - THERMALS\n\t\t% ===================="
+"=====================================\n\t\tthermals = y(20:27,end);\n\n\t\tTh"
+"ermals = ['/home/giorgio/Documenti/PolitoMaterial/Tesi/PoliTOThesis/Resources"
+"/plecs_sim/PFC_sim_results/variable_load/Thermals/', mat2str(PowerOutput(inde"
+"x)), 'W.csv'];\n\t\tfid = fopen(Thermals,'w');\n\t\tfprintf(fid, ['\"Time / s"
+"\",\"GaNFET1_Junction\",\"GaNFET2_Junction\",\"GaNFET3_Junction\",\"GaNFET4_J"
+"unction\",\"GaNFET5_Junction\",GaNFET6_Junction\",\"GaNFET_Package_temp\",\"M"
+"OSFET7_Junction\",\"MOSFET8_Junction\",\"MOSFET7_Package_temp\",\"MOSFET8_Pac"
+"kage_temp\"\\n']);\n\t\t\n\t\tfprintf(fid, '%e', t(end));\n\t\tfor i = 1:8\n"
+"\t\t\tfprintf(fid, ',%e', thermals(i));\n\t\tend\n\t\tfprintf(fid, '\\n');\n"
+"\t\t\n\t\tfclose(fid);\n\n\t\t% Reducing simulation results by return value '"
+"result' \n \t\tresult = 0;\n \telse\n \t\t% Print error message to Octave con"
+"sole\n \t\tprintf(' Error in Simulation %d for Power=%dW: %s\\n',\n          "
+"        index, PowerOutput(index), data);\n\tend\nend\n\n% Set value to be sw"
+"ept\nPowerOutput = [250:5000:3000]; % start step stop\n%PowerOutput = 50;\n% "
+"Initialize simStruct as cell array with all values\nfor ix = 1:length(PowerOu"
+"tput)\n\tsimStructs{ix}.ModelVars.Pout = PowerOutput(ix);\n% Name of 'ModelVa"
+"rs' can be assigned for diagnostic purposes\t\n\tsimStructs{ix}.Name = ['Powe"
+"r=' mat2str(PowerOutput(ix)) 'W'];\nend\n\n% Start simulation, return result "
+"from callback function into 'out'\n% Analysis will be moved to callback funct"
+"ion to reduce simulation results\nout = plecs('simulate', simStructs, @(index"
+", data) callback(index, data));\n\nfor ix = 1:length(PowerOutput)\n\tprintf('"
+" Simulation for Power=%dW: started\\n',PowerOutput(ix));\n\t% Detect if error"
+"s occurred in parallel simulation \n   if ischar(out{ix})\n   \tprintf(' Erro"
+"r for P=%dW: %s\\n',PowerOutput(ix), out{ix});\n   else\n \t\tprintf(' Simula"
+"tion for Power=%dW: terminated\\n',PowerOutput(ix));\n\tend\nend"
   }
   Script {
     Name          "PLL_sweep"
