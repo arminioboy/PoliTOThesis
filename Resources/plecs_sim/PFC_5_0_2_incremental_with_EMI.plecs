@@ -28,23 +28,39 @@ Plecs {
   AlgebraicLoopWithStateMachineMsg "2"
   AssertionAction "3"
   FixedPointDatatypeOverride "1"
-  InitializationCommands base64 "UG91dD0xMDA7JUNPTU1FTlQgVEhJUyBGT1IgQkFUQ0ggU"
-"0lNVUxBVElPTlMKClZvdXQ9NDAwOwpWaW4gPSAyMzAqc3FydCgyKTsgJSBHcmlkIHZvbHRhZ2UgKF"
-"YpCkYgPSA1MC4wOyAlIEdyaWQgZnJlcXVlbmN5IChIeikKCmRlYWR0aW1lPTE1ZS05OwolU2xvd19"
-"sZWdfZGVhZHRpbWU9NDAwZS05OwoKJXRoZXJtYWwKJVJ0aF9jaCA9IDAuMTsJCSUgQ2FzZS10by1o"
-"ZWF0c2luayB0aGVybWFsIHJlc2lzdGFuY2UgKFRJTSkgKEsvVykgWzA6MjBdCiVSdGhfaGEgPSAwL"
-"jU7CQklIEhlYXRzaW5rLXRvLWFtYmllbnQgdGhlcm1hbCByZXNpc3RhbmNlIChLL1cpIFswOjIwXQ"
-"oldGFvX2hhID0gMTsJCSUgSGVhdHNpbmsgdGltZSBjb25zdGFudCAocykgWzA6MTAwXQolQ3RoID0"
-"gdGFvX2hhL1J0aF9oYTsgJSBIZWF0c2luayB0aGVybWFsIGNhcGFjaXRhbmNlIChKL0spCgpSdGhf"
-"YWlyID0gNDA7ICAgICAgICAgJSBDYXNlLXRvLWFtYmllbnQsZm9yY2VkIHZlbnRpbGF0aW9uIChLL"
-"1cpClJ0aF9wY2JfYWlyID0gNTsgICAgICAlIEJvYXJkLXRvLWFtYmllbnQgLCBmb3JjZWQgdmVudG"
-"lsYXRpb24gKEsvVykKUnRoX3BjYiA9IDI7CSAgICAgICAlIENhc2UtdG8tYm9hcmQgKEsvVykKUnR"
-"oX3BhY2tfYWlyX1NpID0gMTA7ICUgQ2FzZS10by1hbWJpZW50LGZvcmNlZCB2ZW50aWxhdGlvbiAo"
-"Sy9XKQoKVGFtYiA9IDI1OwpUaW5pdEdhTkZFVHMgPSA3MDsKVGluaXRTaUZFVHMgPSAyNTsKJWVuZ"
-"CB0aGVybWFsCgoKZnMgPSAxNDBlMzsgJSBTd2l0Y2hpbmcgZnJlcXVlbmN5IChIeikKClBMTF9lcn"
-"Jvcj0wOyVhbW91bnQgb2YgUExMIGVycm9yICjCsCkKUExMX2ppdHRlcl9mcmVxPTE7JSBmcmVxdWV"
-"uY3kgb2YgdGhpcyBqaXR0ZXIgKEh6KQpQTExfaml0dGVyX2FtcGxpdHVkZT0oUExMX2Vycm9yKjAu"
-"MDIpLzM2MDs="
+  InitializationCommands base64 "JVBvdXQ9NTA1MDslQ09NTUVOVCBUSElTIEZPUiBCQVRDS"
+"CBTSU1VTEFUSU9OUwoKVm91dD00MDA7ClZpbiA9IDIzMCpzcXJ0KDIpOyAlIEdyaWQgdm9sdGFnZS"
+"AoVikKRiA9IDUwLjA7ICUgR3JpZCBmcmVxdWVuY3kgKEh6KQoKZGVhZHRpbWU9MTVlLTk7CiVTbG9"
+"3X2xlZ19kZWFkdGltZT00MDBlLTk7CgoldGhlcm1hbAolUnRoX2NoID0gMC4xOwkJJSBDYXNlLXRv"
+"LWhlYXRzaW5rIHRoZXJtYWwgcmVzaXN0YW5jZSAoVElNKSAoSy9XKSBbMDoyMF0KJVJ0aF9oYSA9I"
+"DAuNTsJCSUgSGVhdHNpbmstdG8tYW1iaWVudCB0aGVybWFsIHJlc2lzdGFuY2UgKEsvVykgWzA6Mj"
+"BdCiV0YW9faGEgPSAxOwkJJSBIZWF0c2luayB0aW1lIGNvbnN0YW50IChzKSBbMDoxMDBdCiVDdGg"
+"gPSB0YW9faGEvUnRoX2hhOyAlIEhlYXRzaW5rIHRoZXJtYWwgY2FwYWNpdGFuY2UgKEovSykKClJ0"
+"aF9haXIgPSA0MDsgICAgICAgICAlIENhc2UtdG8tYW1iaWVudCxmb3JjZWQgdmVudGlsYXRpb24gK"
+"EsvVykKUnRoX3BjYl9haXIgPSA1OyAgICAgICUgQm9hcmQtdG8tYW1iaWVudCAsIGZvcmNlZCB2ZW"
+"50aWxhdGlvbiAoSy9XKQpSdGhfcGNiID0gMjsJICAgICAgICUgQ2FzZS10by1ib2FyZCAoSy9XKQp"
+"SdGhfcGFja19haXJfU2kgPSAxMDsgJSBDYXNlLXRvLWFtYmllbnQsZm9yY2VkIHZlbnRpbGF0aW9u"
+"IChLL1cpCgpUYW1iID0gMjU7ClRpbml0R2FORkVUcyA9IDI1OyUgcGxhY2Vob2xkZXJzIGp1c3Qgd"
+"G8gYXZvaWQgZXJyb3JzIGluIGNhc2Ugb2YgY29kZSBidWdzClRpbml0U2lGRVRzID0gMjU7CgppZi"
+"BQb3V0IDwgMTAwCglUaW5pdEdhTkZFVHMgPSA3MTsKCVRpbml0U2lGRVRzID0gMjUuNTsKZW5kCml"
+"mIFBvdXQgPiAxMDAgJiYgUG91dCA8PSA1MDAKCVRpbml0R2FORkVUcyA9IDczLjU7CglUaW5pdFNp"
+"RkVUcyA9IDI2OwplbmQKaWYgUG91dCA+IDUwMCAmJiBQb3V0IDw9IDEwMDAKCVRpbml0R2FORkVUc"
+"yA9IDc2LjU7CglUaW5pdFNpRkVUcyA9IDI3OwplbmQKaWYgUG91dCA+IDEwMDAgJiYgUG91dCA8PS"
+"AxNTAwCglUaW5pdEdhTkZFVHMgPSA3OTsKCVRpbml0U2lGRVRzID0gMjg7CmVuZAppZiBQb3V0ID4"
+"gMTUwMCAmJiBQb3V0IDw9IDIwMDAKCVRpbml0R2FORkVUcyA9IDgzOwoJVGluaXRTaUZFVHMgPSAy"
+"OS41OwplbmQKaWYgUG91dCA+IDIwMDAgJiYgUG91dCA8PSAyNTAwCglUaW5pdEdhTkZFVHMgPSA4O"
+"DsKCVRpbml0U2lGRVRzID0gMzM7CmVuZAppZiBQb3V0ID4gMjUwMCAmJiBQb3V0IDw9IDMwMDAKCV"
+"Rpbml0R2FORkVUcyA9IDk0LjU7CglUaW5pdFNpRkVUcyA9IDM4Ljc1OwplbmQKaWYgUG91dCA+IDM"
+"wMDAgJiYgUG91dCA8PSAzNTAwCglUaW5pdEdhTkZFVHMgPSAxMDE7CglUaW5pdFNpRkVUcyA9IDQ1"
+"OwplbmQKaWYgUG91dCA+IDM1MDAgJiYgUG91dCA8PSA0MDAwCglUaW5pdEdhTkZFVHMgPSAxMDk7C"
+"glUaW5pdFNpRkVUcyA9IDUyOwplbmQKaWYgUG91dCA+IDQwMDAgJiYgUG91dCA8PSA0NTAwCglUaW"
+"5pdEdhTkZFVHMgPSAxMTguMjU7CglUaW5pdFNpRkVUcyA9IDYxOwplbmQKaWYgUG91dCA+IDQ1MDA"
+"gJiYgUG91dCA8PSA1MDAwCglUaW5pdEdhTkZFVHMgPSAxMjg7CglUaW5pdFNpRkVUcyA9IDcwOwpl"
+"bmQKaWYgUG91dCA+IDUwMDAKCVRpbml0R2FORkVUcyA9IDEzMzsKCVRpbml0U2lGRVRzID0gNzU7C"
+"mVuZAoKJWVuZCB0aGVybWFsCgoKZnMgPSAxNDBlMzsgJSBTd2l0Y2hpbmcgZnJlcXVlbmN5IChIei"
+"kKClBMTF9lcnJvcj0wOyVhbW91bnQgb2YgUExMIGVycm9yICjCsCkKUExMX2ppdHRlcl9mcmVxPTE"
+"7JSBmcmVxdWVuY3kgb2YgdGhpcyBqaXR0ZXIgKEh6KQpQTExfaml0dGVyX2FtcGxpdHVkZT0oUExM"
+"X2Vycm9yKjAuMDIpLzM2MDs="
   InitialState  "1"
   SystemState   ""
   JacobianComputation "2"
@@ -90,9 +106,9 @@ Plecs {
     Index         "2"
   }
   Schematic {
-    Location      [0, 0; 930, 969]
-    ZoomFactor    1.35954
-    SliderPosition [1282, -1]
+    Location      [0, 0; 1860, 969]
+    ZoomFactor    0.869264
+    SliderPosition [0, 0]
     ShowBrowser   off
     BrowserWidth  802
     Component {
@@ -162,7 +178,7 @@ Plecs {
       Schematic {
         Location      [0, 0; 1280, 679]
         ZoomFactor    1.31992
-        SliderPosition [461, 0]
+        SliderPosition [-1, 0]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -1918,7 +1934,7 @@ Plecs {
       Schematic {
         Location      [172, 89; 1102, 1056]
         ZoomFactor    1.13796
-        SliderPosition [-1, 0]
+        SliderPosition [605, 0]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -7816,6 +7832,14 @@ Plecs {
         }
       }
       MaskProbe {
+        Name          "current"
+        Probe {
+          Component     "Am1"
+          Path          ""
+          Signals       {"Measured current"}
+        }
+      }
+      MaskProbe {
         Name          "losses"
         Probe {
           Component     "HF_caps"
@@ -7875,7 +7899,7 @@ Plecs {
       Schematic {
         Location      [195, 174; 1606, 917]
         ZoomFactor    2.14397
-        SliderPosition [-1, 58]
+        SliderPosition [32, 0]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -9211,7 +9235,7 @@ Plecs {
             Direction     down
           }
           Schematic {
-            Location      [258, 269; 898, 708]
+            Location      [258, 269; 1367, 708]
             ZoomFactor    1.71498
             SliderPosition [0, 0]
             ShowBrowser   off
@@ -9245,7 +9269,7 @@ Plecs {
               LabelPosition west
               Parameter {
                 Variable      "R"
-                Value         "300e-6"
+                Value         "800e-3"
                 Show          on
               }
             }
@@ -9450,7 +9474,7 @@ Plecs {
               LabelPosition west
               Parameter {
                 Variable      "R"
-                Value         "300e-6"
+                Value         "800e-3"
                 Show          on
               }
             }
@@ -9655,7 +9679,7 @@ Plecs {
               LabelPosition west
               Parameter {
                 Variable      "R"
-                Value         "300e-6"
+                Value         "800e-3"
                 Show          on
               }
             }
@@ -9860,7 +9884,7 @@ Plecs {
               LabelPosition west
               Parameter {
                 Variable      "R"
-                Value         "300e-6"
+                Value         "800e-3"
                 Show          on
               }
             }
@@ -10031,7 +10055,7 @@ Plecs {
             Direction     down
           }
           Schematic {
-            Location      [258, 269; 898, 708]
+            Location      [258, 269; 1149, 708]
             ZoomFactor    1.71498
             SliderPosition [0, 0]
             ShowBrowser   off
@@ -10065,7 +10089,7 @@ Plecs {
               LabelPosition west
               Parameter {
                 Variable      "R"
-                Value         "300e-6"
+                Value         "800e-3"
                 Show          on
               }
             }
@@ -10402,6 +10426,14 @@ Plecs {
           Component     "Vm1"
           Path          ""
           Signals       {"Measured voltage"}
+        }
+      }
+      MaskProbe {
+        Name          "current"
+        Probe {
+          Component     "Am1"
+          Path          ""
+          Signals       {"Measured current"}
         }
       }
       MaskProbe {
@@ -15964,6 +15996,14 @@ Plecs {
         }
       }
       MaskProbe {
+        Name          "current"
+        Probe {
+          Component     "Am1"
+          Path          ""
+          Signals       {"Measured current"}
+        }
+      }
+      MaskProbe {
         Name          "losses"
         Probe {
           Component     "HF_caps"
@@ -16998,7 +17038,7 @@ Plecs {
         Direction     right
       }
       TerminalNames { "Vac_sig", "L", "N", "Vac_pol" }
-      Location      [0, 0; 400, 218]
+      Location      [0, 0; 778, 218]
       ZoomFactor    1
       SliderPosition [0, 0]
       ShowBrowser   off
@@ -18052,9 +18092,9 @@ Plecs {
         Direction     right
       }
       Schematic {
-        Location      [0, 0; 930, 969]
-        ZoomFactor    1.95696
-        SliderPosition [1429, 293]
+        Location      [1014, 24; 2874, 993]
+        ZoomFactor    1.01409
+        SliderPosition [0, 18]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -18276,9 +18316,9 @@ Plecs {
             Direction     right
           }
           Schematic {
-            Location      [0, 0; 1860, 969]
+            Location      [0, 0; 1280, 679]
             ZoomFactor    1.13957
-            SliderPosition [-1, -1]
+            SliderPosition [1184, 1253]
             ShowBrowser   off
             BrowserWidth  100
             Component {
@@ -27495,7 +27535,7 @@ Plecs {
           Schematic {
             Location      [0, 0; 840, 418]
             ZoomFactor    1.11289
-            SliderPosition [35, 25]
+            SliderPosition [0, 0]
             ShowBrowser   off
             BrowserWidth  100
             Component {
@@ -33738,7 +33778,7 @@ Plecs {
             Schematic {
               Location      [111, 153; 751, 591]
               ZoomFactor    1.95289
-              SliderPosition [0, 0]
+              SliderPosition [-1, 0]
               ShowBrowser   off
               BrowserWidth  100
               Component {
@@ -34322,9 +34362,9 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [0, 0; 930, 679]
+        Location      [1014, 24; 2147, 495]
         ZoomFactor    1.03342
-        SliderPosition [42, 0]
+        SliderPosition [80, -1]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -34365,11 +34405,11 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -15; 15, 15]
-          Location      [0, 0; 1860, 991]
+          Location      [0, 0; 930, 991]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAB4AAABcfwCAAAAA/sAAAAUAFMAY"
 "QB2AGUAZABWAGkAZQB3AHMAAAAAHAAAAXoAAABgAP////sAAAAQAFoAbwBvAG0AQQByAGUAYQAAAA"
-"AA/////wAAAFYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAAXEAAABgAP///wAAAAMAAAdEAAA"
-"AWPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB0QAAABEAP///wAAB0QAAANi"
+"AA/////wAAAFYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAAXEAAABgAP///wAAAAMAAAOiAAA"
+"AWPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA6IAAABEAP///wAAA6IAAANi"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAEAAAAYAFMAdABlAGEAZAB5ACAAcwB0AGEAdABlP8NGC"
@@ -34390,7 +34430,7 @@ Plecs {
           TimeRange     "0"
           ScrollingMode "2"
           SingleTimeAxis "1"
-          Open          "1"
+          Open          "0"
           Ts            "-1"
           SampleLimit   "0"
           XAxisLabel    "Time / s"
@@ -34543,7 +34583,7 @@ Plecs {
             Signals       {"Measured voltage"}
           }
           Probe {
-            Component     "Vm1"
+            Component     "AC_filtered"
             Path          ""
             Signals       {"Measured voltage"}
           }
@@ -34640,6 +34680,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Probe {
             Component     "EPC GaN FET1"
             Path          ""
@@ -34679,6 +34720,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-15, -25; 15, 25]
           Location      [0, 0; 930, 989]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAB4AAABcfwCAAAAA/sAAAAUAFMAY"
@@ -34812,6 +34854,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-15, -15; 15, 15]
           Location      [0, 0; 1438, 935]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAAC2PwCAAAAA/sAAAAQAFoAb"
@@ -34870,6 +34913,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-2, -30; 7, 30]
           Parameter {
             Variable      "Width"
@@ -34885,6 +34929,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition north
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "Vac_pol"
@@ -34920,6 +34965,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition north
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "iAC_sense"
@@ -34955,6 +35001,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "K"
             Value         "303"
@@ -34989,6 +35036,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "K"
             Value         "303/2"
@@ -35023,6 +35071,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "K"
             Value         "1000/33"
@@ -35057,6 +35106,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition north
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "Vdc"
@@ -35092,6 +35142,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition north
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "Vac_sense"
@@ -35127,6 +35178,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition north
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "VL"
@@ -35162,6 +35214,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-35, -10; 35, 10]
           Parameter {
             Variable      "Value"
@@ -35182,6 +35235,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Probe {
             Component     "S7"
             Path          ""
@@ -35201,6 +35255,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Probe {
             Component     "S7"
             Path          ""
@@ -35220,6 +35275,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Probe {
             Component     "EPC GaN FET1"
             Path          ""
@@ -35249,6 +35305,88 @@ Plecs {
             Component     "EPC GaN FET6"
             Path          ""
             Signals       {"FET current (A) (per paralleled device)"}
+          }
+        }
+        Component {
+          Type          PlecsProbe
+          Name          "Probe8"
+          Show          off
+          Position      [375, 220]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Probe {
+            Component     "Bulk_caps_noESL"
+            Path          ""
+            Signals       {"current"}
+          }
+          Probe {
+            Component     "CF2_noESL"
+            Path          ""
+            Signals       {"current"}
+          }
+          Probe {
+            Component     "CF1_noESL"
+            Path          ""
+            Signals       {"current"}
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "Caps"
+          Show          on
+          Position      [450, 220]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Frame         [-15, -15; 15, 15]
+          Location      [0, 0; 1860, 991]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAAC4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAGAA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABgAP///wAAAAMAAAdEAAA"
+"AevwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB0QAAABEAP///wAAB0QAAANA"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":204,\"Labels\""
+":[],\"VisualIdxs\":[]}"
+          PlotPalettes  "AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          Axes          "1"
+          TimeRange     "0.0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "2"
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency / Hz"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
           }
         }
         Connection {
@@ -35425,6 +35563,13 @@ Plecs {
           Points        [390, 500; 390, 455]
           DstComponent  "FETs"
           DstTerminal   4
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Probe8"
+          SrcTerminal   1
+          DstComponent  "Caps"
+          DstTerminal   1
         }
       }
     }
@@ -36242,7 +36387,7 @@ Plecs {
       Schematic {
         Location      [0, 0; 1280, 679]
         ZoomFactor    0.647375
-        SliderPosition [0, 0]
+        SliderPosition [258, 0]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -39130,12 +39275,12 @@ Plecs {
           Frame         [-15, -15; 15, 15]
           Parameter {
             Variable      "lower"
-            Value         "-30"
+            Value         "-20"
             Show          off
           }
           Parameter {
             Variable      "upper"
-            Value         "+30"
+            Value         "+20"
             Show          off
           }
           Terminal {
@@ -41514,9 +41659,9 @@ Plecs {
         Direction     right
       }
       Schematic {
-        Location      [0, 0; 526, 679]
+        Location      [1014, 24; 1920, 495]
         ZoomFactor    1.21596
-        SliderPosition [0, 96]
+        SliderPosition [0, 93]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -41621,7 +41766,7 @@ Plecs {
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAFYA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGAA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABgAP///wAAAAMAAAOiAAA"
-"Ap/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA6IAAABEAP///wAAA6IAAAMT"
+"BCPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA6IAAABEAP///wAAA6IAAAKy"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -41633,7 +41778,7 @@ Plecs {
           TimeRange     "0"
           ScrollingMode "2"
           SingleTimeAxis "1"
-          Open          "1"
+          Open          "0"
           Ts            "-1"
           SampleLimit   "0"
           XAxisLabel    "Time / s"
@@ -41730,6 +41875,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-15, -15; 15, 15]
           Location      [0, 0; 930, 989]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
@@ -42005,6 +42151,19 @@ Plecs {
             }
           }
         }
+        Annotation {
+          Name          "<html><body>\n<p><span style=\" font-size:17px;\">GaN"
+"1_junction</span></p>\n<p><span style=\" font-size:17px;\">GaN2_junction</spa"
+"n></p>\n<p><span style=\" font-size:17px;\">GaN3_junction</span></p>\n<p><spa"
+"n style=\" font-size:17px;\">GaN4_junction</span></p>\n<p><span style=\" font"
+"-size:17px;\">Gan5_junction</span></p>\n<p><span style=\" font-size:17px;\">G"
+"aN6_junction</span></p>\n<p><span style=\" font-size:17px;\">GaN_package_temp"
+"</span></p>\n<p><span style=\" font-size:17px;\">Si7_junction</span></p>\n<p>"
+"<span style=\" font-size:17px;\">Si8_junction</span></p>\n<p><span style=\" f"
+"ont-size:17px;\">Si7_package</span></p>\n<p><span style=\" font-size:17px;\">"
+"Si8_package</span></p></body></html>"
+          Position      [370, 620]
+        } 
       }
     }
     Component {
@@ -42130,7 +42289,7 @@ Plecs {
     }
     Component {
       Type          Voltmeter
-      Name          "Vm1"
+      Name          "AC_filtered"
       Show          on
       Position      [320, 390]
       Direction     up
@@ -44129,7 +44288,7 @@ Plecs {
         Branch {
           Points        [320, 480]
           Branch {
-            DstComponent  "Vm1"
+            DstComponent  "AC_filtered"
             DstTerminal   2
           }
           Branch {
@@ -44416,7 +44575,7 @@ Plecs {
       SrcTerminal   2
       Points        [320, 340]
       Branch {
-        DstComponent  "Vm1"
+        DstComponent  "AC_filtered"
         DstTerminal   1
       }
       Branch {
@@ -44946,55 +45105,59 @@ Plecs {
   Script {
     Name          "Power_sweep"
     Script        "% Clear all previous traces in scope 'Scope' in the current"
-" model\nplecs('clc');\n%plecs('scope', './Losses_measure/All_losses','ClearTr"
-"aces');\n%plecs('scope', './Thermals/csv','ClearTraces');\n\n\n% Evaluate sim"
-"ulation results in callback function\nfunction result = callback(index, data)"
-"\n   % hold and label trace\n\t%Losses = ['/home/giorgio/Documenti/PolitoMate"
-"rial/Tesi/PoliTOThesis/Resources/plecs_sim/PFC_sim_results/variable_load/Loss"
-"es/', mat2str(PowerOutput(index)), 'W.csv'];\n\t%plecs('scope', './Losses_mea"
-"sure/All_losses', 'ExportCSV', Losses);\n\t\n\t%Thermals = ['/home/giorgio/Do"
-"cumenti/PolitoMaterial/Tesi/PoliTOThesis/Resources/plecs_sim/PFC_sim_results/"
-"variable_load/Thermals/', mat2str(PowerOutput(index)), 'W.csv'];\n\t%plecs('s"
-"cope', './Thermals/csv', 'ExportCSV', Thermals);\n\t\n\t%plecs('scope', './Lo"
-"sses_measure/All_losses','ClearTraces');\n\t%plecs('scope', './Thermals/csv',"
-"'ClearTraces');\n\t\n\tif isstruct(data)\n\t\n\t\tt = data.Time;\n\t\ty = dat"
-"a.Values;\n\t\t\n\t\t% ======================================================"
-"===\n\t\t% GRUPPO 1 (19 segnali) - LOSSES\n\t\t% ============================"
-"=============================\n\t\tlosses = y(1:19,end);\n\n\t\tLosses = ['/h"
-"ome/giorgio/Documenti/PolitoMaterial/Tesi/PoliTOThesis/Resources/plecs_sim/PF"
-"C_sim_results/variable_load/Losses/', mat2str(PowerOutput(index)), 'W.csv'];"
+" model\n%plecs('clc');\n%plecs('scope', './Losses_measure/All_losses','ClearT"
+"races');\n%plecs('scope', './Thermals/csv','ClearTraces');\n\n\n% Evaluate si"
+"mulation results in callback function\nfunction result = callback(index, data"
+")\n   % hold and label trace\n\t%Losses = ['/home/giorgio/Documenti/PolitoMat"
+"erial/Tesi/PoliTOThesis/Resources/plecs_sim/PFC_sim_results/variable_load/Los"
+"ses/', mat2str(PowerOutput(index)), 'W.csv'];\n\t%plecs('scope', './Losses_me"
+"asure/All_losses', 'ExportCSV', Losses);\n\t\n\t%Thermals = ['/home/giorgio/D"
+"ocumenti/PolitoMaterial/Tesi/PoliTOThesis/Resources/plecs_sim/PFC_sim_results"
+"/variable_load/Thermals/', mat2str(PowerOutput(index)), 'W.csv'];\n\t%plecs('"
+"scope', './Thermals/csv', 'ExportCSV', Thermals);\n\t\n\t%plecs('scope', './L"
+"osses_measure/All_losses','ClearTraces');\n\t%plecs('scope', './Thermals/csv'"
+",'ClearTraces');\n\t\n\tif isstruct(data)\n\t\n\t\tt = data.Time;\n\t\ty = da"
+"ta.Values;\n\t\t\n\t\t% ====================================================="
+"====\n\t\t% GRUPPO 1 (23 segnali) - LOSSES\n\t\t% ==========================="
+"==============================\n\t\tlosses = y(1:23,end);\n\n\t\tLosses = ['/"
+"home/giorgio/Documenti/PolitoMaterial/Tesi/PoliTOThesis/Resources/plecs_sim/P"
+"FC_sim_results/variable_load/Losses/', mat2str(PowerOutput(index)), 'W.csv'];"
 "\n\t\tfid = fopen(Losses,'w');\n\t\tfprintf(fid, ['\"Time / s\",\"Input_power"
 "\",\"Output_power\",\"Losses\",\"Efficency\",\"Caps_losses\",\"FL1_losses\","
-"\"HF1_losses\",\"FL2_losses\",\"HF2_losses\",\"Bulkcap_losses\",\"GaN_total_l"
-"osses\",\"GaN_switching_losses\",\"GaN_ohmic_losses\",\"L_losses\",\"iTHD_per"
-"centage\",\"Si_conduction\",\"Si_switching\",\"Si_total\",\"EMI_losses\"\\n']"
-");\n\t\tfprintf(fid, '%e', t(end));\n\t\tfor i = 1:19\n\t\t\tfprintf(fid, ',%"
-"e', losses(i));\n\t\tend\n\t\tfprintf(fid, '\\n');\n\t\t\n\t\tfclose(fid);\n"
-"\n\t\t% =========================================================\n\t\t% GRUP"
-"PO 2 (8 segnali) - THERMALS\n\t\t% =========================================="
-"===============\n\t\tthermals = y(20:27,end);\n\n\t\tThermals = ['/home/giorg"
-"io/Documenti/PolitoMaterial/Tesi/PoliTOThesis/Resources/plecs_sim/PFC_sim_res"
-"ults/variable_load/Thermals/', mat2str(PowerOutput(index)), 'W.csv'];\n\t\tfi"
-"d = fopen(Thermals,'w');\n\t\tfprintf(fid, ['\"Time / s\",\"GaNFET 1\",\"GaNF"
-"ET 2\",\"GaNFET 3\",\"GaNFET 4\",\"GaNFET 5\",\"GaNFET 6\",\"MOSFET 7\",\"MOS"
-"FET 8\"\\n']);\n\t\t\n\t\tfprintf(fid, '%e', t(end));\n\t\tfor i = 1:8\n\t\t"
-"\tfprintf(fid, ',%e', thermals(i));\n\t\tend\n\t\tfprintf(fid, '\\n');\n\t\t"
-"\n\t\tfclose(fid);\n\n\t\t% Reducing simulation results by return value 'resu"
-"lt' \n \t\tresult = 0;\n \telse\n \t\t% Print error message to Octave console"
-"\n \t\tprintf(' Error in Simulation %d for Power=%dW: %s\\n',\n              "
-"    index, PowerOutput(index), data);\n\tend\nend\n\n% Set value to be swept"
-"\nPowerOutput = [250:5000:3000]; % start step stop\n%PowerOutput = 50;\n% Ini"
-"tialize simStruct as cell array with all values\nfor ix = 1:length(PowerOutpu"
-"t)\n\tsimStructs{ix}.ModelVars.Pout = PowerOutput(ix);\n% Name of 'ModelVars'"
-" can be assigned for diagnostic purposes\t\n\tsimStructs{ix}.Name = ['Power='"
-" mat2str(PowerOutput(ix)) 'W'];\nend\n\n% Start simulation, return result fro"
-"m callback function into 'out'\n% Analysis will be moved to callback function"
-" to reduce simulation results\nout = plecs('simulate', simStructs, @(index, d"
-"ata) callback(index, data));\n\nfor ix = 1:length(PowerOutput)\n\tprintf(' Si"
-"mulation for Power=%dW: started\\n',PowerOutput(ix));\n\t% Detect if errors o"
-"ccurred in parallel simulation \n   if ischar(out{ix})\n   \tprintf(' Error f"
-"or P=%dW: %s\\n',PowerOutput(ix), out{ix});\n   else\n \t\tprintf(' Simulatio"
-"n for Power=%dW: terminated\\n',PowerOutput(ix));\n\tend\nend"
+"\"HF1_losses\",\"FL2_losses\",\"HF2_losses\",\"Bulkcap_losses\",\"Inductor\","
+"\"EMI\",\"GaN_total\",\"GaN_switching\",\"GaN_ohmic_total\",\"GaN_ohmich_ON\""
+",\"GaN_Forward_conduction\",\"GaN_Reverse_ON_conduction\",\"GaN_Reverse_OFF_c"
+"onduction\",\"Si_total\",\"Si_conduction\",\"Si_switching\",\"iTHD_percentage"
+"\"\\n']);\n\t\tfprintf(fid, '%e', t(end));\n\t\tfor i = 1:23\n\t\t\tfprintf(f"
+"id, ',%e', losses(i));\n\t\tend\n\t\tfprintf(fid, '\\n');\n\t\t\n\t\tfclose(f"
+"id);\n\n\t\t% =========================================================\n\t\t"
+"% GRUPPO 2 (11 segnali) - THERMALS\n\t\t% ==================================="
+"======================\n\t\tthermals = y(24:34,end);\n\n\t\tThermals = ['/hom"
+"e/giorgio/Documenti/PolitoMaterial/Tesi/PoliTOThesis/Resources/plecs_sim/PFC_"
+"sim_results/variable_load/Thermals/', mat2str(PowerOutput(index)), 'W.csv'];"
+"\n\t\tfid = fopen(Thermals,'w');\n\t\tfprintf(fid, ['\"Time / s\",\"GaNFET1_J"
+"unction\",\"GaNFET2_Junction\",\"GaNFET3_Junction\",\"GaNFET4_Junction\",\"Ga"
+"NFET5_Junction\",\"GaNFET6_Junction\",\"GaNFET_Package_temp\",\"MOSFET7_Junct"
+"ion\",\"MOSFET8_Junction\",\"MOSFET7_Package_temp\",\"MOSFET8_Package_temp\""
+"\\n']);\n\t\t\n\t\tfprintf(fid, '%e', t(end));\n\t\tfor i = 1:11\n\t\t\tfprin"
+"tf(fid, ',%e', thermals(i));\n\t\tend\n\t\tfprintf(fid, '\\n');\n\t\t\n\t\tfc"
+"lose(fid);\n\n\t\t% Reducing simulation results by return value 'result' \n "
+"\t\tresult = 0;\n \telse\n \t\t% Print error message to Octave console\n \t\t"
+"printf(' Error in Simulation %d for Power=%dW: %s\\n',\n                  ind"
+"ex, PowerOutput(index), data);\n\tend\nend\n\n% Set value to be swept\nPowerO"
+"utput = [4550:50:5050]; % start step stop\n%PowerOutput = 50;\n% Initialize s"
+"imStruct as cell array with all values\nfor ix = 1:length(PowerOutput)\n\tsim"
+"Structs{ix}.ModelVars.Pout = PowerOutput(ix);\n% Name of 'ModelVars' can be a"
+"ssigned for diagnostic purposes\t\n\tsimStructs{ix}.Name = ['Power=' mat2str("
+"PowerOutput(ix)) 'W'];\n\tsimStructs{ix}.SolverOpts.OutputTimes = 1.3;\nend\n"
+"\n% Start simulation, return result from callback function into 'out'\n% Anal"
+"ysis will be moved to callback function to reduce simulation results\nout = p"
+"lecs('simulate', simStructs, @(index, data) callback(index, data));\n\nfor ix"
+" = 1:length(PowerOutput)\n\tprintf(' Simulation for Power=%dW: started\\n',Po"
+"werOutput(ix));\n\t% Detect if errors occurred in parallel simulation \n   if"
+" ischar(out{ix})\n   \tprintf(' Error for P=%dW: %s\\n',PowerOutput(ix), out{"
+"ix});\n   else\n \t\tprintf(' Simulation for Power=%dW: terminated\\n',PowerO"
+"utput(ix));\n\tend\nend"
   }
   Script {
     Name          "PLL_sweep"
