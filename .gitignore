@@ -4,6 +4,8 @@
 PLECS files
 *.trace
 
+*.exe
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
