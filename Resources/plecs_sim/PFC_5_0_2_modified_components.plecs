@@ -1,5 +1,5 @@
 Plecs {
-  Name          "PFC_5_0_2_incremental_with_EMI"
+  Name          "PFC_5_0_2_modified_components"
   Version       "5.0"
   CircuitModel  "ContStateSpace"
   StartTime     "0"
@@ -88,8 +88,8 @@ Plecs {
   ExternalModeSettings ""
   AlgebraicLoopMethod "1"
   AlgebraicLoopTolerance "1e-6"
-  ScriptsDialogGeometry "[0 0 930 1010]"
-  ScriptsDialogSplitterPos "70"
+  ScriptsDialogGeometry "[0 0 1197 1008]"
+  ScriptsDialogSplitterPos "208"
   MixedSignalSolverBypassOperatingPoint "1"
   MixedSignalSolverInitialConditions "2"
   MixedSignalSolverMaxNewtonIterations "25"
@@ -112,8 +112,8 @@ Plecs {
   }
   Schematic {
     Location      [0, 0; 1860, 969]
-    ZoomFactor    2.544
-    SliderPosition [3097, 803]
+    ZoomFactor    1.0598
+    SliderPosition [0, 0]
     ShowBrowser   off
     BrowserWidth  802
     Component {
@@ -144,7 +144,7 @@ Plecs {
       Type          Resistor
       Name          "Load"
       Show          on
-      Position      [1570, 265]
+      Position      [1330, 265]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -3669,7 +3669,7 @@ Plecs {
       Type          MosfetWithDiode
       Name          "S7"
       Show          on
-      Position      [1680, 135]
+      Position      [1440, 135]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -3685,8 +3685,9 @@ Plecs {
       }
       Parameter {
         Variable      "thermal"
-        Value         "file:IPZ60R017C_UPDATE"
+        Value         "file:IPQC60R010S7A-plecs"
         Show          off
+        CustomVariables "struct('Rg_off', 25, 'Rg_on', 10)"
       }
       Parameter {
         Variable      "Rth"
@@ -3708,7 +3709,7 @@ Plecs {
       Type          MosfetWithDiode
       Name          "S8"
       Show          on
-      Position      [1680, 400]
+      Position      [1440, 400]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -3724,8 +3725,9 @@ Plecs {
       }
       Parameter {
         Variable      "thermal"
-        Value         "file:IPZ60R017C_UPDATE"
+        Value         "file:IPQC60R010S7A-plecs"
         Show          off
+        CustomVariables "struct('Rg_off', 25, 'Rg_on', 10)"
       }
       Parameter {
         Variable      "Rth"
@@ -3966,7 +3968,7 @@ Plecs {
       Type          From
       Name          "From8"
       Show          off
-      Position      [1640, 400]
+      Position      [1400, 400]
       Direction     right
       Flipped       off
       LabelPosition north
@@ -4001,7 +4003,7 @@ Plecs {
       Type          From
       Name          "From9"
       Show          off
-      Position      [1640, 135]
+      Position      [1400, 135]
       Direction     right
       Flipped       off
       LabelPosition north
@@ -4115,7 +4117,7 @@ Plecs {
       Type          Subsystem
       Name          "CF2_noESL"
       Show          off
-      Position      [1170, 240]
+      Position      [900, 250]
       Direction     up
       Flipped       off
       LabelPosition north
@@ -7870,7 +7872,7 @@ Plecs {
       Type          Subsystem
       Name          "Bulk_caps_noESL"
       Show          off
-      Position      [1260, 240]
+      Position      [995, 250]
       Direction     up
       Flipped       off
       LabelPosition north
@@ -9274,7 +9276,7 @@ Plecs {
               LabelPosition west
               Parameter {
                 Variable      "R"
-                Value         "600e-3"
+                Value         "158e-3"
                 Show          on
               }
             }
@@ -9479,7 +9481,7 @@ Plecs {
               LabelPosition west
               Parameter {
                 Variable      "R"
-                Value         "600e-3"
+                Value         "158e-3"
                 Show          on
               }
             }
@@ -9684,7 +9686,7 @@ Plecs {
               LabelPosition west
               Parameter {
                 Variable      "R"
-                Value         "600e-3"
+                Value         "158e-3"
                 Show          on
               }
             }
@@ -9889,7 +9891,7 @@ Plecs {
               LabelPosition west
               Parameter {
                 Variable      "R"
-                Value         "600e-3"
+                Value         "158e-3"
                 Show          on
               }
             }
@@ -10094,7 +10096,7 @@ Plecs {
               LabelPosition west
               Parameter {
                 Variable      "R"
-                Value         "600e-3"
+                Value         "158e-3"
                 Show          on
               }
             }
@@ -10487,7 +10489,7 @@ Plecs {
       Type          Subsystem
       Name          "CF1_noESL"
       Show          off
-      Position      [1215, 240]
+      Position      [945, 250]
       Direction     down
       Flipped       on
       LabelPosition north
@@ -16347,7 +16349,7 @@ Plecs {
       Type          ConfigurableSubsystem
       Name          "Vout_sense"
       Show          on
-      Position      [1390, 240]
+      Position      [1145, 250]
       Direction     up
       Flipped       off
       LabelPosition none
@@ -16940,7 +16942,7 @@ Plecs {
       Type          Goto
       Name          "Goto1"
       Show          off
-      Position      [1525, 230]
+      Position      [1280, 240]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -19577,42 +19579,6 @@ Plecs {
               Flipped       off
               LabelPosition south
               CommentOut    DisabledOpenCircuit
-              Probe {
-                Component     "FET1"
-                Path          ""
-                Signals       {"Device switching loss", "Device conduction los"
-"s"}
-              }
-              Probe {
-                Component     "FET2"
-                Path          ""
-                Signals       {"Device conduction loss", "Device switching los"
-"s"}
-              }
-              Probe {
-                Component     "FET3"
-                Path          ""
-                Signals       {"Device conduction loss", "Device switching los"
-"s"}
-              }
-              Probe {
-                Component     "FET4"
-                Path          ""
-                Signals       {"Device conduction loss", "Device switching los"
-"s"}
-              }
-              Probe {
-                Component     "FET5"
-                Path          ""
-                Signals       {"Device conduction loss", "Device switching los"
-"s"}
-              }
-              Probe {
-                Component     "FET6"
-                Path          ""
-                Signals       {"Device conduction loss", "Device switching los"
-"s"}
-              }
             }
             Component {
               Type          PeriodicAverage
@@ -41780,36 +41746,6 @@ Plecs {
             Signals       {}
           }
           Probe {
-            Component     "FET1"
-            Path          ""
-            Signals       {"Device junction temp"}
-          }
-          Probe {
-            Component     "FET2"
-            Path          ""
-            Signals       {"Device junction temp"}
-          }
-          Probe {
-            Component     "FET3"
-            Path          ""
-            Signals       {"Device junction temp"}
-          }
-          Probe {
-            Component     "FET4"
-            Path          ""
-            Signals       {"Device junction temp"}
-          }
-          Probe {
-            Component     "FET5"
-            Path          ""
-            Signals       {"Device junction temp"}
-          }
-          Probe {
-            Component     "FET6"
-            Path          ""
-            Signals       {"Device junction temp"}
-          }
-          Probe {
             Component     "EPC GaN FET1"
             Path          ""
             Signals       {"FET junction temperature (C)"}
@@ -42267,7 +42203,7 @@ Plecs {
       Type          HeatSink
       Name          "Heat Sink"
       Show          off
-      Position      [1690, 400]
+      Position      [1450, 400]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -42297,7 +42233,7 @@ Plecs {
       Type          HeatSink
       Name          "Heat Sink1"
       Show          off
-      Position      [1690, 135]
+      Position      [1450, 135]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -42327,7 +42263,7 @@ Plecs {
       Type          ThermalResistor
       Name          "Rth1"
       Show          off
-      Position      [1760, 400]
+      Position      [1520, 400]
       Direction     left
       Flipped       on
       LabelPosition north
@@ -42341,7 +42277,7 @@ Plecs {
       Type          ConstantTemperature
       Name          "T1"
       Show          off
-      Position      [1865, 305]
+      Position      [1625, 305]
       Direction     down
       Flipped       on
       LabelPosition east
@@ -42355,7 +42291,7 @@ Plecs {
       Type          ThermalGround
       Name          "Ground1"
       Show          off
-      Position      [1865, 335]
+      Position      [1625, 335]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -42677,222 +42613,6 @@ Plecs {
       }
     }
     Component {
-      Type          HeatSink
-      Name          "Heat Sink2"
-      Show          off
-      Position      [990, 375]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      CommentOut    DisabledOpenCircuit
-      Frame         [-27, -22; 27, 22]
-      Parameter {
-        Variable      "Cth"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "T_init"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "Width"
-        Value         "1"
-        Show          off
-      }
-      Terminal {
-        Type          HeatPort
-        Position      [15, -32]
-        Direction     up
-      }
-      Terminal {
-        Type          HeatPort
-        Position      [-10, -32]
-        Direction     up
-      }
-    }
-    Component {
-      Type          HeatSink
-      Name          "Heat Sink3"
-      Show          off
-      Position      [990, 325]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      CommentOut    DisabledOpenCircuit
-      Frame         [-27, -22; 27, 22]
-      Parameter {
-        Variable      "Cth"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "T_init"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "Width"
-        Value         "1"
-        Show          off
-      }
-      Terminal {
-        Type          HeatPort
-        Position      [10, -32]
-        Direction     up
-      }
-      Terminal {
-        Type          HeatPort
-        Position      [-10, -32]
-        Direction     up
-      }
-    }
-    Component {
-      Type          HeatSink
-      Name          "Heat Sink4"
-      Show          off
-      Position      [990, 270]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      CommentOut    DisabledOpenCircuit
-      Frame         [-27, -22; 27, 22]
-      Parameter {
-        Variable      "Cth"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "T_init"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "Width"
-        Value         "1"
-        Show          off
-      }
-      Terminal {
-        Type          HeatPort
-        Position      [15, -32]
-        Direction     up
-      }
-      Terminal {
-        Type          HeatPort
-        Position      [-10, -32]
-        Direction     up
-      }
-    }
-    Component {
-      Type          HeatSink
-      Name          "Heat Sink5"
-      Show          off
-      Position      [990, 215]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      CommentOut    DisabledOpenCircuit
-      Frame         [-27, -22; 27, 22]
-      Parameter {
-        Variable      "Cth"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "T_init"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "Width"
-        Value         "1"
-        Show          off
-      }
-      Terminal {
-        Type          HeatPort
-        Position      [15, -32]
-        Direction     up
-      }
-      Terminal {
-        Type          HeatPort
-        Position      [-10, -32]
-        Direction     up
-      }
-    }
-    Component {
-      Type          HeatSink
-      Name          "Heat Sink6"
-      Show          off
-      Position      [990, 165]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      CommentOut    DisabledOpenCircuit
-      Frame         [-27, -22; 27, 22]
-      Parameter {
-        Variable      "Cth"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "T_init"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "Width"
-        Value         "1"
-        Show          off
-      }
-      Terminal {
-        Type          HeatPort
-        Position      [10, -32]
-        Direction     up
-      }
-      Terminal {
-        Type          HeatPort
-        Position      [-10, -32]
-        Direction     up
-      }
-    }
-    Component {
-      Type          HeatSink
-      Name          "Heat Sink7"
-      Show          off
-      Position      [990, 115]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      CommentOut    DisabledOpenCircuit
-      Frame         [-27, -22; 27, 22]
-      Parameter {
-        Variable      "Cth"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "T_init"
-        Value         ""
-        Show          off
-      }
-      Parameter {
-        Variable      "Width"
-        Value         "1"
-        Show          off
-      }
-      Terminal {
-        Type          HeatPort
-        Position      [10, -32]
-        Direction     up
-      }
-      Terminal {
-        Type          HeatPort
-        Position      [-10, -32]
-        Direction     up
-      }
-    }
-    Component {
       Type          Output
       Name          "Loss_CSV_out"
       Show          on
@@ -42927,46 +42647,6 @@ Plecs {
       Parameter {
         Variable      "Width"
         Value         "-1"
-        Show          off
-      }
-    }
-    Component {
-      Type          MosfetWithDiode
-      Name          "FET1"
-      Show          off
-      Position      [985, 375]
-      Direction     up
-      Flipped       off
-      LabelPosition east
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Ron"
-        Value         "5e-3"
-        Show          off
-      }
-      Parameter {
-        Variable      "s_init"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "thermal"
-        Value         "file:EPC2304/EPC2304_UPDATE"
-        Show          off
-      }
-      Parameter {
-        Variable      "Rth"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "Np"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "T_init"
-        Value         "TinitGaNFETs"
         Show          off
       }
     }
@@ -43283,206 +42963,6 @@ Plecs {
       }
     }
     Component {
-      Type          MosfetWithDiode
-      Name          "FET2"
-      Show          off
-      Position      [985, 325]
-      Direction     up
-      Flipped       off
-      LabelPosition east
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Ron"
-        Value         "5e-3"
-        Show          off
-      }
-      Parameter {
-        Variable      "s_init"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "thermal"
-        Value         "file:EPC2304/EPC2304_UPDATE"
-        Show          off
-      }
-      Parameter {
-        Variable      "Rth"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "Np"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "T_init"
-        Value         "TinitGaNFETs"
-        Show          off
-      }
-    }
-    Component {
-      Type          MosfetWithDiode
-      Name          "FET3"
-      Show          off
-      Position      [985, 270]
-      Direction     up
-      Flipped       off
-      LabelPosition east
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Ron"
-        Value         "5e-3"
-        Show          off
-      }
-      Parameter {
-        Variable      "s_init"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "thermal"
-        Value         "file:EPC2304/EPC2304_UPDATE"
-        Show          off
-      }
-      Parameter {
-        Variable      "Rth"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "Np"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "T_init"
-        Value         "TinitGaNFETs"
-        Show          off
-      }
-    }
-    Component {
-      Type          MosfetWithDiode
-      Name          "FET4"
-      Show          off
-      Position      [985, 215]
-      Direction     up
-      Flipped       off
-      LabelPosition east
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Ron"
-        Value         "5e-3"
-        Show          off
-      }
-      Parameter {
-        Variable      "s_init"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "thermal"
-        Value         "file:EPC2304/EPC2304_UPDATE"
-        Show          off
-      }
-      Parameter {
-        Variable      "Rth"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "Np"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "T_init"
-        Value         "TinitGaNFETs"
-        Show          off
-      }
-    }
-    Component {
-      Type          MosfetWithDiode
-      Name          "FET5"
-      Show          off
-      Position      [985, 165]
-      Direction     up
-      Flipped       off
-      LabelPosition east
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Ron"
-        Value         "5e-3"
-        Show          off
-      }
-      Parameter {
-        Variable      "s_init"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "thermal"
-        Value         "file:EPC2304/EPC2304_UPDATE"
-        Show          off
-      }
-      Parameter {
-        Variable      "Rth"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "Np"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "T_init"
-        Value         "TinitGaNFETs"
-        Show          off
-      }
-    }
-    Component {
-      Type          MosfetWithDiode
-      Name          "FET6"
-      Show          off
-      Position      [985, 115]
-      Direction     up
-      Flipped       off
-      LabelPosition east
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Ron"
-        Value         "5e-3"
-        Show          off
-      }
-      Parameter {
-        Variable      "s_init"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "thermal"
-        Value         "file:EPC2304/EPC2304_UPDATE"
-        Show          off
-      }
-      Parameter {
-        Variable      "Rth"
-        Value         "0"
-        Show          off
-      }
-      Parameter {
-        Variable      "Np"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "T_init"
-        Value         "TinitGaNFETs"
-        Show          off
-      }
-    }
-    Component {
       Type          ThermalResistor
       Name          "Rth_air"
       Show          off
@@ -43665,411 +43145,6 @@ Plecs {
       }
     }
     Component {
-      Type          From
-      Name          "From3"
-      Show          off
-      Position      [940, 115]
-      Direction     right
-      Flipped       off
-      LabelPosition north
-      Parameter {
-        Variable      "Tag"
-        Value         "PWM1H_sig"
-        Show          off
-      }
-      Parameter {
-        Variable      "Visibility"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "NoMatchingCounterpartAction"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "CustomMessage"
-        Value         ""
-        Show          off
-        Evaluate      on
-      }
-      Parameter {
-        Variable      "HighlightLevel"
-        Value         "0"
-        Show          off
-      }
-    }
-    Component {
-      Type          From
-      Name          "From10"
-      Show          off
-      Position      [940, 375]
-      Direction     right
-      Flipped       off
-      LabelPosition north
-      Parameter {
-        Variable      "Tag"
-        Value         "PWM1L_sig"
-        Show          off
-      }
-      Parameter {
-        Variable      "Visibility"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "NoMatchingCounterpartAction"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "CustomMessage"
-        Value         ""
-        Show          off
-        Evaluate      on
-      }
-      Parameter {
-        Variable      "HighlightLevel"
-        Value         "0"
-        Show          off
-      }
-    }
-    Component {
-      Type          From
-      Name          "From11"
-      Show          off
-      Position      [940, 165]
-      Direction     right
-      Flipped       off
-      LabelPosition north
-      Parameter {
-        Variable      "Tag"
-        Value         "PWM2H_sig"
-        Show          off
-      }
-      Parameter {
-        Variable      "Visibility"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "NoMatchingCounterpartAction"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "CustomMessage"
-        Value         ""
-        Show          off
-        Evaluate      on
-      }
-      Parameter {
-        Variable      "HighlightLevel"
-        Value         "0"
-        Show          off
-      }
-    }
-    Component {
-      Type          From
-      Name          "From15"
-      Show          off
-      Position      [940, 215]
-      Direction     right
-      Flipped       off
-      LabelPosition north
-      Parameter {
-        Variable      "Tag"
-        Value         "PWM3H_sig"
-        Show          off
-      }
-      Parameter {
-        Variable      "Visibility"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "NoMatchingCounterpartAction"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "CustomMessage"
-        Value         ""
-        Show          off
-        Evaluate      on
-      }
-      Parameter {
-        Variable      "HighlightLevel"
-        Value         "0"
-        Show          off
-      }
-    }
-    Component {
-      Type          From
-      Name          "From16"
-      Show          off
-      Position      [940, 270]
-      Direction     right
-      Flipped       off
-      LabelPosition north
-      Parameter {
-        Variable      "Tag"
-        Value         "PWM3L_sig"
-        Show          off
-      }
-      Parameter {
-        Variable      "Visibility"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "NoMatchingCounterpartAction"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "CustomMessage"
-        Value         ""
-        Show          off
-        Evaluate      on
-      }
-      Parameter {
-        Variable      "HighlightLevel"
-        Value         "0"
-        Show          off
-      }
-    }
-    Component {
-      Type          From
-      Name          "From17"
-      Show          off
-      Position      [940, 325]
-      Direction     right
-      Flipped       off
-      LabelPosition north
-      Parameter {
-        Variable      "Tag"
-        Value         "PWM2L_sig"
-        Show          off
-      }
-      Parameter {
-        Variable      "Visibility"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "NoMatchingCounterpartAction"
-        Value         "1"
-        Show          off
-      }
-      Parameter {
-        Variable      "CustomMessage"
-        Value         ""
-        Show          off
-        Evaluate      on
-      }
-      Parameter {
-        Variable      "HighlightLevel"
-        Value         "0"
-        Show          off
-      }
-    }
-    Component {
-      Type          ThermalResistor
-      Name          "Rth_pcb7"
-      Show          off
-      Position      [1060, 390]
-      Direction     left
-      Flipped       off
-      LabelPosition north
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Rth"
-        Value         "Rth_pcb"
-        Show          off
-      }
-    }
-    Component {
-      Type          ThermalResistor
-      Name          "Rth_pcb8"
-      Show          off
-      Position      [1060, 335]
-      Direction     left
-      Flipped       off
-      LabelPosition north
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Rth"
-        Value         "Rth_pcb"
-        Show          off
-      }
-    }
-    Component {
-      Type          ThermalResistor
-      Name          "Rth_pcb9"
-      Show          off
-      Position      [1060, 285]
-      Direction     left
-      Flipped       off
-      LabelPosition north
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Rth"
-        Value         "Rth_pcb"
-        Show          off
-      }
-    }
-    Component {
-      Type          ThermalResistor
-      Name          "Rth_pcb11"
-      Show          off
-      Position      [1060, 230]
-      Direction     left
-      Flipped       off
-      LabelPosition north
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Rth"
-        Value         "Rth_pcb"
-        Show          off
-      }
-    }
-    Component {
-      Type          ThermalResistor
-      Name          "Rth_pcb12"
-      Show          off
-      Position      [1060, 175]
-      Direction     left
-      Flipped       off
-      LabelPosition north
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Rth"
-        Value         "Rth_pcb"
-        Show          off
-      }
-    }
-    Component {
-      Type          ThermalResistor
-      Name          "Rth_pcb13"
-      Show          off
-      Position      [1060, 125]
-      Direction     left
-      Flipped       off
-      LabelPosition north
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Rth"
-        Value         "Rth_pcb"
-        Show          off
-      }
-    }
-    Component {
-      Type          ThermalResistor
-      Name          "Rth_air7"
-      Show          off
-      Position      [1060, 365]
-      Direction     left
-      Flipped       off
-      LabelPosition north
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Rth"
-        Value         "Rth_air"
-        Show          off
-      }
-    }
-    Component {
-      Type          ThermalResistor
-      Name          "Rth_air8"
-      Show          off
-      Position      [1060, 315]
-      Direction     left
-      Flipped       off
-      LabelPosition north
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Rth"
-        Value         "Rth_air"
-        Show          off
-      }
-    }
-    Component {
-      Type          ThermalResistor
-      Name          "Rth_air9"
-      Show          off
-      Position      [1060, 260]
-      Direction     left
-      Flipped       off
-      LabelPosition north
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Rth"
-        Value         "Rth_air"
-        Show          off
-      }
-    }
-    Component {
-      Type          ThermalResistor
-      Name          "Rth_air10"
-      Show          off
-      Position      [1060, 205]
-      Direction     left
-      Flipped       off
-      LabelPosition north
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Rth"
-        Value         "Rth_air"
-        Show          off
-      }
-    }
-    Component {
-      Type          ThermalResistor
-      Name          "Rth_air11"
-      Show          off
-      Position      [1060, 155]
-      Direction     left
-      Flipped       off
-      LabelPosition north
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Rth"
-        Value         "Rth_air"
-        Show          off
-      }
-    }
-    Component {
-      Type          ThermalResistor
-      Name          "Rth_air12"
-      Show          off
-      Position      [1095, 435]
-      Direction     up
-      Flipped       off
-      LabelPosition east
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Rth"
-        Value         "Rth_pcb_air"
-        Show          off
-      }
-    }
-    Component {
-      Type          ThermalResistor
-      Name          "Rth_air13"
-      Show          off
-      Position      [1060, 105]
-      Direction     left
-      Flipped       off
-      LabelPosition north
-      CommentOut    DisabledOpenCircuit
-      Parameter {
-        Variable      "Rth"
-        Value         "Rth_air"
-        Show          off
-      }
-    }
-    Component {
       Type          ThermometerGnd
       Name          "ThmG"
       Show          on
@@ -44102,7 +43177,7 @@ Plecs {
       Type          ThermometerGnd
       Name          "ThmG3"
       Show          off
-      Position      [1875, 420]
+      Position      [1635, 420]
       Direction     up
       Flipped       off
       LabelPosition west
@@ -44111,7 +43186,7 @@ Plecs {
       Type          ThermometerGnd
       Name          "ThmG4"
       Show          off
-      Position      [1915, 155]
+      Position      [1675, 155]
       Direction     up
       Flipped       off
       LabelPosition west
@@ -44120,7 +43195,7 @@ Plecs {
       Type          ThermalResistor
       Name          "Rth2"
       Show          off
-      Position      [1795, 360]
+      Position      [1555, 360]
       Direction     up
       Flipped       on
       LabelPosition east
@@ -44134,7 +43209,7 @@ Plecs {
       Type          ThermalResistor
       Name          "Rth3"
       Show          off
-      Position      [1795, 180]
+      Position      [1555, 180]
       Direction     up
       Flipped       on
       LabelPosition east
@@ -44148,7 +43223,7 @@ Plecs {
       Type          ThermalResistor
       Name          "Rth4"
       Show          off
-      Position      [1760, 135]
+      Position      [1520, 135]
       Direction     left
       Flipped       on
       LabelPosition north
@@ -44181,7 +43256,7 @@ Plecs {
       Type          ThermalCapacitorGnd
       Name          "T_Si_init"
       Show          on
-      Position      [1795, 420]
+      Position      [1555, 420]
       Direction     down
       Flipped       on
       LabelPosition west
@@ -44200,7 +43275,7 @@ Plecs {
       Type          ThermalCapacitorGnd
       Name          "T_Si_init1"
       Show          on
-      Position      [1795, 115]
+      Position      [1555, 115]
       Direction     up
       Flipped       on
       LabelPosition east
@@ -44223,33 +43298,26 @@ Plecs {
       Branch {
         Points        [985, 90]
         Branch {
-          Points        [1250, 90]
+          Points        [1070, 90]
           Branch {
-            Points        [1315, 90]
+            Points        [1330, 90]
             Branch {
-              Points        [1570, 90]
-              Branch {
-                Points        [1680, 90]
-                DstComponent  "S7"
-                DstTerminal   1
-              }
-              Branch {
-                DstComponent  "Load"
-                DstTerminal   1
-              }
+              Points        [1440, 90]
+              DstComponent  "S7"
+              DstTerminal   1
             }
             Branch {
-              DstComponent  "Vout_sense"
-              DstTerminal   2
+              DstComponent  "Load"
+              DstTerminal   1
             }
           }
           Branch {
-            DstComponent  "Bulk_caps_noESL"
-            DstTerminal   1
+            DstComponent  "Vout_sense"
+            DstTerminal   2
           }
         }
         Branch {
-          DstComponent  "FET6"
+          DstComponent  "Bulk_caps_noESL"
           DstTerminal   1
         }
       }
@@ -44279,17 +43347,6 @@ Plecs {
         Branch {
           DstComponent  "EPC GaN FET3"
           DstTerminal   3
-        }
-        Branch {
-          Points        [985, 250]
-          Branch {
-            DstComponent  "FET3"
-            DstTerminal   1
-          }
-          Branch {
-            DstComponent  "FET4"
-            DstTerminal   2
-          }
         }
       }
       Branch {
@@ -44323,20 +43380,9 @@ Plecs {
         DstTerminal   1
       }
       Branch {
-        Points        [985, 190]
-        Branch {
-          Points        [1160, 190]
-          DstComponent  "CF2_noESL"
-          DstTerminal   1
-        }
-        Branch {
-          DstComponent  "FET4"
-          DstTerminal   1
-        }
-        Branch {
-          DstComponent  "FET5"
-          DstTerminal   2
-        }
+        Points        [890, 190]
+        DstComponent  "CF2_noESL"
+        DstTerminal   1
       }
     }
     Connection {
@@ -44360,20 +43406,9 @@ Plecs {
         DstTerminal   1
       }
       Branch {
-        Points        [985, 300]
-        Branch {
-          DstComponent  "FET3"
-          DstTerminal   2
-        }
-        Branch {
-          DstComponent  "FET2"
-          DstTerminal   1
-        }
-        Branch {
-          Points        [1160, 300]
-          DstComponent  "CF2_noESL"
-          DstTerminal   2
-        }
+        Points        [890, 300]
+        DstComponent  "CF2_noESL"
+        DstTerminal   2
       }
     }
     Connection {
@@ -44386,20 +43421,9 @@ Plecs {
         DstTerminal   1
       }
       Branch {
-        Points        [985, 140]
-        Branch {
-          Points        [1225, 140]
-          DstComponent  "CF1_noESL"
-          DstTerminal   1
-        }
-        Branch {
-          DstComponent  "FET5"
-          DstTerminal   1
-        }
-        Branch {
-          DstComponent  "FET6"
-          DstTerminal   2
-        }
+        Points        [955, 140]
+        DstComponent  "CF1_noESL"
+        DstTerminal   1
       }
       Branch {
         Points        [740, 140]
@@ -44434,20 +43458,9 @@ Plecs {
         DstTerminal   1
       }
       Branch {
-        Points        [985, 350]
-        Branch {
-          Points        [1225, 350]
-          DstComponent  "CF1_noESL"
-          DstTerminal   2
-        }
-        Branch {
-          DstComponent  "FET2"
-          DstTerminal   2
-        }
-        Branch {
-          DstComponent  "FET1"
-          DstTerminal   1
-        }
+        Points        [955, 350]
+        DstComponent  "CF1_noESL"
+        DstTerminal   2
       }
     }
     Connection {
@@ -44475,7 +43488,7 @@ Plecs {
         }
       }
       Branch {
-        Points        [1940, 480; 1940, 230; 1680, 230]
+        Points        [1705, 480; 1705, 230; 1440, 230]
         Branch {
           DstComponent  "S8"
           DstTerminal   1
@@ -44503,32 +43516,25 @@ Plecs {
         Branch {
           Points        [985, 420]
           Branch {
-            Points        [1250, 420]
+            Points        [1070, 420]
             Branch {
-              Points        [1315, 420]
+              Points        [1330, 420]
               Branch {
-                Points        [1570, 420]
-                Branch {
-                  DstComponent  "Load"
-                  DstTerminal   2
-                }
-                Branch {
-                  DstComponent  "S8"
-                  DstTerminal   2
-                }
+                DstComponent  "Load"
+                DstTerminal   2
               }
               Branch {
-                DstComponent  "Vout_sense"
-                DstTerminal   3
+                DstComponent  "S8"
+                DstTerminal   2
               }
             }
             Branch {
-              DstComponent  "Bulk_caps_noESL"
-              DstTerminal   2
+              DstComponent  "Vout_sense"
+              DstTerminal   3
             }
           }
           Branch {
-            DstComponent  "FET1"
+            DstComponent  "Bulk_caps_noESL"
             DstTerminal   2
           }
         }
@@ -44974,228 +43980,10 @@ Plecs {
         }
         Branch {
           Points        [1045, 500]
-          Branch {
-            DstComponent  "Wm"
-            DstTerminal   1
-          }
-          Branch {
-            Points        [1095, 500]
-            Branch {
-              DstComponent  "Rth_air12"
-              DstTerminal   2
-            }
-            Branch {
-              Points        [1110, 500; 1110, 365]
-              Branch {
-                DstComponent  "Rth_air7"
-                DstTerminal   2
-              }
-              Branch {
-                Points        [1110, 315]
-                Branch {
-                  Points        [1110, 260]
-                  Branch {
-                    Points        [1110, 205]
-                    Branch {
-                      Points        [1110, 155]
-                      Branch {
-                        Points        [1110, 105]
-                        DstComponent  "Rth_air13"
-                        DstTerminal   2
-                      }
-                      Branch {
-                        DstComponent  "Rth_air11"
-                        DstTerminal   2
-                      }
-                    }
-                    Branch {
-                      DstComponent  "Rth_air10"
-                      DstTerminal   2
-                    }
-                  }
-                  Branch {
-                    DstComponent  "Rth_air9"
-                    DstTerminal   2
-                  }
-                }
-                Branch {
-                  DstComponent  "Rth_air8"
-                  DstTerminal   2
-                }
-              }
-            }
-          }
+          DstComponent  "Wm"
+          DstTerminal   1
         }
       }
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "From3"
-      SrcTerminal   1
-      DstComponent  "FET6"
-      DstTerminal   3
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "From11"
-      SrcTerminal   1
-      DstComponent  "FET5"
-      DstTerminal   3
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "From15"
-      SrcTerminal   1
-      DstComponent  "FET4"
-      DstTerminal   3
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "From10"
-      SrcTerminal   1
-      DstComponent  "FET1"
-      DstTerminal   3
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "From17"
-      SrcTerminal   1
-      DstComponent  "FET2"
-      DstTerminal   3
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "From16"
-      SrcTerminal   1
-      DstComponent  "FET3"
-      DstTerminal   3
-    }
-    Connection {
-      Type          HeatPipe
-      SrcComponent  "Rth_pcb7"
-      SrcTerminal   1
-      DstComponent  "Heat Sink2"
-      DstTerminal   1
-    }
-    Connection {
-      Type          HeatPipe
-      SrcComponent  "Rth_pcb8"
-      SrcTerminal   1
-      DstComponent  "Heat Sink3"
-      DstTerminal   1
-    }
-    Connection {
-      Type          HeatPipe
-      SrcComponent  "Rth_pcb9"
-      SrcTerminal   1
-      DstComponent  "Heat Sink4"
-      DstTerminal   1
-    }
-    Connection {
-      Type          HeatPipe
-      SrcComponent  "Rth_pcb11"
-      SrcTerminal   1
-      DstComponent  "Heat Sink5"
-      DstTerminal   1
-    }
-    Connection {
-      Type          HeatPipe
-      SrcComponent  "Rth_pcb12"
-      SrcTerminal   1
-      DstComponent  "Heat Sink6"
-      DstTerminal   1
-    }
-    Connection {
-      Type          HeatPipe
-      SrcComponent  "Rth_pcb13"
-      SrcTerminal   1
-      DstComponent  "Heat Sink7"
-      DstTerminal   1
-    }
-    Connection {
-      Type          HeatPipe
-      SrcComponent  "Rth_air7"
-      SrcTerminal   1
-      DstComponent  "Heat Sink2"
-      DstTerminal   2
-    }
-    Connection {
-      Type          HeatPipe
-      SrcComponent  "Rth_air8"
-      SrcTerminal   1
-      DstComponent  "Heat Sink3"
-      DstTerminal   2
-    }
-    Connection {
-      Type          HeatPipe
-      SrcComponent  "Rth_air9"
-      SrcTerminal   1
-      DstComponent  "Heat Sink4"
-      DstTerminal   2
-    }
-    Connection {
-      Type          HeatPipe
-      SrcComponent  "Rth_air10"
-      SrcTerminal   1
-      DstComponent  "Heat Sink5"
-      DstTerminal   2
-    }
-    Connection {
-      Type          HeatPipe
-      SrcComponent  "Rth_air11"
-      SrcTerminal   1
-      DstComponent  "Heat Sink6"
-      DstTerminal   2
-    }
-    Connection {
-      Type          HeatPipe
-      SrcComponent  "Rth_pcb7"
-      SrcTerminal   2
-      Points        [1095, 390]
-      Branch {
-        DstComponent  "Rth_air12"
-        DstTerminal   1
-      }
-      Branch {
-        Points        [1095, 335]
-        Branch {
-          DstComponent  "Rth_pcb8"
-          DstTerminal   2
-        }
-        Branch {
-          Points        [1095, 285]
-          Branch {
-            DstComponent  "Rth_pcb9"
-            DstTerminal   2
-          }
-          Branch {
-            Points        [1095, 230]
-            Branch {
-              DstComponent  "Rth_pcb11"
-              DstTerminal   2
-            }
-            Branch {
-              Points        [1095, 175]
-              Branch {
-                DstComponent  "Rth_pcb12"
-                DstTerminal   2
-              }
-              Branch {
-                Points        [1095, 125]
-                DstComponent  "Rth_pcb13"
-                DstTerminal   2
-              }
-            }
-          }
-        }
-      }
-    }
-    Connection {
-      Type          HeatPipe
-      SrcComponent  "Rth_air13"
-      SrcTerminal   1
-      DstComponent  "Heat Sink7"
-      DstTerminal   2
     }
     Connection {
       Type          HeatPipe
@@ -45238,7 +44026,7 @@ Plecs {
       Type          HeatPipe
       SrcComponent  "Rth1"
       SrcTerminal   1
-      Points        [1795, 400]
+      Points        [1555, 400]
       Branch {
         DstComponent  "ThmG3"
         DstTerminal   1
@@ -45263,7 +44051,7 @@ Plecs {
       Type          HeatPipe
       SrcComponent  "T1"
       SrcTerminal   1
-      Points        [1865, 270; 1795, 270]
+      Points        [1625, 270; 1555, 270]
       Branch {
         DstComponent  "Rth2"
         DstTerminal   2
@@ -45277,7 +44065,7 @@ Plecs {
       Type          HeatPipe
       SrcComponent  "Rth4"
       SrcTerminal   1
-      Points        [1795, 135]
+      Points        [1555, 135]
       Branch {
         DstComponent  "Rth3"
         DstTerminal   2
@@ -45335,32 +44123,32 @@ Plecs {
 "\t\tresult = 0;\n \telse\n \t\t% Print error message to Octave console\n \t\t"
 "printf(' Error in Simulation %d for Power=%dW: %s\\n',\n                  ind"
 "ex, PowerOutput(index), data);\n\tend\nend\n\n% Set value to be swept\nPowerO"
-"utput = [3400:50:5050]; % start step stop\n%PowerOutput = 50;\n% Initialize s"
-"imStruct as cell array with all values\nfor ix = 1:length(PowerOutput)\n\tsim"
-"Structs{ix}.ModelVars.Pout = PowerOutput(ix);\n\tsimStructs{ix}.ModelVars.Tin"
-"itGaNFETs = 25;\n\tsimStructs{ix}.ModelVars.TinitSiFETs = 25;\n\tif PowerOutp"
-"ut(ix) <= 100\n\t\tsimStructs{ix}.ModelVars.TinitGaNFETs = 56;\n\t\tsimStruct"
-"s{ix}.ModelVars.TinitSiFETs = 34.9;\n\tend\n\tif PowerOutput(ix) > 100 && Pow"
-"erOutput(ix) <= 500\n\t\tsimStructs{ix}.ModelVars.TinitGaNFETs = 57.2;\n\t\ts"
-"imStructs{ix}.ModelVars.TinitSiFETs = 33.8;\n\tend\n\tif PowerOutput(ix) > 50"
-"0 && PowerOutput(ix) <= 1000\n\t\tsimStructs{ix}.ModelVars.TinitGaNFETs = 58."
-"7;\n\t\tsimStructs{ix}.ModelVars.TinitSiFETs = 34.2;\n\tend\n\tif PowerOutput"
-"(ix) > 1000 && PowerOutput(ix) <= 1500\n\t\tsimStructs{ix}.ModelVars.TinitGaN"
-"FETs = 61.6;\n\t\tsimStructs{ix}.ModelVars.TinitSiFETs = 35.4;\n\tend\n\tif P"
-"owerOutput(ix) > 1500 && PowerOutput(ix) <= 2000\n\t\tsimStructs{ix}.ModelVar"
-"s.TinitGaNFETs = 65.9;\n\t\tsimStructs{ix}.ModelVars.TinitSiFETs = 35.6;\n\te"
-"nd\n\tif PowerOutput(ix) > 2000 && PowerOutput(ix) <= 2500\n\t\tsimStructs{ix"
-"}.ModelVars.TinitGaNFETs = 71.1;\n\t\tsimStructs{ix}.ModelVars.TinitSiFETs = "
-"44.5;\n\tend\n\tif PowerOutput(ix) > 2500 && PowerOutput(ix) <= 3000\n\t\tsim"
-"Structs{ix}.ModelVars.TinitGaNFETs = 79.3;\n\t\tsimStructs{ix}.ModelVars.Tini"
-"tSiFETs = 49.9;\n\tend\n\tif PowerOutput(ix) > 3000 && PowerOutput(ix) <= 350"
-"0\n\t\tsimStructs{ix}.ModelVars.TinitGaNFETs = 87.4;\n\t\tsimStructs{ix}.Mode"
-"lVars.TinitSiFETs = 56.6\n\tend\n\tif PowerOutput(ix) > 3500 && PowerOutput(i"
-"x) <= 4000\n\t\tsimStructs{ix}.ModelVars.TinitGaNFETs = 99;\n\t\tsimStructs{i"
-"x}.ModelVars.TinitSiFETs = 59;\n\tend\n\tif PowerOutput(ix) > 4000 && PowerOu"
-"tput(ix) <= 4500\n\t\tsimStructs{ix}.ModelVars.TinitGaNFETs = 103;\n\t\tsimSt"
-"ructs{ix}.ModelVars.TinitSiFETs = 60.9;\n\tend\n\tif PowerOutput(ix) > 4500 &"
-"& PowerOutput(ix) <= 5000\n\t\tsimStructs{ix}.ModelVars.TinitGaNFETs = 122.3;"
+"utput = [50:50:5050]; % start step stop\n%PowerOutput = 50;\n% Initialize sim"
+"Struct as cell array with all values\nfor ix = 1:length(PowerOutput)\n\tsimSt"
+"ructs{ix}.ModelVars.Pout = PowerOutput(ix);\n\tsimStructs{ix}.ModelVars.Tinit"
+"GaNFETs = 25;\n\tsimStructs{ix}.ModelVars.TinitSiFETs = 25;\n\tif PowerOutput"
+"(ix) <= 100\n\t\tsimStructs{ix}.ModelVars.TinitGaNFETs = 56;\n\t\tsimStructs{"
+"ix}.ModelVars.TinitSiFETs = 34.9;\n\tend\n\tif PowerOutput(ix) > 100 && Power"
+"Output(ix) <= 500\n\t\tsimStructs{ix}.ModelVars.TinitGaNFETs = 57.2;\n\t\tsim"
+"Structs{ix}.ModelVars.TinitSiFETs = 33.8;\n\tend\n\tif PowerOutput(ix) > 500 "
+"&& PowerOutput(ix) <= 1000\n\t\tsimStructs{ix}.ModelVars.TinitGaNFETs = 58.7;"
+"\n\t\tsimStructs{ix}.ModelVars.TinitSiFETs = 34.2;\n\tend\n\tif PowerOutput(i"
+"x) > 1000 && PowerOutput(ix) <= 1500\n\t\tsimStructs{ix}.ModelVars.TinitGaNFE"
+"Ts = 61.6;\n\t\tsimStructs{ix}.ModelVars.TinitSiFETs = 35.4;\n\tend\n\tif Pow"
+"erOutput(ix) > 1500 && PowerOutput(ix) <= 2000\n\t\tsimStructs{ix}.ModelVars."
+"TinitGaNFETs = 65.9;\n\t\tsimStructs{ix}.ModelVars.TinitSiFETs = 35.6;\n\tend"
+"\n\tif PowerOutput(ix) > 2000 && PowerOutput(ix) <= 2500\n\t\tsimStructs{ix}."
+"ModelVars.TinitGaNFETs = 71.1;\n\t\tsimStructs{ix}.ModelVars.TinitSiFETs = 44"
+".5;\n\tend\n\tif PowerOutput(ix) > 2500 && PowerOutput(ix) <= 3000\n\t\tsimSt"
+"ructs{ix}.ModelVars.TinitGaNFETs = 79.3;\n\t\tsimStructs{ix}.ModelVars.TinitS"
+"iFETs = 49.9;\n\tend\n\tif PowerOutput(ix) > 3000 && PowerOutput(ix) <= 3500"
+"\n\t\tsimStructs{ix}.ModelVars.TinitGaNFETs = 87.4;\n\t\tsimStructs{ix}.Model"
+"Vars.TinitSiFETs = 56.6\n\tend\n\tif PowerOutput(ix) > 3500 && PowerOutput(ix"
+") <= 4000\n\t\tsimStructs{ix}.ModelVars.TinitGaNFETs = 99;\n\t\tsimStructs{ix"
+"}.ModelVars.TinitSiFETs = 59;\n\tend\n\tif PowerOutput(ix) > 4000 && PowerOut"
+"put(ix) <= 4500\n\t\tsimStructs{ix}.ModelVars.TinitGaNFETs = 103;\n\t\tsimStr"
+"ucts{ix}.ModelVars.TinitSiFETs = 60.9;\n\tend\n\tif PowerOutput(ix) > 4500 &&"
+" PowerOutput(ix) <= 5000\n\t\tsimStructs{ix}.ModelVars.TinitGaNFETs = 122.3;"
 "\n\t\tsimStructs{ix}.ModelVars.TinitSiFETs = 78.5;\n\tend\n\tif PowerOutput(i"
 "x) > 5000\n\t\tsimStructs{ix}.ModelVars.TinitGaNFETs = 128;\n\t\tsimStructs{i"
 "x}.ModelVars.TinitSiFETs = 83;\n\tend\n\n% Name of 'ModelVars' can be assigne"

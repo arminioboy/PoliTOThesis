@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ThermalLibraryPackage xmlns="http://www.plexim.com/xml/thermallibrary/" version="1.0">
+ <Name>InfineonSMD</Name>
+ <Version check="https://www.plexim.com/version">1.0.0</Version>
+ <BlockLibrary file="IPQC60T010S7A">Infineon CoolMOS</BlockLibrary>
+ <ThermalDescriptions directory="thermals" />
+</ThermalLibraryPackage>
