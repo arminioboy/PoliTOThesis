@@ -1,0 +1,815 @@
+*****************************************************************
+* INFINEON Power Transistors                                    *
+* Content:        SPICE Model Library                           *
+* Device:         CoolMOS (Superjunction MOSFET)                *
+* Model Types:    L3                                            *
+* Technology:                                                   *
+* Date and time:  08.08.2024  11:48:03                          *
+* Version:        1156                                          *
+*****************************************************************
+*                                                               *
+* The models for Infineon Power MOSFET are evaluated with       *
+* SIMetrixTM-SPICE simulator. The Infineon Power MOSFET models  *
+* are tested, verified and provided in SPICE simulation code.   *
+*                                                               *
+* Infineon | Terminals | Usage suggestion                       *
+* Level    |           |                                        *
+* ------------------------------------------------------------- *
+* L0       | G, D, S   | General electrical simulations/ whole  *
+*          |           | application circuits.                  *
+* ------------------------------------------------------------- *
+* L1       | G, D, S   | Transient, switching losses and        *
+*          |           | efficiency analyses. Behavior of       *
+*          |           | device over full temperature range.    *
+* ------------------------------------------------------------- *
+* L2       | G, D, S,  | Same as L1 but with individual device  *
+*          | Tj, Tcase | temperature. This model is not         *
+*          |           | supported because it is covered by     *
+*          |           | L3-model.                              *
+* ------------------------------------------------------------- *
+* L3       | G, D, S,  | Self-heating effects, modeling of heat *
+*          | Tj, Tcase | flow including thermal models of       *
+*          |           | application.                           *
+*                                                               *
+*****************************************************************
+* Detailed Informations:                                        *
+*                                                               *
+* The model files are available on the Infineon web page:       *
+* http://www.infineon.com                                       *
+* Please refer also to the Infineon application note AN 2014-02 *
+* "Simulation models for Infineon Power MOSFET"                 *
+*                                                               *
+* This library contains models of the following INFINEON        *
+* CoolMOS transistors:                                          *
+*                                                               *
+*   S7A_TS 600V                                                 *
+*      IPDQ60T017S7A     IPQC60T017S7A     IPDQ60T022S7A        *
+*      IPQC60T022S7A     IPDQ60T040S7A     IPQC60T040S7A        *
+*      IPDQ60T010S7A     IPQC60T010S7A                          *
+*                                                               *
+*****************************************************************
+**********************************************************************
+************************ L3 TECHNOLOGY MODEL *************************
+**********************************************************************
+
+.SUBCKT cool_600_S7_varT9 dd g s Tj T1 PARAMS: a=1 dVth=0 dR=0 dgfs=0 Inn=1 Unn=1 Rmax=1
++gmin=1 Rs=1 Rp=1 dC=0 heat=0
+.PARAM	Tref=298
+.PARAM	fpar1={4.63-0.01}
+.PARAM	fpar2={4.69m+0.5m}
+.PARAM	fpar3={-3.2m*1}
+.PARAM  fpar4={11.7*1.28}
+.PARAM  fpar5={0.46*1.17}
+.PARAM  fpar6={3.12*1.056}
+.PARAM  fpar7={0.3*1.18}
+.PARAM  fpar8={6.40*1}
+.PARAM  fpar9={0.9*1.0}
+.PARAM  fpar10=5.8
+.PARAM  fpar11=1.2
+.PARAM 	fpar12=3.2
+.PARAM  fpar13=0.3
+.PARAM  fpar14=-23.
+.PARAM 	fpar15=660
+.PARAM  fpar16=0.715
+.PARAM  fpar17=0
+.PARAM  fpar18={0.61*58.0m}
+.PARAM	fpar19=-29
+.PARAM  fpar20=0.65u
+.PARAM  fpar21=1.05
+.PARAM 	fpar22=1.02
+.PARAM  fpar23={(1.471n+3.7p)/1000}
+.PARAM  fpar24={110p*1.35}
+.PARAM  fpar25=10.0p
+.PARAM  fpar26={0.5f}
+.PARAM  fpar27={0.2*7.0p}
+.PARAM  fpar28=0.6p
+.PARAM	fpar29={60f+0.27839p}
+.PARAM  fpar30={2.3404p}
+.PARAM  fpar31={2.27p*0.95}
+.PARAM  fpar32={600p*1.02}
+.PARAM	fpar33={4.n*1.15}
+.PARAM  fpar34={150p*0.97}
+.PARAM	fpar35=45.7696p
+.PARAM  fpar36=193.32p
+.PARAM	fpar37=85.8u
+.PARAM  fpar38=273
+.PARAM  r0={fpar8*((fpar38/Tref)**fpar9)*a}
+.PARAM  r1={(Unn-Inn*Rs-fpar1)*r0}
+.PARAM  r2={(fpar17*SQRT(0.4)-fpar11)*Inn*r0}
+.PARAM  Rlim={(r1+2*r2*Rmax-SQRT(r1**2+4*r2))/(2*r2)}
+.PARAM  fpar39={fpar5/a+if(dVth==0,limit(dR,0,1)*max(Rlim-fpar5/a-Rs-Rdp,0),0)}
+.PARAM  fpar40={fpar18/a}
+.PARAM  fpar41={fpar23*a}
+.PARAM  fpar42={fpar24*a}
+.PARAM  fpar43={fpar25*a}
+.PARAM  fpar44={fpar26*a}
+.PARAM  fpar45={(fpar29*a+fpar30)}
+.PARAM  fpar46={fpar31*a}
+.PARAM  fpar47={a*fpar32}
+.PARAM  fpar48={(fpar35+fpar36*a)}
+.PARAM  fpar49=-0.17
+.PARAM  x0={(fpar27-fpar25)/fpar28}  x1={fpar27/fpar28} dx={x1-x0} pc22=85
+.FUNC 	QCdg1(x) {fpar43*min(x,x1)+fpar45*max(x-x1,0)+fpar44/2*max(0, x-pc22)**2+(fpar43-fpar45)*((limit(x,x0,x1)-x0)**3/(dx*dx)*((limit(x,x0,x1)-x0)/(2*dx)-1))}
+.PARAM  fpar50={-3500}	fpar51={-110}	fpar52={-100}	fpar53={-0.16}	fpar54={-10m}  fpar55={-0.6}
+.PARAM 	a0={(fpar33-fpar32)/fpar34} a1={fpar33/fpar34} da={a1-a0}
+.FUNC 	QCds1(x) {fpar47*min(x,a1)+fpar47*((limit(x,a0,a1)-a0)**3/(da*da)*((limit(x,a0,a1)-a0)/(2*da)-1))}
+E_Edg1    d1   ox  VALUE {if(V(d1,g)>0,V(d1,g)-(exp(fpar49*max(V(d1,g),0))-1)/fpar49,0)}
+C_Cdg1   ox   g   {fpar42}
+E_Edg2   d1   ox2 VALUE {V(d1,g)-QCdg1(V(d1,g))/fpar43}
+C_Cdg2  ox2   g   {fpar43}
+C_Cds0    d1      s  {fpar46}
+E_Eds1    d1  edep1  VALUE {if(V(d1,s)>0,V(d1,s)-fpar50*(exp(fpar53*max(V(d1,s),0))-1)-fpar51*(exp(fpar54*max(V(d1,s),0))-1)-fpar52*(exp(fpar55*max(V(d1,s),0))-1),0)}
+C_Cds1    edep1   s   {fpar46}
+E_Eds2    d1   edep2 VALUE {V(d1,s)-QCds1(V(d1,s))/fpar47}
+C_Cds2    edep2   s  {fpar47}
+C_Cgs   g    s   {fpar48}
+.FUNC I0(Uee,p,pp,z1,cc)  {if(Uee>pp,(Uee-cc*z1)*z1,p*(pp-p)/cc*exp((Uee-pp)/p))}
+.FUNC Ig(Uds,T,p,Uee,cc)  {fpar8*(fpar38/T)**fpar9*I0(Uee,p,min(2*p,p+cc*Uds),min(Uds,Uee/(2*cc)),cc)}
+.FUNC J(d,g,T,da,s)
++ {a*(s*(Ig(da,T,fpar10*fpar37*T,g-fpar1-dVth+fpar2*(T-Tref),fpar11)+1*exp(min(fpar14+(d-fpar15-fpar16*(T-Tref))/fpar13,25))))}
+G_chan    d    s  VALUE={J(V(d,s),V(g,s),fpar38+limit(V(Tj),-200,499),(SQRT(1+4*fpar12*abs(V(d,s)))-1)/2/fpar12,sgn(V(d,s)))}
+V_Ichannel d1 d 0
+.FUNC Rd0(T)  {(fpar7*fpar39+(1-fpar7)*fpar39*(T/Tref)**fpar6)}
+.FUNC CF(T,Iepi) {(fpar4**2)/max(1,fpar4**2-(Rd0(T)*Iepi)**limit(2+fpar3*(T-Tref),1.2,3))}
+V_Iepi     dd d2 0
+G_G_Rd     d2 d1 VALUE {V(d2,d1)/(Rd0(fpar38+LIMIT(V(t1),-200,999))*CF(fpar38+LIMIT(V(t1),-200,999),abs(I(V_Iepi))))}
+.PARAM fpar56=2.8
+.PARAM fpar57=0.01
+.PARAM fpar58=3
+.PARAM fpar59=2.3
+Dbody s dio dbody
+.model dbody D (BV={fpar15*10}, CJO ={1*fpar41}, TT={fpar20}, IS ={a*exp(fpar19)} m={0.3} RS={fpar40/100} N={fpar21} )
+G_Rdio   dio2   dd  VALUE={OFFBJT(V(g,s))*(V(dio2,dd)*(1+fpar56*V(dio2,dd)**(1+2*OFFBJT2(V(g,s)))))/(fpar40*((limit(V(Tj),-200,999)+fpar38)/Tref)**fpar22)}
+V_sense2 dio2   dio  0
+.PARAM PI=3.1415926535897932384626433832795028841971
+.FUNC OFFBJT(Vgs) {if(Vgs>fpar58,1-fpar59*abs(ARCTAN((Vgs-fpar58)**fpar57))/PI,1)}
+.FUNC OFFBJT2(Vgs) {if(Vgs>fpar58,abs(1-OFFBJT(Vgs)),0)}
+R_R_ERd_g  d2 d1  10k
+R1        g    s    1G
+Rd01      d    s    500Meg
+Rd02     d2    s    500Meg
+Rd05     dio   s    500Meg
+G_G_Ptot_channel 0 Tj VALUE {heat*LIMIT(V(d,s)*I(V_Ichannel),0,100k) }
+G_G_Ptot_Epi     0 t1 VALUE {heat*(LIMIT(V(dd,d1)*I(V_Iepi),0,100k)+LIMIT(V(dd,s)*I(V_sense2),0,100k))}
+.ENDS
+
+**********************************************************************
+
+******************** TSENSE L3 TECHNOLOGY MODEL **********************
+
+.SUBCKT TSENSE_L3 a c tj tcase PARAMS: actArea=1.0
+
+.PARAM
+*
+* Model parameters
+****************************************
+*
++ is	= {22.1e-12}
++ isr	= {0.0}
++ n		= {1.594}
++ nr	= {2.0}
++ ikf	= {100e-3}
++ rs	= {10.94}
++ eg	= {0.971}
++ trs1	= {-7.065e-3}
++ trs2	= {21e-6}
++ tikf	= {0}
++ xti	= {0.64}
++ tn1	= {-805e-6}
++ tn2	= {850e-9}
++ cj0	= {2.017e-12}
++ fc	= {0.5}
++ mj	= {0.3}
++ vj	= {0.75}
++ bv	= {1.0e3}
++ ibv	= {1.0e-10}
++ ibvl	= {0.0}
++ nbv	= {1.0}
++ nbvl	= {1.0}
++ tt	= {2.6e-9}
++ dleak	= {1e12}
++ c0	= {1e-12}
+*
+* DC Current
+****************************************
+*
+.func Vt(T) {(1.38e-23)*(273.15+T)/1.6e-19}
+.func nt(T,Tref) {{n}*(1+{tn1}*(T-Tref)+{tn2}*(T-Tref)**2)}
+.func egt(T){(eg-4.73e-4*T**2/(T+636))}
+*
+.func Inrm(V,T,Tref) {Istemp(V,T,Tref) *limit((exp(V/(nt(T,Tref)*Vt(T)))-1),0,1e12)}
+.func Irec(V,T,Tref) {Isrtemp(V,T,Tref)*limit((exp(V/({nr} *Vt(T)))-1),0,1e12)}
+*
+*  high-injection+recombination current
+****************************************
+*
+.func Kinj(V,T,Tref) {if(Ikftemp(V,T,Tref)>0.0,sqrt(Ikftemp(V,T,Tref)/(Ikftemp(V,T,Tref)+Inrm(V,T,Tref))),1)}
+.func Kgen(V,T) {pwr(((1-(V/{vj}))**2+0.005),({mj}/2))}
+*
+*  reverse current at breakdown
+****************************************
+*
+.func Irevh(V,T) {{ibv} *limit(exp(-((V+{bv})/({nbv} *Vt(T)))),0,1e12)}
+.func Irevl(V,T) {{ibvl}*limit(exp(-((V+{bv})/({nbvl}*Vt(T)))),0,1e12)}
+*
+*  forward+reverse current
+****************************************
+*
+.func Ifwd(V,T,Tref) {Inrm(V,T,Tref)*Kinj(V,T,Tref)+Irec(V,T,Tref)*Kgen(V,T)}
+.func Irev(V,T) {Irevh(V,T)+Irevl(V,T)}
+*
+*  diode current with area scaling
+****************************************
+*
+.func Iac(V,T,Tref) {{actArea}*(Ifwd(V,T,Tref)-Irev(V,T))}
+*
+* DC Current temp. effects
+****************************************
+*
+.func Istemp(V,T,Tref)  {{is}  *exp(((273.15+T)/(273.15+Tref)-1)*egt(T)/(nt(T,Tref)*Vt(T)))*pwr(((273.15+T)/(273.15+Tref)),(xti/nt(T,Tref)))}
+.func Isrtemp(V,T,Tref) {{isr} *exp(((273.15+T)/(273.15+Tref)-1)*egt(T)/(nr*Vt(T)))   *pwr(((273.15+T)/(273.15+Tref)),(xti/nr))}
+.func Ikftemp(V,T,Tref) {{ikf} *(1+{tikf}*(T-Tref))}
+*
+* parasitic resistance
+****************************************
+*
+.func rstemp(T,Tref) {{rs}*(1+{trs1}*(T-Tref)+{trs2}*(T-Tref)**2)/{actArea}}
+*
+* Capacitances
+****************************************
+*
+.func Qt(V,T,Tref) {-{tt}*Ifwd(V,T,Tref)}
+.func Qcj(V)  {if(V<=({fc}*{vj}),({vj}*{cj0})/(1-{mj})*pwr((1-V/{vj}),{1-mj}),{cj0}*{vj}/(1-{mj})*(1-pwr((1-{fc}),(1-{mj})))
++              + {cj0}/(pwr((1-{fc}),(1+{mj})))*(1-{fc}*(1+{mj})*V+{mj}*pwr(V,2)/(2*{vj})+{fc}*{vj}*({fc}*(1-{mj}/2)-1)))}
+*
+.func Qtot(V,T,Tref) {{actArea}*Qcj(V)+Qt(V,T,Tref)}
+*
+* Model Instantiation
+****************************************
+*
+* Diode1
+****************************************
+*
+grs1         a   a1 value={v(a,a1)/rstemp(v(tj,0),v(tcase,0))}
+Gtsense1     a1  c1  value={(Iac(v(a1,c1),v(tj,0),v(tcase,0)))}
+Ejac1        a1  y1 value={v(a1,c1)+(Qcj(limit(v(a1,c1),-20,0.35))+Qt(v(a1,c1),v(tj,0),v(tcase,0)))/{c0}}
+Cjtsense1    y1  c1 {c0}
+Ra           a   0  {dleak}
+Rc1          c1  0  {dleak}
+Ry1          y1  0  {dleak}
+*
+* Diode2
+****************************************
+*
+grs2         c1  c2 value={v(c1,c2)/rstemp(v(tj,0),v(tcase,0))}
+Gtsense2     c2  c3 value={Iac(v(c2,c3),v(tj,0),v(tcase,0))}
+Ejac2        c2  y2 value={v(c2,c3)+(Qcj(limit(v(c2,c3),-20,0.35))+Qt(v(c2,c3),v(tj,0),v(tcase,0)))/{c0}}
+Cjtsense2    y2  c3 {c0}
+Ry2          y2  0  {dleak}
+*
+* Diode3
+****************************************
+*
+grs3         c3  c4 value={v(c3,c4)/rstemp(v(tj,0),v(tcase,0))}
+Gtsense3     c4  c  value={Iac(v(c4,c),v(tj,0),v(tcase,0))}
+Ejac3        c4  y3 value={v(c4,c)+(Qcj(limit(v(c4,c),-20,0.35))+Qt(v(c4,c),v(tj,0),v(tcase,0)))/{c0}}
+Cjtsense3    y3  c  {c0}
+Rc3          c3  0  {dleak}
+Ry3          y3  0  {dleak}
+*
+.ENDS
+
+**********************************************************************
+
+.SUBCKT IPDQ60T017S7A_L3 drain gate source source_sense ts Tj Tcase PARAMS: dVth=0 dRdson=0 Zthtype=0 selfheat=1
+.PARAM Rs=3.93E-04    Rg=0.9    Rdp=4.09E-05          Ls=3.06E-09        Ld=1.73E-09
+.PARAM Lg=8.59E-09    act=37.52        Inn={1.00E+00*37.52}  Unn=1.00E+01       Rmax=17.0m
+.PARAM Lss=5.70E-09  Rss=3.92E-02       Rts=4.70E-02         Lts=5.79E-09    lzth={limit(Zthtype,0,1)}
+X1  dd g s Tj 1 cool_600_S7_varT9 PARAMS: a={act} dVth={dVth} dR={dRdson} Inn={Inn} Unn={Unn}
+                                     +Rmax={Rmax} Rs={Rs} Rdp={Rdp} heat=1
+X2  tsi s Tj Tcase TSENSE_L3 PARAMS: actArea={1.0}
+C_gts g  tsi 4.2e-12
+C_sts s  tsi 4.8e-12
+C_dts dd tsi 0.5e-12
+L_Ld         drain  ldrd    {Ld}
+R_Ld         drain  ldrd    10
+R_Rd         dd     ldrd    {Rdp}
+L_Ls         source lsrs  {Ls}
+R_Ls         source lsrs  10
+R_Rs         s      lsrs  {Rs}
+L_Lg         gate   lgrg  {Lg}
+R_Lg         gate   lgrg  10
+R_Rg         lgrg   g     {Rg}
+L_Lss        source_sense  lssrss  {Lss}
+R_Lss        source_sense  lssrss  10
+R_Rss        lssrss        s       {Rss}
+L_Lts        ts     ltsrts {Lts}
+R_Lts        ts     ltsrts 10
+R_Rts        ltsrts tsi    {Rts}
+C_Czth1      Tj     0     363.538u
+C_Czth2      0      1     2.192m
+C_Czth3      0      2     3.095m
+C_Czth4      0      3     77.68m
+C_Czth5      0      4     160.085m
+C_Czth6      0      Tcase 140.0m
+R_Rth1       Tj     1     {(4.49m+lzth*1.16m)*selfheat}
+R_Rth2       1      2     {6.19m+lzth*1.6m}
+R_Rth3       2      3     {29.94m+lzth*34.24m}
+R_Rth4       3      4     {54.68m+lzth*31.5m}
+R_Rth5       4      Tcase {54.68m+lzth*31.5m}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IPQC60T017S7A_L3 drain gate source source_sense ts Tj Tcase PARAMS: dVth=0 dRdson=0 Zthtype=0 selfheat=1
+.PARAM Rs=3.93E-04    Rg=0.9    Rdp=4.09E-05          Ls=3.06E-09        Ld=1.73E-09
+.PARAM Lg=8.59E-09    act=37.52        Inn={1.00E+00*37.52}  Unn=1.00E+01       Rmax=17.0m
+.PARAM Lss=5.70E-09  Rss=3.92E-02       Rts=4.70E-02         Lts=5.79E-09    lzth={limit(Zthtype,0,1)}
+X1  dd g s Tj 1 cool_600_S7_varT9 PARAMS: a={act} dVth={dVth} dR={dRdson} Inn={Inn} Unn={Unn}
+                                     +Rmax={Rmax} Rs={Rs} Rdp={Rdp} heat=1
+X2  tsi s Tj Tcase TSENSE_L3 PARAMS: actArea={1.0}
+C_gts g  tsi 4.2e-12
+C_sts s  tsi 4.8e-12
+C_dts dd tsi 0.5e-12
+L_Ld         drain  ldrd    {Ld}
+R_Ld         drain  ldrd    10
+R_Rd         dd     ldrd    {Rdp}
+L_Ls         source lsrs  {Ls}
+R_Ls         source lsrs  10
+R_Rs         s      lsrs  {Rs}
+L_Lg         gate   lgrg  {Lg}
+R_Lg         gate   lgrg  10
+R_Rg         lgrg   g     {Rg}
+L_Lss        source_sense  lssrss  {Lss}
+R_Lss        source_sense  lssrss  10
+R_Rss        lssrss        s       {Rss}
+L_Lts        ts     ltsrts {Lts}
+R_Lts        ts     ltsrts 10
+R_Rts        ltsrts tsi    {Rts}
+C_Czth1      Tj     0     363.538u
+C_Czth2      0      1     2.192m
+C_Czth3      0      2     3.095m
+C_Czth4      0      3     77.68m
+C_Czth5      0      4     160.085m
+C_Czth6      0      Tcase 140.0m
+R_Rth1       Tj     1     {(4.49m+lzth*1.16m)*selfheat}
+R_Rth2       1      2     {6.19m+lzth*1.6m}
+R_Rth3       2      3     {29.94m+lzth*34.24m}
+R_Rth4       3      4     {54.68m+lzth*31.5m}
+R_Rth5       4      Tcase {54.68m+lzth*31.5m}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IPDQ60T022S7A_L3 drain gate source source_sense ts Tj Tcase PARAMS: dVth=0 dRdson=0 Zthtype=0 selfheat=1
+.PARAM Rs=3.93E-04    Rg=0.8    Rdp=4.09E-05          Ls=3.06E-09        Ld=1.73E-09
+.PARAM Lg=8.59E-09    act=28.551        Inn={1.00E+00*28.551}  Unn=1.00E+01       Rmax=22.0m
+.PARAM Lss=5.70E-09  Rss=3.92E-02       Rts=4.70E-02         Lts=5.79E-09    lzth={limit(Zthtype,0,1)}
+X1  dd g s Tj 1 cool_600_S7_varT9 PARAMS: a={act} dVth={dVth} dR={dRdson} Inn={Inn} Unn={Unn}
+                                     +Rmax={Rmax} Rs={Rs} Rdp={Rdp} heat=1
+X2  tsi s Tj Tcase TSENSE_L3 PARAMS: actArea={1.0}
+C_gts g  tsi 4.2e-12
+C_sts s  tsi 4.8e-12
+C_dts dd tsi 0.5e-12
+L_Ld         drain  ldrd    {Ld}
+R_Ld         drain  ldrd    10
+R_Rd         dd     ldrd    {Rdp}
+L_Ls         source lsrs  {Ls}
+R_Ls         source lsrs  10
+R_Rs         s      lsrs  {Rs}
+L_Lg         gate   lgrg  {Lg}
+R_Lg         gate   lgrg  10
+R_Rg         lgrg   g     {Rg}
+L_Lss        source_sense  lssrss  {Lss}
+R_Lss        source_sense  lssrss  10
+R_Rss        lssrss        s       {Rss}
+L_Lts        ts     ltsrts {Lts}
+R_Lts        ts     ltsrts 10
+R_Rts        ltsrts tsi    {Rts}
+C_Czth1      Tj     0     277.632u
+C_Czth2      0      1     1.674m
+C_Czth3      0      2     2.364m
+C_Czth4      0      3     59.324m
+C_Czth5      0      4     121.928m
+C_Czth6      0      Tcase 140.0m
+R_Rth1       Tj     1     {(5.88m+lzth*1.52m)*selfheat}
+R_Rth2       1      2     {8.11m+lzth*2.1m}
+R_Rth3       2      3     {39.21m+lzth*42.07m}
+R_Rth4       3      4     {62.06m+lzth*38.5m}
+R_Rth5       4      Tcase {62.06m+lzth*38.5m}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IPQC60T022S7A_L3 drain gate source source_sense ts Tj Tcase PARAMS: dVth=0 dRdson=0 Zthtype=0 selfheat=1
+.PARAM Rs=3.93E-04    Rg=0.8    Rdp=4.09E-05          Ls=3.06E-09        Ld=1.73E-09
+.PARAM Lg=8.59E-09    act=28.551        Inn={1.00E+00*28.551}  Unn=1.00E+01       Rmax=22.0m
+.PARAM Lss=5.70E-09  Rss=3.92E-02       Rts=4.70E-02         Lts=5.79E-09    lzth={limit(Zthtype,0,1)}
+X1  dd g s Tj 1 cool_600_S7_varT9 PARAMS: a={act} dVth={dVth} dR={dRdson} Inn={Inn} Unn={Unn}
+                                     +Rmax={Rmax} Rs={Rs} Rdp={Rdp} heat=1
+X2  tsi s Tj Tcase TSENSE_L3 PARAMS: actArea={1.0}
+C_gts g  tsi 4.2e-12
+C_sts s  tsi 4.8e-12
+C_dts dd tsi 0.5e-12
+L_Ld         drain  ldrd    {Ld}
+R_Ld         drain  ldrd    10
+R_Rd         dd     ldrd    {Rdp}
+L_Ls         source lsrs  {Ls}
+R_Ls         source lsrs  10
+R_Rs         s      lsrs  {Rs}
+L_Lg         gate   lgrg  {Lg}
+R_Lg         gate   lgrg  10
+R_Rg         lgrg   g     {Rg}
+L_Lss        source_sense  lssrss  {Lss}
+R_Lss        source_sense  lssrss  10
+R_Rss        lssrss        s       {Rss}
+L_Lts        ts     ltsrts {Lts}
+R_Lts        ts     ltsrts 10
+R_Rts        ltsrts tsi    {Rts}
+C_Czth1      Tj     0     277.632u
+C_Czth2      0      1     1.674m
+C_Czth3      0      2     2.364m
+C_Czth4      0      3     59.324m
+C_Czth5      0      4     121.928m
+C_Czth6      0      Tcase 140.0m
+R_Rth1       Tj     1     {(5.88m+lzth*1.52m)*selfheat}
+R_Rth2       1      2     {8.11m+lzth*2.1m}
+R_Rth3       2      3     {39.21m+lzth*42.07m}
+R_Rth4       3      4     {62.06m+lzth*38.5m}
+R_Rth5       4      Tcase {62.06m+lzth*38.5m}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IPDQ60T040S7A_L3 drain gate source source_sense ts Tj Tcase PARAMS: dVth=0 dRdson=0 Zthtype=0 selfheat=1
+.PARAM Rs=5.58E-04    Rg=0.8    Rdp=4.28E-05          Ls=3.74E-09        Ld=1.91E-09
+.PARAM Lg=9.12E-09    act=15.62        Inn={1.00E+00*15.62}  Unn=1.00E+01       Rmax=40.0m
+.PARAM Lss=6.07E-09  Rss=4.18E-02       Rts=4.87E-02         Lts=5.96E-09    lzth={limit(Zthtype,0,1)}
+X1  dd g s Tj 1 cool_600_S7_varT9 PARAMS: a={act} dVth={dVth} dR={dRdson} Inn={Inn} Unn={Unn}
+                                     +Rmax={Rmax} Rs={Rs} Rdp={Rdp} heat=1
+X2  tsi s Tj Tcase TSENSE_L3 PARAMS: actArea={1.0}
+C_gts g  tsi 4.2e-12
+C_sts s  tsi 4.8e-12
+C_dts dd tsi 0.5e-12
+L_Ld         drain  ldrd    {Ld}
+R_Ld         drain  ldrd    10
+R_Rd         dd     ldrd    {Rdp}
+L_Ls         source lsrs  {Ls}
+R_Ls         source lsrs  10
+R_Rs         s      lsrs  {Rs}
+L_Lg         gate   lgrg  {Lg}
+R_Lg         gate   lgrg  10
+R_Rg         lgrg   g     {Rg}
+L_Lss        source_sense  lssrss  {Lss}
+R_Lss        source_sense  lssrss  10
+R_Rss        lssrss        s       {Rss}
+L_Lts        ts     ltsrts {Lts}
+R_Lts        ts     ltsrts 10
+R_Rts        ltsrts tsi    {Rts}
+C_Czth1      Tj     0     152.919u
+C_Czth2      0      1     922.136u
+C_Czth3      0      2     1.302m
+C_Czth4      0      3     32.675m
+C_Czth5      0      4     66.535m
+C_Czth6      0      Tcase 140.0m
+R_Rth1       Tj     1     {(10.67m+lzth*2.77m)*selfheat}
+R_Rth2       1      2     {14.72m+lzth*3.82m}
+R_Rth3       2      3     {71.18m+lzth*70.68m}
+R_Rth4       3      4     {78.89m+lzth*64.19m}
+R_Rth5       4      Tcase {78.89m+lzth*64.19m}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IPQC60T040S7A_L3 drain gate source source_sense ts Tj Tcase PARAMS: dVth=0 dRdson=0 Zthtype=0 selfheat=1
+.PARAM Rs=5.58E-04    Rg=0.8    Rdp=4.28E-05          Ls=3.74E-09        Ld=1.91E-09
+.PARAM Lg=9.12E-09    act=15.62        Inn={1.00E+00*15.62}  Unn=1.00E+01       Rmax=40.0m
+.PARAM Lss=6.07E-09  Rss=4.18E-02       Rts=4.87E-02         Lts=5.96E-09    lzth={limit(Zthtype,0,1)}
+X1  dd g s Tj 1 cool_600_S7_varT9 PARAMS: a={act} dVth={dVth} dR={dRdson} Inn={Inn} Unn={Unn}
+                                     +Rmax={Rmax} Rs={Rs} Rdp={Rdp} heat=1
+X2  tsi s Tj Tcase TSENSE_L3 PARAMS: actArea={1.0}
+C_gts g  tsi 4.2e-12
+C_sts s  tsi 4.8e-12
+C_dts dd tsi 0.5e-12
+L_Ld         drain  ldrd    {Ld}
+R_Ld         drain  ldrd    10
+R_Rd         dd     ldrd    {Rdp}
+L_Ls         source lsrs  {Ls}
+R_Ls         source lsrs  10
+R_Rs         s      lsrs  {Rs}
+L_Lg         gate   lgrg  {Lg}
+R_Lg         gate   lgrg  10
+R_Rg         lgrg   g     {Rg}
+L_Lss        source_sense  lssrss  {Lss}
+R_Lss        source_sense  lssrss  10
+R_Rss        lssrss        s       {Rss}
+L_Lts        ts     ltsrts {Lts}
+R_Lts        ts     ltsrts 10
+R_Rts        ltsrts tsi    {Rts}
+C_Czth1      Tj     0     152.919u
+C_Czth2      0      1     922.136u
+C_Czth3      0      2     1.302m
+C_Czth4      0      3     32.675m
+C_Czth5      0      4     66.535m
+C_Czth6      0      Tcase 140.0m
+R_Rth1       Tj     1     {(10.67m+lzth*2.77m)*selfheat}
+R_Rth2       1      2     {14.72m+lzth*3.82m}
+R_Rth3       2      3     {71.18m+lzth*70.68m}
+R_Rth4       3      4     {78.89m+lzth*64.19m}
+R_Rth5       4      Tcase {78.89m+lzth*64.19m}
+.ENDS
+
+********************************************************************************
+
+**********************************************************************
+************************ L3 TECHNOLOGY MODEL *************************
+**********************************************************************
+
+.SUBCKT cool_600_S7_varT9_10m dd g s Tj T1 PARAMS: a=1 dVth=0 dR=0 Inn=1 Unn=1 Rmax=1 gmin=1 Rs=1 heat=0
+X1  dd g s Tj T1 cool_600_S7_varT9_10m_inner PARAMS: a={a*0.81} dVth={dVth} dR={dR} Inn={Inn} Unn={Unn}
+                                      +Rmax={Rmax} Rs={Rs} Rdp={Rdp} heat={heat} gmin={gmin}
+X2  dd g s Tj T1 cool_600_S7_varT9_10m_ring PARAMS: a={a*0.19} dVth={dVth} dR={dR} Inn={Inn} Unn={Unn}
+                                      +Rmax={Rmax} Rs={Rs} Rdp={Rdp} heat={heat} gmin={gmin}
+.ENDS
+
+.SUBCKT cool_600_S7_varT9_10m_inner dd g s Tj T1 PARAMS: a=1 dVth=0 dR=0 Inn=1 Unn=1 Rmax=1 gmin=1 Rs=1 heat=0
+.PARAM	Tref=298
+.PARAM	fpar1={4.63+0.15}
+.PARAM	fpar2={4.69m+1.1m}
+.PARAM	fpar3={-3.2m*1}
+.PARAM  fpar4={11.7*1.23}
+.PARAM  fpar5={0.46*1.17}
+.PARAM  fpar6={3.12*1.056}
+.PARAM  fpar7={0.3*1.18}
+.PARAM  fpar8={6.40*1}
+.PARAM  fpar9={0.9*1.0}
+.PARAM  fpar10={5.8*1.2}
+.PARAM  fpar11={1.2*1.1}
+.PARAM 	fpar12={3.2*1.5}
+.PARAM  fpar13=0.3
+.PARAM  fpar14=-23.
+.PARAM 	fpar15=660
+.PARAM  fpar16=0.715
+.PARAM  fpar17=0
+.PARAM  fpar18={0.61*58.0m}
+.PARAM	fpar19=-29
+.PARAM  fpar20=0.65u
+.PARAM  fpar21=1.05
+.PARAM 	fpar22=1.02
+.PARAM  fpar23={(1.471n+3.7p)/1000}
+.PARAM  fpar24={110p*1.35}
+.PARAM  fpar25=10.0p
+.PARAM  fpar26={0.5f}
+.PARAM  fpar27={0.2*7.0p}
+.PARAM  fpar28=0.6p
+.PARAM	fpar29={60f+0.27839p}
+.PARAM  fpar30={2.3404p}
+.PARAM  fpar31={2.27p*0.95}
+.PARAM  fpar32={600p*1.02}
+.PARAM	fpar33={4.n*1.15}
+.PARAM  fpar34={150p*0.97}
+.PARAM	fpar35=45.7696p
+.PARAM  fpar36=193.32p
+.PARAM	fpar37=85.8u
+.PARAM  fpar38=273
+.PARAM  r0={fpar8*((fpar38/Tref)**fpar9)*a}
+.PARAM  r1={(Unn-Inn*Rs-fpar1)*r0}
+.PARAM  r2={(fpar17*SQRT(0.4)-fpar11)*Inn*r0}
+.PARAM  Rlim={(r1+2*r2*Rmax-SQRT(r1**2+4*r2))/(2*r2)}
+.PARAM  fpar39={fpar5/a+if(dVth==0,limit(dR,0,1)*max(Rlim-fpar5/a-Rs-Rdp,0),0)}
+.PARAM  fpar40={fpar18/a}
+.PARAM  fpar41={fpar23*a}
+.PARAM  fpar42={fpar24*a}
+.PARAM  fpar43={fpar25*a}
+.PARAM  fpar44={fpar26*a}
+.PARAM  fpar45={(fpar29*a+fpar30)}
+.PARAM  fpar46={fpar31*a}
+.PARAM  fpar47={a*fpar32}
+.PARAM  fpar48={(fpar35+fpar36*a)}
+.PARAM  fpar49=-0.17
+.PARAM  x0={(fpar27-fpar25)/fpar28}  x1={fpar27/fpar28} dx={x1-x0} pc22=85
+.FUNC 	QCdg1(x) {fpar43*min(x,x1)+fpar45*max(x-x1,0)+fpar44/2*max(0, x-pc22)**2+(fpar43-fpar45)*((limit(x,x0,x1)-x0)**3/(dx*dx)*((limit(x,x0,x1)-x0)/(2*dx)-1))}
+.PARAM  fpar50={-3500}	fpar51={-110}	fpar52={-100}	fpar53={-0.16}	fpar54={-10m}  fpar55={-0.6}
+.PARAM 	a0={(fpar33-fpar32)/fpar34} a1={fpar33/fpar34} da={a1-a0}
+.FUNC 	QCds1(x) {fpar47*min(x,a1)+fpar47*((limit(x,a0,a1)-a0)**3/(da*da)*((limit(x,a0,a1)-a0)/(2*da)-1))}
+E_Edg1    d1   ox  VALUE {if(V(d1,g)>0,V(d1,g)-(exp(fpar49*max(V(d1,g),0))-1)/fpar49,0)}
+C_Cdg1   ox   g   {fpar42}
+E_Edg2   d1   ox2 VALUE {V(d1,g)-QCdg1(V(d1,g))/fpar43}
+C_Cdg2  ox2   g   {fpar43}
+C_Cds0    d1      s  {fpar46}
+E_Eds1    d1  edep1  VALUE {if(V(d1,s)>0,V(d1,s)-fpar50*(exp(fpar53*max(V(d1,s),0))-1)-fpar51*(exp(fpar54*max(V(d1,s),0))-1)-fpar52*(exp(fpar55*max(V(d1,s),0))-1),0)}
+C_Cds1    edep1   s   {fpar46}
+E_Eds2    d1   edep2 VALUE {V(d1,s)-QCds1(V(d1,s))/fpar47}
+C_Cds2    edep2   s  {fpar47}
+C_Cgs   g    s   {fpar48}
+.FUNC I0(Uee,p,pp,z1,cc)  {if(Uee>pp,(Uee-cc*z1)*z1,p*(pp-p)/cc*exp((Uee-pp)/p))}
+.FUNC Ig(Uds,T,p,Uee,cc)  {fpar8*(fpar38/T)**fpar9*I0(Uee,p,min(2*p,p+cc*Uds),min(Uds,Uee/(2*cc)),cc)}
+.FUNC J(d,g,T,da,s)
++ {a*(s*(Ig(da,T,fpar10*fpar37*T,g-fpar1-dVth+fpar2*(T-Tref),fpar11)+1*exp(min(fpar14+(d-fpar15-fpar16*(T-Tref))/fpar13,25))))}
+G_chan    d    s  VALUE={J(V(d,s),V(g,s),fpar38+limit(V(Tj),-200,499),(SQRT(1+4*fpar12*abs(V(d,s)))-1)/2/fpar12,sgn(V(d,s)))}
+V_Ichannel d1 d 0
+.FUNC Rd0(T)  {(fpar7*fpar39+(1-fpar7)*fpar39*(T/Tref)**fpar6)}
+.FUNC CF(T,Iepi) {(fpar4**2)/max(1,fpar4**2-(Rd0(T)*Iepi)**limit(2+fpar3*(T-Tref),1.2,3))}
+V_Iepi     dd d2 0
+G_G_Rd     d2 d1 VALUE {V(d2,d1)/(Rd0(fpar38+LIMIT(V(t1),-200,999))*CF(fpar38+LIMIT(V(t1),-200,999),abs(I(V_Iepi))))}
+.PARAM fpar56=2.8
+.PARAM fpar57=0.01
+.PARAM fpar58=3
+.PARAM fpar59=2.3
+Dbody s dio dbody
+.model dbody D (BV={fpar15*10}, CJO ={1*fpar41}, TT={fpar20}, IS ={a*exp(fpar19)} m={0.3} RS={fpar40/100} N={fpar21} )
+G_Rdio   dio2   dd  VALUE={OFFBJT(V(g,s))*(V(dio2,dd)*(1+fpar56*V(dio2,dd)**(1+2*OFFBJT2(V(g,s)))))/(fpar40*((limit(V(Tj),-200,999)+fpar38)/Tref)**fpar22)}
+V_sense2 dio2   dio  0
+.PARAM PI=3.1415926535897932384626433832795028841971
+.FUNC OFFBJT(Vgs) {if(Vgs>fpar58,1-fpar59*abs(ARCTAN((Vgs-fpar58)**fpar57))/PI,1)}
+.FUNC OFFBJT2(Vgs) {if(Vgs>fpar58,abs(1-OFFBJT(Vgs)),0)}
+R_R_ERd_g  d2 d1  10k
+R1        g    s    1G
+Rd01      d    s    500Meg
+Rd02     d2    s    500Meg
+Rd05     dio   s    500Meg
+G_G_Ptot_channel 0 Tj VALUE {heat*LIMIT(V(d,s)*I(V_Ichannel),0,100k) }
+G_G_Ptot_Epi     0 t1 VALUE {heat*(LIMIT(V(dd,d1)*I(V_Iepi),0,100k)+LIMIT(V(dd,s)*I(V_sense2),0,100k))}
+.ENDS
+
+.SUBCKT cool_600_S7_varT9_10m_ring dd g s Tj T1 PARAMS: a=1 dVth=0 dR=0 Inn=1 Unn=1 Rmax=1 gmin=1 Rs=1 heat=0
+.PARAM	Tref=298
+.PARAM	fpar1={4.63+0.15+3}
+.PARAM	fpar2={4.69m+1.1m}
+.PARAM	fpar3={-3.2m*1}
+.PARAM  fpar4={11.7*1.28}
+.PARAM  fpar5={0.46*1.17}
+.PARAM  fpar6={3.12*1.056}
+.PARAM  fpar7={0.3*1.18}
+.PARAM  fpar8={6.40*0.75}
+.PARAM  fpar9={0.9*1.0}
+.PARAM  fpar10={5.8*1.2}
+.PARAM  fpar11={1.2*1.2}
+.PARAM 	fpar12={3.2*1.5}
+.PARAM  fpar13=0.3
+.PARAM  fpar14=-23.
+.PARAM 	fpar15=660
+.PARAM  fpar16=0.715
+.PARAM  fpar17=0
+.PARAM  fpar18={0.61*58.0m}
+.PARAM	fpar19=-29
+.PARAM  fpar20=0.65u
+.PARAM  fpar21=1.05
+.PARAM 	fpar22=1.02
+.PARAM  fpar23={(1.471n+3.7p)/1000}
+.PARAM  fpar24={110p*1.35}
+.PARAM  fpar25=10.0p
+.PARAM  fpar26={0.5f}
+.PARAM  fpar27={0.2*7.0p}
+.PARAM  fpar28=0.6p
+.PARAM	fpar29={60f+0.27839p}
+.PARAM  fpar30={2.3404p*1e-3}
+.PARAM  fpar31={2.27p*0.95}
+.PARAM  fpar32={600p*1.02}
+.PARAM	fpar33={4.n*1.15}
+.PARAM  fpar34={150p*0.97}
+.PARAM	fpar35={45.7696p*1e-3}
+.PARAM  fpar36=193.32p
+.PARAM	fpar37=85.8u
+.PARAM  fpar38=273
+.PARAM  r0={fpar8*((fpar38/Tref)**fpar9)*a}
+.PARAM  r1={(Unn-Inn*Rs-fpar1)*r0}
+.PARAM  r2={(fpar17*SQRT(0.4)-fpar11)*Inn*r0}
+.PARAM  Rlim={(r1+2*r2*Rmax-SQRT(r1**2+4*r2))/(2*r2)}
+.PARAM  fpar39={fpar5/a+if(dVth==0,limit(dR,0,1)*max(Rlim-fpar5/a-Rs-Rdp,0),0)}
+.PARAM  fpar40={fpar18/a}
+.PARAM  fpar41={fpar23*a}
+.PARAM  fpar42={fpar24*a}
+.PARAM  fpar43={fpar25*a}
+.PARAM  fpar44={fpar26*a}
+.PARAM  fpar45={(fpar29*a+fpar30)}
+.PARAM  fpar46={fpar31*a}
+.PARAM  fpar47={a*fpar32}
+.PARAM  fpar48={(fpar35+fpar36*a)}
+.PARAM  fpar49=-0.17
+.PARAM  x0={(fpar27-fpar25)/fpar28}  x1={fpar27/fpar28} dx={x1-x0} pc22=85
+.FUNC 	QCdg1(x) {fpar43*min(x,x1)+fpar45*max(x-x1,0)+fpar44/2*max(0, x-pc22)**2+(fpar43-fpar45)*((limit(x,x0,x1)-x0)**3/(dx*dx)*((limit(x,x0,x1)-x0)/(2*dx)-1))}
+.PARAM  fpar50={-3500}	fpar51={-110}	fpar52={-100}	fpar53={-0.16}	fpar54={-10m}  fpar55={-0.6}
+.PARAM 	a0={(fpar33-fpar32)/fpar34} a1={fpar33/fpar34} da={a1-a0}
+.FUNC 	QCds1(x) {fpar47*min(x,a1)+fpar47*((limit(x,a0,a1)-a0)**3/(da*da)*((limit(x,a0,a1)-a0)/(2*da)-1))}
+E_Edg1    d1   ox  VALUE {if(V(d1,g)>0,V(d1,g)-(exp(fpar49*max(V(d1,g),0))-1)/fpar49,0)}
+C_Cdg1   ox   g   {fpar42}
+E_Edg2   d1   ox2 VALUE {V(d1,g)-QCdg1(V(d1,g))/fpar43}
+C_Cdg2  ox2   g   {fpar43}
+C_Cds0    d1      s  {fpar46}
+E_Eds1    d1  edep1  VALUE {if(V(d1,s)>0,V(d1,s)-fpar50*(exp(fpar53*max(V(d1,s),0))-1)-fpar51*(exp(fpar54*max(V(d1,s),0))-1)-fpar52*(exp(fpar55*max(V(d1,s),0))-1),0)}
+C_Cds1    edep1   s   {fpar46}
+E_Eds2    d1   edep2 VALUE {V(d1,s)-QCds1(V(d1,s))/fpar47}
+C_Cds2    edep2   s  {fpar47}
+C_Cgs   g    s   {fpar48}
+.FUNC I0(Uee,p,pp,z1,cc)  {if(Uee>pp,(Uee-cc*z1)*z1,p*(pp-p)/cc*exp((Uee-pp)/p))}
+.FUNC Ig(Uds,T,p,Uee,cc)  {fpar8*(fpar38/T)**fpar9*I0(Uee,p,min(2*p,p+cc*Uds),min(Uds,Uee/(2*cc)),cc)}
+.FUNC J(d,g,T,da,s)
++ {a*(s*(Ig(da,T,fpar10*fpar37*T,g-fpar1-dVth+fpar2*(T-Tref),fpar11)+1*exp(min(fpar14+(d-fpar15-fpar16*(T-Tref))/fpar13,25))))}
+G_chan    d    s  VALUE={J(V(d,s),V(g,s),fpar38+limit(V(Tj),-200,499),(SQRT(1+4*fpar12*abs(V(d,s)))-1)/2/fpar12,sgn(V(d,s)))}
+V_Ichannel d1 d 0
+.FUNC Rd0(T)  {(fpar7*fpar39+(1-fpar7)*fpar39*(T/Tref)**fpar6)}
+.FUNC CF(T,Iepi) {(fpar4**2)/max(1,fpar4**2-(Rd0(T)*Iepi)**limit(2+fpar3*(T-Tref),1.2,3))}
+V_Iepi     dd d2 0
+G_G_Rd     d2 d1 VALUE {V(d2,d1)/(Rd0(fpar38+LIMIT(V(t1),-200,999))*CF(fpar38+LIMIT(V(t1),-200,999),abs(I(V_Iepi))))}
+.PARAM fpar56=2.8
+.PARAM fpar57=0.01
+.PARAM fpar58=3
+.PARAM fpar59=2.3
+Dbody s dio dbody
+.model dbody D (BV={fpar15*10}, CJO ={1*fpar41}, TT={fpar20}, IS ={a*exp(fpar19)} m={0.3} RS={fpar40/100} N={fpar21} )
+G_Rdio   dio2   dd  VALUE={OFFBJT(V(g,s))*(V(dio2,dd)*(1+fpar56*V(dio2,dd)**(1+2*OFFBJT2(V(g,s)))))/(fpar40*((limit(V(Tj),-200,999)+fpar38)/Tref)**fpar22)}
+V_sense2 dio2   dio  0
+.PARAM PI=3.1415926535897932384626433832795028841971
+.FUNC OFFBJT(Vgs) {if(Vgs>fpar58,1-fpar59*abs(ARCTAN((Vgs-fpar58)**fpar57))/PI,1)}
+.FUNC OFFBJT2(Vgs) {if(Vgs>fpar58,abs(1-OFFBJT(Vgs)),0)}
+R_R_ERd_g  d2 d1  10k
+R1        g    s    1G
+Rd01      d    s    500Meg
+Rd02     d2    s    500Meg
+Rd05     dio   s    500Meg
+G_G_Ptot_channel 0 Tj VALUE {heat*LIMIT(V(d,s)*I(V_Ichannel),0,100k) }
+G_G_Ptot_Epi     0 t1 VALUE {heat*(LIMIT(V(dd,d1)*I(V_Iepi),0,100k)+LIMIT(V(dd,s)*I(V_sense2),0,100k))}
+.ENDS
+
+**********************************************************************
+
+.SUBCKT IPDQ60T010S7A_L3 drain gate source source_sense ts Tj Tcase PARAMS: dVth=0 dRdson=0 Zthtype=0 selfheat=1
+.PARAM Rs=2.92E-04    Rg=0.45    Rdp=3.64E-05          Ls=2.41E-09        Ld=1.27E-09
+.PARAM Lg=8.10E-09    act=61.23        Inn={1.00E+00*61.23}  Unn=1.00E+01       Rmax=10.0m
+.PARAM Lss=4.90E-09  Rss=3.22E-02       Rts=4.72E-02         Lts=5.82E-09    lzth={limit(Zthtype,0,1)}
+X1  dd g s Tj 1 cool_600_S7_varT9_10m PARAMS: a={act} dVth={dVth} dR={dRdson} Inn={Inn} Unn={Unn}
+                                     +Rmax={Rmax} Rs={Rs} Rdp={Rdp} heat=1
+X2  tsi s Tj Tcase TSENSE_L3 PARAMS: actArea={1.0}
+C_gts g  tsi 4.2e-12
+C_sts s  tsi 4.8e-12
+C_dts dd tsi 0.5e-12
+L_Ld         drain  ldrd    {Ld}
+R_Ld         drain  ldrd    10
+R_Rd         dd     ldrd    {Rdp}
+L_Ls         source lsrs  {Ls}
+R_Ls         source lsrs  10
+R_Rs         s      lsrs  {Rs}
+L_Lg         gate   lgrg  {Lg}
+R_Lg         gate   lgrg  10
+R_Rg         lgrg   g     {Rg}
+L_Lss        source_sense  lssrss  {Lss}
+R_Lss        source_sense  lssrss  10
+R_Rss        lssrss        s       {Rss}
+L_Lts        ts     ltsrts {Lts}
+R_Lts        ts     ltsrts 10
+R_Rts        ltsrts tsi    {Rts}
+C_Czth1      Tj     0     592.752u
+C_Czth2      0      1     3.574m
+C_Czth3      0      2     5.046m
+C_Czth4      0      3     28.686m
+C_Czth5      0      4     107.851m
+C_Czth6      0      Tcase 140.0m
+R_Rth1       Tj     1     {(2.75m+lzth*713.58u)*selfheat}
+R_Rth2       1      2     {3.8m+lzth*984.24u}
+R_Rth3       2      3     {18.36m+lzth*20.86m}
+R_Rth4       3      4     {39.58m+lzth*19.19m}
+R_Rth5       4      Tcase {54.58m+lzth*19.19m}
+.ENDS
+
+********************************************************************************
+
+.SUBCKT IPQC60T010S7A_L3 drain gate source source_sense ts Tj Tcase PARAMS: dVth=0 dRdson=0 Zthtype=0 selfheat=1
+.PARAM Rs=2.92E-04    Rg=0.45    Rdp=3.64E-05          Ls=2.41E-09        Ld=1.27E-09
+.PARAM Lg=8.10E-09    act=61.23        Inn={1.00E+00*61.23}  Unn=1.00E+01       Rmax=10.0m
+.PARAM Lss=4.90E-09  Rss=3.22E-02       Rts=4.72E-02         Lts=5.82E-09    lzth={limit(Zthtype,0,1)}
+X1  dd g s Tj 1 cool_600_S7_varT9_10m PARAMS: a={act} dVth={dVth} dR={dRdson} Inn={Inn} Unn={Unn}
+                                     +Rmax={Rmax} Rs={Rs} Rdp={Rdp} heat=1
+X2  tsi s Tj Tcase TSENSE_L3 PARAMS: actArea={1.0}
+C_gts g  tsi 4.2e-12
+C_sts s  tsi 4.8e-12
+C_dts dd tsi 0.5e-12
+L_Ld         drain  ldrd    {Ld}
+R_Ld         drain  ldrd    10
+R_Rd         dd     ldrd    {Rdp}
+L_Ls         source lsrs  {Ls}
+R_Ls         source lsrs  10
+R_Rs         s      lsrs  {Rs}
+L_Lg         gate   lgrg  {Lg}
+R_Lg         gate   lgrg  10
+R_Rg         lgrg   g     {Rg}
+L_Lss        source_sense  lssrss  {Lss}
+R_Lss        source_sense  lssrss  10
+R_Rss        lssrss        s       {Rss}
+L_Lts        ts     ltsrts {Lts}
+R_Lts        ts     ltsrts 10
+R_Rts        ltsrts tsi    {Rts}
+C_Czth1      Tj     0     592.752u
+C_Czth2      0      1     3.574m
+C_Czth3      0      2     5.046m
+C_Czth4      0      3     28.686m
+C_Czth5      0      4     107.851m
+C_Czth6      0      Tcase 140.0m
+R_Rth1       Tj     1     {(2.75m+lzth*713.58u)*selfheat}
+R_Rth2       1      2     {3.8m+lzth*984.24u}
+R_Rth3       2      3     {18.36m+lzth*20.86m}
+R_Rth4       3      4     {39.58m+lzth*19.19m}
+R_Rth5       4      Tcase {54.58m+lzth*19.19m}
+.ENDS
+
+********************************************************************************
