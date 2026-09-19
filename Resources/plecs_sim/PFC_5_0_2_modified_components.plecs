@@ -3,7 +3,7 @@ Plecs {
   Version       "5.0"
   CircuitModel  "ContStateSpace"
   StartTime     "0"
-  TimeSpan      "1.2"
+  TimeSpan      "0.6"
   Timeout       ""
   Solver        "radau"
   MaxStep       "1e-6"
@@ -29,43 +29,43 @@ Plecs {
   AssertionAction "3"
   FixedPointDatatypeOverride "1"
   InitializationCommands base64 "aWYgfmV4aXN0KCdQb3V0JywndmFyJykKICAgIFBvdXQgP"
-"SA1MDsKZW5kCgpWb3V0PTQwMDsKVmluID0gMjMwKnNxcnQoMik7ICUgR3JpZCB2b2x0YWdlIChWKQ"
-"pGID0gNTAuMDsgJSBHcmlkIGZyZXF1ZW5jeSAoSHopCgpkZWFkdGltZT0xNWUtOTsKJVNsb3dfbGV"
-"nX2RlYWR0aW1lPTQwMGUtOTsKCiV0aGVybWFsCiVSdGhfY2ggPSAwLjE7CQklIENhc2UtdG8taGVh"
-"dHNpbmsgdGhlcm1hbCByZXNpc3RhbmNlIChUSU0pIChLL1cpIFswOjIwXQolUnRoX2hhID0gMC41O"
-"wkJJSBIZWF0c2luay10by1hbWJpZW50IHRoZXJtYWwgcmVzaXN0YW5jZSAoSy9XKSBbMDoyMF0KJX"
-"Rhb19oYSA9IDE7CQklIEhlYXRzaW5rIHRpbWUgY29uc3RhbnQgKHMpIFswOjEwMF0KJUN0aCA9IHR"
-"hb19oYS9SdGhfaGE7ICUgSGVhdHNpbmsgdGhlcm1hbCBjYXBhY2l0YW5jZSAoSi9LKQoKUnRoX2Fp"
-"ciA9IDEwMDsgICAgICAgICAlIENhc2UtdG8tYW1iaWVudCxmb3JjZWQgdmVudGlsYXRpb24gKEsvV"
-"ykKUnRoX3BjYiA9IDMuODsJICAgICAgICUgQ2FzZS10by1ib2FyZCAoSy9XKQpSdGhfcGNiX2Fpci"
-"A9IDIuMjsgICAgICAlIEJvYXJkLXRvLWFtYmllbnQgLCBmb3JjZWQgdmVudGlsYXRpb24gKEsvVyk"
-"gd2FzIDUgYmVmb3JlCgoKUnRoX3BhY2tfYWlyX1NpID0gMzk7ICUgQ2FzZS10by1hbWJpZW50LGZv"
-"cmNlZCB2ZW50aWxhdGlvbiAoSy9XKQpSdGhfanVuY3Rpb25fYWlyX1NpID0gMjM7ICVqdW5jdGlvb"
-"i10by1hbWJpZW50KEsvVykKClRhbWIgPSAyNTsKCiVDT01NRU5UIFRIRVNFIEZPUiBCQVRDSCBTSU"
-"1VTEFUSU9OUwoKJVRpbml0R2FORkVUcyA9IDc5LjM7CiVUaW5pdFNpRkVUcyA9IDQ5Ljk7CgppZiB"
-"+ZXhpc3QoJ1Rpbml0R2FORkVUcycsJ3ZhcicpIHx8IH5leGlzdCgnVGluaXRTaUZFVHMnLCd2YXIn"
-"KQogICAgVGluaXRHYU5GRVRzID0gMjU7CiAgICBUaW5pdFNpRkVUcyA9IDI1OwoKCWlmIFBvdXQgP"
-"D0gMTAwCgkJVGluaXRHYU5GRVRzID0gNTY7CgkJVGluaXRTaUZFVHMgPSAzNC45OwoJZW5kCglpZi"
-"BQb3V0ID4gMTAwICYmIFBvdXQgPD0gNTAwCgkJVGluaXRHYU5GRVRzID0gNTcuMjsKCQlUaW5pdFN"
-"pRkVUcyA9IDMzLjg7CgllbmQKCWlmIFBvdXQgPiA1MDAgJiYgUG91dCA8PSAxMDAwCgkJVGluaXRH"
-"YU5GRVRzID0gNTguNzsKCQlUaW5pdFNpRkVUcyA9IDM0LjI7CgllbmQKCWlmIFBvdXQgPiAxMDAwI"
-"CYmIFBvdXQgPD0gMTUwMAoJCVRpbml0R2FORkVUcyA9IDYxLjY7CgkJVGluaXRTaUZFVHMgPSAzNS"
-"40OwoJZW5kCglpZiBQb3V0ID4gMTUwMCAmJiBQb3V0IDw9IDIwMDAKCQlUaW5pdEdhTkZFVHMgPSA"
-"2NS45OwoJCVRpbml0U2lGRVRzID0gMzUuNjsKCWVuZAoJaWYgUG91dCA+IDIwMDAgJiYgUG91dCA8"
-"PSAyNTAwCgkJVGluaXRHYU5GRVRzID0gNzEuMTsKCQlUaW5pdFNpRkVUcyA9IDQ0LjU7CgllbmQKC"
-"WlmIFBvdXQgPiAyNTAwICYmIFBvdXQgPD0gMzAwMAoJCVRpbml0R2FORkVUcyA9IDc5LjM7CgkJVG"
-"luaXRTaUZFVHMgPSA0OS45OwoJZW5kCglpZiBQb3V0ID4gMzAwMCAmJiBQb3V0IDw9IDM1MDAKCQl"
-"UaW5pdEdhTkZFVHMgPSA4Ny40OwoJCVRpbml0U2lGRVRzID0gNTYuNjsKCWVuZAoJaWYgUG91dCA+"
-"IDM1MDAgJiYgUG91dCA8PSA0MDAwCgkJVGluaXRHYU5GRVRzID0gOTk7CgkJVGluaXRTaUZFVHMgP"
-"SA1OTsKCWVuZAoJaWYgUG91dCA+IDQwMDAgJiYgUG91dCA8PSA0NTAwCgkJVGluaXRHYU5GRVRzID"
-"0gMTAzOwoJCVRpbml0U2lGRVRzID0gNjAuOTsKCWVuZAoJaWYgUG91dCA+IDQ1MDAgJiYgUG91dCA"
-"8PSA1MDAwCgkJVGluaXRHYU5GRVRzID0gMTIyLjM7CgkJVGluaXRTaUZFVHMgPSA3OC41OwoJZW5k"
-"CglpZiBQb3V0ID4gNTAwMAoJCVRpbml0R2FORkVUcyA9IDEyODsKCQlUaW5pdFNpRkVUcyA9IDgzO"
-"woJZW5kCmVuZAoKVGp1bmN0aW9uR2FORkVUcyA9IDEuMipUaW5pdEdhTkZFVHM7ClRqdW5jdGlvbl"
-"NpRkVUcyA9IDEuMypUaW5pdFNpRkVUczsKJWVuZCB0aGVybWFsCgoKZnMgPSAxNDBlMzsgJSBTd2l"
-"0Y2hpbmcgZnJlcXVlbmN5IChIeikKClBMTF9lcnJvcj0wOyVhbW91bnQgb2YgUExMIGVycm9yICjC"
-"sCkKUExMX2ppdHRlcl9mcmVxPTE7JSBmcmVxdWVuY3kgb2YgdGhpcyBqaXR0ZXIgKEh6KQpQTExfa"
-"ml0dGVyX2FtcGxpdHVkZT0oUExMX2Vycm9yKjAuMDIpLzM2MDs="
+"SA1MDAwOwplbmQKClZvdXQ9NDAwOwpWaW4gPSAyMzAqc3FydCgyKTsgJSBHcmlkIHZvbHRhZ2UgKF"
+"YpCkYgPSA1MC4wOyAlIEdyaWQgZnJlcXVlbmN5IChIeikKCmRlYWR0aW1lPTE1ZS05OwolU2xvd19"
+"sZWdfZGVhZHRpbWU9NDAwZS05OwoKJXRoZXJtYWwKJVJ0aF9jaCA9IDAuMTsJCSUgQ2FzZS10by1o"
+"ZWF0c2luayB0aGVybWFsIHJlc2lzdGFuY2UgKFRJTSkgKEsvVykgWzA6MjBdCiVSdGhfaGEgPSAwL"
+"jU7CQklIEhlYXRzaW5rLXRvLWFtYmllbnQgdGhlcm1hbCByZXNpc3RhbmNlIChLL1cpIFswOjIwXQ"
+"oldGFvX2hhID0gMTsJCSUgSGVhdHNpbmsgdGltZSBjb25zdGFudCAocykgWzA6MTAwXQolQ3RoID0"
+"gdGFvX2hhL1J0aF9oYTsgJSBIZWF0c2luayB0aGVybWFsIGNhcGFjaXRhbmNlIChKL0spCgpSdGhf"
+"YWlyID0gMTAwOyAgICAgICAgICUgQ2FzZS10by1hbWJpZW50LGZvcmNlZCB2ZW50aWxhdGlvbiAoS"
+"y9XKQpSdGhfcGNiID0gMy44OwkgICAgICAgJSBDYXNlLXRvLWJvYXJkIChLL1cpClJ0aF9wY2JfYW"
+"lyID0gMi4yOyAgICAgICUgQm9hcmQtdG8tYW1iaWVudCAsIGZvcmNlZCB2ZW50aWxhdGlvbiAoSy9"
+"XKSB3YXMgNSBiZWZvcmUKCgpSdGhfcGFja19haXJfU2kgPSAzOTsgJSBDYXNlLXRvLWFtYmllbnQs"
+"Zm9yY2VkIHZlbnRpbGF0aW9uIChLL1cpClJ0aF9qdW5jdGlvbl9haXJfU2kgPSAyMzsgJWp1bmN0a"
+"W9uLXRvLWFtYmllbnQoSy9XKQoKVGFtYiA9IDI1OwoKJUNPTU1FTlQgVEhFU0UgRk9SIEJBVENIIF"
+"NJTVVMQVRJT05TCgolVGluaXRHYU5GRVRzID0gNzkuMzsKJVRpbml0U2lGRVRzID0gNDkuOTsKCml"
+"mIH5leGlzdCgnVGluaXRHYU5GRVRzJywndmFyJykgfHwgfmV4aXN0KCdUaW5pdFNpRkVUcycsJ3Zh"
+"cicpCiAgICBUaW5pdEdhTkZFVHMgPSAyNTsKICAgIFRpbml0U2lGRVRzID0gMjU7CgoJaWYgUG91d"
+"CA8PSAxMDAKCQlUaW5pdEdhTkZFVHMgPSA1NjsKCQlUaW5pdFNpRkVUcyA9IDM0Ljk7CgllbmQKCW"
+"lmIFBvdXQgPiAxMDAgJiYgUG91dCA8PSA1MDAKCQlUaW5pdEdhTkZFVHMgPSA1Ny4yOwoJCVRpbml"
+"0U2lGRVRzID0gMzMuODsKCWVuZAoJaWYgUG91dCA+IDUwMCAmJiBQb3V0IDw9IDEwMDAKCQlUaW5p"
+"dEdhTkZFVHMgPSA1OC43OwoJCVRpbml0U2lGRVRzID0gMzQuMjsKCWVuZAoJaWYgUG91dCA+IDEwM"
+"DAgJiYgUG91dCA8PSAxNTAwCgkJVGluaXRHYU5GRVRzID0gNjEuNjsKCQlUaW5pdFNpRkVUcyA9ID"
+"M1LjQ7CgllbmQKCWlmIFBvdXQgPiAxNTAwICYmIFBvdXQgPD0gMjAwMAoJCVRpbml0R2FORkVUcyA"
+"9IDY1Ljk7CgkJVGluaXRTaUZFVHMgPSAzNS42OwoJZW5kCglpZiBQb3V0ID4gMjAwMCAmJiBQb3V0"
+"IDw9IDI1MDAKCQlUaW5pdEdhTkZFVHMgPSA3MS4xOwoJCVRpbml0U2lGRVRzID0gNDQuNTsKCWVuZ"
+"AoJaWYgUG91dCA+IDI1MDAgJiYgUG91dCA8PSAzMDAwCgkJVGluaXRHYU5GRVRzID0gNzkuMzsKCQ"
+"lUaW5pdFNpRkVUcyA9IDQ5Ljk7CgllbmQKCWlmIFBvdXQgPiAzMDAwICYmIFBvdXQgPD0gMzUwMAo"
+"JCVRpbml0R2FORkVUcyA9IDg3LjQ7CgkJVGluaXRTaUZFVHMgPSA1Ni42OwoJZW5kCglpZiBQb3V0"
+"ID4gMzUwMCAmJiBQb3V0IDw9IDQwMDAKCQlUaW5pdEdhTkZFVHMgPSA5OTsKCQlUaW5pdFNpRkVUc"
+"yA9IDU5OwoJZW5kCglpZiBQb3V0ID4gNDAwMCAmJiBQb3V0IDw9IDQ1MDAKCQlUaW5pdEdhTkZFVH"
+"MgPSAxMDM7CgkJVGluaXRTaUZFVHMgPSA2MC45OwoJZW5kCglpZiBQb3V0ID4gNDUwMCAmJiBQb3V"
+"0IDw9IDUwMDAKCQlUaW5pdEdhTkZFVHMgPSAxMjIuMzsKCQlUaW5pdFNpRkVUcyA9IDc4LjU7Cgll"
+"bmQKCWlmIFBvdXQgPiA1MDAwCgkJVGluaXRHYU5GRVRzID0gMTI4OwoJCVRpbml0U2lGRVRzID0gO"
+"DM7CgllbmQKZW5kCgpUanVuY3Rpb25HYU5GRVRzID0gMS4yKlRpbml0R2FORkVUczsKVGp1bmN0aW"
+"9uU2lGRVRzID0gMS4zKlRpbml0U2lGRVRzOwolZW5kIHRoZXJtYWwKCgpmcyA9IDE0MGUzOyAlIFN"
+"3aXRjaGluZyBmcmVxdWVuY3kgKEh6KQoKUExMX2Vycm9yPTA7JWFtb3VudCBvZiBQTEwgZXJyb3Ig"
+"KMKwKQpQTExfaml0dGVyX2ZyZXE9MTslIGZyZXF1ZW5jeSBvZiB0aGlzIGppdHRlciAoSHopClBMT"
+"F9qaXR0ZXJfYW1wbGl0dWRlPShQTExfZXJyb3IqMC4wMikvMzYwOw=="
   InitialState  "1"
   SystemState   ""
   JacobianComputation "2"
@@ -113,7 +113,7 @@ Plecs {
   Schematic {
     Location      [0, 0; 1280, 679]
     ZoomFactor    1.0598
-    SliderPosition [493, 126]
+    SliderPosition [487, 126]
     ShowBrowser   off
     BrowserWidth  802
     Component {
@@ -1939,7 +1939,7 @@ Plecs {
       Schematic {
         Location      [172, 89; 1102, 1056]
         ZoomFactor    1.13796
-        SliderPosition [605, 0]
+        SliderPosition [-1, 0]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -17045,7 +17045,7 @@ Plecs {
         Direction     right
       }
       TerminalNames { "Vac_sig", "L", "N", "Vac_pol" }
-      Location      [0, 0; 778, 218]
+      Location      [0, 0; 907, 218]
       ZoomFactor    1
       SliderPosition [0, 0]
       ShowBrowser   off
@@ -18099,9 +18099,9 @@ Plecs {
         Direction     right
       }
       Schematic {
-        Location      [60, 24; 990, 991]
-        ZoomFactor    1.88968
-        SliderPosition [1711, -1]
+        Location      [60, 24; 1920, 993]
+        ZoomFactor    1.44297
+        SliderPosition [-1, -1]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -18232,7 +18232,7 @@ Plecs {
           }
           Parameter {
             Variable      "Inputs"
-            Value         "+++++"
+            Value         "++++++"
             Show          off
           }
           Parameter {
@@ -18270,7 +18270,7 @@ Plecs {
           Type          From
           Name          "From"
           Show          off
-          Position      [405, 270]
+          Position      [415, 250]
           Direction     right
           Flipped       off
           LabelPosition north
@@ -25880,7 +25880,7 @@ Plecs {
           Type          From
           Name          "From1"
           Show          off
-          Position      [440, 250]
+          Position      [440, 220]
           Direction     right
           Flipped       off
           LabelPosition north
@@ -25915,7 +25915,7 @@ Plecs {
           Type          From
           Name          "From2"
           Show          off
-          Position      [465, 230]
+          Position      [450, 195]
           Direction     right
           Flipped       off
           LabelPosition north
@@ -26224,6 +26224,21 @@ Plecs {
           }
           Probe {
             Component     "iTHD_%"
+            Path          "Losses_measure"
+            Signals       {"Output"}
+          }
+          Probe {
+            Component     "GaN_driver_total"
+            Path          "Losses_measure"
+            Signals       {"Output"}
+          }
+          Probe {
+            Component     "Si_driver_total"
+            Path          "Losses_measure"
+            Signals       {"Output"}
+          }
+          Probe {
+            Component     "FlyBack_efficiency"
             Path          "Losses_measure"
             Signals       {"Output"}
           }
@@ -27169,7 +27184,7 @@ Plecs {
           Type          From
           Name          "From5"
           Show          off
-          Position      [465, 290]
+          Position      [440, 265]
           Direction     right
           Flipped       off
           LabelPosition north
@@ -27362,7 +27377,7 @@ Plecs {
           Type          From
           Name          "From6"
           Show          off
-          Position      [470, 320]
+          Position      [415, 290]
           Direction     right
           Flipped       off
           LabelPosition north
@@ -27911,11 +27926,11 @@ Plecs {
           Type          Display
           Name          "All_out"
           Show          on
-          Position      [910, 735]
+          Position      [910, 765]
           Direction     up
           Flipped       on
           LabelPosition north
-          Frame         [-96, -231; 96, 231]
+          Frame         [-96, -261; 96, 261]
           Parameter {
             Variable      "Notation"
             Value         "1"
@@ -27997,6 +28012,439 @@ Plecs {
             Show          off
           }
         }
+        Component {
+          Type          Constant
+          Name          "GaNDriver_Power section"
+          Show          on
+          Position      [95, 520]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Frame         [-30, -10; 30, 10]
+          Parameter {
+            Variable      "Value"
+            Value         "0.0174"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "IsolatorEfficiency"
+          Show          off
+          Position      [215, 520]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "K"
+            Value         "1.4"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "OutputDataType"
+            Value         "11"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "GainDataType"
+            Value         "11"
+            Show          off
+          }
+        }
+        Component {
+          Type          Constant
+          Name          "GaN_driver_logic_section"
+          Show          on
+          Position      [95, 585]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Frame         [-25, -10; 25, 10]
+          Parameter {
+            Variable      "Value"
+            Value         "0.8545"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Constant
+          Name          "Si_driver_low_section"
+          Show          on
+          Position      [95, 760]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Frame         [-40, -10; 40, 10]
+          Parameter {
+            Variable      "Value"
+            Value         "0.0176"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Constant
+          Name          "Si_driver_high_section"
+          Show          on
+          Position      [95, 705]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Frame         [-40, -10; 40, 10]
+          Parameter {
+            Variable      "Value"
+            Value         "0.0176"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "Si_isolator_efficiency"
+          Show          off
+          Position      [230, 705]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "K"
+            Value         "1.16"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "OutputDataType"
+            Value         "11"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "GainDataType"
+            Value         "11"
+            Show          off
+          }
+        }
+        Component {
+          Type          Sum
+          Name          "Si_driver_total"
+          Show          off
+          Position      [345, 730]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "IconShape"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Inputs"
+            Value         "++"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "11"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Sum
+          Name          "GaN_driver_single"
+          Show          off
+          Position      [310, 550]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "IconShape"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Inputs"
+            Value         "++"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "11"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "GaN_driver_total"
+          Show          off
+          Position      [415, 550]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "K"
+            Value         "6"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "OutputDataType"
+            Value         "11"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "GainDataType"
+            Value         "11"
+            Show          off
+          }
+        }
+        Component {
+          Type          Sum
+          Name          "AUX_total"
+          Show          off
+          Position      [480, 645]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "IconShape"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Inputs"
+            Value         "++"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "11"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "FlyBack_efficiency"
+          Show          off
+          Position      [580, 645]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "K"
+            Value         "1.17"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "OutputDataType"
+            Value         "11"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "GainDataType"
+            Value         "11"
+            Show          off
+          }
+        }
+        Component {
+          Type          Display
+          Name          "GaN_drivers"
+          Show          on
+          Position      [505, 490]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Frame         [-31, -11; 31, 11]
+          Parameter {
+            Variable      "Notation"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Precision"
+            Value         "4"
+            Show          off
+          }
+        }
+        Component {
+          Type          Display
+          Name          "Si_drivers"
+          Show          on
+          Position      [480, 840]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Frame         [-31, -11; 31, 11]
+          Parameter {
+            Variable      "Notation"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Precision"
+            Value         "4"
+            Show          off
+          }
+        }
+        Component {
+          Type          Display
+          Name          "FlyBack_total"
+          Show          on
+          Position      [665, 565]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Frame         [-31, -11; 31, 11]
+          Parameter {
+            Variable      "Notation"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Precision"
+            Value         "4"
+            Show          off
+          }
+        }
+        Component {
+          Type          Goto
+          Name          "Goto8"
+          Show          off
+          Position      [650, 645]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Tag"
+            Value         "FlyBack"
+            Show          off
+          }
+          Parameter {
+            Variable      "Visibility"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
+            Show          off
+          }
+        }
+        Component {
+          Type          From
+          Name          "From7"
+          Show          off
+          Position      [485, 310]
+          Direction     right
+          Flipped       off
+          LabelPosition north
+          Parameter {
+            Variable      "Tag"
+            Value         "FlyBack"
+            Show          off
+          }
+          Parameter {
+            Variable      "Visibility"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
+            Show          off
+          }
+        }
         Connection {
           Type          Signal
           SrcComponent  "Mux3"
@@ -28038,7 +28486,6 @@ Plecs {
           Type          Signal
           SrcComponent  "From"
           SrcTerminal   1
-          Points        [495, 270; 495, 255]
           DstComponent  "Losses_sum"
           DstTerminal   4
         }
@@ -28076,7 +28523,7 @@ Plecs {
           Type          Signal
           SrcComponent  "From1"
           SrcTerminal   1
-          Points        [480, 250; 480, 245]
+          Points        [480, 220; 480, 240]
           DstComponent  "Losses_sum"
           DstTerminal   3
         }
@@ -28162,7 +28609,7 @@ Plecs {
           Type          Signal
           SrcComponent  "From2"
           SrcTerminal   1
-          Points        [490, 230; 490, 235]
+          Points        [490, 195; 490, 230]
           DstComponent  "Losses_sum"
           DstTerminal   2
         }
@@ -28170,7 +28617,7 @@ Plecs {
           Type          Signal
           SrcComponent  "From5"
           SrcTerminal   1
-          Points        [500, 290; 500, 265]
+          Points        [480, 265; 480, 260]
           DstComponent  "Losses_sum"
           DstTerminal   5
         }
@@ -28213,7 +28660,7 @@ Plecs {
           Type          Signal
           SrcComponent  "From6"
           SrcTerminal   1
-          Points        [505, 320]
+          Points        [490, 290; 490, 270]
           DstComponent  "Losses_sum"
           DstTerminal   6
         }
@@ -28282,7 +28729,7 @@ Plecs {
               DstTerminal   1
             }
             Branch {
-              Points        [775, 735]
+              Points        [775, 765]
               DstComponent  "All_out"
               DstTerminal   1
             }
@@ -28301,6 +28748,121 @@ Plecs {
             DstComponent  "Goto3"
             DstTerminal   1
           }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "GaNDriver_Power section"
+          SrcTerminal   1
+          DstComponent  "IsolatorEfficiency"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Si_driver_high_section"
+          SrcTerminal   1
+          DstComponent  "Si_isolator_efficiency"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Si_isolator_efficiency"
+          SrcTerminal   2
+          Points        [285, 705; 285, 725]
+          DstComponent  "Si_driver_total"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Si_driver_low_section"
+          SrcTerminal   1
+          Points        [230, 760; 230, 735]
+          DstComponent  "Si_driver_total"
+          DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "IsolatorEfficiency"
+          SrcTerminal   2
+          Points        [260, 520; 260, 545]
+          DstComponent  "GaN_driver_single"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "GaN_driver_logic_section"
+          SrcTerminal   1
+          Points        [205, 585; 205, 555]
+          DstComponent  "GaN_driver_single"
+          DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "GaN_driver_single"
+          SrcTerminal   1
+          DstComponent  "GaN_driver_total"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "AUX_total"
+          SrcTerminal   1
+          DstComponent  "FlyBack_efficiency"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "GaN_driver_total"
+          SrcTerminal   2
+          Points        [445, 550]
+          Branch {
+            Points        [445, 640]
+            DstComponent  "AUX_total"
+            DstTerminal   2
+          }
+          Branch {
+            Points        [445, 490]
+            DstComponent  "GaN_drivers"
+            DstTerminal   1
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Si_driver_total"
+          SrcTerminal   1
+          Points        [410, 730]
+          Branch {
+            Points        [410, 650]
+            DstComponent  "AUX_total"
+            DstTerminal   3
+          }
+          Branch {
+            Points        [410, 840]
+            DstComponent  "Si_drivers"
+            DstTerminal   1
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "FlyBack_efficiency"
+          SrcTerminal   2
+          Points        [610, 645]
+          Branch {
+            Points        [610, 565]
+            DstComponent  "FlyBack_total"
+            DstTerminal   1
+          }
+          Branch {
+            DstComponent  "Goto8"
+            DstTerminal   1
+          }
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "From7"
+          SrcTerminal   1
+          Points        [500, 310; 500, 280]
+          DstComponent  "Losses_sum"
+          DstTerminal   7
         }
         Annotation {
           Name          base64 "PGh0bWw+PGJvZHk+CjxwPjxzcGFuIHN0eWxlPSIgY29sb3"
@@ -28351,8 +28913,10 @@ Plecs {
 "</span></p>\n<p><span style=\" font-size:17px;\">Si_total</span></p>\n<p><spa"
 "n style=\" font-size:17px;\">Si_conduction</span></p>\n<p><span style=\" font"
 "-size:17px;\">Si_switching</span></p>\n<p><span style=\" font-size:17px;\">iT"
-"HD%</span></p></body></html>"
-          Position      [1140, 735]
+"HD%</span></p>\n<p><span style=\" font-size:17px;\">GaN_drivers</span></p>\n<"
+"p><span style=\" font-size:17px;\">Si_drivers</span></p>\n<p><span style=\" f"
+"ont-size:17px;\">AUX_total_(FlyBack included)</span></p></body></html>"
+          Position      [1140, 765]
         } 
       }
     }
@@ -33747,7 +34311,7 @@ Plecs {
               Direction     right
             }
             Schematic {
-              Location      [111, 153; 751, 591]
+              Location      [111, 153; 1550, 591]
               ZoomFactor    1.95289
               SliderPosition [-1, 0]
               ShowBrowser   off
@@ -34381,11 +34945,11 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -15; 15, 15]
-          Location      [0, 0; 1393, 727]
+          Location      [0, 0; 930, 989]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAB4AAABcfwCAAAAA/sAAAAUAFMAY"
 "QB2AGUAZABWAGkAZQB3AHMAAAAAHAAAAXoAAABgAP////sAAAAQAFoAbwBvAG0AQQByAGUAYQAAAA"
-"AA/////wAAAFYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAAXEAAABgAP///wAAAAMAAAVxAAA"
-"A6PwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABXEAAABEAP///wAABXEAAAHK"
+"AA/////wAAAFYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAAXEAAABgAP///wAAAAMAAAOiAAA"
+"A6PwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA6IAAABEAP///wAAA6IAAALQ"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAEAAAAYAFMAdABlAGEAZAB5ACAAcwB0AGEAdABlP8NGC"
@@ -34406,7 +34970,7 @@ Plecs {
           TimeRange     "0"
           ScrollingMode "2"
           SingleTimeAxis "1"
-          Open          "0"
+          Open          "1"
           Ts            "-1"
           SampleLimit   "0"
           XAxisLabel    "Time / s"
@@ -34696,11 +35260,11 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -25; 15, 25]
-          Location      [0, 0; 930, 989]
+          Location      [0, 0; 1860, 991]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAB4AAABcfwCAAAAA/sAAAAUAFMAY"
 "QB2AGUAZABWAGkAZQB3AHMAAAAAHAAAAXoAAABgAP////sAAAAQAFoAbwBvAG0AQQByAGUAYQAAAA"
-"AA/////wAAAKYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAAXEAAABgAP///wAAAAMAAAOiAAA"
-"AdPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA6IAAABEAP///wAAA6IAAANE"
+"AA/////wAAAKYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAHAAAAXEAAABgAP///wAAAAMAAAdEAAA"
+"BdPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB0QAAABEAP///wAAB0QAAAJG"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAEAAAAYAFMAdABlAGEAZAB5ACAAcwB0AGEAdABlP8NGC"
@@ -34708,15 +35272,17 @@ Plecs {
 "AAf/gAAAAAAAAAf/gAAAAAAAB/+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
           HeaderState   "{\"DefaultSecSize\":0,\"FirstSecSize\":358,\"Labels\""
 ":[\"Delta\"],\"VisualIdxs\":[3]}"
-          PlotPalettes  "AAAAAQAAAAQAAAABAAAABAAAAAEC//8u4P//zMwAAAAAAAEC//8AA"
-"P////8AAAAAAAEC//9PsP////8AAAAAAAEC//8SwP////8AAAAAAAQAAAABAAAAAAEAAAAAAQAAAA"
-"ABAAAAAAQAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAQAAAABAAAAAAEAAAAAAQA"
-"AAAABAAAAAAQAAAABQAgAAAAAAAAAAAABP/AAAAAAAAAAAAABP/AAAAAAAAAAAAABP/AAAAAAAAAA"
-"AAAEAAAAAQEAAAABAQAAAAEBAAAAAQEAAAADAAAAAQAAAAMAAAABAv//LuD//8zMAAAAAAABAv//A"
-"AD/////AAAAAAABAv//T7D/////AAAAAAADAAAAAQAAAAABAAAAAAEAAAAAAwAAAAEAAAABAAAAAQ"
-"AAAAEAAAABAAAAAQAAAAMAAAABAAAAAAEAAAAAAQAAAAADAAAAAT/wAAAAAAAAAAAAAT/wAAAAAAA"
-"AAAAAAT/wAAAAAAAAAAAAAwAAAAEBAAAAAQEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+          PlotPalettes  "AAAAAQAAAAYAAAABAAAABgAAAAEC//8u4P//zMwAAAAAAAEC//8AA"
+"P////8AAAAAAAEC//9PsP////8AAAAAAAEC//8SwP////8AAAAAAAEC//91MP////8AAAAAAAEC//"
+"9GUL//zMwAAAAAAAYAAAABAAAAAAEAAAAAAQAAAAABAAAAAAEAAAAAAQAAAAAGAAAAAQAAAAEAAAA"
+"BAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAABgAAAAEAAAAAAQAAAAABAAAA"
+"AAEAAAAAAQAAAAABAAAAAAYAAAABP/AAAAAAAAAAAAABP/AAAAAAAAAAAAABP/AAAAAAAAAAAAABP"
+"/AAAAAAAAAAAAABP/AAAAAAAAAAAAABP/AAAAAAAAAAAAAGAAAAAQEAAAABAQAAAAEBAAAAAQEAAA"
+"ABAAAAAAEAAAAAAwAAAAEAAAADAAAAAQL//y7g///MzAAAAAAAAQL//wAA/////wAAAAAAAQL//0+"
+"w/////wAAAAAAAwAAAAEAAAAAAQAAAAABAAAAAAMAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAAD"
+"AAAAAQAAAAABAAAAAAEAAAAAAwAAAAE/8AAAAAAAAAAAAAE/8AAAAAAAAAAAAAE/8AAAAAAAAAAAA"
+"AMAAAABAQAAAAEBAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           Axes          "4"
           TimeRange     "0"
           ScrollingMode "2"
@@ -35315,7 +35881,7 @@ Plecs {
           TimeRange     "0.0"
           ScrollingMode "1"
           SingleTimeAxis "1"
-          Open          "1"
+          Open          "0"
           Ts            "-1"
           SampleLimit   "0"
           XAxisLabel    "Time / s"
@@ -35409,7 +35975,7 @@ Plecs {
           TimeRange     "0.0"
           ScrollingMode "1"
           SingleTimeAxis "1"
-          Open          "1"
+          Open          "0"
           Ts            "-1"
           SampleLimit   "0"
           XAxisLabel    "Time / s"
@@ -36093,11 +36659,11 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -25; 15, 25]
-          Location      [0, 0; 1860, 991]
+          Location      [0, 0; 930, 989]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAKYA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
-"AA/////wAAAGAA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABgAP///wAAAAMAAAdEAAA"
-"AdPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB0QAAABEAP///wAAB0QAAANG"
+"AA/////wAAAGAA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABgAP///wAAAAMAAAOiAAA"
+"AyvwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA6IAAABEAP///wAAA6IAAALu"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -36453,9 +37019,9 @@ Plecs {
         Direction     up
       }
       Schematic {
-        Location      [0, 0; 1280, 679]
-        ZoomFactor    0.747524
-        SliderPosition [494, 0]
+        Location      [0, 0; 930, 969]
+        ZoomFactor    1.03015
+        SliderPosition [-1, -1]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -36654,9 +37220,9 @@ Plecs {
             Direction     left
           }
           Schematic {
-            Location      [0, 57; 1860, 1026]
+            Location      [0, 57; 1393, 762]
             ZoomFactor    1.68176
-            SliderPosition [0, 27]
+            SliderPosition [274, -1]
             ShowBrowser   off
             BrowserWidth  100
             Component {
@@ -44096,34 +44662,34 @@ Plecs {
 "osses_measure/All_losses','ClearTraces');\n\t%plecs('scope', './Thermals/csv'"
 ",'ClearTraces');\n\t\n\tif isstruct(data)\n\t\n\t\tt = data.Time;\n\t\ty = da"
 "ta.Values;\n\t\t\n\t\t% ====================================================="
-"====\n\t\t% GRUPPO 1 (23 segnali) - LOSSES\n\t\t% ==========================="
-"==============================\n\t\tlosses = y(1:23,end);\n\n\t\tLosses = ['/"
-"home/giorgio/Documenti/PolitoMaterial/Tesi/PoliTOThesis/Resources/plecs_sim/P"
-"FC_new_components_sweep/Losses/', mat2str(PowerOutput(index)), 'W.csv'];\n\t"
-"\tfid = fopen(Losses,'w');\n\t\tfprintf(fid, ['\"Time / s\",\"Input_power\","
-"\"Output_power\",\"Losses\",\"Efficency\",\"Caps_losses\",\"FL1_losses\",\"HF"
-"1_losses\",\"FL2_losses\",\"HF2_losses\",\"Bulkcap_losses\",\"Inductor\",\"EM"
-"I\",\"GaN_total\",\"GaN_switching\",\"GaN_ohmic_total\",\"GaN_ohmich_ON\",\"G"
-"aN_Forward_conduction\",\"GaN_Reverse_ON_conduction\",\"GaN_Reverse_OFF_condu"
-"ction\",\"Si_total\",\"Si_conduction\",\"Si_switching\",\"iTHD_percentage\"\\"
-"n']);\n\t\tfprintf(fid, '%e', t(end));\n\t\tfor i = 1:23\n\t\t\tfprintf(fid, "
-"',%e', losses(i));\n\t\tend\n\t\tfprintf(fid, '\\n');\n\t\t\n\t\tfclose(fid);"
-"\n\n\t\t% =========================================================\n\t\t% GR"
-"UPPO 2 (11 segnali) - THERMALS\n\t\t% ======================================="
-"==================\n\t\tthermals = y(24:34,end);\n\n\t\tThermals = ['/home/gi"
-"orgio/Documenti/PolitoMaterial/Tesi/PoliTOThesis/Resources/plecs_sim/PFC_new_"
-"components_sweep/Thermals/', mat2str(PowerOutput(index)), 'W.csv'];\n\t\tfid "
-"= fopen(Thermals,'w');\n\t\tfprintf(fid, ['\"Time / s\",\"GaNFET1_Junction\","
-"\"GaNFET2_Junction\",\"GaNFET3_Junction\",\"GaNFET4_Junction\",\"GaNFET5_Junc"
-"tion\",\"GaNFET6_Junction\",\"GaNFET_Package_temp\",\"MOSFET7_Junction\",\"MO"
-"SFET8_Junction\",\"MOSFET7_Package_temp\",\"MOSFET8_Package_temp\"\\n']);\n\t"
-"\t\n\t\tfprintf(fid, '%e', t(end));\n\t\tfor i = 1:11\n\t\t\tfprintf(fid, ',%"
-"e', thermals(i));\n\t\tend\n\t\tfprintf(fid, '\\n');\n\t\t\n\t\tfclose(fid);"
-"\n\n\t\t% Reducing simulation results by return value 'result' \n \t\tresult "
-"= 0;\n \telse\n \t\t% Print error message to Octave console\n \t\tprintf(' Er"
-"ror in Simulation %d for Power=%dW: %s\\n',\n                  index, PowerOu"
-"tput(index), data);\n\tend\nend\n\n% Set value to be swept\n%PowerOutput = [1"
-"00:50:5050]; % start step stop\nPowerOutput = [100,200];\n% Initialize simStr"
+"====\n\t\t% GRUPPO 1 (26 segnali) - LOSSES\n\t\t% ==========================="
+"==============================\n\t\tlosses = y(1:26,end);\n\n\t\tLosses = ['/"
+"home/giorgio/Documenti/PolitoMaterial/Tesi/PoliTOThesis/Resources/plecs_sim/t"
+"est/Losses/', mat2str(PowerOutput(index)), 'W.csv'];\n\t\tfid = fopen(Losses,"
+"'w');\n\t\tfprintf(fid, ['\"Time / s\",\"Input_power\",\"Output_power\",\"Los"
+"ses\",\"Efficency\",\"Caps_losses\",\"FL1_losses\",\"HF1_losses\",\"FL2_losse"
+"s\",\"HF2_losses\",\"Bulkcap_losses\",\"Inductor\",\"EMI\",\"GaN_total\",\"Ga"
+"N_switching\",\"GaN_ohmic_total\",\"GaN_ohmich_ON\",\"GaN_Forward_conduction"
+"\",\"GaN_Reverse_ON_conduction\",\"GaN_Reverse_OFF_conduction\",\"Si_total\","
+"\"Si_conduction\",\"Si_switching\",\"iTHD_percentage\",\"GaN_Drivers\",\"Si_d"
+"rivers\",\"AUX_total\"\\n']);\n\t\tfprintf(fid, '%e', t(end));\n\t\tfor i = 1"
+":26\n\t\t\tfprintf(fid, ',%e', losses(i));\n\t\tend\n\t\tfprintf(fid, '\\n');"
+"\n\t\t\n\t\tfclose(fid);\n\n\t\t% ==========================================="
+"==============\n\t\t% GRUPPO 2 (11 segnali) - THERMALS\n\t\t% ==============="
+"==========================================\n\t\tthermals = y(27:37,end);\n\n"
+"\t\tThermals = ['/home/giorgio/Documenti/PolitoMaterial/Tesi/PoliTOThesis/Res"
+"ources/plecs_sim/test/Thermals/', mat2str(PowerOutput(index)), 'W.csv'];\n\t"
+"\tfid = fopen(Thermals,'w');\n\t\tfprintf(fid, ['\"Time / s\",\"GaNFET1_Junct"
+"ion\",\"GaNFET2_Junction\",\"GaNFET3_Junction\",\"GaNFET4_Junction\",\"GaNFET"
+"5_Junction\",\"GaNFET6_Junction\",\"GaNFET_Package_temp\",\"MOSFET7_Junction"
+"\",\"MOSFET8_Junction\",\"MOSFET7_Package_temp\",\"MOSFET8_Package_temp\"\\n'"
+"]);\n\t\t\n\t\tfprintf(fid, '%e', t(end));\n\t\tfor i = 1:11\n\t\t\tfprintf(f"
+"id, ',%e', thermals(i));\n\t\tend\n\t\tfprintf(fid, '\\n');\n\t\t\n\t\tfclose"
+"(fid);\n\n\t\t% Reducing simulation results by return value 'result' \n \t\tr"
+"esult = 0;\n \telse\n \t\t% Print error message to Octave console\n \t\tprint"
+"f(' Error in Simulation %d for Power=%dW: %s\\n',\n                  index, P"
+"owerOutput(index), data);\n\tend\nend\n\n% Set value to be swept\n%PowerOutpu"
+"t = [100:50:5050]; % start step stop\nPowerOutput = 500;\n% Initialize simStr"
 "uct as cell array with all values\nfor ix = 1:length(PowerOutput)\n\tsimStruc"
 "ts{ix}.ModelVars.Pout = PowerOutput(ix);\n\tsimStructs{ix}.ModelVars.TinitGaN"
 "FETs = 25;\n\tsimStructs{ix}.ModelVars.TinitSiFETs = 25;\n\tif PowerOutput(ix"
