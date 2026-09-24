@@ -72,8 +72,8 @@ Plecs {
   IncompatibleInitialConditionMsg "2"
   Schematic {
     Location      [0, 0; 1860, 969]
-    ZoomFactor    1.04715
-    SliderPosition [0, 0]
+    ZoomFactor    2.31249
+    SliderPosition [716, 197]
     ShowBrowser   off
     BrowserWidth  100
     Component {
@@ -1624,8 +1624,8 @@ Plecs {
       }
       FSM {
         Location       [60, 70; 1920, 1008]
-        ZoomFactor     0.190367
-        SliderPosition [0, 0]
+        ZoomFactor     0.581055
+        SliderPosition [5805, 324]
         FsmState {
           Name          "P1Discharge1"
           Position      [250, 1630]
@@ -2160,15 +2160,15 @@ Plecs {
         }
         FsmState {
           Name          ".Junction13"
-          Position      [3770, 810]
+          Position      [5100, 2340]
         }
         FsmState {
-          Name          "State1"
-          Position      [3730, 1010]
-          Frame         [-90, -60; 90, 60]
+          Name          "P2Discharge1"
+          Position      [4110, 1230]
+          Frame         [-110, -80; 110, 80]
           Parameter {
             Name     "EnterAction"
-            Value    "/* enter action */"
+            Value    "L1=1;\nH1=0;\nL2=0;\nH2=1;\nL3=0;\nH3=0;\ncounter++;"
           }
           Parameter {
             Name     "DuringAction"
@@ -2180,12 +2180,12 @@ Plecs {
           }
         }
         FsmState {
-          Name          "State2"
-          Position      [4040, 860]
+          Name          "P2DTDischarge1"
+          Position      [4430, 1220]
           Frame         [-90, -60; 90, 60]
           Parameter {
             Name     "EnterAction"
-            Value    "/* enter action */"
+            Value    "H3=1;"
           }
           Parameter {
             Name     "DuringAction"
@@ -2195,18 +2195,266 @@ Plecs {
             Name     "ExitAction"
             Value    ""
           }
+        }
+        FsmState {
+          Name          "P2Charge1"
+          Position      [7010, 1160]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=1;\nH1=0;\nL2=0;\nH2=0;\nL3=0;\nH3=1;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P2DTCharge1"
+          Position      [6720, 1160]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L2=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P2WAITCLK"
+          Position      [5630, 1100]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "if (counter == 6){\n\tcycle_start=1;\n\tcounter = 0;\n}e"
+"lse{\n\tcycle_start=0;\n}"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P2Discharge2"
+          Position      [4510, 1690]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=0;\nH1=0;\nL2=1;\nH2=0;\nL3=0;\nH3=1;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P2DTDischarge2"
+          Position      [4830, 1680]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "H1=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P2Charge2"
+          Position      [6780, 1490]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=0;\nH1=1;\nL2=1;\nH2=0;\nL3=0;\nH3=0;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P2DTCharge2"
+          Position      [6420, 1510]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L3=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P2Discharge3"
+          Position      [5070, 1940]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=0;\nH1=1;\nL2=0;\nH2=0;\nL3=1;\nH3=0;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P2DTDischarge3"
+          Position      [5380, 1940]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "H2=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P2Charge3"
+          Position      [6270, 1980]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=0;\nH1=0;\nL2=0;\nH2=1;\nL3=1;\nH3=0;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P2DTCharge3"
+          Position      [5980, 1980]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          ".Junction12"
+          Position      [5650, 2000]
+        }
+        FsmState {
+          Name          ".Junction18"
+          Position      [5680, 1560]
+        }
+        FsmState {
+          Name          ".Junction19"
+          Position      [5700, 1400]
+        }
+        FsmState {
+          Name          "P2Reset"
+          Position      [5300, 880]
+          Frame         [-90, -80; 90, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=1;\nL2=0;\nL3=1;\nH1=0;\nH2=1;\nH3=0;\ncounter=0;\nre"
+"set=0;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          ".Junction20"
+          Position      [5450, 680]
+        }
+        FsmState {
+          Name          "N2Reset"
+          Position      [5910, 2460]
+          Frame         [-90, -80; 90, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=0;\nH1=1;\nL2=1;\nH2=0;\nL3=0;\nH3=1;\ncounter=0;\nre"
+"set=0;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          ".Junction22"
+          Position      [5840, 3150]
+        }
+        FsmState {
+          Name          ".Junction21"
+          Position      [5820, 3310]
         }
         FsmState {
           Name          ".Junction15"
-          Position      [4420, 590]
+          Position      [5790, 3750]
         }
         FsmState {
-          Name          "State3"
-          Position      [4380, 790]
+          Name          "N2DTCharge3"
+          Position      [6120, 3730]
           Frame         [-90, -60; 90, 60]
           Parameter {
             Name     "EnterAction"
-            Value    "/* enter action */"
+            Value    "H1=1;"
           }
           Parameter {
             Name     "DuringAction"
@@ -2218,12 +2466,12 @@ Plecs {
           }
         }
         FsmState {
-          Name          "State4"
-          Position      [4690, 640]
-          Frame         [-90, -60; 90, 60]
+          Name          "N2Charge3"
+          Position      [6410, 3730]
+          Frame         [-110, -80; 110, 80]
           Parameter {
             Name     "EnterAction"
-            Value    "/* enter action */"
+            Value    "L1=0;\nH1=0;\nL2=1;\nH2=0;\nL3=0;\nH3=1;\ncounter++;"
           }
           Parameter {
             Name     "DuringAction"
@@ -2235,20 +2483,12 @@ Plecs {
           }
         }
         FsmState {
-          Name          ".Junction14"
-          Position      [5840, 330]
-        }
-        FsmState {
-          Name          ".Junction16"
-          Position      [5840, 530]
-        }
-        FsmState {
-          Name          "State5"
-          Position      [5800, 730]
+          Name          "N2DTDischarge3"
+          Position      [5550, 3620]
           Frame         [-90, -60; 90, 60]
           Parameter {
             Name     "EnterAction"
-            Value    "/* enter action */"
+            Value    "L2=1;"
           }
           Parameter {
             Name     "DuringAction"
@@ -2260,12 +2500,12 @@ Plecs {
           }
         }
         FsmState {
-          Name          "State6"
-          Position      [6110, 580]
-          Frame         [-90, -60; 90, 60]
+          Name          "N2Discharge3"
+          Position      [5250, 3610]
+          Frame         [-110, -80; 110, 80]
           Parameter {
             Name     "EnterAction"
-            Value    "/* enter action */"
+            Value    "L1=1;\nH1=0;\nL2=0;\nH2=0;\nL3=0;\nH3=1;\ncounter++;"
           }
           Parameter {
             Name     "DuringAction"
@@ -2277,16 +2517,12 @@ Plecs {
           }
         }
         FsmState {
-          Name          ".Junction17"
-          Position      [6490, 310]
-        }
-        FsmState {
-          Name          "State7"
-          Position      [6450, 510]
+          Name          "N2DTCharge2"
+          Position      [6560, 3260]
           Frame         [-90, -60; 90, 60]
           Parameter {
             Name     "EnterAction"
-            Value    "/* enter action */"
+            Value    "H3=1;"
           }
           Parameter {
             Name     "DuringAction"
@@ -2298,12 +2534,656 @@ Plecs {
           }
         }
         FsmState {
-          Name          "State8"
-          Position      [6760, 360]
+          Name          "N2Charge2"
+          Position      [6920, 3240]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=1;\nH1=0;\nL2=0;\nH2=1;\nL3=0;\nH3=0;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N2DTDischarge2"
+          Position      [4970, 3430]
           Frame         [-90, -60; 90, 60]
           Parameter {
             Name     "EnterAction"
-            Value    "/* enter action */"
+            Value    "L1=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N2Discharge2"
+          Position      [4650, 3440]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=0;\nH1=0;\nL2=0;\nH2=1;\nL3=1;\nH3=0;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N2WAITCLK"
+          Position      [5770, 2850]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "if (counter == 6){\n\tcycle_start=1;\n\tcounter = 0;\n}e"
+"lse{\n\tcycle_start=0;\n}"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N2DTCharge1"
+          Position      [6860, 2910]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "H2=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N2Charge1"
+          Position      [7150, 2910]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=0;\nH1=1;\nL2=0;\nH2=0;\nL3=1;\nH3=0;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N2DTDischarge1"
+          Position      [4570, 2970]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L3=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N2Discharge1"
+          Position      [4250, 2980]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=0;\nH1=1;\nL2=1;\nH2=0;\nL3=0;\nH3=0;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          ".Junction23"
+          Position      [3810, 2170]
+        }
+        FsmState {
+          Name          ".Junction24"
+          Position      [9750, 430]
+        }
+        FsmState {
+          Name          ".Junction26"
+          Position      [11080, 2160]
+        }
+        FsmState {
+          Name          "P3Discharge1"
+          Position      [10090, 1050]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=1;\nH1=0;\nL2=0;\nH2=0;\nL3=1;\nH3=0;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P3DTDischarge1"
+          Position      [10410, 1040]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "H2=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P3Charge1"
+          Position      [12990, 980]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=1;\nH1=0;\nL2=0;\nH2=0;\nL3=1;\nH3=0;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P3DTCharge1"
+          Position      [12700, 980]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L2=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P3Discharge2"
+          Position      [10490, 1510]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=1;\nH1=0;\nL2=1;\nH2=0;\nL3=0;\nH3=0;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P3DTDischarge2"
+          Position      [10810, 1500]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "H3=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P3Charge2"
+          Position      [12760, 1310]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=1;\nH1=0;\nL2=1;\nH2=0;\nL3=0;\nH3=0;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P3DTCharge2"
+          Position      [12400, 1330]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L3=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P3Discharge3"
+          Position      [11050, 1760]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=0;\nH1=0;\nL2=1;\nH2=0;\nL3=1;\nH3=0;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P3DTDischarge3"
+          Position      [11360, 1760]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "H1=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P3Charge3"
+          Position      [12250, 1800]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=0;\nH1=0;\nL2=1;\nH2=0;\nL3=1;\nH3=0;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "P3DTCharge3"
+          Position      [11960, 1800]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          ".Junction25"
+          Position      [11630, 1820]
+        }
+        FsmState {
+          Name          ".Junction28"
+          Position      [11660, 1380]
+        }
+        FsmState {
+          Name          ".Junction29"
+          Position      [11680, 1220]
+        }
+        FsmState {
+          Name          "P3Reset"
+          Position      [11280, 700]
+          Frame         [-90, -80; 90, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=1;\nL2=1;\nL3=1;\nH1=0;\nH2=0;\nH3=0;\ncounter=0;\nre"
+"set=0;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          ".Junction30"
+          Position      [11430, 500]
+        }
+        FsmState {
+          Name          "N3Reset"
+          Position      [11890, 2280]
+          Frame         [-90, -80; 90, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=0;\nH1=1;\nL2=0;\nH2=1;\nL3=0;\nH3=1;\ncounter=0;\nre"
+"set=0;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          ".Junction32"
+          Position      [11820, 2970]
+        }
+        FsmState {
+          Name          ".Junction31"
+          Position      [11800, 3130]
+        }
+        FsmState {
+          Name          ".Junction27"
+          Position      [11770, 3570]
+        }
+        FsmState {
+          Name          "N3DTCharge3"
+          Position      [12100, 3550]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "H1=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N3Charge3"
+          Position      [12390, 3550]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=0;\nH1=0;\nL2=0;\nH2=1;\nL3=0;\nH3=1;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N3DTDischarge3"
+          Position      [11530, 3440]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N3Discharge3"
+          Position      [11230, 3430]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=0;\nH1=0;\nL2=0;\nH2=1;\nL3=0;\nH3=1;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N3DTCharge2"
+          Position      [12540, 3080]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "H3=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N3Charge2"
+          Position      [12900, 3060]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=0;\nH1=1;\nL2=0;\nH2=1;\nL3=0;\nH3=0;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N3DTDischarge2"
+          Position      [10950, 3250]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L3=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N3Discharge2"
+          Position      [10630, 3260]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=0;\nH1=1;\nL2=0;\nH2=1;\nL3=0;\nH3=0;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N3WAITCLK"
+          Position      [11750, 2670]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "if (counter == 6){\n\tcycle_start=1;\n\tcounter = 0;\n}e"
+"lse{\n\tcycle_start=0;\n}"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N3DTCharge1"
+          Position      [12840, 2730]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "H2=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N3Charge1"
+          Position      [13130, 2730]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=0;\nH1=1;\nL2=0;\nH2=0;\nL3=0;\nH3=1;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N3DTDischarge1"
+          Position      [10550, 2790]
+          Frame         [-90, -60; 90, 60]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L2=1;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          "N3Discharge1"
+          Position      [10230, 2800]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "L1=0;\nH1=1;\nL2=0;\nH2=0;\nL3=0;\nH3=1;\ncounter++;"
+          }
+          Parameter {
+            Name     "DuringAction"
+            Value    ""
+          }
+          Parameter {
+            Name     "ExitAction"
+            Value    ""
+          }
+        }
+        FsmState {
+          Name          ".Junction33"
+          Position      [9790, 1990]
+        }
+        FsmState {
+          Name          "P3WAITCLK"
+          Position      [11610, 920]
+          Frame         [-110, -80; 110, 80]
+          Parameter {
+            Name     "EnterAction"
+            Value    "if (counter == 6){\n\tcycle_start=1;\n\tcounter = 0;\n}e"
+"lse{\n\tcycle_start=0;\n}"
           }
           Parameter {
             Name     "DuringAction"
@@ -4050,12 +4930,12 @@ Plecs {
             External         on
           }
           FsmDstInfo {
-            StatePath        ".Junction14"
-            TerminalLoc      left
+            StatePath        ".Junction24"
+            TerminalLoc      top
             TerminalCoord    0.5
             External         on
           }
-          SegmentLengths      [1064]
+          SegmentLengths      []
           LabelPosition       0.5
           Parameter {
             Name     "Trigger"
@@ -4087,7 +4967,7 @@ Plecs {
             TerminalCoord    0.5
             External         on
           }
-          SegmentLengths      []
+          SegmentLengths      [1425.541623252726]
           LabelPosition       0.5
           Parameter {
             Name     "Trigger"
@@ -4114,12 +4994,12 @@ Plecs {
             External         on
           }
           FsmDstInfo {
-            StatePath        "State1"
+            StatePath        "N2WAITCLK"
             TerminalLoc      top
-            TerminalCoord    0.784097
+            TerminalCoord    0.34699
             External         on
           }
-          SegmentLengths      [62]
+          SegmentLengths      [207]
           LabelPosition       0.5
           Parameter {
             Name     "Trigger"
@@ -4146,12 +5026,12 @@ Plecs {
             External         on
           }
           FsmDstInfo {
-            StatePath        "State2"
-            TerminalLoc      left
-            TerminalCoord    0.0608187
+            StatePath        "N2Reset"
+            TerminalLoc      top
+            TerminalCoord    0.510913
             External         on
           }
-          SegmentLengths      [82]
+          SegmentLengths      []
           LabelPosition       0.5
           Parameter {
             Name     "Trigger"
@@ -4178,8 +5058,8 @@ Plecs {
             External         on
           }
           FsmDstInfo {
-            StatePath        ".Junction15"
-            TerminalLoc      left
+            StatePath        ".Junction20"
+            TerminalLoc      top
             TerminalCoord    0.5
             External         on
           }
@@ -4204,18 +5084,402 @@ Plecs {
         }
         FsmTransition {
           FsmSrcInfo {
-            StatePath        ".Junction15"
-            TerminalLoc      bottom
-            TerminalCoord    0.5
+            StatePath        "P2Discharge1"
+            TerminalLoc      right
+            TerminalCoord    0.517987
             External         on
           }
           FsmDstInfo {
-            StatePath        "State3"
-            TerminalLoc      top
-            TerminalCoord    0.784097
+            StatePath        "P2DTDischarge1"
+            TerminalLoc      left
+            TerminalCoord    0.521446
             External         on
           }
-          SegmentLengths      [62]
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P2WAITCLK"
+            TerminalLoc      left
+            TerminalCoord    0.00279244
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P2Discharge1"
+            TerminalLoc      top
+            TerminalCoord    0.515579
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==0"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P2WAITCLK"
+            TerminalLoc      right
+            TerminalCoord    0.0406402
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P2Charge1"
+            TerminalLoc      top
+            TerminalCoord    0.608197
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==1"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "2"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P2Charge1"
+            TerminalLoc      left
+            TerminalCoord    0.559156
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P2DTCharge1"
+            TerminalLoc      right
+            TerminalCoord    0.44412
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P2Discharge2"
+            TerminalLoc      right
+            TerminalCoord    0.517987
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P2DTDischarge2"
+            TerminalLoc      left
+            TerminalCoord    0.521446
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P2WAITCLK"
+            TerminalLoc      left
+            TerminalCoord    0.210421
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P2Discharge2"
+            TerminalLoc      top
+            TerminalCoord    0.327962
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==2"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "3"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P2Charge2"
+            TerminalLoc      left
+            TerminalCoord    0.559156
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P2DTCharge2"
+            TerminalLoc      right
+            TerminalCoord    0.44412
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P2Discharge3"
+            TerminalLoc      right
+            TerminalCoord    0.517987
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P2DTDischarge3"
+            TerminalLoc      left
+            TerminalCoord    0.521446
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P2Charge3"
+            TerminalLoc      left
+            TerminalCoord    0.548328
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P2DTCharge3"
+            TerminalLoc      right
+            TerminalCoord    0.562455
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P2WAITCLK"
+            TerminalLoc      left
+            TerminalCoord    0.587811
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P2Discharge3"
+            TerminalLoc      top
+            TerminalCoord    0.108361
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==4"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "4"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P2WAITCLK"
+            TerminalLoc      right
+            TerminalCoord    0.465974
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P2Charge2"
+            TerminalLoc      left
+            TerminalCoord    0.0284568
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==3"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "5"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P2WAITCLK"
+            TerminalLoc      right
+            TerminalCoord    0.806686
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P2Charge3"
+            TerminalLoc      top
+            TerminalCoord    0.468371
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==5"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "6"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P2DTDischarge3"
+            TerminalLoc      right
+            TerminalCoord    0.490996
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction12"
+            TerminalLoc      left
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
           LabelPosition       0.5
           Parameter {
             Name     "Trigger"
@@ -4231,23 +5495,183 @@ Plecs {
           }
           Parameter {
             Name     "Priority"
-            Value    "2"
+            Value    "1"
           }
         }
         FsmTransition {
           FsmSrcInfo {
-            StatePath        ".Junction15"
+            StatePath        "P2DTDischarge2"
+            TerminalLoc      right
+            TerminalCoord    0.401829
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction18"
+            TerminalLoc      left
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P2DTCharge2"
+            TerminalLoc      left
+            TerminalCoord    0.310889
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction18"
             TerminalLoc      right
             TerminalCoord    0.5
             External         on
           }
-          FsmDstInfo {
-            StatePath        "State4"
-            TerminalLoc      left
-            TerminalCoord    0.0608187
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P2DTDischarge1"
+            TerminalLoc      right
+            TerminalCoord    0.636068
             External         on
           }
-          SegmentLengths      [82]
+          FsmDstInfo {
+            StatePath        ".Junction19"
+            TerminalLoc      left
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      [46.1942444139695]
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P2DTCharge1"
+            TerminalLoc      left
+            TerminalCoord    0.891353
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction19"
+            TerminalLoc      right
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P2Reset"
+            TerminalLoc      bottom
+            TerminalCoord    0.625723
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P2WAITCLK"
+            TerminalLoc      top
+            TerminalCoord    0.458046
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction20"
+            TerminalLoc      left
+            TerminalCoord    0.5
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P2Reset"
+            TerminalLoc      top
+            TerminalCoord    0.475259
+            External         on
+          }
+          SegmentLengths      []
           LabelPosition       0.5
           Parameter {
             Name     "Trigger"
@@ -4268,15 +5692,15 @@ Plecs {
         }
         FsmTransition {
           FsmSrcInfo {
-            StatePath        ".Junction14"
+            StatePath        ".Junction20"
             TerminalLoc      bottom
             TerminalCoord    0.5
             External         on
           }
           FsmDstInfo {
-            StatePath        ".Junction16"
+            StatePath        "P2WAITCLK"
             TerminalLoc      top
-            TerminalCoord    0.5
+            TerminalCoord    0.730128
             External         on
           }
           SegmentLengths      []
@@ -4300,18 +5724,882 @@ Plecs {
         }
         FsmTransition {
           FsmSrcInfo {
-            StatePath        ".Junction16"
+            StatePath        "P2DTCharge3"
+            TerminalLoc      left
+            TerminalCoord    0.600455
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction12"
+            TerminalLoc      right
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      [-112]
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction19"
             TerminalLoc      bottom
             TerminalCoord    0.5
             External         on
           }
           FsmDstInfo {
-            StatePath        "State5"
+            StatePath        ".Junction18"
             TerminalLoc      top
-            TerminalCoord    0.784097
+            TerminalCoord    0.5
             External         on
           }
-          SegmentLengths      [62]
+          SegmentLengths      [69]
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction18"
+            TerminalLoc      bottom
+            TerminalCoord    0.5
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction12"
+            TerminalLoc      top
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      [209]
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2Discharge1"
+            TerminalLoc      right
+            TerminalCoord    0.517987
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N2DTDischarge1"
+            TerminalLoc      left
+            TerminalCoord    0.521446
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2WAITCLK"
+            TerminalLoc      left
+            TerminalCoord    0.00279244
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N2Discharge1"
+            TerminalLoc      top
+            TerminalCoord    0.515579
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==0"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2WAITCLK"
+            TerminalLoc      right
+            TerminalCoord    0.0406402
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N2Charge1"
+            TerminalLoc      top
+            TerminalCoord    0.608197
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==1"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "2"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2Charge1"
+            TerminalLoc      left
+            TerminalCoord    0.559156
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N2DTCharge1"
+            TerminalLoc      right
+            TerminalCoord    0.44412
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2Discharge2"
+            TerminalLoc      right
+            TerminalCoord    0.517987
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N2DTDischarge2"
+            TerminalLoc      left
+            TerminalCoord    0.521446
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2WAITCLK"
+            TerminalLoc      left
+            TerminalCoord    0.210421
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N2Discharge2"
+            TerminalLoc      top
+            TerminalCoord    0.327962
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==2"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "3"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2Charge2"
+            TerminalLoc      left
+            TerminalCoord    0.559156
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N2DTCharge2"
+            TerminalLoc      right
+            TerminalCoord    0.44412
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2Discharge3"
+            TerminalLoc      right
+            TerminalCoord    0.517987
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N2DTDischarge3"
+            TerminalLoc      left
+            TerminalCoord    0.521446
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2Charge3"
+            TerminalLoc      left
+            TerminalCoord    0.548328
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N2DTCharge3"
+            TerminalLoc      right
+            TerminalCoord    0.562455
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2WAITCLK"
+            TerminalLoc      left
+            TerminalCoord    0.587811
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N2Discharge3"
+            TerminalLoc      top
+            TerminalCoord    0.108361
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==4"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "4"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2WAITCLK"
+            TerminalLoc      right
+            TerminalCoord    0.465974
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N2Charge2"
+            TerminalLoc      left
+            TerminalCoord    0.0284568
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==3"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "5"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2WAITCLK"
+            TerminalLoc      right
+            TerminalCoord    0.806686
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N2Charge3"
+            TerminalLoc      top
+            TerminalCoord    0.468371
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==5"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "6"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2DTDischarge3"
+            TerminalLoc      right
+            TerminalCoord    0.490996
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction15"
+            TerminalLoc      left
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2DTDischarge2"
+            TerminalLoc      right
+            TerminalCoord    0.401829
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction21"
+            TerminalLoc      left
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2DTCharge2"
+            TerminalLoc      left
+            TerminalCoord    0.310889
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction21"
+            TerminalLoc      right
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2DTDischarge1"
+            TerminalLoc      right
+            TerminalCoord    0.636068
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction22"
+            TerminalLoc      left
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2DTCharge1"
+            TerminalLoc      left
+            TerminalCoord    0.891353
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction22"
+            TerminalLoc      right
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2Reset"
+            TerminalLoc      bottom
+            TerminalCoord    0.625723
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N2WAITCLK"
+            TerminalLoc      top
+            TerminalCoord    0.458046
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N2DTCharge3"
+            TerminalLoc      left
+            TerminalCoord    0.600455
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction15"
+            TerminalLoc      right
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      [-112]
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction22"
+            TerminalLoc      bottom
+            TerminalCoord    0.5
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction21"
+            TerminalLoc      top
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      [69]
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction21"
+            TerminalLoc      bottom
+            TerminalCoord    0.5
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction15"
+            TerminalLoc      top
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      [209]
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction12"
+            TerminalLoc      bottom
+            TerminalCoord    0.5
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction23"
+            TerminalLoc      right
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction15"
+            TerminalLoc      bottom
+            TerminalCoord    0.5
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction23"
+            TerminalLoc      bottom
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      [15]
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction23"
+            TerminalLoc      top
+            TerminalCoord    0.5
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction7"
+            TerminalLoc      left
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      [-861.75,-150.5]
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction24"
+            TerminalLoc      bottom
+            TerminalCoord    0.5
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction26"
+            TerminalLoc      top
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      [1425.541623252726]
           LabelPosition       0.5
           Parameter {
             Name     "Trigger"
@@ -4332,18 +6620,50 @@ Plecs {
         }
         FsmTransition {
           FsmSrcInfo {
-            StatePath        ".Junction16"
+            StatePath        ".Junction26"
+            TerminalLoc      bottom
+            TerminalCoord    0.5
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N3WAITCLK"
+            TerminalLoc      top
+            TerminalCoord    0.34699
+            External         on
+          }
+          SegmentLengths      [207]
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "2"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction26"
             TerminalLoc      right
             TerminalCoord    0.5
             External         on
           }
           FsmDstInfo {
-            StatePath        "State6"
-            TerminalLoc      left
-            TerminalCoord    0.0608187
+            StatePath        "N3Reset"
+            TerminalLoc      top
+            TerminalCoord    0.510913
             External         on
           }
-          SegmentLengths      [82]
+          SegmentLengths      []
           LabelPosition       0.5
           Parameter {
             Name     "Trigger"
@@ -4364,14 +6684,14 @@ Plecs {
         }
         FsmTransition {
           FsmSrcInfo {
-            StatePath        ".Junction14"
+            StatePath        ".Junction24"
             TerminalLoc      right
             TerminalCoord    0.5
             External         on
           }
           FsmDstInfo {
-            StatePath        ".Junction17"
-            TerminalLoc      left
+            StatePath        ".Junction30"
+            TerminalLoc      top
             TerminalCoord    0.5
             External         on
           }
@@ -4396,18 +6716,1266 @@ Plecs {
         }
         FsmTransition {
           FsmSrcInfo {
-            StatePath        ".Junction17"
+            StatePath        "P3Discharge1"
+            TerminalLoc      right
+            TerminalCoord    0.517987
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P3DTDischarge1"
+            TerminalLoc      left
+            TerminalCoord    0.521446
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P3Charge1"
+            TerminalLoc      left
+            TerminalCoord    0.559156
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P3DTCharge1"
+            TerminalLoc      right
+            TerminalCoord    0.44412
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P3Discharge2"
+            TerminalLoc      right
+            TerminalCoord    0.517987
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P3DTDischarge2"
+            TerminalLoc      left
+            TerminalCoord    0.521446
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P3Charge2"
+            TerminalLoc      left
+            TerminalCoord    0.559156
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P3DTCharge2"
+            TerminalLoc      right
+            TerminalCoord    0.44412
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P3Discharge3"
+            TerminalLoc      right
+            TerminalCoord    0.517987
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P3DTDischarge3"
+            TerminalLoc      left
+            TerminalCoord    0.521446
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P3Charge3"
+            TerminalLoc      left
+            TerminalCoord    0.548328
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P3DTCharge3"
+            TerminalLoc      right
+            TerminalCoord    0.562455
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P3DTDischarge3"
+            TerminalLoc      right
+            TerminalCoord    0.490996
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction25"
+            TerminalLoc      left
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P3DTDischarge2"
+            TerminalLoc      right
+            TerminalCoord    0.401829
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction28"
+            TerminalLoc      left
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P3DTCharge2"
+            TerminalLoc      left
+            TerminalCoord    0.310889
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction28"
+            TerminalLoc      right
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P3DTDischarge1"
+            TerminalLoc      right
+            TerminalCoord    0.636068
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction29"
+            TerminalLoc      left
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      [46.1942444139695]
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P3DTCharge1"
+            TerminalLoc      left
+            TerminalCoord    0.891353
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction29"
+            TerminalLoc      right
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction30"
+            TerminalLoc      left
+            TerminalCoord    0.5
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P3Reset"
+            TerminalLoc      top
+            TerminalCoord    0.475259
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "reset"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P3DTCharge3"
+            TerminalLoc      left
+            TerminalCoord    0.600455
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction25"
+            TerminalLoc      right
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      [-112]
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction29"
             TerminalLoc      bottom
             TerminalCoord    0.5
             External         on
           }
           FsmDstInfo {
-            StatePath        "State7"
+            StatePath        ".Junction28"
             TerminalLoc      top
-            TerminalCoord    0.784097
+            TerminalCoord    0.5
             External         on
           }
-          SegmentLengths      [62]
+          SegmentLengths      [69]
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction28"
+            TerminalLoc      bottom
+            TerminalCoord    0.5
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction25"
+            TerminalLoc      top
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      [209]
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3Discharge1"
+            TerminalLoc      right
+            TerminalCoord    0.517987
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N3DTDischarge1"
+            TerminalLoc      left
+            TerminalCoord    0.521446
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3WAITCLK"
+            TerminalLoc      left
+            TerminalCoord    0.00279244
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N3Discharge1"
+            TerminalLoc      top
+            TerminalCoord    0.515579
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==0"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3WAITCLK"
+            TerminalLoc      right
+            TerminalCoord    0.0406402
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N3Charge1"
+            TerminalLoc      top
+            TerminalCoord    0.608197
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==1"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "2"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3Charge1"
+            TerminalLoc      left
+            TerminalCoord    0.559156
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N3DTCharge1"
+            TerminalLoc      right
+            TerminalCoord    0.44412
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3Discharge2"
+            TerminalLoc      right
+            TerminalCoord    0.517987
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N3DTDischarge2"
+            TerminalLoc      left
+            TerminalCoord    0.521446
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3WAITCLK"
+            TerminalLoc      left
+            TerminalCoord    0.210421
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N3Discharge2"
+            TerminalLoc      top
+            TerminalCoord    0.327962
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==2"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "3"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3Charge2"
+            TerminalLoc      left
+            TerminalCoord    0.559156
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N3DTCharge2"
+            TerminalLoc      right
+            TerminalCoord    0.44412
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3Discharge3"
+            TerminalLoc      right
+            TerminalCoord    0.517987
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N3DTDischarge3"
+            TerminalLoc      left
+            TerminalCoord    0.521446
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3Charge3"
+            TerminalLoc      left
+            TerminalCoord    0.548328
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N3DTCharge3"
+            TerminalLoc      right
+            TerminalCoord    0.562455
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_DT"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3WAITCLK"
+            TerminalLoc      left
+            TerminalCoord    0.587811
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N3Discharge3"
+            TerminalLoc      top
+            TerminalCoord    0.108361
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==4"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "4"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3WAITCLK"
+            TerminalLoc      right
+            TerminalCoord    0.465974
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N3Charge2"
+            TerminalLoc      left
+            TerminalCoord    0.0284568
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==3"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "5"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3WAITCLK"
+            TerminalLoc      right
+            TerminalCoord    0.806686
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N3Charge3"
+            TerminalLoc      top
+            TerminalCoord    0.468371
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==5"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "6"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3DTDischarge3"
+            TerminalLoc      right
+            TerminalCoord    0.490996
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction27"
+            TerminalLoc      left
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3DTDischarge2"
+            TerminalLoc      right
+            TerminalCoord    0.401829
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction31"
+            TerminalLoc      left
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3DTCharge2"
+            TerminalLoc      left
+            TerminalCoord    0.310889
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction31"
+            TerminalLoc      right
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3DTDischarge1"
+            TerminalLoc      right
+            TerminalCoord    0.636068
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction32"
+            TerminalLoc      left
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3DTCharge1"
+            TerminalLoc      left
+            TerminalCoord    0.891353
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction32"
+            TerminalLoc      right
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3Reset"
+            TerminalLoc      bottom
+            TerminalCoord    0.625723
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "N3WAITCLK"
+            TerminalLoc      top
+            TerminalCoord    0.458046
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "N3DTCharge3"
+            TerminalLoc      left
+            TerminalCoord    0.600455
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction27"
+            TerminalLoc      right
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      [-112]
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction32"
+            TerminalLoc      bottom
+            TerminalCoord    0.5
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction31"
+            TerminalLoc      top
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      [69]
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction31"
+            TerminalLoc      bottom
+            TerminalCoord    0.5
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction27"
+            TerminalLoc      top
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      [209]
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction25"
+            TerminalLoc      bottom
+            TerminalCoord    0.5
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction33"
+            TerminalLoc      right
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction27"
+            TerminalLoc      bottom
+            TerminalCoord    0.5
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        ".Junction33"
+            TerminalLoc      bottom
+            TerminalCoord    0.5
+            External         on
+          }
+          SegmentLengths      [15]
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P3Reset"
+            TerminalLoc      bottom
+            TerminalCoord    0.625723
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P3WAITCLK"
+            TerminalLoc      top
+            TerminalCoord    0.458046
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    ""
+          }
+          Parameter {
+            Name     "Condition"
+            Value    ""
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction30"
+            TerminalLoc      bottom
+            TerminalCoord    0.5
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P3WAITCLK"
+            TerminalLoc      top
+            TerminalCoord    0.730128
+            External         on
+          }
+          SegmentLengths      []
           LabelPosition       0.5
           Parameter {
             Name     "Trigger"
@@ -4428,18 +7996,210 @@ Plecs {
         }
         FsmTransition {
           FsmSrcInfo {
-            StatePath        ".Junction17"
+            StatePath        "P3WAITCLK"
+            TerminalLoc      left
+            TerminalCoord    0.00279244
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P3Discharge1"
+            TerminalLoc      top
+            TerminalCoord    0.515579
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==0"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "1"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P3WAITCLK"
             TerminalLoc      right
+            TerminalCoord    0.0406402
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P3Charge1"
+            TerminalLoc      top
+            TerminalCoord    0.608197
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==1"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "2"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P3WAITCLK"
+            TerminalLoc      left
+            TerminalCoord    0.210421
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P3Discharge2"
+            TerminalLoc      top
+            TerminalCoord    0.327962
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==2"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "3"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P3WAITCLK"
+            TerminalLoc      left
+            TerminalCoord    0.587811
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P3Discharge3"
+            TerminalLoc      top
+            TerminalCoord    0.108361
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iREF_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==4"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "4"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P3WAITCLK"
+            TerminalLoc      right
+            TerminalCoord    0.465974
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P3Charge2"
+            TerminalLoc      left
+            TerminalCoord    0.0284568
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==3"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "5"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        "P3WAITCLK"
+            TerminalLoc      right
+            TerminalCoord    0.806686
+            External         on
+          }
+          FsmDstInfo {
+            StatePath        "P3Charge3"
+            TerminalLoc      top
+            TerminalCoord    0.468371
+            External         on
+          }
+          SegmentLengths      []
+          LabelPosition       0.5
+          Parameter {
+            Name     "Trigger"
+            Value    "iZVS_trig"
+          }
+          Parameter {
+            Name     "Condition"
+            Value    "counter==5"
+          }
+          Parameter {
+            Name     "Action"
+            Value    ""
+          }
+          Parameter {
+            Name     "Priority"
+            Value    "6"
+          }
+        }
+        FsmTransition {
+          FsmSrcInfo {
+            StatePath        ".Junction33"
+            TerminalLoc      left
             TerminalCoord    0.5
             External         on
           }
           FsmDstInfo {
-            StatePath        "State8"
-            TerminalLoc      left
-            TerminalCoord    0.0608187
+            StatePath        ".Junction7"
+            TerminalLoc      top
+            TerminalCoord    0.5
             External         on
           }
-          SegmentLengths      [82]
+          SegmentLengths      [-2367.120130469709,-1963.216534221052]
           LabelPosition       0.5
           Parameter {
             Name     "Trigger"
@@ -4447,7 +8207,7 @@ Plecs {
           }
           Parameter {
             Name     "Condition"
-            Value    "reset"
+            Value    ""
           }
           Parameter {
             Name     "Action"
@@ -4712,7 +8472,7 @@ Plecs {
       Frame         [-45, -10; 45, 10]
       Parameter {
         Variable      "Value"
-        Value         "1/6"
+        Value         "7/8"
         Show          off
       }
       Parameter {
@@ -4732,7 +8492,7 @@ Plecs {
       Frame         [-10, -10; 10, 10]
       Parameter {
         Variable      "Value"
-        Value         "1"
+        Value         "0"
         Show          off
       }
       Parameter {
