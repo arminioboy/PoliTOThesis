@@ -3,7 +3,7 @@ Plecs {
   Version       "5.0"
   CircuitModel  "ContStateSpace"
   StartTime     "0"
-  TimeSpan      "1.2e-3"
+  TimeSpan      "1.8e-3"
   Timeout       ""
   Solver        "radau"
   MaxStep       "1e-3"
@@ -1098,11 +1098,11 @@ Plecs {
       Flipped       off
       LabelPosition south
       Frame         [-15, -30; 15, 30]
-      Location      [0, 0; 1860, 991]
+      Location      [0, 0; 671, 991]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAADwPwCAAAAA/sAAAAQAFoAbwBvA"
-"G0AQQByAGUAYQAAAAAyAAADwAAAAFYA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
-"///wAAAGAA////+wAAAAwAVAByAGEAYwBlAHMAAAAAMgAAA2YAAABgAP///wAAAAMAAAdEAAAA3vw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB0QAAABEAP///wAAB0QAAALcAAAA"
+"G0AQQByAGUAYQAAAAAyAAADwAAAAC4A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGAA////+wAAAAwAVAByAGEAYwBlAHMAAAAAMgAAA2YAAABgAP///wAAAAMAAAKfAAAAVPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAp8AAABEAP///wAAAp8AAANmAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
@@ -1123,7 +1123,7 @@ Plecs {
       TimeRange     "0"
       ScrollingMode "2"
       SingleTimeAxis "0"
-      Open          "1"
+      Open          "0"
       Ts            "-1"
       SampleLimit   "0"
       XAxisLabel    "Time / s"
@@ -10506,6 +10506,22 @@ Plecs {
         Value         "theta"
         Show          off
       }
+      ComponentAssertion {
+        SignalName       "Source voltage"
+        TrSignalName     "Source voltage"
+        LowerLimit       "0"
+        UpperLimit       "131.1"
+        IncludeLimits    off
+        Action           "3"
+      }
+      ComponentAssertion {
+        SignalName       "Source voltage"
+        TrSignalName     "Source voltage"
+        LowerLimit       "0"
+        UpperLimit       "137.5"
+        IncludeLimits    off
+        Action           "3"
+      }
     }
     Component {
       Type          ConfigurableSubsystem
@@ -16822,9 +16838,9 @@ Plecs {
         Direction     left
       }
       Schematic {
-        Location      [0, 0; 1280, 679]
-        ZoomFactor    0.914629
-        SliderPosition [0, 0]
+        Location      [0, 0; 459, 279]
+        ZoomFactor    1.78898
+        SliderPosition [1313, 368]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -17015,6 +17031,11 @@ Plecs {
             Type          Output
             Position      [39, 0]
             Direction     right
+          }
+          Terminal {
+            Type          Output
+            Position      [0, 34]
+            Direction     down
           }
           Schematic {
             Location      [60, 55; 1453, 760]
@@ -17301,6 +17322,25 @@ Plecs {
               Flipped       off
               LabelPosition north
             }
+            Component {
+              Type          Output
+              Name          "M"
+              Show          on
+              Position      [505, 220]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Index"
+                Value         "5"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
             Connection {
               Type          Signal
               SrcComponent  "i_ref"
@@ -17333,14 +17373,6 @@ Plecs {
             }
             Connection {
               Type          Signal
-              SrcComponent  "Sum"
-              SrcTerminal   1
-              Points        [335, 170]
-              DstComponent  "Sum1"
-              DstTerminal   3
-            }
-            Connection {
-              Type          Signal
               SrcComponent  "Sum1"
               SrcTerminal   1
               DstComponent  "Saturation"
@@ -17352,14 +17384,6 @@ Plecs {
               SrcTerminal   1
               DstComponent  "Saturation1"
               DstTerminal   1
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "Saturation1"
-              SrcTerminal   2
-              Points        [285, 220]
-              DstComponent  "Sum"
-              DstTerminal   3
             }
             Connection {
               Type          Signal
@@ -17389,6 +17413,29 @@ Plecs {
               SrcTerminal   2
               DstComponent  "D"
               DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Saturation1"
+              SrcTerminal   2
+              Points        [285, 220]
+              DstComponent  "Sum"
+              DstTerminal   3
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Sum"
+              SrcTerminal   1
+              Points        [335, 170]
+              Branch {
+                DstComponent  "Sum1"
+                DstTerminal   3
+              }
+              Branch {
+                Points        [335, 220]
+                DstComponent  "M"
+                DstTerminal   1
+              }
             }
           }
         }
@@ -17695,9 +17742,9 @@ Plecs {
             Direction     right
           }
           Schematic {
-            Location      [0, 0; 1860, 969]
+            Location      [0, 0; 1280, 679]
             ZoomFactor    1.15876
-            SliderPosition [0, 0]
+            SliderPosition [-1, -1]
             ShowBrowser   off
             BrowserWidth  100
             Component {
@@ -17754,6 +17801,14 @@ Plecs {
                 Variable      "Width"
                 Value         "-1"
                 Show          off
+              }
+              ComponentAssertion {
+                SignalName       "Output"
+                TrSignalName     "Output"
+                LowerLimit       "-50"
+                UpperLimit       "+50"
+                IncludeLimits    off
+                Action           "3"
               }
             }
             Component {
@@ -18242,7 +18297,7 @@ Plecs {
               Type          From
               Name          "From4"
               Show          off
-              Position      [310, 415]
+              Position      [330, 415]
               Direction     right
               Flipped       off
               LabelPosition north
@@ -18277,7 +18332,7 @@ Plecs {
               Type          From
               Name          "From5"
               Show          off
-              Position      [295, 325]
+              Position      [330, 325]
               Direction     right
               Flipped       off
               LabelPosition north
@@ -18431,55 +18486,6 @@ Plecs {
               Name          "Constant"
               Show          off
               Position      [310, 485]
-              Direction     right
-              Flipped       off
-              LabelPosition south
-              Frame         [-20, -10; 20, 10]
-              Parameter {
-                Variable      "Value"
-                Value         "-1"
-                Show          off
-              }
-              Parameter {
-                Variable      "DataType"
-                Value         "10"
-                Show          off
-              }
-            }
-            Component {
-              Type          Product
-              Name          "Product4"
-              Show          off
-              Position      [335, 325]
-              Direction     up
-              Flipped       on
-              LabelPosition north
-              Parameter {
-                Variable      "IconShape"
-                Value         "2"
-                Show          off
-              }
-              Parameter {
-                Variable      "Inputs"
-                Value         "|**"
-                Show          off
-              }
-              Parameter {
-                Variable      "DataType"
-                Value         "11"
-                Show          off
-              }
-              Parameter {
-                Variable      "DataTypeOverflowMode"
-                Value         "1"
-                Show          off
-              }
-            }
-            Component {
-              Type          Constant
-              Name          "Constant3"
-              Show          off
-              Position      [310, 285]
               Direction     right
               Flipped       off
               LabelPosition south
@@ -20003,27 +20009,6 @@ Plecs {
             }
             Connection {
               Type          Signal
-              SrcComponent  "From5"
-              SrcTerminal   1
-              DstComponent  "Product4"
-              DstTerminal   2
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "Product4"
-              SrcTerminal   1
-              DstComponent  "iREF_comp_n"
-              DstTerminal   1
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "Constant3"
-              SrcTerminal   1
-              DstComponent  "Product4"
-              DstTerminal   3
-            }
-            Connection {
-              Type          Signal
               SrcComponent  "CLK_SIG2"
               SrcTerminal   2
               Points        [530, 330]
@@ -20365,6 +20350,13 @@ Plecs {
               SrcComponent  "Multiport Signal Switch7"
               SrcTerminal   1
               DstComponent  "REF_sig"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "From5"
+              SrcTerminal   1
+              DstComponent  "iREF_comp_n"
               DstTerminal   1
             }
           }
@@ -20917,7 +20909,7 @@ Plecs {
           LabelPosition south
           Parameter {
             Variable      "Tag"
-            Value         "inputAC"
+            Value         "iAC"
             Show          off
           }
           Parameter {
@@ -21075,12 +21067,12 @@ Plecs {
           }
           Parameter {
             Variable      "InternalVariables"
-            Value         "counter,reset"
+            Value         "counter,sequence,reset"
             Show          off
           }
           Parameter {
             Variable      "InternalVariableValues"
-            Value         "0,1"
+            Value         "0,0,1"
             Show          off
           }
           Parameter {
@@ -21110,15 +21102,15 @@ Plecs {
           }
           FSM {
             Location       [60, 70; 1920, 1008]
-            ZoomFactor     0.581055
-            SliderPosition [331, 0]
+            ZoomFactor     0.660471
+            SliderPosition [2632, 237]
             FsmState {
               Name          "P1Discharge1"
               Position      [250, 1630]
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=0;\nL2=0;\nH2=1;\nL3=0;\nH3=1;\ncounter++;"
+                Value    "L1=0;\nH1=0;\nL2=0;\nH2=1;\nL3=0;\nH3=1;\n"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21152,7 +21144,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=1;\nL2=0;\nH2=0;\nL3=0;\nH3=1;\ncounter++;"
+                Value    "L1=0;\nH1=1;\nL2=0;\nH2=0;\nL3=0;\nH3=1;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21182,12 +21174,13 @@ Plecs {
             }
             FsmState {
               Name          "P1WAITCLK"
-              Position      [1770, 1500]
-              Frame         [-110, -80; 110, 80]
+              Position      [1770, 1530]
+              Frame         [-110, -110; 110, 110]
               Parameter {
                 Name     "EnterAction"
-                Value    "if (counter == 6){\n\tcycle_start=1;\n\tcounter = 0;"
-"\n}else{\n\tcycle_start=0;\n}"
+                Value    "if (sequence != 1){\n\tsequence=1;\n\tcounter = 0;\n"
+"}\n\nif (counter == 6){\n\tcycle_start=1;\n\tcounter = 0;\n}else{\n\tcycle_st"
+"art=0;\n}"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21204,7 +21197,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=1;\nL2=0;\nH2=0;\nL3=0;\nH3=1;\ncounter++;"
+                Value    "L1=0;\nH1=1;\nL2=0;\nH2=0;\nL3=0;\nH3=1;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21238,7 +21231,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=1;\nL2=0;\nH2=1;\nL3=0;\nH3=0;\ncounter++;"
+                Value    "L1=0;\nH1=1;\nL2=0;\nH2=1;\nL3=0;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21272,7 +21265,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=1;\nL2=0;\nH2=1;\nL3=0;\nH3=0;\ncounter++;"
+                Value    "L1=0;\nH1=1;\nL2=0;\nH2=1;\nL3=0;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21306,7 +21299,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=0;\nL2=0;\nH2=1;\nL3=0;\nH3=1;\ncounter++;"
+                Value    "L1=0;\nH1=0;\nL2=0;\nH2=1;\nL3=0;\nH3=1;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21421,7 +21414,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=0;\nL2=1;\nH2=0;\nL3=1;\nH3=0;\ncounter++;"
+                Value    "L1=0;\nH1=0;\nL2=1;\nH2=0;\nL3=1;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21455,7 +21448,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=1;\nH1=0;\nL2=1;\nH2=0;\nL3=0;\nH3=0;\ncounter++;"
+                Value    "L1=1;\nH1=0;\nL2=1;\nH2=0;\nL3=0;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21489,7 +21482,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=1;\nH1=0;\nL2=1;\nH2=0;\nL3=0;\nH3=0;\ncounter++;"
+                Value    "L1=1;\nH1=0;\nL2=1;\nH2=0;\nL3=0;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21523,7 +21516,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=1;\nH1=0;\nL2=0;\nH2=0;\nL3=1;\nH3=0;\ncounter++;"
+                Value    "L1=1;\nH1=0;\nL2=0;\nH2=0;\nL3=1;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21536,12 +21529,13 @@ Plecs {
             }
             FsmState {
               Name          "N1WAITCLK"
-              Position      [1730, 3260]
-              Frame         [-110, -80; 110, 80]
+              Position      [1730, 3290]
+              Frame         [-110, -110; 110, 110]
               Parameter {
                 Name     "EnterAction"
-                Value    "if (counter == 6){\n\tcycle_start=1;\n\tcounter = 0;"
-"\n}else{\n\tcycle_start=0;\n}"
+                Value    "if (sequence != 4){\n\tsequence=4;\n\tcounter = 0;\n"
+"}\n\nif (counter == 6){\n\tcycle_start=1;\n\tcounter = 0;\n}else{\n\tcycle_st"
+"art=0;\n}"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21575,7 +21569,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=1;\nH1=0;\nL2=0;\nH2=0;\nL3=1;\nH3=0;\ncounter++;"
+                Value    "L1=1;\nH1=0;\nL2=0;\nH2=0;\nL3=1;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21609,7 +21603,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=0;\nL2=1;\nH2=0;\nL3=1;\nH3=0;\ncounter++;"
+                Value    "L1=0;\nH1=0;\nL2=1;\nH2=0;\nL3=1;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21654,7 +21648,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=1;\nH1=0;\nL2=0;\nH2=1;\nL3=0;\nH3=0;\ncounter++;"
+                Value    "L1=1;\nH1=0;\nL2=0;\nH2=1;\nL3=0;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21688,7 +21682,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=1;\nH1=0;\nL2=0;\nH2=0;\nL3=0;\nH3=1;\ncounter++;"
+                Value    "L1=1;\nH1=0;\nL2=0;\nH2=0;\nL3=0;\nH3=1;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21718,12 +21712,13 @@ Plecs {
             }
             FsmState {
               Name          "P2WAITCLK"
-              Position      [5630, 1100]
-              Frame         [-110, -80; 110, 80]
+              Position      [5630, 1130]
+              Frame         [-110, -110; 110, 110]
               Parameter {
                 Name     "EnterAction"
-                Value    "if (counter == 6){\n\tcycle_start=1;\n\tcounter = 0;"
-"\n}else{\n\tcycle_start=0;\n}"
+                Value    "if (sequence != 2){\n\tsequence = 2;\n\tcounter = 0;"
+"\n}\n\nif (counter == 6){\n\tcycle_start=1;\n\tcounter = 0;\n}else{\n\tcycle_"
+"start=0;\n}"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21740,7 +21735,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=0;\nL2=1;\nH2=0;\nL3=0;\nH3=1;\ncounter++;"
+                Value    "L1=0;\nH1=0;\nL2=1;\nH2=0;\nL3=0;\nH3=1;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21774,7 +21769,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=1;\nL2=1;\nH2=0;\nL3=0;\nH3=0;\ncounter++;"
+                Value    "L1=0;\nH1=1;\nL2=1;\nH2=0;\nL3=0;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21808,7 +21803,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=1;\nL2=0;\nH2=0;\nL3=1;\nH3=0;\ncounter++;"
+                Value    "L1=0;\nH1=1;\nL2=0;\nH2=0;\nL3=1;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21842,7 +21837,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=0;\nL2=0;\nH2=1;\nL3=1;\nH3=0;\ncounter++;"
+                Value    "L1=0;\nH1=0;\nL2=0;\nH2=1;\nL3=1;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21957,7 +21952,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=0;\nL2=1;\nH2=0;\nL3=0;\nH3=1;\ncounter++;"
+                Value    "L1=0;\nH1=0;\nL2=1;\nH2=0;\nL3=0;\nH3=1;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -21991,7 +21986,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=1;\nH1=0;\nL2=0;\nH2=0;\nL3=0;\nH3=1;\ncounter++;"
+                Value    "L1=1;\nH1=0;\nL2=0;\nH2=0;\nL3=0;\nH3=1;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22025,7 +22020,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=1;\nH1=0;\nL2=0;\nH2=1;\nL3=0;\nH3=0;\ncounter++;"
+                Value    "L1=1;\nH1=0;\nL2=0;\nH2=1;\nL3=0;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22059,7 +22054,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=0;\nL2=0;\nH2=1;\nL3=1;\nH3=0;\ncounter++;"
+                Value    "L1=0;\nH1=0;\nL2=0;\nH2=1;\nL3=1;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22072,12 +22067,13 @@ Plecs {
             }
             FsmState {
               Name          "N2WAITCLK"
-              Position      [5770, 2850]
-              Frame         [-110, -80; 110, 80]
+              Position      [5770, 2880]
+              Frame         [-110, -110; 110, 110]
               Parameter {
                 Name     "EnterAction"
-                Value    "if (counter == 6){\n\tcycle_start=1;\n\tcounter = 0;"
-"\n}else{\n\tcycle_start=0;\n}"
+                Value    "if (sequence != 5){\n\tsequence=5;\n\tcounter = 0;\n"
+"}\n\nif (counter == 6){\n\tcycle_start=1;\n\tcounter = 0;\n}else{\n\tcycle_st"
+"art=0;\n}"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22111,7 +22107,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=1;\nL2=0;\nH2=0;\nL3=1;\nH3=0;\ncounter++;"
+                Value    "L1=0;\nH1=1;\nL2=0;\nH2=0;\nL3=1;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22145,7 +22141,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=1;\nL2=1;\nH2=0;\nL3=0;\nH3=0;\ncounter++;"
+                Value    "L1=0;\nH1=1;\nL2=1;\nH2=0;\nL3=0;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22174,7 +22170,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=1;\nH1=0;\nL2=0;\nH2=0;\nL3=1;\nH3=0;\ncounter++;"
+                Value    "L1=1;\nH1=0;\nL2=0;\nH2=0;\nL3=1;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22208,7 +22204,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=1;\nH1=0;\nL2=0;\nH2=0;\nL3=1;\nH3=0;\ncounter++;"
+                Value    "L1=1;\nH1=0;\nL2=0;\nH2=0;\nL3=1;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22242,7 +22238,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=1;\nH1=0;\nL2=1;\nH2=0;\nL3=0;\nH3=0;\ncounter++;"
+                Value    "L1=1;\nH1=0;\nL2=1;\nH2=0;\nL3=0;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22276,7 +22272,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=1;\nH1=0;\nL2=1;\nH2=0;\nL3=0;\nH3=0;\ncounter++;"
+                Value    "L1=1;\nH1=0;\nL2=1;\nH2=0;\nL3=0;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22310,7 +22306,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=0;\nL2=1;\nH2=0;\nL3=1;\nH3=0;\ncounter++;"
+                Value    "L1=0;\nH1=0;\nL2=1;\nH2=0;\nL3=1;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22344,7 +22340,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=0;\nL2=1;\nH2=0;\nL3=1;\nH3=0;\ncounter++;"
+                Value    "L1=0;\nH1=0;\nL2=1;\nH2=0;\nL3=1;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22459,7 +22455,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=0;\nL2=0;\nH2=1;\nL3=0;\nH3=1;\ncounter++;"
+                Value    "L1=0;\nH1=0;\nL2=0;\nH2=1;\nL3=0;\nH3=1;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22493,7 +22489,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=0;\nL2=0;\nH2=1;\nL3=0;\nH3=1;\ncounter++;"
+                Value    "L1=0;\nH1=0;\nL2=0;\nH2=1;\nL3=0;\nH3=1;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22527,7 +22523,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=1;\nL2=0;\nH2=1;\nL3=0;\nH3=0;\ncounter++;"
+                Value    "L1=0;\nH1=1;\nL2=0;\nH2=1;\nL3=0;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22561,7 +22557,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=1;\nL2=0;\nH2=1;\nL3=0;\nH3=0;\ncounter++;"
+                Value    "L1=0;\nH1=1;\nL2=0;\nH2=1;\nL3=0;\nH3=0;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22574,12 +22570,13 @@ Plecs {
             }
             FsmState {
               Name          "N3WAITCLK"
-              Position      [11750, 2670]
-              Frame         [-110, -80; 110, 80]
+              Position      [11750, 2710]
+              Frame         [-110, -120; 110, 120]
               Parameter {
                 Name     "EnterAction"
-                Value    "if (counter == 6){\n\tcycle_start=1;\n\tcounter = 0;"
-"\n}else{\n\tcycle_start=0;\n}"
+                Value    "if (sequence != 6){\n\tsequence=6;\n\tcounter = 0;\n"
+"}\n\nif (counter == 6){\n\tcycle_start=1;\n\tcounter = 0;\n}else{\n\tcycle_st"
+"art=0;\n}"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22613,7 +22610,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=1;\nL2=0;\nH2=0;\nL3=0;\nH3=1;\ncounter++;"
+                Value    "L1=0;\nH1=1;\nL2=0;\nH2=0;\nL3=0;\nH3=1;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22647,7 +22644,7 @@ Plecs {
               Frame         [-110, -80; 110, 80]
               Parameter {
                 Name     "EnterAction"
-                Value    "L1=0;\nH1=1;\nL2=0;\nH2=0;\nL3=0;\nH3=1;\ncounter++;"
+                Value    "L1=0;\nH1=1;\nL2=0;\nH2=0;\nL3=0;\nH3=1;"
               }
               Parameter {
                 Name     "DuringAction"
@@ -22664,12 +22661,13 @@ Plecs {
             }
             FsmState {
               Name          "P3WAITCLK"
-              Position      [11610, 920]
-              Frame         [-110, -80; 110, 80]
+              Position      [11610, 950]
+              Frame         [-110, -110; 110, 110]
               Parameter {
                 Name     "EnterAction"
-                Value    "if (counter == 6){\n\tcycle_start=1;\n\tcounter = 0;"
-"\n}else{\n\tcycle_start=0;\n}"
+                Value    "if (sequence != 3){\n\tsequence=3;\n\tcounter = 0;\n"
+"}\n\nif (counter == 6){\n\tcycle_start=1;\n\tcounter = 0;\n}else{\n\tcycle_st"
+"art=0;\n}"
               }
               Parameter {
                 Name     "DuringAction"
@@ -23277,7 +23275,7 @@ Plecs {
               }
               Parameter {
                 Name     "Condition"
-                Value    "reset"
+                Value    "reset || (sequence != 1)"
               }
               Parameter {
                 Name     "Action"
@@ -24109,7 +24107,7 @@ Plecs {
               }
               Parameter {
                 Name     "Condition"
-                Value    "D<0.6666"
+                Value    "D<0.6726"
               }
               Parameter {
                 Name     "Action"
@@ -24205,7 +24203,7 @@ Plecs {
               }
               Parameter {
                 Name     "Condition"
-                Value    "reset"
+                Value    "reset || (sequence != 4)"
               }
               Parameter {
                 Name     "Action"
@@ -24273,7 +24271,7 @@ Plecs {
               }
               Parameter {
                 Name     "Action"
-                Value    ""
+                Value    "counter++;"
               }
               Parameter {
                 Name     "Priority"
@@ -24369,7 +24367,7 @@ Plecs {
               }
               Parameter {
                 Name     "Action"
-                Value    ""
+                Value    "counter++;\n"
               }
               Parameter {
                 Name     "Priority"
@@ -24525,7 +24523,7 @@ Plecs {
               }
               Parameter {
                 Name     "Condition"
-                Value    "reset"
+                Value    "reset || (sequence != 5)"
               }
               Parameter {
                 Name     "Action"
@@ -25165,7 +25163,7 @@ Plecs {
               }
               Parameter {
                 Name     "Condition"
-                Value    "reset"
+                Value    "reset || (sequence != 2)"
               }
               Parameter {
                 Name     "Action"
@@ -26001,7 +25999,7 @@ Plecs {
               }
               Parameter {
                 Name     "Action"
-                Value    ""
+                Value    "counter++;"
               }
               Parameter {
                 Name     "Priority"
@@ -26033,7 +26031,7 @@ Plecs {
               }
               Parameter {
                 Name     "Action"
-                Value    ""
+                Value    "counter++;"
               }
               Parameter {
                 Name     "Priority"
@@ -26157,7 +26155,7 @@ Plecs {
               }
               Parameter {
                 Name     "Condition"
-                Value    "reset"
+                Value    "reset || (sequence != 6)"
               }
               Parameter {
                 Name     "Action"
@@ -26573,7 +26571,7 @@ Plecs {
               }
               Parameter {
                 Name     "Condition"
-                Value    "reset"
+                Value    "reset || (sequence != 3)"
               }
               Parameter {
                 Name     "Action"
@@ -27377,7 +27375,7 @@ Plecs {
               }
               Parameter {
                 Name     "Action"
-                Value    ""
+                Value    "counter++;"
               }
               Parameter {
                 Name     "Priority"
@@ -27409,7 +27407,7 @@ Plecs {
               }
               Parameter {
                 Name     "Action"
-                Value    ""
+                Value    "counter++;"
               }
               Parameter {
                 Name     "Priority"
@@ -27702,6 +27700,390 @@ Plecs {
               Parameter {
                 Name     "Priority"
                 Value    "1"
+              }
+            }
+            FsmTransition {
+              FsmSrcInfo {
+                StatePath        "P1WAITCLK"
+                TerminalLoc      bottom
+                TerminalCoord    0.277441
+                External         on
+              }
+              FsmDstInfo {
+                StatePath        ".Junction2"
+                TerminalLoc      top
+                TerminalCoord    0.5
+                External         on
+              }
+              SegmentLengths      [72]
+              LabelPosition       0.5
+              Parameter {
+                Name     "Trigger"
+                Value    "iZVS_trig"
+              }
+              Parameter {
+                Name     "Condition"
+                Value    ""
+              }
+              Parameter {
+                Name     "Action"
+                Value    ""
+              }
+              Parameter {
+                Name     "Priority"
+                Value    "7"
+              }
+            }
+            FsmTransition {
+              FsmSrcInfo {
+                StatePath        "P1WAITCLK"
+                TerminalLoc      bottom
+                TerminalCoord    0.973322
+                External         on
+              }
+              FsmDstInfo {
+                StatePath        ".Junction2"
+                TerminalLoc      top
+                TerminalCoord    0.5
+                External         on
+              }
+              SegmentLengths      [72]
+              LabelPosition       0.5
+              Parameter {
+                Name     "Trigger"
+                Value    "iREF_trig"
+              }
+              Parameter {
+                Name     "Condition"
+                Value    ""
+              }
+              Parameter {
+                Name     "Action"
+                Value    ""
+              }
+              Parameter {
+                Name     "Priority"
+                Value    "8"
+              }
+            }
+            FsmTransition {
+              FsmSrcInfo {
+                StatePath        "N1WAITCLK"
+                TerminalLoc      bottom
+                TerminalCoord    0.360916
+                External         on
+              }
+              FsmDstInfo {
+                StatePath        ".Junction6"
+                TerminalLoc      top
+                TerminalCoord    0.5
+                External         on
+              }
+              SegmentLengths      [72]
+              LabelPosition       0.5
+              Parameter {
+                Name     "Trigger"
+                Value    "iZVS_trig"
+              }
+              Parameter {
+                Name     "Condition"
+                Value    ""
+              }
+              Parameter {
+                Name     "Action"
+                Value    ""
+              }
+              Parameter {
+                Name     "Priority"
+                Value    "7"
+              }
+            }
+            FsmTransition {
+              FsmSrcInfo {
+                StatePath        "N1WAITCLK"
+                TerminalLoc      bottom
+                TerminalCoord    0.931804
+                External         on
+              }
+              FsmDstInfo {
+                StatePath        ".Junction6"
+                TerminalLoc      top
+                TerminalCoord    0.5
+                External         on
+              }
+              SegmentLengths      [72]
+              LabelPosition       0.5
+              Parameter {
+                Name     "Trigger"
+                Value    "iREF_trig"
+              }
+              Parameter {
+                Name     "Condition"
+                Value    ""
+              }
+              Parameter {
+                Name     "Action"
+                Value    ""
+              }
+              Parameter {
+                Name     "Priority"
+                Value    "8"
+              }
+            }
+            FsmTransition {
+              FsmSrcInfo {
+                StatePath        "P2WAITCLK"
+                TerminalLoc      bottom
+                TerminalCoord    0.377142
+                External         on
+              }
+              FsmDstInfo {
+                StatePath        ".Junction19"
+                TerminalLoc      top
+                TerminalCoord    0.5
+                External         on
+              }
+              SegmentLengths      [72]
+              LabelPosition       0.5
+              Parameter {
+                Name     "Trigger"
+                Value    "iZVS_trig"
+              }
+              Parameter {
+                Name     "Condition"
+                Value    ""
+              }
+              Parameter {
+                Name     "Action"
+                Value    ""
+              }
+              Parameter {
+                Name     "Priority"
+                Value    "7"
+              }
+            }
+            FsmTransition {
+              FsmSrcInfo {
+                StatePath        "P2WAITCLK"
+                TerminalLoc      bottom
+                TerminalCoord    0.931561
+                External         on
+              }
+              FsmDstInfo {
+                StatePath        ".Junction19"
+                TerminalLoc      top
+                TerminalCoord    0.5
+                External         on
+              }
+              SegmentLengths      [72]
+              LabelPosition       0.5
+              Parameter {
+                Name     "Trigger"
+                Value    "iREF_trig"
+              }
+              Parameter {
+                Name     "Condition"
+                Value    ""
+              }
+              Parameter {
+                Name     "Action"
+                Value    ""
+              }
+              Parameter {
+                Name     "Priority"
+                Value    "8"
+              }
+            }
+            FsmTransition {
+              FsmSrcInfo {
+                StatePath        "N2WAITCLK"
+                TerminalLoc      bottom
+                TerminalCoord    0.337983
+                External         on
+              }
+              FsmDstInfo {
+                StatePath        ".Junction22"
+                TerminalLoc      top
+                TerminalCoord    0.5
+                External         on
+              }
+              SegmentLengths      [72]
+              LabelPosition       0.5
+              Parameter {
+                Name     "Trigger"
+                Value    "iZVS_trig"
+              }
+              Parameter {
+                Name     "Condition"
+                Value    ""
+              }
+              Parameter {
+                Name     "Action"
+                Value    ""
+              }
+              Parameter {
+                Name     "Priority"
+                Value    "7"
+              }
+            }
+            FsmTransition {
+              FsmSrcInfo {
+                StatePath        "N2WAITCLK"
+                TerminalLoc      bottom
+                TerminalCoord    0.914875
+                External         on
+              }
+              FsmDstInfo {
+                StatePath        ".Junction22"
+                TerminalLoc      top
+                TerminalCoord    0.5
+                External         on
+              }
+              SegmentLengths      [72]
+              LabelPosition       0.5
+              Parameter {
+                Name     "Trigger"
+                Value    "iREF_trig"
+              }
+              Parameter {
+                Name     "Condition"
+                Value    ""
+              }
+              Parameter {
+                Name     "Action"
+                Value    ""
+              }
+              Parameter {
+                Name     "Priority"
+                Value    "8"
+              }
+            }
+            FsmTransition {
+              FsmSrcInfo {
+                StatePath        "P3WAITCLK"
+                TerminalLoc      bottom
+                TerminalCoord    0.308234
+                External         on
+              }
+              FsmDstInfo {
+                StatePath        ".Junction29"
+                TerminalLoc      top
+                TerminalCoord    0.5
+                External         on
+              }
+              SegmentLengths      [72]
+              LabelPosition       0.5
+              Parameter {
+                Name     "Trigger"
+                Value    "iZVS_trig"
+              }
+              Parameter {
+                Name     "Condition"
+                Value    ""
+              }
+              Parameter {
+                Name     "Action"
+                Value    ""
+              }
+              Parameter {
+                Name     "Priority"
+                Value    "7"
+              }
+            }
+            FsmTransition {
+              FsmSrcInfo {
+                StatePath        "P3WAITCLK"
+                TerminalLoc      bottom
+                TerminalCoord    0.974994
+                External         on
+              }
+              FsmDstInfo {
+                StatePath        ".Junction29"
+                TerminalLoc      top
+                TerminalCoord    0.5
+                External         on
+              }
+              SegmentLengths      [72]
+              LabelPosition       0.5
+              Parameter {
+                Name     "Trigger"
+                Value    "iREF_trig"
+              }
+              Parameter {
+                Name     "Condition"
+                Value    ""
+              }
+              Parameter {
+                Name     "Action"
+                Value    ""
+              }
+              Parameter {
+                Name     "Priority"
+                Value    "8"
+              }
+            }
+            FsmTransition {
+              FsmSrcInfo {
+                StatePath        "N3WAITCLK"
+                TerminalLoc      bottom
+                TerminalCoord    0.324644
+                External         on
+              }
+              FsmDstInfo {
+                StatePath        ".Junction32"
+                TerminalLoc      top
+                TerminalCoord    0.5
+                External         on
+              }
+              SegmentLengths      [62]
+              LabelPosition       0.5
+              Parameter {
+                Name     "Trigger"
+                Value    "iZVS_trig"
+              }
+              Parameter {
+                Name     "Condition"
+                Value    ""
+              }
+              Parameter {
+                Name     "Action"
+                Value    ""
+              }
+              Parameter {
+                Name     "Priority"
+                Value    "7"
+              }
+            }
+            FsmTransition {
+              FsmSrcInfo {
+                StatePath        "N3WAITCLK"
+                TerminalLoc      bottom
+                TerminalCoord    0.902755
+                External         on
+              }
+              FsmDstInfo {
+                StatePath        ".Junction32"
+                TerminalLoc      top
+                TerminalCoord    0.5
+                External         on
+              }
+              SegmentLengths      [59.39883126029827]
+              LabelPosition       0.5
+              Parameter {
+                Name     "Trigger"
+                Value    "iREF_trig"
+              }
+              Parameter {
+                Name     "Condition"
+                Value    ""
+              }
+              Parameter {
+                Name     "Action"
+                Value    ""
+              }
+              Parameter {
+                Name     "Priority"
+                Value    "8"
               }
             }
           }
@@ -28023,41 +28405,6 @@ Plecs {
         }
         Component {
           Type          From
-          Name          "From4"
-          Show          off
-          Position      [525, 530]
-          Direction     right
-          Flipped       off
-          LabelPosition north
-          Parameter {
-            Variable      "Tag"
-            Value         "D"
-            Show          off
-          }
-          Parameter {
-            Variable      "Visibility"
-            Value         "2"
-            Show          off
-          }
-          Parameter {
-            Variable      "NoMatchingCounterpartAction"
-            Value         "1"
-            Show          off
-          }
-          Parameter {
-            Variable      "CustomMessage"
-            Value         ""
-            Show          off
-            Evaluate      on
-          }
-          Parameter {
-            Variable      "HighlightLevel"
-            Value         "0"
-            Show          off
-          }
-        }
-        Component {
-          Type          From
           Name          "From13"
           Show          off
           Position      [600, 520]
@@ -28100,11 +28447,11 @@ Plecs {
           Flipped       off
           LabelPosition south
           Frame         [-15, -15; 15, 15]
-          Location      [0, 0; 1860, 991]
+          Location      [0, 0; 1393, 727]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAAFYA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGAA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABgAP///wAAAAMAAAAAAAA"
-"AAPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABEAP///wAAB0QAAAPA"
+"AAPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABEAP///wAABXEAAAK4"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
@@ -28169,6 +28516,96 @@ Plecs {
               KeepBaseline  off
               BaselineValue 0
             }
+          }
+        }
+        Component {
+          Type          Display
+          Name          "ConversionRatio"
+          Show          on
+          Position      [900, 325]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Frame         [-31, -11; 31, 11]
+          Parameter {
+            Variable      "Notation"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Precision"
+            Value         "4"
+            Show          off
+          }
+        }
+        Component {
+          Type          Goto
+          Name          "Goto5"
+          Show          off
+          Position      [770, 325]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "Tag"
+            Value         "M"
+            Show          off
+          }
+          Parameter {
+            Variable      "Visibility"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
+            Show          off
+          }
+        }
+        Component {
+          Type          From
+          Name          "From5"
+          Show          off
+          Position      [525, 530]
+          Direction     right
+          Flipped       off
+          LabelPosition north
+          Parameter {
+            Variable      "Tag"
+            Value         "M"
+            Show          off
+          }
+          Parameter {
+            Variable      "Visibility"
+            Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "NoMatchingCounterpartAction"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "CustomMessage"
+            Value         ""
+            Show          off
+            Evaluate      on
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
+            Show          off
           }
         }
         Connection {
@@ -28420,7 +28857,7 @@ Plecs {
         }
         Connection {
           Type          Signal
-          SrcComponent  "From4"
+          SrcComponent  "From5"
           SrcTerminal   1
           DstComponent  "Sequencer"
           DstTerminal   8
@@ -28466,6 +28903,20 @@ Plecs {
           SrcTerminal   6
           DstComponent  "3L"
           DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "DutyCycleCalculation"
+          SrcTerminal   5
+          Points        [820, 325]
+          Branch {
+            DstComponent  "ConversionRatio"
+            DstTerminal   1
+          }
+          Branch {
+            DstComponent  "Goto5"
+            DstTerminal   1
+          }
         }
         RectangleAnnotation {
           Position     [650, 280]

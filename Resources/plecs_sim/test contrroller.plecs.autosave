@@ -73,7 +73,7 @@ Plecs {
   Schematic {
     Location      [0, 0; 1860, 969]
     ZoomFactor    1.57991
-    SliderPosition [0, -1]
+    SliderPosition [0, 289]
     ShowBrowser   off
     BrowserWidth  100
     Component {
@@ -1622,13 +1622,13 @@ Plecs {
       }
       Parameter {
         Variable      "Animate"
-        Value         "1"
+        Value         "2"
         Show          off
       }
       FSM {
         Location       [60, 70; 1920, 1008]
-        ZoomFactor     0.40192
-        SliderPosition [0, 547]
+        ZoomFactor     0.736536
+        SliderPosition [485, 759]
         FsmState {
           Name          "P1Discharge1"
           Position      [250, 1630]
@@ -8818,7 +8818,7 @@ Plecs {
       LabelPosition south
       Parameter {
         Variable      "Min"
-        Value         "iZVS-0.01"
+        Value         "iZVS+0.5"
         Show          off
       }
       Parameter {
